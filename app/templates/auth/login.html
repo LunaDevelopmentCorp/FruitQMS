@@ -1,0 +1,59 @@
+{% extends "base.html" %}
+
+{% block title %}Login - FruitQMS{% endblock %}
+
+{% block content %}
+<div class="row justify-content-center">
+    <div class="col-md-6 col-lg-5">
+        <div class="card shadow-sm mt-5">
+            <div class="card-body p-5">
+                <h2 class="text-center mb-4 text-success">🍎 Login to FruitQMS</h2>
+
+                <div class="alert alert-info" role="alert">
+                    <strong>Demo Account:</strong><br>
+                    Email: demo@fruitqms.com<br>
+                    Password: demo123
+                </div>
+
+                <form method="POST" action="{{ url_for('auth.login') }}">
+                    {{ form.hidden_tag() }}
+
+                    <div class="mb-3">
+                        {{ form.email.label(class="form-label required-field") }}
+                        {{ form.email(class="form-control form-control-lg", placeholder="demo@fruitqms.com") }}
+                        {% if form.email.errors %}
+                            <div class="text-danger">
+                                {% for error in form.email.errors %}
+                                    <small>{{ error }}</small>
+                                {% endfor %}
+                            </div>
+                        {% endif %}
+                    </div>
+
+                    <div class="mb-3">
+                        {{ form.password.label(class="form-label required-field") }}
+                        {{ form.password(class="form-control form-control-lg", placeholder="••••••••") }}
+                        {% if form.password.errors %}
+                            <div class="text-danger">
+                                {% for error in form.password.errors %}
+                                    <small>{{ error }}</small>
+                                {% endfor %}
+                            </div>
+                        {% endif %}
+                    </div>
+
+                    <div class="d-grid">
+                        <button type="submit" class="btn btn-success btn-lg">Login</button>
+                    </div>
+                </form>
+
+                <hr class="my-4">
+
+                <p class="text-center text-muted small">
+                    FruitQMS | GLOBALG.A.P. IFA v6.0 Compliant
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

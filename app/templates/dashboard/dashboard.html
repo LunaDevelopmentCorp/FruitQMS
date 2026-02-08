@@ -1,0 +1,357 @@
+{% extends "base.html" %}
+
+{% block title %}Dashboard - FruitQMS{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+<style>
+    #map {
+        height: 320px;
+        width: 100%;
+        border-radius: 8px;
+    }
+    .marker-popup h6 { margin: 0 0 5px 0; color: #28a745; }
+    .marker-popup p { margin: 0; font-size: 0.9em; }
+    .stat-card .stat-value { font-size: 1.8rem; font-weight: 700; line-height: 1.1; }
+    .stat-card .stat-label { font-size: 0.8rem; color: #6c757d; }
+    .todo-item { padding: 0.5rem 0; border-bottom: 1px solid #f0f0f0; }
+    .todo-item:last-child { border-bottom: none; }
+    .todo-item a { text-decoration: none; color: inherit; }
+    .todo-item a:hover { color: #28a745; }
+    .priority-high { border-left: 3px solid #dc3545; padding-left: 0.75rem; }
+    .priority-medium { border-left: 3px solid #fd7e14; padding-left: 0.75rem; }
+    .priority-low { border-left: 3px solid #28a745; padding-left: 0.75rem; }
+    .setup-step { padding: 0.35rem 0; font-size: 0.9rem; }
+    .compliance-bar { height: 8px; border-radius: 4px; }
+</style>
+{% endblock %}
+
+{% block content %}
+<!-- Header -->
+<div class="d-flex justify-content-between align-items-center mb-4">
+    <div>
+        <h2 class="mb-1">Dashboard</h2>
+        <span class="text-muted">
+            {% if org %}
+                {{ org.name }} <span class="badge bg-secondary">{{ org.org_type|replace('_', ' ')|title }}</span>
+            {% else %}
+                No organisation set up yet
+            {% endif %}
+            <span class="badge bg-primary ms-1">{{ current_user.role|replace('_', ' ')|title }}</span>
+        </span>
+    </div>
+    <div>
+        {% if not setup_complete %}
+            <a href="/wizard/step{{ setup_step or 1 }}" class="btn btn-success">
+                <i class="bi bi-play-circle"></i> Continue Setup
+            </a>
+        {% elif current_user.role in ['qa_manager', 'auditor'] %}
+            <a href="{{ url_for('setup.settings') }}" class="btn btn-outline-success">
+                <i class="bi bi-gear"></i> Settings
+            </a>
+        {% endif %}
+    </div>
+</div>
+
+<!-- Quick Stats Row -->
+<div class="row g-3 mb-4">
+    <div class="col-6 col-md-3">
+        <div class="card shadow-sm stat-card h-100">
+            <div class="card-body text-center py-3">
+                <div class="stat-value text-success">{{ '7/7' if setup_complete else (setup_step ~ '/7') }}</div>
+                <div class="stat-label">Setup Steps</div>
+            </div>
+        </div>
+    </div>
+    <div class="col-6 col-md-3">
+        <div class="card shadow-sm stat-card h-100">
+            <div class="card-body text-center py-3">
+                <div class="stat-value text-primary">{{ grower_count }}</div>
+                <div class="stat-label">Growers</div>
+            </div>
+        </div>
+    </div>
+    <div class="col-6 col-md-3">
+        <div class="card shadow-sm stat-card h-100">
+            <div class="card-body text-center py-3">
+                <div class="stat-value {% if compliance_percent >= 80 %}text-success{% elif compliance_percent >= 50 %}text-warning{% else %}text-danger{% endif %}">
+                    {{ compliance_percent }}%
+                </div>
+                <div class="stat-label">Compliance</div>
+                {% if cp_total > 0 %}
+                <div class="progress compliance-bar mt-1">
+                    <div class="progress-bar {% if compliance_percent >= 80 %}bg-success{% elif compliance_percent >= 50 %}bg-warning{% else %}bg-danger{% endif %}"
+                         style="width: {{ compliance_percent }}%"></div>
+                </div>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+    <div class="col-6 col-md-3">
+        <div class="card shadow-sm stat-card h-100">
+            <div class="card-body text-center py-3">
+                <div class="stat-value text-secondary">{{ cp_compliant }}/{{ cp_total }}</div>
+                <div class="stat-label">Control Points Done</div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Main Content: Two columns -->
+<div class="row g-4 mb-4">
+
+    <!-- LEFT COLUMN: To-Do & Outstanding -->
+    <div class="col-lg-7">
+
+        <!-- Action Items -->
+        {% if todo_items %}
+        <div class="card shadow-sm mb-4">
+            <div class="card-header bg-white">
+                <h5 class="mb-0"><i class="bi bi-lightning-charge text-warning"></i> Action Required</h5>
+            </div>
+            <div class="card-body py-2">
+                {% for item in todo_items %}
+                <div class="todo-item priority-{{ item.priority }}">
+                    <a href="{{ item.link }}" class="d-flex justify-content-between align-items-center">
+                        <span>{{ item.text }}</span>
+                        <i class="bi bi-chevron-right text-muted"></i>
+                    </a>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+        {% endif %}
+
+        <!-- Setup Progress (if not complete) -->
+        {% if not setup_complete %}
+        <div class="card shadow-sm mb-4">
+            <div class="card-header bg-white">
+                <h5 class="mb-0"><i class="bi bi-list-check text-success"></i> Setup Progress</h5>
+            </div>
+            <div class="card-body py-2">
+                {% for task in setup_tasks %}
+                <div class="setup-step d-flex align-items-center">
+                    {% if task.done %}
+                        <i class="bi bi-check-circle-fill text-success me-2"></i>
+                        <span class="text-muted"><s>{{ task.label }}</s></span>
+                    {% else %}
+                        <i class="bi bi-circle text-muted me-2"></i>
+                        <span>{{ task.label }}</span>
+                    {% endif %}
+                </div>
+                {% endfor %}
+                <div class="mt-2">
+                    <a href="/wizard/step{{ setup_step or 1 }}" class="btn btn-success btn-sm">
+                        <i class="bi bi-play-circle"></i> Continue from Step {{ setup_step or 1 }}
+                    </a>
+                </div>
+            </div>
+        </div>
+        {% endif %}
+
+        <!-- Outstanding Control Points -->
+        {% if outstanding_major or outstanding_minor %}
+        <div class="card shadow-sm mb-4">
+            <div class="card-header bg-white d-flex justify-content-between align-items-center">
+                <h5 class="mb-0"><i class="bi bi-exclamation-triangle text-danger"></i> Outstanding Control Points</h5>
+                {% if current_user.role in ['qa_manager', 'auditor'] %}
+                <a href="{{ url_for('setup.settings') }}#globalgap" class="btn btn-outline-success btn-sm">View All</a>
+                {% endif %}
+            </div>
+            <div class="card-body py-2">
+                {% if outstanding_major %}
+                <h6 class="text-danger small fw-bold mt-1 mb-2">Major Must ({{ outstanding_major|length }}{% if outstanding_major|length >= 15 %}+{% endif %})</h6>
+                {% for cp in outstanding_major %}
+                <div class="todo-item">
+                    <div class="d-flex justify-content-between">
+                        <div>
+                            <code class="me-1">{{ cp.code }}</code>
+                            <span class="badge bg-danger" style="font-size: 0.65rem;">Major</span>
+                        </div>
+                        <span class="badge {% if cp.compliance_status == 'Non-compliant' %}bg-danger{% else %}bg-secondary{% endif %}" style="font-size: 0.65rem;">
+                            {{ cp.compliance_status or 'Not reviewed' }}
+                        </span>
+                    </div>
+                    <small class="text-muted">{{ cp.description[:100] }}{% if cp.description|length > 100 %}...{% endif %}</small>
+                </div>
+                {% endfor %}
+                {% endif %}
+
+                {% if outstanding_minor %}
+                <h6 class="text-warning small fw-bold mt-3 mb-2">Minor Must & Recommendations ({{ outstanding_minor|length }}{% if outstanding_minor|length >= 15 %}+{% endif %})</h6>
+                {% for cp in outstanding_minor[:5] %}
+                <div class="todo-item">
+                    <div class="d-flex justify-content-between">
+                        <div>
+                            <code class="me-1">{{ cp.code }}</code>
+                        </div>
+                        <span class="badge bg-secondary" style="font-size: 0.65rem;">
+                            {{ cp.compliance_status or 'Not reviewed' }}
+                        </span>
+                    </div>
+                    <small class="text-muted">{{ cp.description[:100] }}{% if cp.description|length > 100 %}...{% endif %}</small>
+                </div>
+                {% endfor %}
+                {% if outstanding_minor|length > 5 %}
+                <div class="text-muted small mt-2">... and {{ outstanding_minor|length - 5 }} more</div>
+                {% endif %}
+                {% endif %}
+            </div>
+        </div>
+        {% endif %}
+
+    </div>
+
+    <!-- RIGHT COLUMN: Recently Completed & Quick Links -->
+    <div class="col-lg-5">
+
+        <!-- Recently Completed -->
+        {% if recently_completed %}
+        <div class="card shadow-sm mb-4">
+            <div class="card-header bg-white">
+                <h5 class="mb-0"><i class="bi bi-check2-all text-success"></i> Recently Completed</h5>
+            </div>
+            <div class="card-body py-2">
+                {% for cp in recently_completed %}
+                <div class="setup-step">
+                    <i class="bi bi-check-circle-fill text-success me-2"></i>
+                    <code class="me-1">{{ cp.code }}</code>
+                    <small class="text-muted">{{ cp.description[:60] }}{% if cp.description|length > 60 %}...{% endif %}</small>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+        {% endif %}
+
+        <!-- Quick Links -->
+        <div class="card shadow-sm mb-4">
+            <div class="card-header bg-white">
+                <h5 class="mb-0"><i class="bi bi-grid text-primary"></i> Quick Links</h5>
+            </div>
+            <div class="card-body">
+                <div class="d-grid gap-2">
+                    {% if not setup_complete %}
+                    <a href="/wizard/step{{ setup_step or 1 }}" class="btn btn-success">
+                        <i class="bi bi-play-circle me-1"></i> Continue Setup Wizard
+                    </a>
+                    {% endif %}
+                    {% if current_user.role in ['qa_manager', 'auditor'] %}
+                    <a href="{{ url_for('setup.settings') }}" class="btn btn-outline-secondary">
+                        <i class="bi bi-gear me-1"></i> Settings
+                    </a>
+                    <a href="{{ url_for('setup.settings') }}#globalgap" class="btn btn-outline-secondary">
+                        <i class="bi bi-clipboard-check me-1"></i> GLOBALG.A.P. Checklist
+                    </a>
+                    <a href="{{ url_for('setup.settings') }}#growers" class="btn btn-outline-secondary">
+                        <i class="bi bi-people me-1"></i> Manage Growers
+                    </a>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+
+        <!-- Supported Standards -->
+        <div class="card shadow-sm mb-4">
+            <div class="card-header bg-white">
+                <h5 class="mb-0"><i class="bi bi-patch-check text-success"></i> Supported Standards</h5>
+            </div>
+            <div class="card-body py-2">
+                <div class="row">
+                    <div class="col-6">
+                        <small>
+                            <div><i class="bi bi-check-circle-fill text-success"></i> GLOBALG.A.P. IFA v6.0</div>
+                            <div><i class="bi bi-check-circle-fill text-success"></i> GRASP</div>
+                            <div><i class="bi bi-check-circle-fill text-success"></i> SMETA</div>
+                            <div><i class="bi bi-check-circle-fill text-success"></i> Tesco Nurture</div>
+                        </small>
+                    </div>
+                    <div class="col-6">
+                        <small>
+                            <div><i class="bi bi-check-circle-fill text-success"></i> Rainforest Alliance</div>
+                            <div><i class="bi bi-check-circle-fill text-success"></i> LEAF</div>
+                            <div><i class="bi bi-check-circle-fill text-success"></i> SPRING</div>
+                        </small>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Geographic Overview (collapsed by default if no data) -->
+<div class="row mb-4">
+    <div class="col-12">
+        <div class="card shadow-sm">
+            <div class="card-header bg-white d-flex justify-content-between align-items-center"
+                 data-bs-toggle="collapse" data-bs-target="#mapCollapse" role="button" aria-expanded="true">
+                <h5 class="mb-0"><i class="bi bi-geo-alt text-success"></i> Geographic Overview</h5>
+                <i class="bi bi-chevron-down text-muted"></i>
+            </div>
+            <div class="collapse show" id="mapCollapse">
+                <div class="card-body p-0">
+                    <div id="map"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block extra_js %}
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script>
+    var mapData = {{ map_data|safe }};
+    var defaultCenter = [-33.9249, 18.4241];
+    var mapCenter = defaultCenter;
+    var zoom = 10;
+
+    if (mapData.packhouse && mapData.packhouse.lat && mapData.packhouse.lng) {
+        mapCenter = [mapData.packhouse.lat, mapData.packhouse.lng];
+    }
+
+    var map = L.map('map').setView(mapCenter, zoom);
+
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        attribution: '&copy; OpenStreetMap contributors',
+        maxZoom: 18
+    }).addTo(map);
+
+    var packhouseIcon = L.icon({
+        iconUrl: 'https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-2x-green.png',
+        shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/images/marker-shadow.png',
+        iconSize: [25, 41], iconAnchor: [12, 41], popupAnchor: [1, -34], shadowSize: [41, 41]
+    });
+
+    var growerIcon = L.icon({
+        iconUrl: 'https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-2x-blue.png',
+        shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/images/marker-shadow.png',
+        iconSize: [25, 41], iconAnchor: [12, 41], popupAnchor: [1, -34], shadowSize: [41, 41]
+    });
+
+    if (mapData.packhouse) {
+        var ph = mapData.packhouse;
+        var complianceBadge = '';
+        if (ph.compliance !== 'N/A') {
+            var badgeClass = 'bg-success';
+            var percent = parseInt(ph.compliance);
+            if (percent < 70) badgeClass = 'bg-danger';
+            else if (percent < 90) badgeClass = 'bg-warning';
+            complianceBadge = '<p><span class="badge ' + badgeClass + '">Compliance: ' + ph.compliance + '</span></p>';
+        }
+        L.marker([ph.lat, ph.lng], {icon: packhouseIcon}).addTo(map)
+            .bindPopup('<div class="marker-popup"><h6>' + ph.name + '</h6><p><strong>GGN:</strong> ' + ph.ggn + '</p><p><strong>Crops:</strong> ' + ph.crops + '</p>' + complianceBadge + '</div>');
+    }
+
+    if (mapData.growers && mapData.growers.length > 0) {
+        mapData.growers.forEach(function(grower) {
+            L.marker([grower.lat, grower.lng], {icon: growerIcon}).addTo(map)
+                .bindPopup('<div class="marker-popup"><h6>' + grower.name + '</h6><p><strong>Code:</strong> ' + grower.code + '</p><p><strong>Crop:</strong> ' + grower.crop + '</p><p><strong>Size:</strong> ' + grower.size + ' ha</p></div>');
+        });
+    }
+
+    // Re-invalidate map size when collapse is shown (Leaflet rendering fix)
+    document.getElementById('mapCollapse').addEventListener('shown.bs.collapse', function () {
+        map.invalidateSize();
+    });
+</script>
+{% endblock %}

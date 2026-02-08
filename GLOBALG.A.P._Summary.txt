@@ -1,0 +1,751 @@
+====================================================================================================
+GLOBALG.A.P. IFA v6.0 - Fruit & Vegetables
+Complete Control Points Summary
+====================================================================================================
+
+
+====================================================================================================
+FV 01 INTERNAL DOCUMENTATION
+====================================================================================================
+
+1. FV-GFS 01.04 - Major Must
+   Effective corrective actions are taken to address non-conformances detected during the self-assessments/internal audits.
+
+2. FV-GFS 01.03 - Major Must
+   The producer completes a minimum of one self-assessment/internal audit annually to the standard.
+
+3. FV-GFS 01.02 - Major Must
+   Records for auditing purposes are up-to-date. Records are kept for a minimum period of two years, unless a longer period is required.
+
+4. FV-GFS 01.01 - Major Must
+   A procedure is in place to manage and control documents and records.
+
+
+====================================================================================================
+FV 02 CONTINUOUS IMPROVEMENT PLAN
+====================================================================================================
+
+1. FV-GFS 02.02 - Major Must
+   There is evidence that a continuous improvement plan is implemented.
+
+2. FV-GFS 02.01 - Major Must
+   A continuous improvement plan is documented.
+
+
+====================================================================================================
+FV 03 RESOURCE MANAGEMENT AND TRAINING
+====================================================================================================
+
+1. FV-GFS 03.01 - Major Must
+   The roles and responsibilities of workers whose jobs have an impact on the implementation of the standard are defined.
+
+2. FV-GFS 03.04 - Major Must
+   Records of all training activities are kept.
+
+3. FV-GFS 03.03 - Major Must
+   Worker training includes the necessary skills and competencies and is supported by records.
+
+4. FV-GFS 03.02 - Major Must
+   Individuals responsible for technical decision-making on inputs can demonstrate competence.
+
+
+====================================================================================================
+FV 04 OUTSOURCED ACTIVITIES (SUBCONTRACTORS)
+====================================================================================================
+
+1. FV-GFS 04.01 - Major Must
+   The producer ensures that outsourced activities comply with the principles and criteria of the standard which are relevant to the services provided.
+
+
+====================================================================================================
+FV 05 SPECIFICATIONS, SUPPLIERS, AND STOCK MANAGEMENT
+====================================================================================================
+
+1. FV-GFS 05.02 - Major Must
+   An inventory is in place to manage stock on site.
+
+2. FV-GFS 05.01 - Major Must
+   Specifications and procedures for materials and services that are relevant to food safety are available.
+
+
+====================================================================================================
+FV 06 TRACEABILITY
+====================================================================================================
+
+1. FV-GFS 06.01 - Major Must
+   All registered products are traceable back to and from the registered farm where they were produced and handled (where applicable).
+
+
+====================================================================================================
+FV 07 PARALLEL OWNERSHIP, TRACEABILITY, AND SEGREGATION 
+====================================================================================================
+
+1. FV-GFS 07.01 - Major Must
+   An effective system is in place to identify all products originating from GLOBALG.A.P. certified processes and segregate them from products originating from noncertified processes.
+
+2. FV-GFS 07.03 - Major Must
+   A final verification step is in place to ensure correct dispatch of products originating from certified and noncertified production processes.
+
+3. FV-GFS 07.02 - Major Must
+   The GLOBALG.A.P. Number (GGN) is indicated on all final products originating from certified production processes when registered for parallel ownership.
+
+4. FV-GFS 07.04 - Major Must
+   Products that are purchased from different sources are identified.
+
+
+====================================================================================================
+FV 08 MASS BALANCE
+====================================================================================================
+
+1. FV-GFS 08.01 - Major Must
+   Sales records are available for all quantities sold for all registered products.
+
+2. FV-GFS 08.02 - Major Must
+   Quantities (produced, stored, and/or purchased) are recorded and summarized for all products.
+
+
+====================================================================================================
+FV 09 RECALL AND WITHDRAWAL
+====================================================================================================
+
+1. FV-GFS 09.01 - Major Must
+   Documented procedures are in place to manage the recall and withdrawal of products from the marketplace, and such procedures are tested annually.
+
+
+====================================================================================================
+FV 10 COMPLAINTS
+====================================================================================================
+
+1. FV-GFS 10.01 - Major Must
+   A complaint procedure relating to both internal and external issues covered by the standard is available and implemented.
+
+2. FV-GFS 10.02 - Major Must
+   Workers are informed of their rights related to the standard, and there is a grievance mechanism available and implemented through which workers can file complaints confidentially and without fear of retaliation.
+
+
+====================================================================================================
+FV 11 NON-CONFORMING PRODUCTS
+====================================================================================================
+
+1. FV-GFS 11.01 - Major Must
+   Procedures are in place to manage and handle non-conforming products.
+
+
+====================================================================================================
+FV 12 LABORATORY TESTING
+====================================================================================================
+
+1. FV-GFS 12.01 - Major Must
+   Laboratory testing occurs in a manner consistent with industry requirements and prevailing regulations.
+
+
+====================================================================================================
+FV 13 EQUIPMENT AND DEVICES
+====================================================================================================
+
+1. FV-GFS 13.01 - Major Must
+   Equipment, tools, and devices are fit for purpose and maintained.
+
+2. FV-GFS 13.02 - Major Must
+   Equipment is stored in such a way as to prevent product contamination.
+
+3. FV-GFS 13.03 - Major Must
+   Vehicles and equipment used for loading, transport, or storage of harvested products are cleaned, maintained, and appropriate for use.
+
+
+====================================================================================================
+FV 14 FOOD SAFETY POLICY DECLARATION
+====================================================================================================
+
+1. FV-GFS 14.01 - Major Must
+   The producer has completed and signed the food safety policy declaration.
+
+
+====================================================================================================
+FV 15 FOOD DEFENSE
+====================================================================================================
+
+1. FV-GFS 15.01 - Major Must
+   A food defense system is in place to address risks associated with malicious attack or contamination.
+
+
+====================================================================================================
+FV 16 FOOD FRAUD
+====================================================================================================
+
+1. FV-GFS 16.01 - Major Must
+   A system is in place to address risks associated with food fraud.
+
+
+====================================================================================================
+FV 17 LOGO USE
+====================================================================================================
+
+1. FV-GFS 17.01 - Major Must
+   The GLOBALG.A.P. word, trademark, and QR code or logo, as well as the GLOBALG.A.P. Number (GGN) are used according to “GLOBALG.A.P. trademarks use: Policy and guidelines.”
+
+
+====================================================================================================
+FV 18 GLOBALG.A.P. STATUS
+====================================================================================================
+
+1. FV-GFS 18.01 - Major Must
+   Transaction documentation includes reference to the GLOBALG.A.P. status and the GLOBALG.A.P. Number (GGN).
+
+
+====================================================================================================
+FV 19 HYGIENE
+====================================================================================================
+
+1. FV-GFS 19.01 - Major Must
+   The farm has a documented hygiene risk assessment.
+
+2. FV-GFS 19.04 - Major Must
+   Smoking, eating, chewing, and drinking are confined to designated areas.
+
+3. FV-GFS 19.02 - Major Must
+   Documented hygiene procedures are in place to minimize food safety risks.
+
+4. FV-GFS 19.03 - Major Must
+   All persons working on the farm have received hygiene training.
+
+5. FV-GFS 19.06 - Major Must
+   Handwashing facilities are available for all workers, visitors, and subcontractors who come into direct contact with products.
+
+6. FV-GFS 19.05 - Major Must
+   Clean toilets are provided for workers, visitors, and subcontractors in the vicinity of their work.
+
+7. FV-GFS 19.07 - Major Must
+   Animal activity that may result in product contamination is managed.
+
+8. FV-GFS 19.08 - Major Must
+   Containers used for production and harvesting are cleaned, maintained, and appropriate for use.
+
+
+====================================================================================================
+FV 20 WORKERS’ HEALTH, SAFETY, AND WELFARE
+====================================================================================================
+
+1. FV-GFS 20.03.04 - Minor Must
+   Suitable changing facilities are available where necessary.
+
+2. FV-GFS 20.03.02 - Major Must
+   Personal protective equipment (PPE) is maintained in clean conditions and stored appropriately so as not to pose any contamination risk to personal items.
+
+3. FV-GFS 20.03.03 - Minor Must
+   There is evidence that the provided personal protective equipment (PPE) is used by the workers.
+
+4. FV-GFS 20.03.01 - Major Must
+   Workers, visitors, and subcontractors are equipped with suitable personal protective equipment (PPE).
+
+5. FV-GFS 20.02.03 - Minor Must
+   First aid kits are accessible at all permanent sites and fields near the work.
+
+6. FV-GFS 20.02.04 - Minor Must
+   There is always at least one person trained in first aid present on the farm whenever on-farm activities are being carried out.
+
+7. FV-GFS 20.02.02 - Minor Must
+   Safety advice for substances hazardous to workers’ health and safety is immediately available and accessible.
+
+8. FV-GFS 20.01.03 - Major Must
+   All staff have received health and safety training according to the risk assessment.
+
+9. FV-GFS 20.02.01 - Major Must
+   Accident and emergency procedures are displayed and communicated.
+
+10. FV-GFS 20.01.02 - Major Must
+   The farm has health and safety procedures.
+
+11. FV-GFS 20.01.01 - Major Must
+   There is a documented risk assessment for workers’ health and safety.
+
+12. FV-GFS 20.04.01 - Minor Must
+   There is communication between management and workers on issues related to their health, safety, and welfare.
+
+13. FV-GFS 20.04.02 - Major Must
+   Workers have access to clean drinking water, food storage, and areas to eat and rest.
+
+14. FV-GFS 20.04.03 - Major Must
+   On-site living quarters are compliant with applicable local regulations, habitable, and equipped with basic services and facilities.
+
+15. FV-GFS 20.04.04 - Minor Must
+   Transportation provided to workers is safe.
+
+
+====================================================================================================
+FV 21 SITE MANAGEMENT
+====================================================================================================
+
+1. FV-GFS 21.02 - Major Must
+   A management plan that establishes strategies for minimizing the risks identified in the risk assessment for operation suitability has been developed and implemented and is reviewed regularly.
+
+2. FV-GFS 21.01 - Major Must
+   A documented risk assessment is completed for all registered sites.
+
+3. FV-GFS 21.03 - Major Must
+   The producer has a system for identifying sites and facilities used for production.
+
+4. FV-GFS 21.04 - Major Must
+   The site is kept in a tidy and orderly condition.
+
+5. FV-GFS 21.05 - Recom.
+   The producer recognizes the farm as an agricultural ecosystem that interacts with neighboring landscapes (while the legal scope of the producer is on the farm).
+
+6. FV-GFS 21.06 - Major Must
+   Where the operation handles or stores allergens, the operation has a documented allergen management program.
+
+
+====================================================================================================
+FV 22 BIODIVERSITY AND HABITATS
+====================================================================================================
+
+1. FV-GFS 22.03.02 - Major Must
+   On the farm (within the farm boundaries), areas with legally recognized conservation value (or effectively protected by other means) which had been converted into agricultural areas or into other uses between 1 January 2008 and 1 January 2014 are already restored, under restoration, or will enter binding restoration.
+
+2. FV-GFS 22.03.03 - Recom.
+   Management of biodiversity is supported with metrics.
+
+3. FV-GFS 22.03.01 - Major Must
+   On the farm (within the farm boundaries), no areas with legally recognized conservation value (or effectively protected by other means) have been converted into agricultural areas or into other uses since 1 January 2014.
+
+4. FV-GFS 22.02.01 - Recom.
+   Unproductive sites are used as ecological focus area to protect and enhance biodiversity.
+
+5. FV-GFS 22.01.02 - Minor Must
+   Biodiversity is protected.
+
+6. FV-GFS 22.01.01 - Minor Must
+   Biodiversity is managed to enable its protection and enhancement.
+
+7. FV-GFS 22.01.03 - Recom.
+   Biodiversity is enhanced.
+
+
+====================================================================================================
+FV 23 ENERGY EFFICIENCY
+====================================================================================================
+
+1. FV-GFS 23.02 - Minor Must
+   Based on the results of the monitoring, there is a plan to improve energy efficiency on the farm.
+
+2. FV-GFS 23.03 - Minor Must
+   The plan to improve energy efficiency considers minimizing the use of nonrenewable energy.
+
+3. FV-GFS 23.04 - Recom.
+   Management of energy is supported with metrics.
+
+4. FV-GFS 23.01 - Major Must
+   On-farm energy use is monitored.
+
+
+====================================================================================================
+FV 24 GREENHOUSE GASES AND CLIMATE CHANGE
+====================================================================================================
+
+1. FV-GFS 24.01 - Recom.
+   The farm contributes to reducing GHG* emissions and removing them from the atmosphere.
+ 
+*Greenhouse gas (GHG) emissions refer to carbon dioxide (CO₂), methane (CH₄), nitrous oxide (N₂O), and fluorinated gases. Due to their varying potential to contribute to global warming, they are sometimes calculated as CO₂ equivalents (CO₂e).
+
+2. FV-GFS 24.02 - Recom.
+   The farm enables the formation of organic carbon in soils and in biomass.
+
+3. FV-GFS 24.03 - Recom.
+   The farm’s contribution to reducing and removing greenhouse gases (GHGs) from the atmosphere is supported with metrics.
+
+
+====================================================================================================
+FV 25 WASTE MANAGEMENT
+====================================================================================================
+
+1. FV-GFS 25.09 - Recom.
+   Food waste* is prevented and managed.
+
+*Food waste: food that is not channeled for human consumption, animal feed, or bio-based materials.
+
+2. FV-GFS 25.07 - Minor Must
+   Fragments and small pieces of packaging material and other nonproduct waste are removed from the field.
+
+3. FV-GFS 25.02 - Minor Must
+   Waste products and sources of pollution are identified in all areas of the farm.
+
+4. FV-GFS 25.04 - Minor Must
+   Holding areas for diesel and other fuel oil tanks are environmentally safe.
+
+5. FV-GFS 25.08 - Minor Must
+   Plastics are managed in a responsible way.
+
+6. FV-GFS 25.01 - Major Must
+   A waste management system is implemented.
+
+7. FV-GFS 25.05 - Recom.
+   Organic waste is managed in an appropriate manner to reduce the risk of contamination of the environment.
+
+8. FV-GFS 25.06 - Minor Must
+   The water used for washing and cleaning purposes is disposed of in a manner that minimizes the environmental, health, and safety impact.
+
+9. FV-GFS 25.03 - Recom.
+   All forklifts and other driven transport trolleys are clean and well maintained and of a suitable type to avoid contamination through emissions.
+
+
+====================================================================================================
+FV 26 PLANT PROPAGATION MATERIAL
+====================================================================================================
+
+1. FV-GFS 26.04 - Major Must
+   Up-to-date records on all chemical treatments applied on in-house propagation materials are available.
+
+2. FV-GFS 26.05 - Major Must
+   Information on chemical treatments is available for purchased propagation materials.
+
+3. FV-GFS 26.03 - Minor Must
+   Plant health quality control systems are implemented and recorded for in-house propagation materials.
+
+4. FV-GFS 26.02 - Major Must
+   Propagation materials are obtained in compliance with intellectual property laws.
+
+5. FV-GFS 26.01 - Major Must
+   Propagation materials are obtained in compliance with variety registration laws, where applicable.
+
+
+====================================================================================================
+FV 27 GENETICALLY MODIFIED ORGANISMS
+====================================================================================================
+
+1. FV-GFS 27.04 - Major Must
+   Adventitious mixing of genetically modified (GM) crops with conventional crops is avoided.
+
+2. FV-GFS 27.03 - Major Must
+   The producer’s direct clients have been informed of the genetically modified organism (GMO) status of the product.
+
+3. FV-GFS 27.02 - Major Must
+   Growing of genetically modified crops and/or trials is subject to the prevailing regulations in the country of production.
+
+4. FV-GFS 27.01 - Minor Must
+   A procedure for use and handling of genetically modified (GM) materials is available.
+
+
+====================================================================================================
+FV 28 SOIL AND SUBSTRATE MANAGEMENT
+====================================================================================================
+
+1. FV-GFS 28.01.04 - Minor Must
+   Techniques have been used to improve or maintain soil structure and avoid soil compaction.
+
+2. FV-GFS 28.01.01 - Major Must
+   To improve and optimize soil health, the producer has a soil management plan.
+
+3. FV-GFS 28.01.02 - Recom.
+   Soil maps have been prepared for the farm.
+
+4. FV-GFS 28.01.03 - Minor Must
+   Crop rotation for annual crops is implemented, where feasible.
+
+5. FV-GFS 28.01.05 - Minor Must
+   The producer uses techniques to reduce the possibility of soil erosion.
+
+6. FV-GFS 28.03.03 - Minor Must
+   Substrates of natural origins do not come from designated conservation areas.
+
+7. FV-GFS 28.03.02 - Minor Must
+   Records are kept of any chemicals used to sterilize substrates for reuse.
+
+8. FV-GFS 28.03.01 - Recom.
+   The producer participates in substrate recycling.
+
+9. FV-GFS 28.02.01 - Minor Must
+   There is documented justification for the use of soil fumigants.
+
+10. FV-GFS 28.02.02 - Minor Must
+   The preplanting interval is complied with.
+
+
+====================================================================================================
+FV 29 FERTILIZERS AND BIOSTIMULANTS
+====================================================================================================
+
+1. FV-GFS 29.02.02 - Minor Must
+   Fertilizers and biostimulants are stored in an appropriate manner that reduces the risk of environmental contamination.
+
+2. FV-GFS 29.02.01 - Major Must
+   Fertilizers and biostimulants are stored in an appropriate manner that does not compromise food safety.
+
+3. FV-GFS 29.01.01 - Major Must
+   Up-to-date records of all fertilizer and biostimulant applications are kept.
+
+4. FV-GFS 29.01.03 - Minor Must
+   The records of all fertilizer applications shall include:
+
+5. FV-GFS 29.01.07 - Recom.
+   Management of fertilizers is supported with metrics.
+
+6. FV-GFS 29.01.06 - Minor Must
+   The records of all fertilizer applications shall include:
+
+7. FV-GFS 29.01.05 - Minor Must
+   The records of all fertilizer applications shall include:
+
+8. FV-GFS 29.01.02 - Minor Must
+   The records of all fertilizer applications shall include:
+
+9. FV-GFS 29.01.04 - Minor Must
+   The records of all fertilizer applications shall include:
+
+10. FV-GFS 29.03.03 - Major Must
+   The use of human sewage sludge is prohibited on the farm.
+
+11. FV-GFS 29.03.02 - Major Must
+   The interval between the application of organic fertilizer and harvest does not compromise food safety.
+
+12. FV-GFS 29.03.01 - Major Must
+   A risk assessment for organic fertilizer is conducted as per intended use.
+
+13. FV-GFS 29.04.01 - Minor Must
+   The content of major nutrients (nitrogen, phosphorus, potassium) in applied fertilizers is known.
+
+14. FV-GFS 29.04.02 - Recom.
+   Purchased inorganic fertilizers are accompanied by documented evidence of chemical content, including heavy metals.
+
+
+====================================================================================================
+FV 30 WATER MANAGEMENT
+====================================================================================================
+
+1. FV-GFS 30.01.01 - Major Must
+   There is a risk assessment to assess food safety risks for pre- and postharvest water used.
+
+2. FV-GFS 30.01.03 - Major Must
+   A water management plan is available.
+
+3. FV-GFS 30.01.02 - Major Must
+   A risk assessment has been undertaken to evaluate environmental issues for water management on the farm (pre- and postharvest).
+
+4. FV-GFS 30.04.02 - Major Must
+   Storage of water does not pose any food safety risks.
+
+5. FV-GFS 30.06.01 - Minor Must
+   Tools are routinely used to calculate and optimize crop irrigation.
+
+6. FV-GFS 30.05.02 - Major Must
+   Corrective actions are taken based on results from the risk assessment and results of the water analysis.
+
+7. FV-GFS 30.05.01 - Major Must
+   Water is analyzed for food safety, in accordance with the risk assessment.
+
+8. FV-GFS 30.05.03 - Major Must
+   The use of treated sewage water does not pose a food safety risk.
+
+9. FV-GFS 30.05.04 - Major Must
+   Water that comes into contact with products during harvest and postharvest meets the microbial standard for drinking water.
+
+10. FV-GFS 30.05.06 - Major Must
+   Treated water used during harvest or postharvest is monitored appropriately.
+
+11. FV-GFS 30.05.05 - Major Must
+   Recirculated water used during production, harvest, and postharvest is changed or replenished at an appropriate frequency.
+
+12. FV-GFS 30.03.01 - Minor Must
+   Where feasible, measures have been implemented to collect water and, where appropriate, to recycle.
+
+13. FV-GFS 30.01.04 - Recom.
+   Actions are taken to complement on-farm water management with off-farm activities (while recognizing that the legal scope of the producer is on the farm).
+
+14. FV-GFS 30.04.01 - Recom.
+   Water storage facilities are present and well maintained to take advantage of periods of maximum water availability.
+
+15. FV-GFS 30.02.02 - Major Must
+   Restrictions indicated in water permits/licenses are complied with.
+
+16. FV-GFS 30.02.01 - Major Must
+   Water use at farm level has valid permits/licenses where legally required.
+
+17. FV-GFS 30.06.03 - Recom.
+   Management of water is supported with metrics.
+
+18. FV-GFS 30.06.02 - Major Must
+   Measures are taken to understand the amount of water used and actions identified for how to increase water use efficiency.
+
+
+====================================================================================================
+FV 31 INTEGRATED PEST MANAGEMENT
+====================================================================================================
+
+1. FV-GFS 31.04 - Major Must
+   The producer implements prevention measures.
+
+2. FV-GFS 31.03 - Minor Must
+   There is an integrated pest management (IPM) plan describing the measures used at farm level to manage the relevant pests, diseases, and weeds that affect the registered crop(s).
+
+3. FV-GFS 31.07 - Minor Must
+   Anti-resistance recommendations have been followed to maintain the effectiveness of available plant protection products (PPPs).
+
+4. FV-GFS 31.06 - Major Must
+   The producer makes interventions to manage pests.
+
+5. FV-GFS 31.01 - Minor Must
+   Implementation of integrated pest management (IPM) is assisted through training or advice.
+
+6. FV-GFS 31.05 - Major Must
+   The producer practices monitoring of their registered crops to plan pest and disease management.
+
+7. FV-GFS 31.02 - Major Must
+   The producer is informed about the relevant pests, diseases, and weeds that affect their registered crops.
+
+8. FV-GFS 31.08 - Minor Must
+   The producer uses the results of integrated pest management (IPM) to learn and to improve the IPM plan.
+
+
+====================================================================================================
+FV 32 PLANT PROTECTION PRODUCTS
+====================================================================================================
+
+1. FV-GFS 32.04.03 - Minor Must
+   Empty containers are kept secure until disposal is possible.
+
+2. FV-GFS 32.01.02 - Major Must
+   Plant protection products (PPPs) and other treatments are applied appropriately and as recommended on the product label.
+
+3. FV-GFS 32.02.01 - Major Must
+   Records of plant protection product (PPP) applications are kept.
+
+4. FV-GFS 32.01.01 - Major Must
+   Only treatments with plant protection products (PPPs) authorized for the country of production are used.
+
+5. FV-GFS 32.04.05 - Minor Must
+   Official collection and disposal systems are used, when available, and the empty containers are then adequately stored, labeled, and handled according to the rules of that collection system.
+
+6. FV-GFS 32.04.04 - Minor Must
+   Empty plant protection product (PPP) containers are disposed of in such a way as to mitigate the risk to humans and the environment.
+
+7. FV-GFS 32.04.01 - Major Must
+   Empty plant protection product (PPP) containers are triple rinsed with water before storage and disposal, and the rinsate is disposed of in such a way as to mitigate the risk to the environment.
+
+8. FV-GFS 32.09.06 - Minor Must
+   The plant protection product (PPP) storage is able to retain and manage spillage.
+
+9. FV-GFS 32.09.05 - Minor Must
+   Plant protection product (PPP) storage is illuminated.
+
+10. FV-GFS 32.04.02 - Major Must
+   The reuse of empty plant protection product (PPP) containers for purposes other than containing and transporting identical products is avoided.
+
+11. FV-GFS 32.09.04 - Minor Must
+   Plant protection products (PPPs) are stored at appropriate temperatures.
+
+12. FV-GFS 32.09.03 - Minor Must
+   Plant protection product (PPP) storage does not pose a risk to workers or create opportunities for cross contamination.
+
+13. FV-GFS 32.09.02 - Minor Must
+   The plant protection product (PPP) storage is structurally sound and robust.
+
+14. FV-GFS 32.09.01 - Major Must
+   Plant protection products (PPPs), biocontrol agents, and any other treatment products are stored in a manner that ensures the associated risks are managed.
+
+15. FV-GFS 32.08.01 - Minor Must
+   Up-to-date application records are kept of all other substances not covered under any of the sections.
+
+16. FV-GFS 32.01.04 - Recom.
+   The producer takes active measures to prevent plant protection product (PPP) drift from neighboring plots.
+
+17. FV-GFS 32.01.03 - Major Must
+   The producer takes active measures to prevent plant protection product (PPP) drift to neighboring plots.
+
+18. FV-GFS 32.02.03 - Recom.
+   Management of plant protection products (PPPs) is supported with metrics.
+
+19. FV-GFS 32.03.01 - Major Must
+   There is evidence that the registered preharvest intervals have been complied with.
+
+20. FV-GFS 32.02.02 - Major Must
+   Weather conditions at time of application are recorded.
+
+21. FV-GFS 32.04.06 - Major Must
+   All local regulations regarding disposal or destruction of plant protection product (PPP) containers are complied with.
+
+22. FV-GFS 32.05.01 - Minor Must
+   Obsolete plant protection products (PPPs) are securely maintained, identified, and disposed of via authorized or approved channels.
+
+23. FV-GFS 32.06.01 - Minor Must
+   Surplus application mixes or tank washings are disposed of responsibly.
+
+24. FV-GFS 32.11.01 - Major Must
+   Invoices and/or procurement documentation of all plant protection products (PPPs) and postharvest treatments are kept.
+
+25. FV-GFS 32.10.04 - Minor Must
+   Facilities are available to deal with operator contamination.
+
+26. FV-GFS 32.10.01 - Minor Must
+   Access to health checks is available to workers with exposure to applicable plant protection products (PPPs) according to the risk assessment or exposure and toxicity of products.
+
+27. FV-GFS 32.10.03 - Minor Must
+   An accident procedure is available near the plant protection product (PPP)/chemical storage.
+
+28. FV-GFS 32.10.05 - Minor Must
+   Plant protection products (PPPs) are transported between production sites in a safe and secure manner.
+
+29. FV-GFS 32.10.06 - Major Must
+   The farm has documented procedures addressing re-entry times after plant protection product (PPP) application.
+
+30. FV-GFS 32.10.02 - Major Must
+   Plant protection products (PPPs) are mixed and handled according to label requirements.
+
+31. FV-GFS 32.07.01 - Major Must
+   Information regarding maximum residue levels (MRLs) is available for the destination markets in which products will be traded.
+
+32. FV-GFS 32.07.03 - Major Must
+   The correct maximum residue level (MRL) sampling and testing procedures are followed.
+
+33. FV-GFS 32.07.02 - Major Must
+   A risk assessment for all registered products has been completed and the maximum residue level (MRL) requirements of the applicable market(s) are met.
+
+34. FV-GFS 32.07.04 - Major Must
+   A documented action plan is available that describes the steps to be taken if an unauthorized plant protection product (PPP) is detected in the maximum residue level (MRL) sampling.
+
+35. FV-GFS 32.07.05 - Major Must
+   A documented action plan is available that describes the steps to be taken if a maximum residue level (MRL) is exceeded.
+
+
+====================================================================================================
+FV 33 POSTHARVEST HANDLING
+====================================================================================================
+
+1. FV-GFS 33.04.01 - Major Must
+   A pest management plan is in place and implemented.
+
+2. FV-GFS 33.06.01 - Major Must
+   A risk-based microbial environmental monitoring program is in place for product handling areas.
+
+3. FV-GFS 33.04.02 - Major Must
+   Records are kept of pest control inspections and corrective actions taken.
+
+4. FV-GFS 33.07.01 - Major Must
+   Air and compressed gases are monitored, stored, and handled so as to minimize food safety risks.
+
+5. FV-GFS 33.05.01 - Major Must
+   Final product labeling is appropriate.
+
+6. FV-GFS 33.03.01 - Major Must
+   Controlled storage conditions are maintained.
+
+7. FV-GFS 33.02.01 - Major Must
+   Systems are in place to ensure that foreign materials do not contaminate products.
+
+8. FV-GFS 33.02.02 - Major Must
+   A procedure is in place for handling foreign material contamination.
+
+9. FV-GFS 33.01.04 - Major Must
+   Cleaning equipment, agents, lubricants, etc. are stored and used to prevent chemical contamination of products and are approved for application in the food industry.
+
+10. FV-GFS 33.01.03 - Major Must
+   Packaging materials are appropriate for their intended use and stored under conditions that protect the materials from contamination.
+
+11. FV-GFS 33.01.02 - Major Must
+   All locations for collection, storage, and distribution of packed products are cleaned and maintained.
+
+12. FV-GFS 33.01.01 - Major Must
+   Harvested and packed products are stored to minimize food safety risks.
+
+
+====================================================================================================
+TOTAL: 191 Control Points
+====================================================================================================

@@ -1,0 +1,757 @@
+Code,Section,Subsection,Control Point,Compliance Criteria,Criticality
+FV-GFS 10.01,FV 10 COMPLAINTS,-,A complaint procedure relating to both internal and external issues covered by the standard is available and implemented.,"A documented complaint procedure shall be available to facilitate the recording and follow-up of all received complaints relating to issues covered by the standard and to record actions taken with respect to such complaints.
+
+If the producer is informed by a competent and/or local authority that they are under investigation and/or has received a sanction within the scope of the certification, the complaint procedure shall require the producer to notify the GLOBALG.A.P. Secretariat via the certification body (CB).
+
+In case of complaints related to the standard (food safety, workers’ well-being, environmental protection, etc.) that can endanger the reputation and credibility of the GLOBALG.A.P. brand, the certificate holder shall inform the CB immediately.
+
+In the case of producer groups, the producer group members do not need a complete complaint procedure, but only the parts that are relevant to them.
+
+Workers shall be permitted to file complaints to their employer on topics covered under the standard, and such complaints shall be documented and addressed by the certificate holder.",Major Must
+FV-GFS 28.01.04,FV 28 SOIL AND SUBSTRATE MANAGEMENT,FV 28.01 Soil management and conservation,Techniques have been used to improve or maintain soil structure and avoid soil compaction.,"There shall be evidence of the application of techniques (use of deep-rooting green crops, drainage, subsoiling, use of low-pressure tires, tramlines, permanent row marking, etc.) that are suitable for use on the land and, where possible, minimize, isolate, or eliminate soil compaction.",Minor Must
+FV-GFS 22.03.02,FV 22 BIODIVERSITY AND HABITATS,FV 22.03 Natural ecosystems and habitats are not converted into agricultural areas,"On the farm (within the farm boundaries), areas with legally recognized conservation value (or effectively protected by other means) which had been converted into agricultural areas or into other uses between 1 January 2008 and 1 January 2014 are already restored, under restoration, or will enter binding restoration.","Available evidence, such as maps, aerial photos, or documents issued by local or national authorities or authorized service providers, shall indicate that restoration has been completed, or is in implementation or under planning for binding implementation, to recover the entire extent of the parts of the farm (within the farm boundaries) that fulfils the characteristic below, where those parts of the farm had been converted into agricultural area or into other uses between 1 January 2008 and 1 January 2014:
+- Areas where legal protection prevents such conversions (protected areas recognized by national or local legislation, areas with relevant categories of the International Union for Conservation of Nature (IUCN), areas that are protected via other effective means, etc.)",Major Must
+FV-GFS 18.01,FV 18 GLOBALG.A.P. STATUS,-,Transaction documentation includes reference to the GLOBALG.A.P. status and the GLOBALG.A.P. Number (GGN).,"Delivery notes, sales invoices, and, where appropriate, other documentation related to sales of materials and products originating from certified production processes shall include the GGN of the certificate holder and a reference to the GLOBALG.A.P. certification status. This is not obligatory in internal documentation.
+Where the producer has a Global Location Number (GLN), this shall replace the GGN issued by the GLOBALG.A.P. Secretariat during the registration process.
+Positive identification of the certification status is sufficient on transaction documentation (e.g., “GLOBALG.A.P. certified [product name]”). Products originating from noncertified production processes do not need to be identified as “noncertified.”
+Indication of the certification status is obligatory regardless of whether the product originating from a certified production process was sold as such or not. This cannot be checked during the initial (first ever) certification body (CB) audit because the producer does not yet have certification and the producer cannot reference the GLOBALG.A.P. certification status before the first positive certification decision.
+“N/A” only if there is an up-to-date and documented bilateral agreement available between the certificate holder and their direct buyer that all shipments contain only products originating from certified production processes.",Major Must
+FV-GFS 10.02,FV 10 COMPLAINTS,-,"Workers are informed of their rights related to the standard, and there is a grievance mechanism available and implemented through which workers can file complaints confidentially and without fear of retaliation.","Workers shall be informed (in the predominant workforce language) of the general topics covered by the standard, of legal rights granted by prevailing regulations, and of their ability to file complaints to their employer.
+The producer shall have a mechanism to resolve the claims and complaints suitable to the size of the farm, type of workers, and working conditions.
+The mechanism shall be confidential and simple to use, and a description (i.e., where to file, how to file, time expected to solve the issue) shall be available to the workers all the time that they are present on the farm. (The description can consist of pictograms or signs in the predominant workforce language describing the mechanism.)
+Records of the filed complaints shall be kept and checked.",Major Must
+FV-GFS 17.01,FV 17 LOGO USE,-,"The GLOBALG.A.P. word, trademark, and QR code or logo, as well as the GLOBALG.A.P. Number (GGN) are used according to “GLOBALG.A.P. trademarks use: Policy and guidelines.”","The producer shall use the GLOBALG.A.P. word, trademark, and QR code or logo, as well as the GGN, Global Location Number (GLN), or sub-GLN according to “GLOBALG.A.P. trademarks use: Policy and guidelines.” The GLOBALG.A.P. word, trademark, or logo shall never appear on the final product, on the consumer packaging, or at the point of sale. However, the certificate holder can use any and/or all in business-to-business communications.
+
+The GLOBALG.A.P. word, trademark, or logo cannot be in use during the initial (first ever) certification body (CB) audit because the producer does not yet have certification, and the producer cannot refer to GLOBALG.A.P. certification status before the first positive certification decision.",Major Must
+FV-GFS 03.01,FV 03 RESOURCE MANAGEMENT AND TRAINING,-,The roles and responsibilities of workers whose jobs have an impact on the implementation of the standard are defined.,"Workers with assigned duties that affect food safety and the implementation of activities covered by the standard shall be identified, including:
+- Job function, responsibilities, and title
+- Position within organizational structure
+- Contact information
+- Alternate in case of absences
+
+One worker shall be clearly identifiable as responsible for workers’ health, safety, and welfare.",Major Must
+FV-GFS 23.02,FV 23 ENERGY EFFICIENCY,-,"Based on the results of the monitoring, there is a plan to improve energy efficiency on the farm.","A documented plan identifying opportunities to improve energy efficiency shall be available.
+The plan can be a multiyear plan if the specific reality of the producer requires it.",Minor Must
+FV-GFS 02.02,FV 02 CONTINUOUS IMPROVEMENT PLAN,-,There is evidence that a continuous improvement plan is implemented.,"The implementation of identified points in the continuous improvement plan shall be supported by evidence.
+Evidence may include new procedures or policies, data sharing (to quantify changes), training, etc.
+The continuous improvement plan shall be supported by documented evidence. The evidence kept on file may include:
+- Actual outcome of efforts, with date of evaluation
+- Comments on why the effort was successful or not successful
+- If one or more of the goals are not reached, justification and description of further action
+- Sharing of relevant data with the GLOBALG.A.P. Secretariat",Major Must
+FV-GFS 32.04.03,FV 32 PLANT PROTECTION PRODUCTS,FV 32.04 Empty containers,Empty containers are kept secure until disposal is possible.,"There shall be a designated secure storage point for all empty plant protection product (PPP) containers prior to disposal that is isolated from the crop and packaging materials (e.g., permanently marked via signage) with physically restricted access for persons and fauna.",Minor Must
+FV-GFS 29.02.02,FV 29 FERTILIZERS AND BIOSTIMULANTS,FV 29.02 Storage,Fertilizers and biostimulants are stored in an appropriate manner that reduces the risk of environmental contamination.,"Fertilizers (organic and inorganic) and biostimulants shall be stored in a designated area. Appropriate measures shall have been taken to prevent the pollution of water sources (concrete foundations, walls, leak-proof container, etc.), or the fertilizers shall be stored at least 25 meters from water sources.
+Where necessary, inorganic fertilizers (powders, granules, liquids, etc.) shall be protected from atmospheric influences (sunlight, frost and rain, high temperatures, etc.). Based on a risk assessment (fertilizer type, weather conditions, storage duration and location), plastic coverage may be acceptable. It is permitted to store lime and gypsum in the field.
+As long as the storage requirements on the safety data sheet (SDS) are complied with, bulk liquid fertilizers can be stored outside in containers. The storage area shall be well ventilated and free from rainwater or heavy condensation.
+Inorganic fertilizers shall be stored in an area that is free from waste, does not constitute a breeding place for rodents, and where spillage and leakage can be cleared away.",Minor Must
+FV-GFS 29.02.01,FV 29 FERTILIZERS AND BIOSTIMULANTS,FV 29.02 Storage,Fertilizers and biostimulants are stored in an appropriate manner that does not compromise food safety.,"Fertilizers and biostimulants shall be stored in a designated area separate from plant protection products (PPPs) and harvested or packed products.
+Cross contamination between fertilizers (organic and inorganic), biostimulants, and PPPs shall be prevented. Use of a physical barrier (wall, sheeting, etc.) may be based upon defined risk.
+Fertilizers and biostimulants that are applied together with PPPs (micronutrients, foliar fertilizers, etc.) can be stored with PPPs if both are kept in closed containers.",Major Must
+FV-GFS 25.09,FV 25 WASTE MANAGEMENT,-,"Food waste* is prevented and managed.
+
+*Food waste: food that is not channeled for human consumption, animal feed, or bio-based materials.","Available evidence indicates that:
+Surplus produce** should be redirected for one of the following purposes, in order of preference:
+- Human consumption (for processing, social food services, etc.)
+- Animal feed
+- Bio-based materials
+
+Food waste should be redirected in one of the following ways:
+- Recycling, composting, and/or land applications
+- Repurposing (e.g., incineration of waste with energy recovery)
+- Other forms of disposal
+Evidence of food surplus and food waste management should be based on quantitative records (estimations are accepted).
+In Option 2 producer groups, evidence at quality management system (QMS) level is acceptable.
+**Surplus produce: produce of the farm that is grown and harvested (or unharvested and left in the field) but not distributed to customers.",Recom.
+FV-GFS 03.04,FV 03 RESOURCE MANAGEMENT AND TRAINING,-,Records of all training activities are kept.,"Induction or refresher training shall be recorded.
+Training records relevant to the implementation of the standard and good agricultural practices shall include:
+- Date of training and duration
+- Topic(s) covered
+- Names of trainer(s) or training provider(s)
+- Names of trainee(s) (e.g., attendance list(s))
+- Evidence of attendance (e.g., trainee signature)",Major Must
+FV-GFS 32.01.02,FV 32 PLANT PROTECTION PRODUCTS,FV 32.01 Plant protection product management,Plant protection products (PPPs) and other treatments are applied appropriately and as recommended on the product label.,"A system shall be in place to ensure that PPPs, including biocontrol agents, are used as authorized for the specific crop and intended purpose (i.e., for the pest, disease, weed, or target of the intervention) and as per label recommendation or official registration body publication.
+If the producer uses an off-label PPP, there shall be evidence of official approval for use of that PPP on that crop in that country.
+All PPPs shall be correctly and properly labeled.",Major Must
+FV-GFS 32.02.01,FV 32 PLANT PROTECTION PRODUCTS,FV 32.02 Application records,Records of plant protection product (PPP) applications are kept.,"Records shall be kept for all applications of PPPs, biocontrol agents, and postharvest treatments and shall specify the following:
+- Crop and/or variety treated
+- Application location (geographical area, the name or reference of the farm, and the field, orchard, greenhouse, or facility where the crop is located)
+- Exact dates (day/month/year) from start to end (The producer need not record end times, but shall always record end dates. By doing so, it shall be considered that reentry intervals are calculated using the start of the next calendar day.)
+- Registered trade name and active ingredient or beneficial organism with scientific name
+- Preharvest interval as per the product label or, if not on the label, as stated by an official source
+- Amount of product applied (weight or volume) and concentration or rate
+- Type of machinery or application equipment used (backpack sprayer, aerial application, chemigation, etc.)
+- Reason for application (target pest, disease, weed, condition, etc.)
+- Full name of the applicator (person applying)
+- Full name of the person technically responsible for decision-making and authorization of treatment applications (if single individual authorizes all applications, person’s details need be recorded only once)",Major Must
+FV-GFS 32.01.01,FV 32 PLANT PROTECTION PRODUCTS,FV 32.01 Plant protection product management,Only treatments with plant protection products (PPPs) authorized for the country of production are used.,"A system shall be in place to ensure that PPPs are used as authorized for the country of production.
+
+Evidence may take the form of reference lists (online acceptable), product labels, or descriptions of prevailing regulations. Where no official registration scheme exists in the country of production, the producer shall refer to “International Code of Conduct on the Distribution and Use of Pesticides” of the Food and Agriculture Organization (FAO).
+
+Extrapolated PPP use is allowed as per local registration scheme (see guideline).
+
+An up-to-date documented list that takes into account any change in local and national legislation for biocides, waxes, and postharvest PPPs shall be available for commercial brand products (including any active ingredient compositions) used.",Major Must
+FV-GFS 32.04.05,FV 32 PLANT PROTECTION PRODUCTS,FV 32.04 Empty containers,"Official collection and disposal systems are used, when available, and the empty containers are then adequately stored, labeled, and handled according to the rules of that collection system.","Where official collection and disposal systems exist, there shall be records of participation by the producer. All empty plant protection product (PPP) containers, once emptied, shall be adequately stored, labeled, handled, and disposed of according to the requirements of the official collection and disposal schemes, where applicable.",Minor Must
+FV-GFS 32.04.04,FV 32 PLANT PROTECTION PRODUCTS,FV 32.04 Empty containers,Empty plant protection product (PPP) containers are disposed of in such a way as to mitigate the risk to humans and the environment.,"The producer shall dispose of empty PPP containers using a safe handling system prior to the disposal, and a disposal method that avoids exposing people to the contents and avoids contamination of the environment (watercourses, flora, and fauna).",Minor Must
+FV-GFS 32.04.01,FV 32 PLANT PROTECTION PRODUCTS,FV 32.04 Empty containers,"Empty plant protection product (PPP) containers are triple rinsed with water before storage and disposal, and the rinsate is disposed of in such a way as to mitigate the risk to the environment.","Pressure-rinsing equipment for PPP containers shall be installed on the PPP application machinery, or there shall be documented instructions to rinse each container at least three times prior to its disposal.
+
+Either via the use of a container-handling device or according to a documented procedure for the application equipment operators, the rinsate from the empty PPP containers shall always be put back into the application equipment tank when mixing or disposed of in a manner that compromises neither food safety nor the environment.
+",Major Must
+FV-GFS 32.09.06,FV 32 PLANT PROTECTION PRODUCTS,FV 32.09 Plant protection product and postharvest treatment product storage,The plant protection product (PPP) storage is able to retain and manage spillage.,"Shelving shall not be absorbent in case of spillage (metal, rigid plastic, or covered with impermeable liner, etc.).
+
+The PPP storage shall have retaining tanks or shall be bunded to 110% of the volume of the largest container of stored liquid to ensure that there cannot be any leakage, seepage, or contamination to the exterior of the storage. Materials and tools such as sand, floor brush and dustpan, and plastic bags shall be available and in a fixed location to be used exclusively in case of spillage of PPPs.",Minor Must
+FV-GFS 32.09.05,FV 32 PLANT PROTECTION PRODUCTS,FV 32.09 Plant protection product and postharvest treatment product storage,Plant protection product (PPP) storage is illuminated.,The storage shall be sufficiently illuminated by natural or artificial lighting to ensure that all product labels can be easily read.,Minor Must
+FV-GFS 32.04.02,FV 32 PLANT PROTECTION PRODUCTS,FV 32.04 Empty containers,The reuse of empty plant protection product (PPP) containers for purposes other than containing and transporting identical products is avoided.,"There shall be evidence that empty PPP containers have not been and currently are not being reused for anything other than containing and transporting identical products as stated on the original label. In regions where there is a risk that the container could be used to carry drinking water, containers shall be punctured prior to disposal.",Major Must
+FV-GFS 32.09.04,FV 32 PLANT PROTECTION PRODUCTS,FV 32.09 Plant protection product and postharvest treatment product storage,Plant protection products (PPPs) are stored at appropriate temperatures.,Storage temperatures shall be in accordance with label requirements.,Minor Must
+FV-GFS 32.09.03,FV 32 PLANT PROTECTION PRODUCTS,FV 32.09 Plant protection product and postharvest treatment product storage,Plant protection product (PPP) storage does not pose a risk to workers or create opportunities for cross contamination.,"The PPPs and postharvest treatment product storage shall mitigate health and safety risks to workers and the risk of cross contamination.
+
+Liquids shall never be stored above powders or granular formulations.",Minor Must
+FV-GFS 32.09.02,FV 32 PLANT PROTECTION PRODUCTS,FV 32.09 Plant protection product and postharvest treatment product storage,The plant protection product (PPP) storage is structurally sound and robust.,Storage capacity shall be sufficient to contain all PPPs during the peak application season. The storage space shall be sturdy.,Minor Must
+FV-GFS 32.09.01,FV 32 PLANT PROTECTION PRODUCTS,FV 32.09 Plant protection product and postharvest treatment product storage,"Plant protection products (PPPs), biocontrol agents, and any other treatment products are stored in a manner that ensures the associated risks are managed.","The PPP storage shall:
+- Comply with all the appropriate current national, regional, and local legislation and regulations
+- Be located away from production areas, packaging storage areas, living areas, and harvested products to prevent cross contamination
+- Be kept secure and locked when not in use
+- Be accessible only to people with formal training in handling PPPs
+- Be properly ventilated
+- Have measuring equipment to support the accuracy of mixtures, including containers with graduation demarcations and calibrated scales
+- Be equipped with utensils (buckets, water supply point, etc.), which shall be kept clean for the safe and efficient handling of all PPPs that can be applied (This last also applies to the filling/mixing area, if this is different.)
+- Ensure all PPPs used on registered crops are stored separately from those used on nonregistered crops (e.g., garden chemicals)
+- Contain the PPPs in their original containers and packages (In the case of breakage only, the new package shall contain all the information of the original label.)",Major Must
+FV-GFS 32.08.01,FV 32 PLANT PROTECTION PRODUCTS,FV 32.08 Application of other substances,Up-to-date application records are kept of all other substances not covered under any of the sections.,"Records of other substances applied to water, soil, and hydroponic/fertigation systems (plant growth promotors, soil conditioners, pH adjusters, homemade and purchased remedies, etc.) shall be kept. Records shall contain the name of the substance, the crop, the field, the date, and the amount applied. In the case of purchased products, the trade or commercial name, where applicable, and the active substance or ingredient, or the main source (plant, algae, mineral, etc.) shall be recorded. If a registration scheme for this substance(s) exists in the country of production, the substance shall be approved.
+
+Where the substances do not require authorization for use in the country of production, the producer shall ensure use does not compromise food safety.
+
+Records shall contain information about the ingredients, where available.",Minor Must
+FV-GFS 25.07,FV 25 WASTE MANAGEMENT,-,Fragments and small pieces of packaging material and other nonproduct waste are removed from the field.,Fragments and small pieces of packaging material and nonproduct waste shall be removed from the production site after the specific in-field process is completed.,Minor Must
+FV-GFS 32.01.04,FV 32 PLANT PROTECTION PRODUCTS,FV 32.01 Plant protection product management,The producer takes active measures to prevent plant protection product (PPP) drift from neighboring plots.,"The producer should take active measures to avoid the risk of PPP drift from adjacent plots e.g., by making agreements and organizing communication with producers from neighboring plots in order to eliminate the risk of undesired PPP drift, by planting vegetative buffers at the edges of cropped fields, and by increasing PPP sampling on such fields.",Recom.
+FV-GFS 32.01.03,FV 32 PLANT PROTECTION PRODUCTS,FV 32.01 Plant protection product management,The producer takes active measures to prevent plant protection product (PPP) drift to neighboring plots.,"The producer shall take active measures to avoid the risk of PPP drift from own plots to neighboring production areas. This may include, but is not limited to, knowledge of what neighbors are growing, planting living fences, maintenance of spray equipment, etc.",Major Must
+FV-GFS 32.02.03,FV 32 PLANT PROTECTION PRODUCTS,FV 32.02 Application records,Management of plant protection products (PPPs) is supported with metrics.,"Acceptable metrics allow calculating the following:
+- List of active ingredients used
+- The total amount of active ingredients applied (in kg/crop, kg/month, and kg/ha/month)
+
+Metrics should refer to the farm’s various production sites, units of time (e.g., growing cycles), and the active ingredient amounts per kg of product and ha of production.
+
+In Option 2 producer groups, evidence at quality management system (QMS) level is acceptable. Results (data) on metrics at producer group and farm level should be available to indicate compliance.",Recom.
+FV-GFS 32.03.01,FV 32 PLANT PROTECTION PRODUCTS,FV 32.03 Plant protection product preharvest intervals,There is evidence that the registered preharvest intervals have been complied with.,"The producer shall be able to demonstrate, through the use of records such as plant protection product (PPP) application records and crop harvest dates, that preharvest intervals have been complied with for PPPs applied to crops. Specifically, in continuous harvesting situations, systems shall be in place in the field, orchard, or greenhouse (warning signs, time of application, etc.) to ensure compliance with all preharvest intervals.",Major Must
+FV-GFS 32.02.02,FV 32 PLANT PROTECTION PRODUCTS,FV 32.02 Application records,Weather conditions at time of application are recorded.,"Local weather conditions (wind, sunny/overcast, humidity, etc.) affecting effectiveness of treatment or drift to neighboring crops shall be recorded for all plant protection product (PPP) applications. This may be in the form of pictograms with tick boxes, text information, or another viable system on the record.
+“N/A” for covered crops.",Major Must
+FV-GFS 25.02,FV 25 WASTE MANAGEMENT,-,Waste products and sources of pollution are identified in all areas of the farm.,"Possible waste products (paper, cardboard, plastic, oil, etc.) and sources of pollution (fertilizer excess, exhaust smoke, oil, fuel, noise, effluent, chemicals, etc.) associated with farm processes shall be identified.
+In Option 2 producer groups, evidence at quality management system (QMS) level is acceptable.",Minor Must
+FV-GFS 21.02,FV 21 SITE MANAGEMENT,-,A management plan that establishes strategies for minimizing the risks identified in the risk assessment for operation suitability has been developed and implemented and is reviewed regularly.,"A management plan shall:
+- Be reviewed together with the risk assessment (annually or when changes occur) and address all risks identified in the risk assessment
+- Describe the control measures implemented for the risks identified
+- Be appropriate to farm operations
+- Support facility design, cleaning activities, pest control, and other activities to minimize food safety risks
+- Ensure that the layout and flow of operations are suitable for the intended purpose, consider applicable structures, and are designed to minimize food safety risks
+- Be effective and visibly implemented",Major Must
+FV-GFS 21.01,FV 21 SITE MANAGEMENT,-,A documented risk assessment is completed for all registered sites.,"The risk assessment shall be:
+- Available for all production sites, including structures
+- Reviewed at least annually or when changes occur (new risks emerge or new sites or crops enter production)
+
+It shall consider:
+- Biological, physical, and chemical hazards (including allergens)
+- Risk of microbial cross contamination originating from neighboring or adjacent sites
+- Site history (minimum of one year, with five years recommended)
+- Impact of proposed activities on adjacent crops",Major Must
+FV-GFS 21.03,FV 21 SITE MANAGEMENT,-,The producer has a system for identifying sites and facilities used for production.,"The producer shall have a system to identify:
+- All fields, orchards, vineyards, greenhouses, and other production areas
+- All water sources, storage and handling facilities, agrochemical storages, yards, buildings, and any features that may pose a workers’ health and safety, food safety, or environmental risk
+
+Identification may be on a map or through the use of signs at each site.",Major Must
+FV-GFS 29.01.01,FV 29 FERTILIZERS AND BIOSTIMULANTS,FV 29.01 Application records,Up-to-date records of all fertilizer and biostimulant applications are kept.,"Records shall be kept of each fertilizer (organic and inorganic) and biostimulant application, including in hydroponic and fertigation systems.",Major Must
+FV-GFS 21.04,FV 21 SITE MANAGEMENT,-,The site is kept in a tidy and orderly condition.,"The site shall be maintained so as to prevent contamination of products. There shall be no waste or litter in the immediate vicinity of the production site(s) or storage buildings. Incidental and insignificant litter and waste in the designated areas are acceptable, as is the waste from the current day’s work. All other waste shall be cleaned up, including fuel spills.",Major Must
+FV-GFS 25.04,FV 25 WASTE MANAGEMENT,-,Holding areas for diesel and other fuel oil tanks are environmentally safe.,"Holding areas shall be maintained in a manner that mitigates risks to the environment. The minimum requirement is a bunded, impervious area able to contain at least 110% of the volume of the largest tank stored within it. In an environmentally sensitive area, the capacity shall be 165% of the volume of the largest tank.",Minor Must
+FV-GFS 25.08,FV 25 WASTE MANAGEMENT,-,Plastics are managed in a responsible way.,"There shall be visual evidence that for durable plastic products and for single-use plastic products (seasonal plastics) used in agricultural production:
+- Operators have been trained in appropriate operating procedures and practices that minimize release of plastics into the environment.
+- Manufacturer specifications are observed to maintain the integrity of plastics throughout their use and retrieval. This refers, for example, to plastics inspection, maintenance, and replacement.
+- Retrieved used plastic is stored securely and disposed of in an environmentally sound manner.
+- After use, recycling or reusing of plastics is implemented wherever possible.
+- Where possible, adoption of alternatives that are more environmentally sustainable than plastics are considered.
+
+In Option 2 producer groups, evidence at quality management system (QMS) level is acceptable.",Minor Must
+FV-GFS 29.01.03,FV 29 FERTILIZERS AND BIOSTIMULANTS,FV 29.01 Application records,The records of all fertilizer applications shall include:,Date(s),Minor Must
+FV-GFS 25.01,FV 25 WASTE MANAGEMENT,-,A waste management system is implemented.,"A waste management system addressing potential contamination of product or the environment (air, soil, substrate, and water) shall:
+- Be documented and current
+- Address collection, storage, and disposal of waste material, including plant protection products, fertilizers, wastewater, drainage, and packaging material, where applicable
+- Addresses potential for contamination of nearby water sources, roadways, and adjacent land",Major Must
+FV-GFS 29.01.07,FV 29 FERTILIZERS AND BIOSTIMULANTS,FV 29.01 Application records,Management of fertilizers is supported with metrics.,"Acceptable metrics allow calculating the following:
+The total amounts of potassium, nitrogen, and phosphorus applied on the farm (in kg/crop, kg/month, and kg/ha/month).
+
+Metrics should refer to inorganic and organic fertilizers, units of time (e.g., growing cycle), and amounts of fertilizer per kg of product and ha of production.
+In Option 2 producer groups, evidence at quality management system (QMS) level is acceptable. Results (data) on metrics at producer group and farm level should be available to indicate compliance.",Recom.
+FV-GFS 29.01.06,FV 29 FERTILIZERS AND BIOSTIMULANTS,FV 29.01 Application records,The records of all fertilizer applications shall include:,Name of the applicator to clearly identify the individual or team of workers performing the fertilization,Minor Must
+FV-GFS 29.01.05,FV 29 FERTILIZERS AND BIOSTIMULANTS,FV 29.01 Application records,The records of all fertilizer applications shall include:,Amount (rate or concentration as applicable),Minor Must
+FV-GFS 29.01.02,FV 29 FERTILIZERS AND BIOSTIMULANTS,FV 29.01 Application records,The records of all fertilizer applications shall include:,"Geographical area and the name or reference of the field, orchard, or greenhouse",Minor Must
+FV-GFS 29.01.04,FV 29 FERTILIZERS AND BIOSTIMULANTS,FV 29.01 Application records,The records of all fertilizer applications shall include:,Name and type,Minor Must
+FV-GFS 29.03.03,FV 29 FERTILIZERS AND BIOSTIMULANTS,FV 29.03 Organic fertilizers,The use of human sewage sludge is prohibited on the farm.,"Human sewage sludge shall never be used in the production of registered crops. The use of human sewage sludge that has been composted or incorporated into a commercially available product is not permitted, regardless of lawful use according to prevailing regulations.",Major Must
+FV-GFS 29.03.02,FV 29 FERTILIZERS AND BIOSTIMULANTS,FV 29.03 Organic fertilizers,The interval between the application of organic fertilizer and harvest does not compromise food safety.,"Records shall show that the interval between the use of composted organic fertilizers and harvest does not compromise food safety.
+
+If raw animal manure is used, it shall be incorporated into the soil. The risks associated with the type of raw manure used and intended use shall be evaluated when establishing a preharvest interval, while adhering to the following minimum requirements:
+- For tree crops (i.e., trees with the lowest fruit suspended well above the ground, so that the fruit does not come into contact with the soil, and excluding low bushes): Raw manure shall be applied prior to bud burst or on a shorter interval based on the risk assessment, but never shorter than 60 days prior to harvest.
+- Leafy greens: Raw manure shall never be applied after planting, regardless of any harvest interval.
+- For other crops: Raw manure shall be applied at least 60 days prior to harvest.",Major Must
+FV-GFS 29.03.01,FV 29 FERTILIZERS AND BIOSTIMULANTS,FV 29.03 Organic fertilizers,A risk assessment for organic fertilizer is conducted as per intended use.,"A risk assessment for organic fertilizer shall be documented, conducted prior to use of the organic fertilizer, and it shall consider the following:
+- Type of organic fertilizer
+- Method of treatment
+- Microbial contamination
+- Weed/Seed content
+- Heavy metal content
+- Timing of application
+- Placement of application (e.g., in contact with edible portion of the crop)
+
+Procedures shall take into consideration World Health Organization (WHO) guidance.
+This also applies to substrates from biogas plants.
+For commercially available organic fertilizers, accompanying documentation and certifications of quality and content may be substituted for a risk assessment.",Major Must
+FV-GFS 26.04,FV 26 PLANT PROPAGATION MATERIAL,-,Up-to-date records on all chemical treatments applied on in-house propagation materials are available.,"Records of all plant protection product treatments applied during the plant propagation period for in-house plant nursery propagation shall be available and include:
+- Location
+- Date
+- Trade name, active ingredient, and preharvest interval of each product 
+- Name of applicator
+- Justification for application
+- Quantity
+- Machinery used
+
+This principle and the respective criteria apply primarily to short cycle crops, where the treatment of propagation materials affect food safety. It would not apply to most fruit trees, where propagation and active production are separated by longer periods of time.",Major Must
+FV-GFS 26.05,FV 26 PLANT PROPAGATION MATERIAL,-,Information on chemical treatments is available for purchased propagation materials.,"Records with the name(s) of chemical product(s) applied on propagation materials by the supplier shall be available on request. This can be in the form of:
+- Application records maintained by the supplier
+- Information on seed packages
+- List with names of plant protection products applied
+
+Producers sourcing from suppliers who have GLOBALG.A.P. certification for plant propagation material, or for an equivalent or GLOBALG.A.P. recognized certification is considered compliant.
+“N/A” for perennial crops.",Major Must
+FV-GFS 26.03,FV 26 PLANT PROPAGATION MATERIAL,-,Plant health quality control systems are implemented and recorded for in-house propagation materials.,"A quality control system that contains a monitoring system for visible signs of pests and diseases shall be in place and current records of the monitoring system shall be available. The term “nursery” shall refer to any place where propagation materials are produced, including in-house selection of grafting materials.
+The monitoring system shall include the recording and identification of the mother plant or field of origin crop, as applicable. Recording shall occur at regular, established intervals. If the cultivated trees or plants are intended for own use only (i.e., not sold), in-house records for monitoring and propagation activities shall suffice. Where rootstocks are used, special attention shall be paid to the origin of the rootstocks through documentation.",Minor Must
+FV-GFS 25.05,FV 25 WASTE MANAGEMENT,-,Organic waste is managed in an appropriate manner to reduce the risk of contamination of the environment.,"Organic waste material should be composted and used for soil conditioning. The composting method should mitigate the risk of pest, disease, or weed carryover.",Recom.
+FV-GFS 26.02,FV 26 PLANT PROPAGATION MATERIAL,-,Propagation materials are obtained in compliance with intellectual property laws.,"Where the producer uses registered varieties or rootstock, documents shall be available on request that prove that the propagation materials have been purchased or otherwise obtained in accordance with applicable intellectual property rights regulations. The documents may be the license contract (for starting materials that do not originate from seed, but from vegetative origin), a document or empty seed package that states the variety name, batch number, propagation material vendor, and packing list/delivery note or invoice to demonstrate the amount obtained and identity of all propagation materials used in the last 24 months.
+Note: The PLUTO database of UPOV (http://www.upov.int/pluto/en) and the Variety Finder on the website of CPVO (https://cpvoextranet.cpvo.europa.eu/) list all varieties in the world, providing their registration details and the intellectual property protection details for each variety and country.",Major Must
+FV-GFS 26.01,FV 26 PLANT PROPAGATION MATERIAL,-,"Propagation materials are obtained in compliance with variety registration laws, where applicable.","There shall be available documentation (empty seed package, plant passport, packing list, invoice, etc.) that states, at minimum, the variety name, batch number, propagation material vendor, and, where available, additional information on seed quality (germination, genetic purity, physical purity, seed health, etc.). Material coming from nurseries that have GLOBALG.A.P. certification for plant propagation material is considered compliant.",Major Must
+FV-GFS 32.04.06,FV 32 PLANT PROTECTION PRODUCTS,FV 32.04 Empty containers,All local regulations regarding disposal or destruction of plant protection product (PPP) containers are complied with.,"All the relevant national, regional, and local regulations and legislation, if such exist, shall have been complied with regarding the disposal of empty PPP containers.",Major Must
+FV-GFS 32.05.01,FV 32 PLANT PROTECTION PRODUCTS,FV 32.05 Obsolete plant protection products,"Obsolete plant protection products (PPPs) are securely maintained, identified, and disposed of via authorized or approved channels.","There shall be records indicating that obsolete PPPs have been disposed of via officially authorized channels. If this is not possible, obsolete PPPs shall be securely maintained and identifiable.",Minor Must
+FV-GFS 32.06.01,FV 32 PLANT PROTECTION PRODUCTS,FV 32.06 Disposal of surplus application mix,Surplus application mixes or tank washings are disposed of responsibly.,"Applying surplus spray and tank washings to the crop shall be the first method of disposal, providing that the overall label dose rate is not exceeded. Surplus mix or tank washings shall be disposed of in a manner that does not pose a risk to the environment.
+No agrochemical wastewater shall be released into the open environment.
+Records shall be kept.",Minor Must
+FV-GFS 03.03,FV 03 RESOURCE MANAGEMENT AND TRAINING,-,Worker training includes the necessary skills and competencies and is supported by records.,"Workers shall be able to demonstrate competence in their assigned tasks.
+
+Tasks that shall require specific training include handling and/or administering of agricultural chemicals, disinfectants, plant protection products (PPPs), biocides, and/or other hazardous substances and operating of equipment.
+
+Evidence of training includes attendance records, certificates, or other relevant qualifications.
+Subcontractors shall either be trained by the producer or be able to demonstrate competence through previous training or certification.",Major Must
+FV-GFS 32.11.01,FV 32 PLANT PROTECTION PRODUCTS,FV 32.11 Invoices and procurement documentation,Invoices and/or procurement documentation of all plant protection products (PPPs) and postharvest treatments are kept.,"Efforts shall be made to avoid illegal and counterfeit PPPs.
+Invoices, procurement documentation, or packing slips of all PPPs used and/or stored shall be retained.",Major Must
+FV-GFS 32.10.04,FV 32 PLANT PROTECTION PRODUCTS,FV 32.10 Mixing and handling,Facilities are available to deal with operator contamination.,"All plant protection product (PPP)/chemical storage and filling/mixing areas present on the farm shall have eyewash amenities, a source of clean water near the work area, and a first aid kit containing the relevant first aid material.",Minor Must
+FV-GFS 13.01,FV 13 EQUIPMENT AND DEVICES,-,"Equipment, tools, and devices are fit for purpose and maintained.","Equipment, tools, and devices coming into contact with products shall be made of materials that are safe for contact with products (nontoxic) and designed and constructed to ensure that they can be cleaned, disinfected, and maintained to avoid contamination.
+
+Equipment, tools, and devices, even those not coming into direct contact with products (scales, plant protection product (PPP) or fertilizer application equipment, thermometers, pH meters, etc.), shall be identified, maintained, routinely verified, and, where applicable, calibrated at least annually. Calibration shall be traceable to a national or international standard or method.
+Equipment maintenance, calibration (where applicable), and repairs shall be documented. Maintenance activities shall not present risks to food safety, the environment, or workers.
+
+PPP sprayers: The calibration of PPP application machinery (automatic and nonautomatic) shall have been verified for correct operation within the last 12 months, and this verification shall be certified or documented either by participation in an official scheme (where it exists) or by having been carried out by a person who can demonstrate their competence.
+
+Irrigation/Fertigation equipment: At a minimum, annual maintenance records shall be kept for all methods of irrigation/fertigation machinery/techniques used.",Major Must
+FV-GFS 32.10.01,FV 32 PLANT PROTECTION PRODUCTS,FV 32.10 Mixing and handling,Access to health checks is available to workers with exposure to applicable plant protection products (PPPs) according to the risk assessment or exposure and toxicity of products.,"The producer shall provide workers who come into contact with PPPs the option of receiving health checks annually or according to the workers’ health and safety risk assessment. The health checks shall honor the privacy of personal information. The risk assessment shall identify the specific chemical exposure that would warrant the health check. Where health checks exist through government farm worker programs or other systems, these may be used as justification in the risk assessment that health care for high-exposure workers is readily available. Workers shall be informed of how to access these health services.",Minor Must
+FV-GFS 32.10.03,FV 32 PLANT PROTECTION PRODUCTS,FV 32.10 Mixing and handling,An accident procedure is available near the plant protection product (PPP)/chemical storage.,An accident procedure containing all appropriate information and emergency contact telephone numbers shall be present and display the basic steps of primary accident care. The procedure shall be accessible by all persons working near the PPP/chemical storage(s) and designated mixing area(s).,Minor Must
+FV-GFS 04.01,FV 04 OUTSOURCED ACTIVITIES (SUBCONTRACTORS),-,The producer ensures that outsourced activities comply with the principles and criteria of the standard which are relevant to the services provided.,"Outsourced processes and/or the use of subcontractors are identified and controlled.
+The producer shall oversee the activities undertaken by the subcontractors to ensure compliance with the relevant principles and criteria in the standard. This applies to each activity and season in which at least one subcontractor is used.
+Evidence of compliance with relevant principles and criteria shall be collected by means of an assessment and shall be available during the certification body (CB) audit.
+If such an assessment is undertaken by a producer, evidence of compliance with the relevant principles and criteria shall be available. The subcontractor shall agree to such assessment by a producer where relevant to the standard.
+A GLOBALG.A.P. approved CB may assess the subcontractor and may issue a letter of conformance with the following information:
+- Date of assessment
+- Name of the CB
+- CB auditor name
+- Details of the subcontractor
+- List of the assessed principles and criteria
+
+Certificates issued to subcontractors for standards that are not officially approved by the GLOBALG.A.P. Secretariat are not valid evidence of compliance with the standard.",Major Must
+FV-GFS 25.06,FV 25 WASTE MANAGEMENT,-,"The water used for washing and cleaning purposes is disposed of in a manner that minimizes the environmental, health, and safety impact.","Wastewater resulting from washing of contaminated machinery (spray equipment, personal protective equipment (PPE), hydrocoolers, etc.) shall be disposed of in a way that does not pose a risk to the environment or human health. Drainage shall not pose a risk to water sources or contaminate the delivery systems.",Minor Must
+FV-GFS 20.03.04,"FV 20 WORKERS’ HEALTH, SAFETY, AND WELFARE",FV 20.03 Personal protective equipment,Suitable changing facilities are available where necessary.,The changing facilities (in line with local conditions) shall be used to change clothing and protective outer garments as required. Changing facilities may not be needed if personal protective equipment (PPE) is applied over existing clothing.,Minor Must
+FV-GFS 20.03.02,"FV 20 WORKERS’ HEALTH, SAFETY, AND WELFARE",FV 20.03 Personal protective equipment,Personal protective equipment (PPE) is maintained in clean conditions and stored appropriately so as not to pose any contamination risk to personal items.,PPE shall be kept clean according to the type of use and degree of potential contamination. Protective clothing shall be laundered separately from personal items. Dirty and damaged PPE shall be disposed of appropriately. PPE shall be stored in a manner that prevents cross contamination with chemicals.,Major Must
+FV-GFS 20.03.03,"FV 20 WORKERS’ HEALTH, SAFETY, AND WELFARE",FV 20.03 Personal protective equipment,There is evidence that the provided personal protective equipment (PPE) is used by the workers.,"There shall be evidence that the provided PPE is being used.
+If single-use PPE is used, the supply maintained on hand shall correspond to the needs of the workers, or records demonstrating that new PPE is promptly sourced and restocked shall be available.",Minor Must
+FV-GFS 20.03.01,"FV 20 WORKERS’ HEALTH, SAFETY, AND WELFARE",FV 20.03 Personal protective equipment,"Workers, visitors, and subcontractors are equipped with suitable personal protective equipment (PPE).","PPE shall be in accordance with legal requirements, label instructions, and/or as authorized by a competent authority. The PPE shall be available, properly used, and in good repair. Complying with label requirements and requirements in the risk assessment for on-farm operations may include use of the following: appropriate footwear, waterproof clothing, protective overalls, rubber gloves, face masks, respiratory equipment (including replacement filters), ear and eye protection, etc.
+
+PPE shall be provided whenever necessary to workers, subcontractors (acceptable when provided by subcontracting company), and visitors.",Major Must
+FV-GFS 20.02.03,"FV 20 WORKERS’ HEALTH, SAFETY, AND WELFARE",FV 20.02 Hazards and first aid,First aid kits are accessible at all permanent sites and fields near the work.,"Complete and maintained first aid kits (i.e., complete and maintained according to prevailing regulations and appropriate to the activities being carried out) shall be available and accessible at all permanent sites and present in selected vehicles (tractor, car, etc.) where required by the risk assessment.",Minor Must
+FV-GFS 20.02.04,"FV 20 WORKERS’ HEALTH, SAFETY, AND WELFARE",FV 20.02 Hazards and first aid,There is always at least one person trained in first aid present on the farm whenever on-farm activities are being carried out.,"There shall always be at least one person trained in first aid (within the last five years) present at the location whenever production and handling activities are being carried out, including those mentioned in the relevant principles and criteria of the standard. As a guideline: one trained person per 50 workers.",Minor Must
+FV-GFS 20.02.02,"FV 20 WORKERS’ HEALTH, SAFETY, AND WELFARE",FV 20.02 Hazards and first aid,Safety advice for substances hazardous to workers’ health and safety is immediately available and accessible.,"Information related to safe handling of each hazardous substance shall be accessible (websites, telephone numbers, safety data sheets (SDSs), etc.).",Minor Must
+FV-GFS 03.02,FV 03 RESOURCE MANAGEMENT AND TRAINING,-,Individuals responsible for technical decision-making on inputs can demonstrate competence.,"Individuals responsible for technical decisions regarding treatments (quantity and type of fertilizer, pre- and postharvest plant protection product (PPP) applications, both organic and inorganic, etc.) shall demonstrate competence in such topics.
+If the individual responsible for technical decisions is the producer, a designated worker, or a technical expert, their experience shall be complemented by current technical knowledge (access to technical literature, specific training attendance, active PPP applicator license, etc.).
+
+If the individual responsible for technical decisions is an external qualified adviser, technical competence shall be demonstrated by official qualifications or specific training attendance certificates.",Major Must
+FV-GFS 20.01.03,"FV 20 WORKERS’ HEALTH, SAFETY, AND WELFARE",FV 20.01 Risk assessment and training,All staff have received health and safety training according to the risk assessment.,"Basic training on workers’ health and safety shall:
+ - Be provided annually to staff, including owners and managers
+ - Be provided to new staff and to established staff whenever they are reassigned to tasks requiring additional knowledge
+ - Cover all necessary instructions
+ - Be given in a format, either written or verbal, that ensures understanding (may only be in verbal and pictorial form without written explanatory content, where appropriate)
+ - Include training on safety procedures for equipment, products, or new activities
+ - Include training on topics related to accident response, natural disasters, and workers’ health, including illnesses, exposure to chemicals, emergency response procedures, fire safety, and rights and responsibilities associated with workers’ health protection",Major Must
+FV-GFS 20.02.01,"FV 20 WORKERS’ HEALTH, SAFETY, AND WELFARE",FV 20.02 Hazards and first aid,Accident and emergency procedures are displayed and communicated.,"Instructions based on the accident and emergency procedures shall be clearly displayed in accessible and visible location(s) for workers, visitors, and subcontractors. These instructions shall be available in the predominant language(s) of the workforce and/or in pictograms.
+The procedures shall cover/identify the following:
+- The farm address, map, or other location information (e.g., GPS coordinates)
+- Contact person(s)
+- An up-to-date list of relevant telephone numbers (i.e., police, ambulance, hospital, fire brigade, access to emergency healthcare on site or by means of transport, and suppliers of electricity, water, and gas)
+- Emergency evacuation procedures, where applicable
+
+Permanent and legible signs shall indicate potential hazards. Emergency exits and escape route signs shall indicate these must be kept open, accessible, and clear of obstacles. This includes, where applicable, waste pits, flammable structures (fuel tanks, propane/natural gas tanks, etc.), plant protection product (PPP) storage, bodies of water, and any other identified physical hazards.
+Warning signs shall be present and in the predominant language(s) of the workforce and/or in pictograms.
+Examples of other information that can be included:
+- The location of the nearest means of communication (telephone, radio)
+- How and where to contact local medical services, hospitals, and other emergency services
+- The location of fire extinguisher(s) and availability of water nearby
+- The location of large chemical, fuel, and fertilizer storages
+- The locations of emergency exits and operation of fire escapes
+- Emergency cutoffs for electricity, gas, and water lines
+- How to report accidents and dangerous incidents (location, description of incident, number of injured people, type of injuries)",Major Must
+FV-GFS 20.01.02,"FV 20 WORKERS’ HEALTH, SAFETY, AND WELFARE",FV 20.01 Risk assessment and training,The farm has health and safety procedures.,"The health and safety procedures shall address the points identified in the risk assessment and be appropriate to the farming operations. The procedures shall be reviewed annually and updated when the risk assessment changes.
+The farm infrastructure, facilities, on-farm worker housing, and equipment shall be constructed and maintained to minimize health and safety hazards for workers.
+Accident and emergency procedures shall address work areas, worker facilities, and on-farm worker housing and include contingency plans, i.e., the ability of workers to remove themselves from unsafe situations. 
+Where required by the risk assessment, emergency equipment shall be accessible and maintained. Consideration shall be given to workers at greater risk. Whenever accidents occur, the cause shall be reviewed and appropriate preventive actions included in revised health and safety procedures.",Major Must
+FV-GFS 20.01.01,"FV 20 WORKERS’ HEALTH, SAFETY, AND WELFARE",FV 20.01 Risk assessment and training,There is a documented risk assessment for workers’ health and safety.,"The documented risk assessment shall reflect conditions on the farm, including worker facilities and any on-farm worker housing. The risk assessment shall be reviewed and updated annually and when changes occur that impact workers’ health and safety (new machinery, new plant protection products (PPPs), modified cultivation practices, new health risks, etc.). Incidents and accidents shall be recorded.
+Examples of hazards may include moving machine parts, electricity, vehicle traffic, flammable substances, fertilizer, chemical exposure, excessive noise, dust, vibrations, extreme temperatures, ladders, fuel storage, etc.",Major Must
+FV-GFS 25.03,FV 25 WASTE MANAGEMENT,-,All forklifts and other driven transport trolleys are clean and well maintained and of a suitable type to avoid contamination through emissions.,"Internal transport should be maintained so as to avoid product contamination, with special attention to fume emissions. Forklifts and other driven transport trolleys should be electric or gas-driven.",Recom.
+FV-GFS 13.02,FV 13 EQUIPMENT AND DEVICES,-,Equipment is stored in such a way as to prevent product contamination.,"Equipment (plant protection product (PPP) or fertilizer application equipment, harvesting equipment, wrapping machines, etc.) shall be stored in an appropriate way that prevents possible contamination of products or other materials that may come into contact with the edible portion of the harvested products.",Major Must
+FV-GFS 32.10.05,FV 32 PLANT PROTECTION PRODUCTS,FV 32.10 Mixing and handling,Plant protection products (PPPs) are transported between production sites in a safe and secure manner.,The producer shall ensure that the PPPs are transported in a way that mitigates risk to the environment or the health of the worker(s) and shall follow best industry practices.,Minor Must
+FV-GFS 32.10.06,FV 32 PLANT PROTECTION PRODUCTS,FV 32.10 Mixing and handling,The farm has documented procedures addressing re-entry times after plant protection product (PPP) application.,"Based on the PPP label instructions there shall be clear, documented procedures that regulate re-entry intervals for PPPs applied to crops (standard operating procedure when intervals start and end, time of interval or signs to enter, how to enter, exceptions to entering during interval, and equipment and time in the field required, etc.). Special attention shall be paid to workers at greater risk.
+
+Where no re-entry period is stated, re-entry shall not be allowed until the chemical has dried on the crop.",Major Must
+FV-GFS 32.10.02,FV 32 PLANT PROTECTION PRODUCTS,FV 32.10 Mixing and handling,Plant protection products (PPPs) are mixed and handled according to label requirements.,"Appropriate measuring equipment shall be adequate for mixing PPPs, and the correct handling and filling procedures shall be followed.",Major Must
+FV-GFS 20.04.01,"FV 20 WORKERS’ HEALTH, SAFETY, AND WELFARE",FV 20.04 Workers’ welfare,"There is communication between management and workers on issues related to their health, safety, and welfare.","Communication between management and workers about health, safety, and welfare issues shall be able to take place openly (i.e., without fear of intimidation or retaliation).
+
+The communication may be in the form of scheduled meetings, worker hotlines, anonymous comment boxes, daily prework briefings, or individual crew meetings.
+On very small operations, communication between a family or limited number of workers may occur continuously.",Minor Must
+FV-GFS 23.03,FV 23 ENERGY EFFICIENCY,-,The plan to improve energy efficiency considers minimizing the use of nonrenewable energy.,The producer shall consider reducing the use of nonrenewable energy to the lowest possible and using renewable energy instead.,Minor Must
+FV-GFS 24.01,FV 24 GREENHOUSE GASES AND CLIMATE CHANGE,-,"The farm contributes to reducing GHG* emissions and removing them from the atmosphere.
+ 
+*Greenhouse gas (GHG) emissions refer to carbon dioxide (CO₂), methane (CH₄), nitrous oxide (N₂O), and fluorinated gases. Due to their varying potential to contribute to global warming, they are sometimes calculated as CO₂ equivalents (CO₂e).","Available evidence should indicate that the producer has awareness and knowledge of how on-farm practices can contribute to reducing GHG emissions and removing them from the atmosphere, for example in connection to energy, soil health, fertilizers, and food waste.
+In Option 2 producer groups, evidence at quality management system (QMS) level is acceptable.",Recom.
+FV-GFS 24.02,FV 24 GREENHOUSE GASES AND CLIMATE CHANGE,-,The farm enables the formation of organic carbon in soils and in biomass.,"Available evidence should indicate that the producer is preparing to implement, or already implementing, agricultural practices that enable the formation of organic carbon in soils and in biomass, for example:
+- Crop residue management (burying residues, seeding on residues)
+- Use of cover crops in crop rotation, diversification of crop rotation, minimum or no tillage
+- Reduction of nutrient release in fertilizer management
+- Restoration of ecosystems
+- Carbon farming and practices to capture carbon in soil and biomass
+In Option 2 producer groups, evidence at quality management system (QMS) level is acceptable.",Recom.
+FV-GFS 23.04,FV 23 ENERGY EFFICIENCY,-,Management of energy is supported with metrics.,"Acceptable metrics allow calculating, at minimum, the following:
+- The total energy use on the farm for each energy source/month
+- The proportion of renewable vs. nonrenewable energy in the energy source
+
+Additional calculations can include, for example:
+- The amount of energy imported into the farm (e.g., from the grid)
+- The amount of energy generated at producer level (e.g., through solar panels, with fuels)
+- The amount of energy exported (e.g., to the grid)
+
+Metrics should refer to sources of energy, the farm’s various production sites, ha of land under cultivation, units of time (e.g., growing cycle), nonrenewable and renewable energy sources, the amounts of energy per kg of product and ha of production, and/or the amounts listed above per kg of product.
+In Option 2 producer groups, evidence at quality management system (QMS) level is acceptable. Results (data) on metrics at producer group and farm level should be available to indicate compliance.",Recom.
+FV-GFS 20.04.02,"FV 20 WORKERS’ HEALTH, SAFETY, AND WELFARE",FV 20.04 Workers’ welfare,"Workers have access to clean drinking water, food storage, and areas to eat and rest.",A clean place to store food and a clean place to eat shall be provided to the workers if they eat on the farm. Drinking water shall always be provided at no cost to the workers. Worker access to drinking water shall not be restricted. There shall be designated areas for resting and breaks.,Major Must
+FV-GFS 28.01.01,FV 28 SOIL AND SUBSTRATE MANAGEMENT,FV 28.01 Soil management and conservation,"To improve and optimize soil health, the producer has a soil management plan.",The producer shall demonstrate that consideration has been given to the nutritional needs of the crop and to maintaining soil fertility. Records of soil analyses and crop-specific information shall be available as evidence.,Major Must
+FV-GFS 23.01,FV 23 ENERGY EFFICIENCY,-,On-farm energy use is monitored.,"There shall be records of on-farm energy use (e.g., invoices detailing energy consumption). The producer (or, where applicable, the quality management system (QMS) manager) shall be aware of where and how energy is consumed on the farm and through farming practices. In the absence of energy meters (e.g., for small producers), estimations are acceptable.
+In Option 2 producer groups, evidence at QMS level is acceptable.",Major Must
+FV-GFS 24.03,FV 24 GREENHOUSE GASES AND CLIMATE CHANGE,-,The farm’s contribution to reducing and removing greenhouse gases (GHGs) from the atmosphere is supported with metrics.,"Acceptable metrics include the following:
+At minimum, the GHG equivalence of the total amount of energy use on the farm (in CO2e/ha/month and CO2e/kg/month).
+
+Additional calculations can include, for example:
+- GHG equivalence of other amounts of energy that have been calculated for the farm
+- GHG equivalence as related to, for example, soil and biomass, carbon farming, or environmental footprint
+
+Metrics should refer to the farm’s various production sites, units of time (e.g., growing cycles), and to GHG per kg of product and ha of production.
+In Option 2 producer groups, evidence at quality management system (QMS) level is acceptable. Results (data) on metrics at group and farm level should be available to indicate compliance.",Recom.
+FV-GFS 22.03.03,FV 22 BIODIVERSITY AND HABITATS,FV 22.03 Natural ecosystems and habitats are not converted into agricultural areas,Management of biodiversity is supported with metrics.,"Acceptable metrics allow calculating, at minimum, the following:
+- The total area (in ha or m2) of natural or seminatural ecosystems and habitats, legally recognized protected areas, or areas effectively protected by other means (on 1 January of the certification body (CB) audit year)
+- The total area (in ha or m2) converted into agricultural use or into other uses between 1 January 2008 and 1 January 2014 (on 1 January of the CB audit year)
+- The total area (in ha or m2) that has already been restored (on 1 January of the CB audit year)
+- The total area (in ha or m2) that is under restoration (on 1 January of the CB audit year)
+- The total area (in ha or m2) that is planned for binding restoration (on 1 January of the CB audit year)
+
+Additional biodiversity aspects/metrics can also be calculated, where applicable.
+In Option 2 producer groups, evidence at quality management system (QMS) level is acceptable. Results (data) on metrics at producer group and farm level should be available to indicate compliance.",Recom.
+FV-GFS 06.01,FV 06 TRACEABILITY,-,All registered products are traceable back to and from the registered farm where they were produced and handled (where applicable).,"A documented identification and traceability system shall allow registered products to be traced back to the registered farm or supplier, or to the registered farms or suppliers of the Option 2 producer group, and traced forward to the immediate customer (one step forward and one step back).
+
+Harvest information shall link a batch or lot to the production records or the farms of specific producers. Product handling shall also be covered, where applicable.
+
+Records shall be available of the annual verification of the traceability system. This verification can occur through an actual recall and withdrawal or as part of a mock recall and withdrawal exercise.",Major Must
+FV-GFS 22.03.01,FV 22 BIODIVERSITY AND HABITATS,FV 22.03 Natural ecosystems and habitats are not converted into agricultural areas,"On the farm (within the farm boundaries), no areas with legally recognized conservation value (or effectively protected by other means) have been converted into agricultural areas or into other uses since 1 January 2014.","Available evidence, such as maps, aerial photos, or documents issued by local or national authorities or authorized service providers, shall indicate that since 1 January 2014, no conversion into agricultural area or into other uses has occurred in parts of the farm (within the farm boundaries) that fulfils the following characteristic:
+- Areas where legal protection prevents such conversions (protected areas recognized by national or local legislation, areas with relevant categories of the International Union for Conservation of Nature (IUCN), areas that are protected via other effective means, etc.)",Major Must
+FV-GFS 22.02.01,FV 22 BIODIVERSITY AND HABITATS,FV 22.02 Ecological upgrading of unproductive sites,Unproductive sites are used as ecological focus area to protect and enhance biodiversity.,"Available evidence should indicate that unproductive sites (low-lying wet areas, woodlands, headland strips, or areas of impoverished soil, etc.) are addressed in the biodiversity plan and used to protect or enhance biodiversity.
+
+The evidence used in the previous three principles and criteria on biodiversity, if applied in on-farm unproductive sites, can be accepted here too.",Recom.
+FV-GFS 22.01.02,FV 22 BIODIVERSITY AND HABITATS,FV 22.01 Management of biodiversity and habitats,Biodiversity is protected.,"The biodiversity plan shall be implemented in order to protect biodiversity, for example via one or more of the following practices or other similar practices:
+- Integrated pest management (IPM)
+- Implementing measures to mitigate potential negative impact of artificial illumination on biodiversity, especially during the night (e.g., screens or painted glass that helps mitigate potential impacts on migratory birds or other nocturnal biodiversity)
+- Allowing for seasonal fallow
+- Creating shelters for beneficial predators
+- Leaving areas for habitat near fields or greenhouses
+- Creating buffer zones along aquatic ecosystems and between production areas or implementing other water management practices
+- Enabling soil health and soil biodiversity via crop rotation, reduced or no-tillage farming, erosion control, and/or other soil management practices
+- Optimizing and, if possible, reducing the use of agrochemicals and fertilizers
+- Implementing measures to protect species
+
+With regard to protection of biodiversity, the guideline provides reference.
+In Option 2 producer groups, evidence at quality management system (QMS) level is acceptable.",Minor Must
+FV-GFS 22.01.01,FV 22 BIODIVERSITY AND HABITATS,FV 22.01 Management of biodiversity and habitats,Biodiversity is managed to enable its protection and enhancement.,"A documented biodiversity plan for the farm shall be available. This can be a generic plan that has been made farm-specific.
+This biodiversity plan shall:
+- Take into account local legislation and tailor the plan contents to the on-farm reality (open field, greenhouse, vertical farming, etc.)
+- Contain at least the following sections:
+Baseline: initial situation of biodiversity
+Measures: how to enable protection and enhance biodiversity based on the baseline
+Monitoring: summary of results of the implementation of the measures
+Adjustment: refining the measures based on monitoring results
+- While recognizing that the legal scope of the producer is on the farm, take into account the landscape beyond the farm and encourage implementation of actions with other stakeholders, for example via informal collaboration, formal projects, sector and network initiatives, etc.
+
+With regard to protection of biodiversity, the guideline provides reference.
+In Option 2 producer groups, evidence at quality management system (QMS) level is acceptable.",Minor Must
+FV-GFS 21.05,FV 21 SITE MANAGEMENT,-,The producer recognizes the farm as an agricultural ecosystem that interacts with neighboring landscapes (while the legal scope of the producer is on the farm).,"Available evidence should indicate, for example, that:
+- In water management, the producer knows where the water for the farm comes from and where the water that leaves the farm goes to.
+- In biodiversity management, the producer knows how the farm can contribute to protecting and enhancing biodiversity via biotope corridors (e.g., trees) that connect habitats on the farms with the landscapes beyond the farm.
+- The producer shows awareness of or participation in projects, joint action, or collaboration with other producers or stakeholders in sector- or crop-specific initiatives, etc.",Recom.
+FV-GFS 22.01.03,FV 22 BIODIVERSITY AND HABITATS,FV 22.01 Management of biodiversity and habitats,Biodiversity is enhanced.,"Available evidence, such as maps, aerial photos, on-farm visual evidence, documents issued by local or national authorities or authorized service providers, should indicate that the biodiversity plan is implemented to enhance biodiversity, for example via one or more of the following practices:
+1) Restoring, improving, or enlarging fragments of any size of:
+a) Forests, wetlands, mangroves, grasslands, peatlands, etc.
+b) Areas with legal protection or areas effectively protected by other means (e.g., protected areas with relevant categories of the International Union for Conservation of Nature (IUCN))
+c) Areas recognized as “High Conservation Value” (HCV) areas
+2) Avoiding or controlling invasive alien species
+3) Other actions by the producer and partners
+With regard to protection of biodiversity, the guideline provides reference.
+
+In Option 2 producer groups, evidence at quality management system (QMS) level is acceptable.",Recom.
+FV-GFS 20.04.03,"FV 20 WORKERS’ HEALTH, SAFETY, AND WELFARE",FV 20.04 Workers’ welfare,"On-site living quarters are compliant with applicable local regulations, habitable, and equipped with basic services and facilities.","The on-site living quarters for the workers shall be habitable and have a sound roof, windows and doors, hygienic and safe food preparation areas, and the basic services of drinking water, toilets, and drains.
+If there are no drains, septic pits may be acceptable if compliant with prevailing regulations.",Major Must
+FV-GFS 20.04.04,"FV 20 WORKERS’ HEALTH, SAFETY, AND WELFARE",FV 20.04 Workers’ welfare,Transportation provided to workers is safe.,Transportation shall be safe for workers and take into account applicable safety requirements and regulations.,Minor Must
+FV-GFS 28.01.02,FV 28 SOIL AND SUBSTRATE MANAGEMENT,FV 28.01 Soil management and conservation,Soil maps have been prepared for the farm.,"The types of soil should be identified for each site, based on a soil profile, soil analysis, or local (regional) cartographic soil type map.",Recom.
+FV-GFS 28.01.03,FV 28 SOIL AND SUBSTRATE MANAGEMENT,FV 28.01 Soil management and conservation,"Crop rotation for annual crops is implemented, where feasible.","When rotations of annual crops to improve soil structure and minimize soil-borne pests and diseases are carried out, this shall be verifiable from planting dates or crop or field records. Records shall exist for the previous two-year rotation.",Minor Must
+FV-GFS 28.01.05,FV 28 SOIL AND SUBSTRATE MANAGEMENT,FV 28.01 Soil management and conservation,The producer uses techniques to reduce the possibility of soil erosion.,"There shall be evidence of control practices and remedial measures (mulching, crossline techniques on slopes, drains, sowing grass or green fertilizers, trees and shrubs on the borders of sites, etc.) to minimize soil erosion (from water, wind, etc.).",Minor Must
+FV-GFS 29.04.01,FV 29 FERTILIZERS AND BIOSTIMULANTS,FV 29.04 Nutrient content,"The content of major nutrients (nitrogen, phosphorus, potassium) in applied fertilizers is known.",Documented evidence/labels detailing major nutrient content (or recognized standard values) shall be available for all fertilizers (organic and inorganic) used on registered crops within the last 24 months.,Minor Must
+FV-GFS 07.01,"FV 07 PARALLEL OWNERSHIP, TRACEABILITY, AND SEGREGATION ",-,An effective system is in place to identify all products originating from GLOBALG.A.P. certified processes and segregate them from products originating from noncertified processes.,It shall be possible to identify all products originating from GLOBALG.A.P. certified production processes and to keep them separate from products originating from noncertified production processes.,Major Must
+FV-GFS 31.04,FV 31 INTEGRATED PEST MANAGEMENT,-,The producer implements prevention measures.,"The producer shall show evidence of implementing at least two activities for the registered crops (individually or per group of crops) that include the adoption of production practices which maintain the vitality of the crops and could reduce the incidence and intensity of pest attacks, thereby reducing the need for intervention.",Major Must
+FV-GFS 31.03,FV 31 INTEGRATED PEST MANAGEMENT,-,"There is an integrated pest management (IPM) plan describing the measures used at farm level to manage the relevant pests, diseases, and weeds that affect the registered crop(s).","The IPM plan shall describe the measures the producer uses or would consider using to manage the pests, diseases, and weeds relevant to the registered crop(s). It shall include:
+- A stepwise approach based on the preventive, nonchemical, and chemical methods which shall be applied depending on the crop and the specific situation as per judgement of the producer or expert adviser
+- Monitoring of pests, diseases, and weeds to determine whether interventions are needed, with action thresholds defined by the producer
+In Option 2 producer groups, evidence at quality management system (QMS) level is acceptable.",Minor Must
+FV-GFS 31.07,FV 31 INTEGRATED PEST MANAGEMENT,-,Anti-resistance recommendations have been followed to maintain the effectiveness of available plant protection products (PPPs).,"If the level of a pest, disease, or weed requires repeated controls in the crops, there shall be evidence that anti-resistance recommendations either on the label or from other sources (where available) are followed. If only one chemical mode-of-action or class of PPP exists or is permitted for use in the country of production or country of export, rotation of product types may not be possible due to lack of availability of suitable alternatives.
+
+The resistance management strategy shall be documented and consider the following points:
+- Always follow the recommendations on the product label.
+- Avoid lower dose rates to ensure optimal application quality.
+- Use rotation programs and mixtures of PPPs with different modes of action that are effective against the target, where available.",Minor Must
+FV-GFS 31.06,FV 31 INTEGRATED PEST MANAGEMENT,-,The producer makes interventions to manage pests.,"The producer shall show evidence for situations in which specific interventions were made against pests adversely affecting the economic value of a crop. The producer may elect to take no action against the pest and incur the economic loss. Where possible, nonchemical approaches shall be considered.
+“N/A” if the producer did not intervene.",Major Must
+FV-GFS 07.03,"FV 07 PARALLEL OWNERSHIP, TRACEABILITY, AND SEGREGATION ",-,A final verification step is in place to ensure correct dispatch of products originating from certified and noncertified production processes.,The check shall be documented to show that the products are correctly dispatched according to the certification status.,Major Must
+FV-GFS 31.01,FV 31 INTEGRATED PEST MANAGEMENT,-,Implementation of integrated pest management (IPM) is assisted through training or advice.,"Where the technically responsible person is the producer, experience shall be complemented by technical knowledge (access to IPM technical literature, specific training attendance, etc.) or the use of tools (software, on-farm detection methods, etc.).
+Where an external adviser has provided assistance, training and technical competence shall be demonstrated via official qualifications, specific training, etc., unless this person has been employed for that purpose by a competent organization.
+In Option 2 producer groups, evidence at quality management system (QMS) level is acceptable.",Minor Must
+FV-GFS 31.05,FV 31 INTEGRATED PEST MANAGEMENT,-,The producer practices monitoring of their registered crops to plan pest and disease management.,"The producer shall show evidence of implementing at least two activities for the registered crops that will determine when and to what extent pests and their natural enemies are present, and using this information to plan what pest management techniques are required.",Major Must
+FV-GFS 31.02,FV 31 INTEGRATED PEST MANAGEMENT,-,"The producer is informed about the relevant pests, diseases, and weeds that affect their registered crops.","The producer shall offer a verbal demonstration of their knowledge on identifying the presence and potential damage of the relevant pests, diseases, and weeds that affect the registered crops. This demonstration can take place in the field, or the producer can explain how they train the corresponding workers on the relevant pests, diseases, and weeds that affect the main registered crop(s).
+In Option 2 producer groups, evidence at quality management system (QMS) level is acceptable.",Major Must
+FV-GFS 27.04,FV 27 GENETICALLY MODIFIED ORGANISMS,-,Adventitious mixing of genetically modified (GM) crops with conventional crops is avoided.,A visual assessment of the identification of GM crops and the integrity of the storage shall be made.,Major Must
+FV-GFS 27.03,FV 27 GENETICALLY MODIFIED ORGANISMS,-,The producer’s direct clients have been informed of the genetically modified organism (GMO) status of the product.,Documented evidence of communication shall be kept and shall allow verification that all products supplied to direct clients meet the agreed requirements.,Major Must
+FV-GFS 27.02,FV 27 GENETICALLY MODIFIED ORGANISMS,-,Growing of genetically modified crops and/or trials is subject to the prevailing regulations in the country of production.,The producer shall have a copy of the prevailing regulations in the country of production and comply accordingly. Records shall be kept of the specific modification and/or the unique identifier. Specific husbandry and management advice shall be obtained.,Major Must
+FV-GFS 27.01,FV 27 GENETICALLY MODIFIED ORGANISMS,-,A procedure for use and handling of genetically modified (GM) materials is available.,An implemented documented procedure that explains how GM materials (crops and trials) are grown and handled shall be available.,Minor Must
+FV-GFS 28.03.03,FV 28 SOIL AND SUBSTRATE MANAGEMENT,FV 28.03 Substrates,Substrates of natural origins do not come from designated conservation areas.,"There shall be records that attest to the source of the substrate of natural origin being used. These records shall demonstrate that the substrate does not come from designated conservation areas.
+Opportunities to decrease the use of peat shall be considered.",Minor Must
+FV-GFS 28.03.02,FV 28 SOIL AND SUBSTRATE MANAGEMENT,FV 28.03 Substrates,Records are kept of any chemicals used to sterilize substrates for reuse.,"If substrates are sterilized on the farm, the name or reference of the field, orchard, or greenhouse shall be recorded.
+If substrates are sterilized off-farm, the name and location of the company that sterilizes the substrate shall be recorded.
+In all cases, the following shall all be correctly recorded:
+- Dates of sterilization (day/month/year)
+- Name and active ingredient used
+- Machinery used (e.g., 1000l tank)
+- Method used (drenching, fogging, etc.)
+- Operator’s name (person who actually applied the chemicals and performed the sterilization)
+- Preplanting interval
+Where applicable and feasible, steaming or nonchemical alternatives shall be used for sterilizing substrates that will be reused.",Minor Must
+FV-GFS 28.03.01,FV 28 SOIL AND SUBSTRATE MANAGEMENT,FV 28.03 Substrates,The producer participates in substrate recycling.,"The producer should keep records documenting dates and quantities of recycled substrate. Invoices/Loading dockets are acceptable. If there is no participation in an available recycling program, it should be justified. Participation in an off-farm recycling program is acceptable.",Recom.
+FV-GFS 07.02,"FV 07 PARALLEL OWNERSHIP, TRACEABILITY, AND SEGREGATION ",-,The GLOBALG.A.P. Number (GGN) is indicated on all final products originating from certified production processes when registered for parallel ownership.,"Where the producer is registered for parallel ownership (i.e., where products originating from certified and noncertified production processes are owned in parallel by one legal entity), all products originating from certified production processes packed in final consumer packaging (either on the farm or after product handling) shall be identified with a GGN. It can be the GGN of the Option 2 producer group, the GGN of the producer group member, both GGNs, or the GGN of the Option 1 individual producer. The GGN shall not be used to label products originating from noncertified production processes.",Major Must
+FV-GFS 28.02.01,FV 28 SOIL AND SUBSTRATE MANAGEMENT,FV 28.02 Soil fumigation,There is documented justification for the use of soil fumigants.,"There shall be documented evidence and justification for the use of soil fumigants, including targeted problem, location, date, active ingredient, doses, method of application, and operator. Methyl bromide shall never be used as a soil fumigant.",Minor Must
+FV-GFS 28.02.02,FV 28 SOIL AND SUBSTRATE MANAGEMENT,FV 28.02 Soil fumigation,The preplanting interval is complied with.,The preplanting interval shall be recorded.,Minor Must
+FV-GFS 29.04.02,FV 29 FERTILIZERS AND BIOSTIMULANTS,FV 29.04 Nutrient content,"Purchased inorganic fertilizers are accompanied by documented evidence of chemical content, including heavy metals.","Documented evidence detailing chemical content, including heavy metals, should be available for all inorganic fertilizers used on registered crops within the last 12 months.",Recom.
+FV-GFS 31.08,FV 31 INTEGRATED PEST MANAGEMENT,-,The producer uses the results of integrated pest management (IPM) to learn and to improve the IPM plan.,"There shall be evidence that the producer evaluates the IPM plan on a yearly basis and introduces improvements if these were identified as necessary.
+In Option 2 producer groups, evidence at quality management system (QMS) level is acceptable.",Minor Must
+FV-GFS 08.01,FV 08 MASS BALANCE,-,Sales records are available for all quantities sold for all registered products.,"Sales details of the quantities of products originating from certified and, where applicable, noncertified production processes shall be recorded for all registered products, with particular attention paid to quantities sold and descriptions provided. The documents shall demonstrate the consistent balance between the input and the output of products originating from certified and noncertified production processes.",Major Must
+FV-GFS 07.04,"FV 07 PARALLEL OWNERSHIP, TRACEABILITY, AND SEGREGATION ",-,Products that are purchased from different sources are identified.,"Procedures (appropriate for the scale of the operation) shall be established, documented, and maintained for identifying quantities of products originating from certified and, where applicable, noncertified production processes purchased from different sources (i.e., other producers or traders) for all registered products.
+Records shall include:
+- Product description
+- GLOBALG.A.P. certification status
+- Quantities of product(s) purchased
+- Supplier details
+- Copy of the GLOBALG.A.P. certificates, where applicable
+- Traceability data/codes related to the purchased products
+- Purchase orders and/or invoices received
+- List of approved suppliers",Major Must
+FV-GFS 09.01,FV 09 RECALL AND WITHDRAWAL,-,"Documented procedures are in place to manage the recall and withdrawal of products from the marketplace, and such procedures are tested annually.","The producer shall have a documented procedure that identifies:
+- The types of events that may result in a recall and withdrawal
+- The persons responsible for making decisions on the possible recall and withdrawal
+- The mechanism for notifying the next step in the supply chain
+- The notification of relevant authorities when required
+- Steps taken to contact the certification body (CB), which in turn may contact the GLOBALG.A.P. Secretariat
+- The methods for reconciling stock
+
+The procedure shall be tested annually for effectiveness and the results of the mock recall shall be recorded (e.g., selecting a lot and demonstrating that it can be effectively traced forward to the customer).
+Actual communications of the mock recall to the clients are not necessary. An up-to-date list of telephone numbers and email addresses is sufficient.
+If an actual recall and withdrawal occurred during the past year, documentation of these may be provided for compliance.",Major Must
+FV-GFS 08.02,FV 08 MASS BALANCE,-,"Quantities (produced, stored, and/or purchased) are recorded and summarized for all products.","Quantities (including information on volumes or weight) of incoming (including purchased products), outgoing (including reject, waste, pulp, etc.), and stored products (both from certified and, where applicable, from noncertified production processes) shall be recorded and a summary maintained for all registered products, so as to facilitate the mass balance verification process, while accounting for industry acceptable gains and losses.
+The frequency of the mass balance verification shall be defined and be appropriate to the scale of the operation, but it shall be done at least annually for each product. Documents to demonstrate mass balance shall be clearly identified. If the certification body (CB) audit is done during the harvest season, mass balance data from last year’s harvest may be reviewed. This shall be prepared prior to the CB audit.
+“N/A” is possible where a bulk product (e.g., potatoes sold to a buyer in bulk directly from the field) is handed from harvest directly to the buyer and/or where a product is harvested directly into containers from the field and shipped to customers. Justification of why mass balance is not applicable shall be given.",Major Must
+FV-GFS 16.01,FV 16 FOOD FRAUD,-,A system is in place to address risks associated with food fraud.,"The system shall include:
+- A risk assessment to identify potential threats to the safety of the product, taking into account risks from fraudulent or adulterated materials
+- A documented food fraud plan to specify the measures to control any risks identified in the risk assessment
+- Consideration shall be given to potential impacts of intentional inaccurate information associated with a product for economical gain
+- Where applicable, risks associated with counterfeit PPP, unauthorized propagation material, origin of packaging, use of approved suppliers, control over access to packaging shall be considered",Major Must
+FV-GFS 15.01,FV 15 FOOD DEFENSE,-,A food defense system is in place to address risks associated with malicious attack or contamination.,"The system shall include:
+- A risk assessment to identify potential threats to the safety of products, taking into account risks from deliberate attempts to inflict contamination or damage
+- A documented food defense plan to specify the measures to control any risks identified in the risk assessment
+- Consideration of identification of tampering to the premises and products, monitoring of external storage and intake points, controlled access where relevant, receiving inputs from safe sources, and having available information for all employees and subcontractors
+- Worker, visitor, and subcontractor awareness of the need to support food defense measures, ensured through training, signs, pictograms, etc.",Major Must
+FV-GFS 05.02,"FV 05 SPECIFICATIONS, SUPPLIERS, AND STOCK MANAGEMENT",-,An inventory is in place to manage stock on site.,"A stock inventory shall ensure that materials and products do not pose a risk to food safety and that those with limited shelf lives are used in the correct order. The inventories shall consider purchased materials (plant protection products (PPPs), ammonium fertilizer, etc.) and apply to both pre- and postharvest activities (e.g., chlorine tablets). Items considered to be stock may include cleaning agents, fertilizers, and PPPs.
+
+Monthly updates are not required, but a calculation of inventory shall occur within a month of any use or purchase. In months when there is no stock movement, there is no need to update the inventory. Where products are distributed by a central function, the records may be held by the quality management system (QMS).",Major Must
+FV-GFS 05.01,"FV 05 SPECIFICATIONS, SUPPLIERS, AND STOCK MANAGEMENT",-,Specifications and procedures for materials and services that are relevant to food safety are available.,"A procedure shall be implemented and maintained for the control of suppliers of inputs and services that may introduce a food safety risk. The procedure shall include:
+- Evaluation, approval, and continued monitoring of suppliers
+- Procurement in emergency situations to ensure materials and services still conform to specifications
+- Availability of records of evaluations, investigations, and follow-up actions
+
+Specifications supporting the implementation of the standard and customer compliance shall be available.
+Specifications shall be reviewed annually or when changes occur, whichever is sooner.
+These changes may include the following, where relevant:
+- Supplier specifications for packaging (where applicable)
+- Allowable and acceptable licenses or qualifications for service providers (pest control contractors, laboratory services, etc.)
+- Descriptions of customer requirements
+- Defined specifications for raw materials
+
+Descriptions of how alternate suppliers will be evaluated in the event of emergency or supply chain disruptions shall also be available.",Major Must
+FV-GFS 14.01,FV 14 FOOD SAFETY POLICY DECLARATION,-,The producer has completed and signed the food safety policy declaration.,"The producer’s food safety policy declaration shall:
+- Support the existence of a food safety culture, consisting of communication, training, feedback from workers, and measurable food safety objectives
+- Be annually completed and signed by the producer/manager responsible for food safety
+- Indicate people whose activities impact food safety
+- Serve as documented evidence of commitment to continuous improvement, food safety culture, provision of resources, and adherence to relevant prevailing regulations
+- Serve as documented evidence of review by management of all elements of the food safety system, on an annual basis or whenever changes occur that impact food safety
+- Substantiate the self-assessment checklist (for Option 1 individual producers)
+- Be completed either by central management or on quality management system (QMS) level on behalf of Option 2 producer group members and Option 1 multisite producers with QMS",Major Must
+FV-GFS 12.01,FV 12 LABORATORY TESTING,-,Laboratory testing occurs in a manner consistent with industry requirements and prevailing regulations.,"There shall be documented evidence that laboratories used to analyze parameters impacting food safety are operating in accordance with the requirements of ISO/IEC 17025.
+
+Analysis shall include water quality, plant protection product residues, environmental monitoring samples, and microbial, chemical, and physical contamination, as well as all other applicable tests. The laboratories shall show evidence of participation in proficiency tests or applicable certifications (e.g., the proficiency testing program provider FAPAS®).",Major Must
+FV-GFS 02.01,FV 02 CONTINUOUS IMPROVEMENT PLAN,-,A continuous improvement plan is documented.,"The producer shall evaluate the farming operation and identify improvements to be undertaken as assessed by the standard. These improvements shall be included in a longer-term plan covering up to three years.
+The continuous improvement plan shall consist of relevant self-defined targets and describe how progress toward each target will be monitored. The plan may include:
+- Description of improvement objective
+- Current status, with date of initial target establishment
+- Planned activity
+- Target outcome with estimated date of achievement",Major Must
+FV-GFS 01.04,FV 01 INTERNAL DOCUMENTATION,-,Effective corrective actions are taken to address non-conformances detected during the self-assessments/internal audits.,Corrective actions shall be documented. Any necessary changes shall be implemented. Compliance with all applicable Major Musts and at least 95% of applicable Minor Musts is required.,Major Must
+FV-GFS 01.03,FV 01 INTERNAL DOCUMENTATION,-,The producer completes a minimum of one self-assessment/internal audit annually to the standard.,"The self-assessment/internal audit shall evaluate compliance, review implementation, and support identification of improvement opportunities. A program of site inspections ensures the site and equipment are maintained, in support of food safety. The frequency of inspections is based on assessed risk and type of activities.
+
+A documented self-assessment for individual producers or an internal farm and quality management system (QMS) audit for multisite producers with QMS and producer groups shall:
+- Occur at least once a year and before the certification body (CB) audit
+- Be completed by the producer, assigned worker, or consultant, and/or as part of a QMS
+- Include all applicable topics covered by the standard/scope, even those addressed using subcontractors (including harvest and postharvest activities)
+- Assess all applicable sites and products
+Self-assessments shall contain comments regarding the evidence observed for all not applicable and non-compliant Major Must and Minor Must principles and criteria. For internal farm audits, comments shall follow “GLOBALG.A.P. general regulations – Rules for producer groups and multisite producers with QMS.”
+",Major Must
+FV-GFS 01.02,FV 01 INTERNAL DOCUMENTATION,-,"Records for auditing purposes are up-to-date. Records are kept for a minimum period of two years, unless a longer period is required.","All records generated or kept by the producer for auditing purposes shall:
+- Be stored securely, readily accessible and kept up to date
+- Be retained for a minimum of two years, or longer if required by customers or prevailing regulations
+- Be valid and backed-up, if used in electronic format
+- Cover at least three months prior to the date of the initial certification body (CB) audit, or begin on the day of registration, whichever is longer
+- Reference full details of each area and all activities covered by the registration
+Where an individual record is missing, the respective principle addressing those records is not compliant. For example, if the date of application is missing on a single spray record, a non-conformance or non-compliance shall be issued against that principle.",Major Must
+FV-GFS 01.01,FV 01 INTERNAL DOCUMENTATION,-,A procedure is in place to manage and control documents and records.,"Documents and records affecting implementation of the requirements shall be managed and controlled.
+
+A documented procedure shall describe:
+- How documents and records are created, reviewed, approved, and updated
+- How reviews are undertaken and changes or amendments are made
+- How version updates take place
+- How relevant documentation is made available to relevant staff
+
+Documentation shall be:
+- Identified with an issue number and/or date and appropriately paginated
+- Sufficiently detailed
+- Reviewed periodically to demonstrate ongoing compliance with the relevant requirements
+- Assigned to relevant staff
+- Revised to incorporate relevant modifications of the standard or normative documents within the period given by GLOBALG.A.P.
+- Approved by authorized staff prior to distribution
+- Effectively rescinded when obsolete",Major Must
+FV-GFS 11.01,FV 11 NON-CONFORMING PRODUCTS,-,Procedures are in place to manage and handle non-conforming products.,"Documented procedures, including a hold-and-release process, shall be in place to prevent unintended use or delivery of non-conforming products.
+
+Products may be considered non-conforming because of food safety issues, quality issues, maximum residue limit exceedance(s), cross contamination issues, etc.
+
+Non-conforming products shall be identified during production and handling. Non-conforming products shall be segregated, appropriately handled, and potentially redirected to a suitable end use (processing, animal feed, etc.). If not redirected, the products shall be disposed of appropriately.
+
+The non-conforming product procedures shall also address the treatment of dropped product, as per the risk assessment.
+
+Products that pose a risk to food safety shall not be harvested or shall be discarded. Discarded products and waste materials shall be stored in clearly designated areas to avoid contamination of products. Signs shall be used to identify waste products, where appropriate. These areas shall be routinely cleaned and/or disinfected according to the cleaning schedule.
+
+Where the root cause is related to significant food safety reasons, the procedure in place shall be implemented and maintained for the determination and implementation of corrective actions. Such actions shall aim to eliminate the cause of a non-conformity to prevent reoccurrence.",Major Must
+FV-GFS 21.06,FV 21 SITE MANAGEMENT,-,"Where the operation handles or stores allergens, the operation has a documented allergen management program.","The allergen management program shall list the allergens in use, stored, or handled by workers at the site specific to prevailing regulations. Where applicable, procedures shall address identification and segregation of allergens during storage, handling, loading, and shipping as based on a risk assessment conducted by the operation. All products intentionally or potentially containing allergenic materials shall be labeled according to the allergen labeling regulations in the country of production and the country of destination.",Major Must
+FV-GFS 19.01,FV 19 HYGIENE,-,The farm has a documented hygiene risk assessment.,"A documented hygiene risk assessment covering production, harvesting, and handling, as applicable, shall cover:
+- Physical, chemical, and microbiological contaminants, spillage of bodily fluids (vomiting, bleeding, etc.), and human transmissible diseases that are associated with the applicable products and processes
+- Workers, personal effects, equipment, clothing, packaging material, transport, vehicles, and product storage (including short-term storage on the farm)
+- The production environment, including design and layout for prevention of cross contamination and support of food safety
+- Measurement and monitoring of cleaning and hygiene activities",Major Must
+FV-GFS 19.04,FV 19 HYGIENE,-,"Smoking, eating, chewing, and drinking are confined to designated areas.","In order to prevent contamination of products, smoking, eating, chewing, and drinking shall be confined to designated areas and not be permitted in product handling or storage areas, unless indicated otherwise by the hygiene risk assessment. Drinking water is the exception.",Major Must
+FV-GFS 19.02,FV 19 HYGIENE,-,Documented hygiene procedures are in place to minimize food safety risks.,"Hygiene procedures shall be aligned with the risk assessment and include applicable harvest and postharvest activities. Pictograms or signs in the predominant workforce language shall describe the appropriate hygiene measures for workers, visitors, and subcontractors.
+When protective equipment and clothing (smocks, aprons, sleeves, gloves, footwear, etc.) are required, they shall be provided by the employer and cleaned, maintained, and stored in a way that minimizes food safety risks.
+Hands shall be washed whenever they may be a source of contamination, including prior to the start of work and after using the toilet.
+The hygiene procedures shall address contamination of product with bodily fluids, reporting requirements for sick people (vomiting, jaundice, diarrhea, etc.), restricting ill persons’ contact with products, and a return-to-work policy. Skin cuts shall be covered and gloves used, as appropriate.
+Visual evidence shall show that no violations of the hygiene procedures occur.",Major Must
+FV-GFS 19.03,FV 19 HYGIENE,-,All persons working on the farm have received hygiene training.,"Basic training on hygiene shall:
+- Be provided annually to all workers, including owners and managers that are working on the farm
+- Be provided to all new workers
+- Cover all necessary instructions
+- Be given in a format, either written or verbal, that ensures understanding (may be in verbal and pictorial form without written explanatory content, where appropriate)
+- Specifically include training on hygiene procedures for harvesting and product handling activities, where applicable",Major Must
+FV-GFS 19.06,FV 19 HYGIENE,-,"Handwashing facilities are available for all workers, visitors, and subcontractors who come into direct contact with products.","Handwashing facilities shall be accessible and maintained in a clean and sanitary condition to allow workers to clean their hands any time their hands may be a source of contamination.
+
+The facilities shall be situated as near as possible to the toilets without posing a risk of cross contamination.
+
+All handwashing facilities shall be equipped with nonperfumed hand soap and means of drying hands. Single use towels shall be used where possible. Towels shall not pose a cross contamination risk. Air towels and forced-air hand dryers are permitted.
+
+The water used for handwashing shall be analyzed, and risks associated with water quality assessed. The water used shall meet the microbial standard for drinking water at all times. If handwashing water does not meet the microbial drinking water standard, a sanitizer (e.g., alcohol-based gel) shall be used after washing hands. The use of only hand sanitizer to clean hands before coming into contact with products is not permitted.",Major Must
+FV-GFS 19.05,FV 19 HYGIENE,-,"Clean toilets are provided for workers, visitors, and subcontractors in the vicinity of their work.","Toilets provided for production and handling activities (including stationary or mobile toilets) shall be:
+- Designed and located so as to minimize the potential risk for product contamination
+- Constructed of material that is easy to clean and maintain (also applies to pit latrines)
+- Allow for direct accessibility for servicing
+- Located in reasonable proximity to the place of work, i.e., accessible on foot or by a readily available mode of transportation
+If production and/or handling takes place in a facility, the doors of toilets shall not open directly onto the production and/or product handling area, unless the door is self-closing. Toilets shall be appropriately cleaned, maintained, and stocked. Facilities shall also be available to visitors, where applicable.",Major Must
+FV-GFS 19.07,FV 19 HYGIENE,-,Animal activity that may result in product contamination is managed.,"Appropriate measures shall be taken to reduce possible product contamination by animals within the production area. Where there is evidence of animal activity that may result in product contamination, appropriate measures shall be taken. Eliminating wildlife or using destructive techniques to rid the production area of all animals are not considered appropriate measures.",Major Must
+FV-GFS 32.07.01,FV 32 PLANT PROTECTION PRODUCTS,FV 32.07 Residue analysis,Information regarding maximum residue levels (MRLs) is available for the destination markets in which products will be traded.,The producer or the producer’s customer shall have a list of currently applicable MRLs for all markets in which products are intended to be traded (domestic and/or international). The MRLs shall be identified by either demonstrating communication with clients confirming the intended markets or by selecting the specific country or countries in which products are intended to be traded.,Major Must
+FV-GFS 32.07.03,FV 32 PLANT PROTECTION PRODUCTS,FV 32.07 Residue analysis,The correct maximum residue level (MRL) sampling and testing procedures are followed.,Documented evidence shall be available demonstrating compliance with applicable sampling procedures.,Major Must
+FV-GFS 32.07.02,FV 32 PLANT PROTECTION PRODUCTS,FV 32.07 Residue analysis,A risk assessment for all registered products has been completed and the maximum residue level (MRL) requirements of the applicable market(s) are met.,"The risk assessment shall cover all registered crops and the potential risk of MRL exceedance based on plant protection product (PPP) usage.
+
+Residues of agricultural chemicals shall not exceed levels established by applicable and prevailing legislation (in both countries of production and intended sale), or by the Codex Alimentarius Commission.
+
+Risk assessment may conclude that analyses are not required when all of the following conditions are met:
+
+- No use of PPPs during the production season or during postharvest handling
+- Evidence of residue testing by the customer (processor or other)
+- A risk assessment validated by an independent third party (e.g., certification body (CB) auditor) or the customer
+
+Where the risk assessment concludes an analysis is required, the number, type, location, and frequency of sampling shall be recorded.
+Complying with MRL thresholds in the country of production is required, regardless of whether the product is exported to other countries. If MRLs of the market of intended export are stricter than those of the country of production, documentation exists that these MRLs have been addressed. Documentation shall support export decisions based upon PPP use and MRL analysis results to maintain compliance with country-of-destination regulations.
+
+Where brokers are responsible for all shipments and the country-of-destination is outside of the producer’s control, compliance with the MRLs in the country of production shall be verified.
+
+The producer may delegate the risk assessment and sampling to a third party managed PPP residue monitoring system (RMS) that is assessed by a GLOBALG.A.P. approved CB.",Major Must
+FV-GFS 32.07.04,FV 32 PLANT PROTECTION PRODUCTS,FV 32.07 Residue analysis,A documented action plan is available that describes the steps to be taken if an unauthorized plant protection product (PPP) is detected in the maximum residue level (MRL) sampling.,"A documented action plan shall be available that describes the steps to be taken in the event that the MRL analysis detects the presence of a PPP that is not authorized for use on the product (not registered in the country of production, not labeled for use on the product, etc.).
+The plan shall detail the steps taken to investigate the cause, to ensure all food safety risks are mitigated, and to arrange for disposal of the product, if needed.",Major Must
+FV-GFS 30.01.01,FV 30 WATER MANAGEMENT,FV 30.01 Water use risk assessments and management plan,There is a risk assessment to assess food safety risks for pre- and postharvest water used.,"There shall be a documented risk assessment for water used for indoor and outdoor production and postharvest activities. The assessment shall cover, at minimum:
+- Identification of water sources by means of maps, photographs, drawings (hand drawings are acceptable), or other depictions to identify the location of water source(s), permanent fixtures, and the flow of the water system (including holding systems, reservoirs, or any water captured for reuse), the depiction shall be linked with site maps and an on-farm reference system
+- Historical analysis results, where applicable
+- The timing of water use (crop growth stage or postharvest)
+- The risk of physical, chemical, and microbial contamination
+- Methods to address risk associated with water delivery mechanisms, mitigating the risk of cross contamination
+- The contact of water with the crop
+- The characteristics of the crop and the growth stage or handling
+- The quality of the water used for fertilizer, plant protection product, or postharvest applications
+- Measures taken to mitigate contamination risk, where appropriate (e.g., preventing human and livestock intrusion with fencing)
+- Acceptable thresholds for water quality
+- Impact on food safety and fit-for-purpose
+- Control of water not intended for use in food production (stored water for grounds maintenance, etc.)
+- A minimum requirement of one analysis per season or certification cycle for water used in postharvest activities that comes in contact with the product, the sample to be taken as near the point of application as possible (minimum of one analysis required even when using municipal water sources).
+The risk assessment shall be reviewed annually and whenever risks change due to operational changes.",Major Must
+FV-GFS 32.07.05,FV 32 PLANT PROTECTION PRODUCTS,FV 32.07 Residue analysis,A documented action plan is available that describes the steps to be taken if a maximum residue level (MRL) is exceeded.,"A documented action plan shall be available that describes the steps and actions to be taken in the event that a plant protection product residue analysis indicates a MRL has been exceeded (MRL of both country of production and countries of destination, if different). The action plan shall include communication to customers and may be part of the recall and withdrawal procedure.",Major Must
+FV-GFS 30.01.03,FV 30 WATER MANAGEMENT,FV 30.01 Water use risk assessments and management plan,A water management plan is available.,"A documented water management plan shall:
+- Be reviewed at least annually, based on the reviewed risk assessments
+- Assess the need for maintenance of irrigation and other water delivery equipment
+- Identify worker training required to support maintenance and repairs
+- Be either an individual or a regional plan if participation in a community irrigation system is documented
+- Include reference to water analysis
+- Include corrective actions taken related to water quality",Major Must
+FV-GFS 30.01.02,FV 30 WATER MANAGEMENT,FV 30.01 Water use risk assessments and management plan,A risk assessment has been undertaken to evaluate environmental issues for water management on the farm (pre- and postharvest).,"There shall be a documented risk assessment for water used for indoor and outdoor production and postharvest activities. At minimum, the assessment shall identify environmental impacts on and of:
+- Water sources
+- Distribution systems
+- Irrigation methods
+- Significant water uses for other activities on the farm
+- Impact of own farming activities on off-farm environments
+
+The risk assessment shall be reviewed annually or whenever changes to risks occur.",Major Must
+FV-GFS 30.04.02,FV 30 WATER MANAGEMENT,FV 30.04 Water storage,Storage of water does not pose any food safety risks.,"If tanks, cisterns, or other containers are used to store water, risks to stored water or products shall be identified. If water storage containers are open to the air, the possibility of contamination shall be addressed. The container shall not be a source of contamination for the water, and the quality of the water held within it shall be appropriate for the intended use.",Major Must
+FV-GFS 30.06.01,FV 30 WATER MANAGEMENT,FV 30.06 Irrigation predictions and record keeping,Tools are routinely used to calculate and optimize crop irrigation.,"The producer shall be able to demonstrate that crop irrigation requirements are calculated based on data (local agricultural institute data, farm rain gauges, drainage trays for substrate growing, evaporation meters, water tension meters for the percentage of soil moisture content, etc.). 
+Where on-farm tools are in place, these shall be maintained to ensure that they are effective and in a good state of repair.
+“N/A” only for rain-fed crops.",Minor Must
+FV-GFS 30.05.02,FV 30 WATER MANAGEMENT,FV 30.05 Water quality,Corrective actions are taken based on results from the risk assessment and results of the water analysis.,"There shall be available documentation of corrective actions as identified and required by the water risk assessment and current sector-specific standards or relevant regulations. Action shall be taken based upon the level of the risk.
+
+Possible strategies to reduce the risk of product contamination arising from water use include, but are not limited to:
+- Treating water before use
+- Preventing water coming into contact with the harvestable portion of the crop
+- Reducing the vulnerability of the water supply
+- Allowing sufficient time between application and harvest to ensure decline in pathogen concentrations
+
+Producers implementing these strategies shall verify that the risk of product contamination is addressed.",Major Must
+FV-GFS 30.05.01,FV 30 WATER MANAGEMENT,FV 30.05 Water quality,"Water is analyzed for food safety, in accordance with the risk assessment.","Water shall be analyzed for food safety at a frequency consistent with the risk assessment and current sector-specific standards or relevant regulations. Water analysis shall be part of the water management plan and completed at least once per year, or more frequently if required by the risk assessment (e.g., in controlled environment agriculture (CEA) production).
+
+A minimum of one analysis per season or certification cycle shall be required on water that comes into contact with products during postharvest processing, with samples taken as near the point of application as possible. A minimum of one analysis shall be required even when using municipal water sources.
+
+The water analysis shall reflect the nature and extent of the water system, the scope of production (type of product, applications, harvesting, handling, water sources, etc.). Where different water sources are used, they shall each be sampled.
+Samples shall be taken from locations that are representative of the water source, usually as close to the point of application as possible.
+
+Analysis shall be performed during the time of water use on products and during the period of highest risk.
+
+There shall be a documented procedure for water analysis, including:
+- Frequency of sampling
+- Person responsible for sampling
+- Method of sample collection
+- Laboratory analyzing the samples
+- Location sampled
+
+Records of all analysis shall be maintained.",Major Must
+FV-GFS 30.05.03,FV 30 WATER MANAGEMENT,FV 30.05 Water quality,The use of treated sewage water does not pose a food safety risk.,"Treated sewage water shall only be used when the risks have been identified and effectively mitigated. The type of crop, growth aspect, and contact with edible portions of the crop shall be considered. Analysis of water shall occur at appropriate intervals to verify that the treatment is consistently effective.
+
+Where treated sewage or reclaimed water is used, water quality shall comply with prevailing regulations or the World Health Organization (WHO-) published “Guidelines for the safe use of wastewater, excreta and greywater” (2006) where no prevailing regulations exist.
+
+Guidelines for minimum verification monitoring of microbial performance targets for wastewater treatment have been referenced in Table 4.5 (Volume 2, 2006) and Table 2.9 (Volume 1, 2006) of the WHO “Guidelines for the safe use of wastewater, excreta and greywater.” Water quality shall be assessed by measuring the quantity of indicator organisms. Escherichia coli (E. coli) is recommended for this purpose, but other prevailing regulations and industry standards may reference total fecal coliforms. When more restrictive prevailing regulations do not exist, the verification level established by the WHO of ≤ 1000 E. coli per 100ml treated wastewater shall be adopted for monitoring purposes. Many prevailing regulations require recreational, reclaimed, and irrigation water to be held to a more restrictive quality requirement, so target water quality thresholds shall be addressed in risk assessments and supporting documentation.
+
+If water has the potential to be polluted (e.g., upstream contamination source), the producer shall demonstrate through analysis that the water complies with prevailing regulations and requirements, or with the WHO guideline requirements where no prevailing regulations exist.
+
+Untreated sewage water shall never be used on crops.
+
+“N/A” if treated sewage water is not used.",Major Must
+FV-GFS 30.05.04,FV 30 WATER MANAGEMENT,FV 30.05 Water quality,Water that comes into contact with products during harvest and postharvest meets the microbial standard for drinking water.,"Water (including ice) used during harvest and postharvest activities (cooling, transport, washing, etc.) shall meet the microbial standards for drinking water and shall be handled so as to prevent product contamination.
+The only exception are flood-harvested cranberry fields, where analysis shall confirm that the water is not a source of microbial contamination for the product.",Major Must
+FV-GFS 30.05.06,FV 30 WATER MANAGEMENT,FV 30.05 Water quality,Treated water used during harvest or postharvest is monitored appropriately.,"Treated water (antimicrobial water additives, ozone, etc.) used during harvest and postharvest activities (e.g., cooling) shall adhere to a documented monitoring system for the treatment process and routine verification of acceptable parameters. Monitoring shall be executed at a frequency established according to a risk assessment. The values measured during monitoring shall be compared to the established allowable parameters. Corrective actions shall be taken for analysis results outside of the allowable thresholds.",Major Must
+FV-GFS 30.05.05,FV 30 WATER MANAGEMENT,FV 30.05 Water quality,"Recirculated water used during production, harvest, and postharvest is changed or replenished at an appropriate frequency.","If water used during production, harvest, and postharvest activities is recirculated, an appropriate frequency for changing the water shall have been established based on applicable parameters (pH, efficacy of antimicrobial water additives, turbidity, visual evaluation, etc.).
+“N/A” if recirculated water is not used.",Major Must
+FV-GFS 30.03.01,FV 30 WATER MANAGEMENT,FV 30.03 Efficient water use on farm,"Where feasible, measures have been implemented to collect water and, where appropriate, to recycle.","Water collection and/or recycling shall be implemented where economically and practically feasible (from building roofs, greenhouses, etc.).
+Water collection or recycling does not refer only to rainwater. Collection from watercourses is not encouraged.",Minor Must
+FV-GFS 33.04.01,FV 33 POSTHARVEST HANDLING,FV 33.04 Pest control,A pest management plan is in place and implemented.,"A pest management plan for monitoring and control of pests in the packing and storage areas shall be in place.
+There shall be visual evidence that the pest monitoring and correcting processes are effective.",Major Must
+FV-GFS 33.06.01,FV 33 POSTHARVEST HANDLING,FV 33.06 Environmental monitoring program,A risk-based microbial environmental monitoring program is in place for product handling areas.,"Where postharvest activities are included in an operation, there shall be a risk-based microbial environmental monitoring program in place for the product handling areas. The program shall allow for assessment of effectiveness of cleaning procedures in reducing food safety risks and identify sources of potential contamination (in water, on surfaces, etc.). The risk assessment shall determine the areas of possible contamination (e.g., high traffic or difficult-to-clean locations).
+
+
+Controlled environment agriculture (CEA) with environmental monitoring programs shall show documentation for applicable production activities and not be limited to product handling.",Major Must
+FV-GFS 33.04.02,FV 33 POSTHARVEST HANDLING,FV 33.04 Pest control,Records are kept of pest control inspections and corrective actions taken.,Monitoring shall take place and records of pest control inspections and follow-up action plan(s) shall be kept.,Major Must
+FV-GFS 33.07.01,FV 33 POSTHARVEST HANDLING,FV 33.07 Air and compressed gases ,"Air and compressed gases are monitored, stored, and handled so as to minimize food safety risks.","Air and compressed gases used in product handling (e.g., for drying) and which could affect food safety shall be regularly monitored, appropriately stored, and handled so as to minimize the risk of product contamination. Based on a risk assessment, the degree of monitoring appropriate for compressed air that comes into contact with the product shall be defined. Risk mitigation activities may include monitoring of filters and do not necessarily require laboratory analysis of air samples.",Major Must
+FV-GFS 33.05.01,FV 33 POSTHARVEST HANDLING,FV 33.05 Product labeling,Final product labeling is appropriate.,"Where final product packing is included in the scope of certification, product labeling shall be done according to applicable prevailing regulations in the country of intended sale and any customer specifications.
+Packaging may be provided by the customer, indicating compliance with customer specifications.",Major Must
+FV-GFS 33.03.01,FV 33 POSTHARVEST HANDLING,FV 33.03 Temperature and humidity control,Controlled storage conditions are maintained.,"Temperature-, humidity- (where relevant), and atmosphere-controlled storage areas shall be monitored and maintained. Records of monitoring shall be kept.",Major Must
+FV-GFS 33.02.01,FV 33 POSTHARVEST HANDLING,FV 33.02 Foreign bodies,Systems are in place to ensure that foreign materials do not contaminate products.,"Systems shall be in place to ensure that foreign materials, including insects, stones, debris, glass, and hard plastic, do not contaminate products.
+
+Glass, hard plastic, and similar materials (light bulbs, fixtures, etc.) suspended above products or used for product handling shall be of a safety design or protected/shielded.",Major Must
+FV-GFS 33.02.02,FV 33 POSTHARVEST HANDLING,FV 33.02 Foreign bodies,A procedure is in place for handling foreign material contamination.,"A documented procedure for handling foreign material contamination, including glass and hard plastic breakages (in greenhouses, product handling, preparation and storage areas, etc.) shall be in place.",Major Must
+FV-GFS 33.01.04,FV 33 POSTHARVEST HANDLING,FV 33.01 Packing (in-field or facility) and storage areas,"Cleaning equipment, agents, lubricants, etc. are stored and used to prevent chemical contamination of products and are approved for application in the food industry.","To avoid chemical contamination of products, cleaning equipment, agents, lubricants, etc. shall be kept in a designated secure area, away from products.
+
+Documented evidence (specific label mention or technical data sheet) shall exist authorizing use for the food industry of all cleaning agents, lubricants, etc. that may come into contact with products. Chemicals shall be applied according to the product label instructions.",Major Must
+FV-GFS 33.01.03,FV 33 POSTHARVEST HANDLING,FV 33.01 Packing (in-field or facility) and storage areas,Packaging materials are appropriate for their intended use and stored under conditions that protect the materials from contamination.,"Packaging materials (including reusable crates) shall be appropriate for their intended use and stored under conditions that protect the materials from contamination and deterioration. Packaging materials may be stored outside, providing risks of contamination have been addressed (e.g., packaging materials sealed in plastic covers).",Major Must
+FV-GFS 33.01.02,FV 33 POSTHARVEST HANDLING,FV 33.01 Packing (in-field or facility) and storage areas,"All locations for collection, storage, and distribution of packed products are cleaned and maintained.","All product handling and storage facilities and equipment (walls, floors, conveyance lines, machinery, etc.) shall be cleaned and maintained with a defined frequency according to a documented cleaning and maintenance schedule. Maintenance shall not introduce food safety risks. Records of cleaning and maintenance shall be kept.",Major Must
+FV-GFS 33.01.01,FV 33 POSTHARVEST HANDLING,FV 33.01 Packing (in-field or facility) and storage areas,Harvested and packed products are stored to minimize food safety risks.,"All harvested products (packed products, bulk) are stored appropriately and protected from contamination in accordance with the hygiene risk assessment.",Major Must
+FV-GFS 19.08,FV 19 HYGIENE,-,"Containers used for production and harvesting are cleaned, maintained, and appropriate for use.","Production and harvesting containers shall be made of nontoxic materials that do not pose a risk to food safety and be constructed to facilitate cleaning and maintenance.
+
+Reusable containers shall be clean before use. A documented cleaning schedule that includes frequency and is in accordance with the hygiene risk assessment shall be in place. Disinfection shall be incorporated into the cleaning procedure when required in the hygiene risk assessment.
+
+Harvest containers shall be used exclusively for product (not used to store chemicals, lubricants, oil, trash, tools, etc.).",Major Must
+FV-GFS 30.01.04,FV 30 WATER MANAGEMENT,FV 30.01 Water use risk assessments and management plan,Actions are taken to complement on-farm water management with off-farm activities (while recognizing that the legal scope of the producer is on the farm).,"Available evidence should indicate awareness of the producer on (or participation in) projects, joint action, or collaboration on water management with stakeholders in the neighboring catchment area, watershed, landscape, or beyond, for example with other producers, sector- or crop-specific initiatives, nongovernmental organizations, etc.",Recom.
+FV-GFS 13.03,FV 13 EQUIPMENT AND DEVICES,-,"Vehicles and equipment used for loading, transport, or storage of harvested products are cleaned, maintained, and appropriate for use.","Vehicles and equipment used for loading, transport, or storage of harvested products shall be cleaned and maintained and stored to prevent product contamination (animal manure, fuel spills, etc.).
+Vehicles and equipment shall be suitable for the intended purpose and stored to minimize food safety risk.",Major Must
+FV-GFS 30.04.01,FV 30 WATER MANAGEMENT,FV 30.04 Water storage,Water storage facilities are present and well maintained to take advantage of periods of maximum water availability.,"Where the farm is located in areas of seasonal water availability, there should be water storage facilities for water use during periods when water availability is low. These should be in a good state of repair and appropriately fenced/secured to prevent accidents.",Recom.
+FV-GFS 30.02.02,FV 30 WATER MANAGEMENT,FV 30.02 Water sources,Restrictions indicated in water permits/licenses are complied with.,"It is not unusual for specific conditions to be set in the permits/licenses, such as hourly, daily, weekly, monthly, or yearly extraction volumes or usage rates.
+Equipment used for monitoring extraction volumes shall be in the correct location to provide accurate readings.
+Records shall be maintained and available to demonstrate that these conditions are being met.",Major Must
+FV-GFS 30.02.01,FV 30 WATER MANAGEMENT,FV 30.02 Water sources,Water use at farm level has valid permits/licenses where legally required.,"Valid permits/licenses issued by the competent authority shall be available for all of the following:
+- Farm water extraction
+- Water storage infrastructure
+- On-farm water usage including but not limited to irrigation, product washing, and flotation processes
+- Water discharge into river courses or other environmentally sensitive areas, where legally required
+
+These permits/licenses shall be available for the certification body (CB) audit and have valid dates.
+If these are not available where required, there shall be evidence that the producer has actively applied for the permit(s), the approval is in process, and there is no clear evidence of an official prohibition for using the relevant water source(s).",Major Must
+FV-GFS 30.06.03,FV 30 WATER MANAGEMENT,FV 30.06 Irrigation predictions and record keeping,Management of water is supported with metrics.,"Acceptable metrics allow calculating the following:
+At minimum, the total monthly amount of water used on the farm in agricultural production (in m3/site/month). The amount of water abstracted from specific sources should also be listed.
+
+Additional metrics may include, for example:
+- The monthly amount of water used in irrigation/ha.
+Indicators should refer to water sources (excluding rainwater), units of time (e.g., growing cycle), and the amounts of water used per kg of product and ha of production.
+In Option 2 producer groups, evidence at quality management system (QMS) level is acceptable. Results (data) on metrics at producer group and farm level should be available to indicate compliance.",Recom.
+FV-GFS 30.06.02,FV 30 WATER MANAGEMENT,FV 30.06 Irrigation predictions and record keeping,Measures are taken to understand the amount of water used and actions identified for how to increase water use efficiency.,"Records of the use of crop irrigation/fertigation water shall be kept, offering estimates of the amount of water needed to support their production. Where possible, ways to increase water efficiency shall be identified.
+In Option 2 producer groups, evidence at quality management system (QMS) level is acceptable.",Major Must

@@ -1,18 +1,18 @@
 {% extends "base.html" %}
 
-{% block title %}Login - FruitQMS{% endblock %}
+{% block title %}{{ _('Login') }} - FruitQMS{% endblock %}
 
 {% block content %}
 <div class="row justify-content-center">
     <div class="col-md-6 col-lg-5">
         <div class="card shadow-sm mt-5">
             <div class="card-body p-5">
-                <h2 class="text-center mb-4 text-success">🍎 Login to FruitQMS</h2>
+                <h2 class="text-center mb-4 text-success">🍎 {{ _('Login to FruitQMS') }}</h2>
 
                 <div class="alert alert-info" role="alert">
-                    <strong>Demo Account:</strong><br>
-                    Email: demo@fruitqms.com<br>
-                    Password: demo123
+                    <strong>{{ _('Demo Account:') }}</strong><br>
+                    {{ _('Email:') }} demo@fruitqms.com<br>
+                    {{ _('Password:') }} demo123
                 </div>
 
                 <form method="POST" action="{{ url_for('auth.login') }}">
@@ -43,14 +43,14 @@
                     </div>
 
                     <div class="d-grid">
-                        <button type="submit" class="btn btn-success btn-lg">Login</button>
+                        <button type="submit" class="btn btn-success btn-lg">{{ _('Login') }}</button>
                     </div>
                 </form>
 
                 <hr class="my-4">
 
                 <p class="text-center text-muted small">
-                    FruitQMS | GLOBALG.A.P. IFA v6.0 Compliant
+                    FruitQMS | {{ _('GLOBALG.A.P. IFA v6.0 Compliant') }}
                 </p>
             </div>
         </div>

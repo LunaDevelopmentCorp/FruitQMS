@@ -1,0 +1,1635 @@
+# Spanish translations for PROJECT.
+# Copyright (C) 2026 ORGANIZATION
+# This file is distributed under the same license as the PROJECT project.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: PROJECT VERSION\n"
+"Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
+"POT-Creation-Date: 2026-02-08 17:07+0000\n"
+"PO-Revision-Date: 2026-02-08 17:07+0000\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: es\n"
+"Language-Team: es <LL@li.org>\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.17.0\n"
+
+#: app/__init__.py:61
+msgid "Please log in to access this page."
+msgstr "Por favor, inicie sesión para acceder a esta página."
+
+#: app/forms.py:8
+msgid "Email"
+msgstr "Correo electrónico"
+
+#: app/forms.py:9
+msgid "Password"
+msgstr "Contraseña"
+
+#: app/forms.py:13 app/forms_wizard.py:38
+msgid "Address *"
+msgstr "Dirección *"
+
+#: app/forms.py:14 app/forms_wizard.py:39
+msgid "Country *"
+msgstr "País *"
+
+#: app/forms.py:15
+msgid "Local Laws & Regulations Notes"
+msgstr "Notas sobre leyes y regulaciones locales"
+
+#: app/forms.py:17 app/forms_wizard.py:44
+msgid "Packing System"
+msgstr "Sistema de empaque"
+
+#: app/forms.py:18 app/forms_wizard.py:45
+msgid "Select System"
+msgstr "Seleccionar sistema"
+
+#: app/forms.py:19 app/forms_wizard.py:46
+msgid "Manual"
+msgstr "Manual"
+
+#: app/forms.py:20 app/forms_wizard.py:47
+msgid "Semi-Automated"
+msgstr "Semiautomatizado"
+
+#: app/forms.py:21 app/forms_wizard.py:48
+msgid "Fully Automated"
+msgstr "Completamente automatizado"
+
+#: app/forms.py:23
+msgid "Water Usage (m³/day)"
+msgstr "Consumo de agua (m³/día)"
+
+#: app/forms.py:24
+msgid "Water Treatment Method"
+msgstr "Método de tratamiento de agua"
+
+#: app/forms.py:25
+msgid "Energy Usage (kWh/month)"
+msgstr "Consumo de energía (kWh/mes)"
+
+#: app/forms.py:26
+msgid "Staff Count"
+msgstr "Cantidad de personal"
+
+#: app/forms.py:27
+msgid "Supervisors Count"
+msgstr "Cantidad de supervisores"
+
+#: app/forms.py:28
+msgid "Avg Working Hours/Week"
+msgstr "Horas de trabajo promedio/semana"
+
+#: app/forms.py:29
+msgid "Shifts per Day"
+msgstr "Turnos por día"
+
+#: app/forms.py:31
+msgid "Intake Protocols"
+msgstr "Protocolos de recepción"
+
+#: app/forms.py:32
+msgid "Online Monitoring"
+msgstr "Monitoreo en línea"
+
+#: app/forms.py:33
+msgid "Final Packing Inspections"
+msgstr "Inspecciones finales de empaque"
+
+#: app/forms.py:37
+msgid "Grower Code *"
+msgstr "Código del productor *"
+
+#: app/forms.py:38
+msgid "Grower Name *"
+msgstr "Nombre del productor *"
+
+#: app/forms.py:39
+msgid "Field Name *"
+msgstr "Nombre del campo *"
+
+#: app/forms.py:40
+msgid "Size (hectares)"
+msgstr "Superficie (hectáreas)"
+
+#: app/forms.py:41
+msgid "GPS Coordinates"
+msgstr "Coordenadas GPS"
+
+#: app/forms.py:42 app/templates/setup/settings.html:291
+msgid "Crop Type"
+msgstr "Tipo de cultivo"
+
+#: app/forms.py:43
+msgid "Select Crop"
+msgstr "Seleccionar cultivo"
+
+#: app/forms.py:91 app/forms_wizard.py:62 app/forms_wizard.py:87
+#: app/forms_wizard.py:111
+msgid "Other"
+msgstr "Otro"
+
+#: app/forms.py:94
+msgid "Spray Program"
+msgstr "Programa de fumigación"
+
+#: app/forms.py:95
+msgid "Harvest Schedule"
+msgstr "Calendario de cosecha"
+
+#: app/forms.py:96
+msgid "Fertilisation Plan"
+msgstr "Plan de fertilización"
+
+#: app/forms.py:97
+msgid "Irrigation Type"
+msgstr "Tipo de riego"
+
+#: app/forms.py:98
+msgid "Planting Date"
+msgstr "Fecha de siembra"
+
+#: app/forms.py:99
+msgid "Pruning Method"
+msgstr "Método de poda"
+
+#: app/forms.py:101
+msgid "Conservation Points"
+msgstr "Puntos de conservación"
+
+#: app/forms.py:102
+msgid "Biodiversity Measures"
+msgstr "Medidas de biodiversidad"
+
+#: app/forms.py:103
+msgid "Delicate Environments Present"
+msgstr "Presencia de ambientes delicados"
+
+#: app/forms.py:104
+msgid "Delicate Environments Notes"
+msgstr "Notas sobre ambientes delicados"
+
+#: app/forms_wizard.py:14
+msgid "Business Type *"
+msgstr "Tipo de negocio *"
+
+#: app/forms_wizard.py:15
+msgid "Select Type"
+msgstr "Seleccionar tipo"
+
+#: app/forms_wizard.py:16
+msgid "Growers Only"
+msgstr "Solo productores"
+
+#: app/forms_wizard.py:17 app/templates/wizard/step7_review.html:26
+msgid "Packhouse Only"
+msgstr "Solo empacadora"
+
+#: app/forms_wizard.py:18 app/templates/wizard/step7_review.html:28
+msgid "Packhouse and Farms"
+msgstr "Empacadora y fincas"
+
+#: app/forms_wizard.py:19 app/templates/wizard/step7_review.html:30
+msgid "Packhouse + Contract Growers"
+msgstr "Empacadora + productores contratados"
+
+#: app/forms_wizard.py:20 app/templates/wizard/step7_review.html:32
+msgid "Packhouse + Own Farm + Contract Growers"
+msgstr "Empacadora + finca propia + productores contratados"
+
+#: app/forms_wizard.py:23
+msgid "GLOBALG.A.P. Audit Scope *"
+msgstr "Alcance de auditoría GLOBALG.A.P. *"
+
+#: app/forms_wizard.py:24
+msgid "Select Audit Scope"
+msgstr "Seleccionar alcance de auditoría"
+
+#: app/forms_wizard.py:25
+msgid "GFS (Individual Producer) - Single unified checklist"
+msgstr "GFS (Productor individual) - Lista de verificación única unificada"
+
+#: app/forms_wizard.py:26
+msgid "SMART (Multi-Site) - Central system + individual grower checklists"
+msgstr "SMART (Multisitio) - Sistema central + listas de verificación individuales por productor"
+
+#: app/forms_wizard.py:29
+msgid "GLOBALG.A.P. Number (GGN)"
+msgstr "Número GLOBALG.A.P. (GGN)"
+
+#: app/forms_wizard.py:31
+msgid "Do you have contract growers?"
+msgstr "¿Tiene productores contratados?"
+
+#: app/forms_wizard.py:32
+msgid "How many contract growers?"
+msgstr "¿Cuántos productores contratados?"
+
+#: app/forms_wizard.py:36
+msgid "How many packhouses do you operate?"
+msgstr "¿Cuántas empacadoras opera?"
+
+#: app/forms_wizard.py:37
+msgid "Packhouse Name *"
+msgstr "Nombre de la empacadora *"
+
+#: app/forms_wizard.py:41
+msgid "Latitude (GPS)"
+msgstr "Latitud (GPS)"
+
+#: app/forms_wizard.py:42
+msgid "Longitude (GPS)"
+msgstr "Longitud (GPS)"
+
+#: app/forms_wizard.py:51
+msgid "Crops Packed"
+msgstr "Cultivos empacados"
+
+#: app/forms_wizard.py:60
+msgid "Other Tropical Fruit"
+msgstr "Otra fruta tropical"
+
+#: app/forms_wizard.py:65
+msgid "Water Usage per packhouse (m³/day)"
+msgstr "Consumo de agua por empacadora (m³/día)"
+
+#: app/forms_wizard.py:66
+msgid "Energy Usage per packhouse (kWh/month)"
+msgstr "Consumo de energía por empacadora (kWh/mes)"
+
+#: app/forms_wizard.py:70
+msgid "Do you have your own fields/orchards?"
+msgstr "¿Tiene campos/huertos propios?"
+
+#: app/forms_wizard.py:71
+msgid "Total Farm Size (hectares)"
+msgstr "Superficie total de la finca (hectáreas)"
+
+#: app/forms_wizard.py:72
+msgid "Number of Fields/Blocks"
+msgstr "Número de campos/bloques"
+
+#: app/forms_wizard.py:74
+msgid "Main Crops Grown"
+msgstr "Principales cultivos producidos"
+
+#: app/forms_wizard.py:90
+msgid "Irrigation Types Used"
+msgstr "Tipos de riego utilizados"
+
+#: app/forms_wizard.py:91
+msgid "Drip Irrigation"
+msgstr "Riego por goteo"
+
+#: app/forms_wizard.py:92
+msgid "Sprinkler"
+msgstr "Aspersión"
+
+#: app/forms_wizard.py:93
+msgid "Flood Irrigation"
+msgstr "Riego por inundación"
+
+#: app/forms_wizard.py:94
+msgid "Micro-Sprinkler"
+msgstr "Microaspersión"
+
+#: app/forms_wizard.py:95
+msgid "Rainfed Only"
+msgstr "Solo de secano"
+
+#: app/forms_wizard.py:100
+msgid "Do you have an environmental policy?"
+msgstr "¿Tiene una política ambiental?"
+
+#: app/forms_wizard.py:101
+msgid "Do you have a HACCP plan?"
+msgstr "¿Tiene un plan HACCP?"
+
+#: app/forms_wizard.py:102
+msgid "Do you have a documented spray/IPM program?"
+msgstr "¿Tiene un programa documentado de fumigación/MIP?"
+
+#: app/forms_wizard.py:104
+msgid "What is your water treatment method?"
+msgstr "¿Cuál es su método de tratamiento de agua?"
+
+#: app/forms_wizard.py:105
+msgid "Select Method"
+msgstr "Seleccionar método"
+
+#: app/forms_wizard.py:106
+msgid "Chlorination"
+msgstr "Cloración"
+
+#: app/forms_wizard.py:107
+msgid "UV Treatment"
+msgstr "Tratamiento UV"
+
+#: app/forms_wizard.py:108
+msgid "Ozone"
+msgstr "Ozono"
+
+#: app/forms_wizard.py:109
+msgid "Filtration Only"
+msgstr "Solo filtración"
+
+#: app/forms_wizard.py:110
+msgid "No Treatment"
+msgstr "Sin tratamiento"
+
+#: app/forms_wizard.py:114
+msgid "Do you have a waste management plan?"
+msgstr "¿Tiene un plan de gestión de residuos?"
+
+#: app/routes/auth.py:20
+msgid "Login successful!"
+msgstr "¡Inicio de sesión exitoso!"
+
+#: app/routes/auth.py:24
+msgid "Invalid email or password"
+msgstr "Correo electrónico o contraseña no válidos"
+
+#: app/routes/auth.py:26
+msgid "Please correct the errors below."
+msgstr "Por favor, corrija los errores a continuación."
+
+#: app/routes/auth.py:35
+msgid "You have been logged out."
+msgstr "Se ha cerrado su sesión."
+
+#: app/routes/dashboard.py:20
+msgid "Business type & audit scope"
+msgstr "Tipo de negocio y alcance de auditoría"
+
+#: app/routes/dashboard.py:21
+msgid "Packhouse details"
+msgstr "Detalles de la empacadora"
+
+#: app/routes/dashboard.py:22
+msgid "Farm & field details"
+msgstr "Detalles de la finca y campos"
+
+#: app/routes/dashboard.py:23
+msgid "Environment & compliance"
+msgstr "Medio ambiente y cumplimiento"
+
+#: app/routes/dashboard.py:24
+msgid "GLOBALG.A.P. analysis"
+msgstr "Análisis GLOBALG.A.P."
+
+#: app/routes/dashboard.py:25
+msgid "Policy generation"
+msgstr "Generación de políticas"
+
+#: app/routes/dashboard.py:26
+msgid "Review & complete"
+msgstr "Revisión y finalización"
+
+#: app/routes/dashboard.py:84
+#, python-format
+msgid "Complete Setup Wizard (currently on step %(step)d)"
+msgstr "Completar el asistente de configuración (actualmente en el paso %(step)d)"
+
+#: app/routes/dashboard.py:90
+msgid "Add your first grower"
+msgstr "Agregue su primer productor"
+
+#: app/routes/dashboard.py:96
+#, python-format
+msgid "Address %(count)d unreviewed control points"
+msgstr "Atender %(count)d puntos de control sin revisar"
+
+#: app/routes/dashboard.py:102
+#, python-format
+msgid "Resolve %(count)d non-compliant control points"
+msgstr "Resolver %(count)d puntos de control no conformes"
+
+#: app/routes/dashboard.py:108
+msgid "Import GLOBALG.A.P. control points checklist"
+msgstr "Importar lista de verificación de puntos de control GLOBALG.A.P."
+
+#: app/routes/main.py:8 app/templates/index.html:14
+msgid "FruitQMS is running locally"
+msgstr "FruitQMS se está ejecutando localmente"
+
+#: app/routes/setup.py:17 app/routes/setup.py:141 app/routes/setup.py:250
+msgid "You do not have permission to access this page."
+msgstr "No tiene permiso para acceder a esta página."
+
+#: app/routes/setup.py:40
+msgid "Packhouse settings updated successfully!"
+msgstr "¡Configuración de la empacadora actualizada con éxito!"
+
+#: app/routes/setup.py:50
+msgid "Grower/field added successfully!"
+msgstr "¡Productor/campo agregado con éxito!"
+
+#: app/routes/setup.py:146 app/routes/setup.py:255
+msgid "No organization found."
+msgstr "No se encontró ninguna organización."
+
+#: app/routes/setup.py:162
+msgid "No growers found. Please add growers first."
+msgstr "No se encontraron productores. Por favor, agregue productores primero."
+
+#: app/routes/setup.py:260
+msgid "No file uploaded."
+msgstr "No se cargó ningún archivo."
+
+#: app/routes/setup.py:265 app/routes/wizard.py:257 app/routes/wizard.py:262
+msgid "No file selected."
+msgstr "No se seleccionó ningún archivo."
+
+#: app/routes/setup.py:269
+msgid "Please upload a CSV file."
+msgstr "Por favor, cargue un archivo CSV."
+
+#: app/routes/setup.py:345
+#, python-format
+msgid ""
+"Processed %(processed)d records (%(created)d created, %(updated)d "
+"updated). %(errors)d errors occurred."
+msgstr ""
+"Se procesaron %(processed)d registros (%(created)d creados, %(updated)d "
+"actualizados). Ocurrieron %(errors)d errores."
+
+#: app/routes/setup.py:350
+#, python-format
+msgid "... and %(count)d more errors."
+msgstr "... y %(count)d errores más."
+
+#: app/routes/setup.py:352
+#, python-format
+msgid ""
+"Successfully processed %(processed)d records! (%(created)d created, "
+"%(updated)d updated)"
+msgstr ""
+"¡Se procesaron %(processed)d registros con éxito! (%(created)d creados, "
+"%(updated)d actualizados)"
+
+#: app/routes/setup.py:357
+#, python-format
+msgid "Error processing CSV file: %(error)s"
+msgstr "Error al procesar el archivo CSV: %(error)s"
+
+#: app/routes/wizard.py:49
+msgid "Business type and audit scope saved!"
+msgstr "¡Tipo de negocio y alcance de auditoría guardados!"
+
+#: app/routes/wizard.py:96
+msgid "Packhouse details saved!"
+msgstr "¡Detalles de la empacadora guardados!"
+
+#: app/routes/wizard.py:138
+msgid "Farm details saved!"
+msgstr "¡Detalles de la finca guardados!"
+
+#: app/routes/wizard.py:179
+msgid "Environmental details saved!"
+msgstr "¡Detalles ambientales guardados!"
+
+#: app/routes/wizard.py:268
+msgid "File type not allowed. Please upload PDF, Word, or Excel files."
+msgstr "Tipo de archivo no permitido. Por favor, cargue archivos PDF, Word o Excel."
+
+#: app/routes/wizard.py:293
+#, python-format
+msgid "Policy \"%(filename)s\" uploaded successfully."
+msgstr "Política \"%(filename)s\" cargada con éxito."
+
+#: app/routes/wizard.py:323
+msgid "Policy removed."
+msgstr "Política eliminada."
+
+#: app/routes/wizard.py:361
+msgid "Setup wizard completed successfully! Your organization has been created."
+msgstr "¡Asistente de configuración completado con éxito! Su organización ha sido creada."
+
+#: app/routes/wizard.py:365
+#, python-format
+msgid "Error completing setup: %(error)s"
+msgstr "Error al completar la configuración: %(error)s"
+
+#: app/routes/wizard.py:391
+#, python-format
+msgid "Error: PDF file not created for %(type)s"
+msgstr "Error: no se creó el archivo PDF para %(type)s"
+
+#: app/routes/wizard.py:401
+#, python-format
+msgid "Error generating policy PDF: %(error)s"
+msgstr "Error al generar el PDF de la política: %(error)s"
+
+#: app/routes/wizard.py:531 app/templates/setup/settings.html:136
+msgid "HACCP Plan"
+msgstr "Plan HACCP"
+
+#: app/routes/wizard.py:533
+msgid "Food safety management system required by GLOBALG.A.P."
+msgstr "Sistema de gestión de seguridad alimentaria requerido por GLOBALG.A.P."
+
+#: app/routes/wizard.py:539
+msgid "Spray/IPM Program"
+msgstr "Programa de fumigación/MIP"
+
+#: app/routes/wizard.py:541
+msgid "Integrated Pest Management and spray application records"
+msgstr "Registros de Manejo Integrado de Plagas y aplicación de fumigaciones"
+
+#: app/routes/wizard.py:547
+msgid "Environmental Policy"
+msgstr "Política ambiental"
+
+#: app/routes/wizard.py:549
+msgid "Site management and conservation policy"
+msgstr "Política de gestión del sitio y conservación"
+
+#: app/routes/wizard.py:555
+msgid "Waste Management Plan"
+msgstr "Plan de gestión de residuos"
+
+#: app/routes/wizard.py:557
+msgid "Waste handling and disposal procedures"
+msgstr "Procedimientos de manejo y eliminación de residuos"
+
+#: app/routes/wizard.py:563
+msgid "Worker Training Log"
+msgstr "Registro de capacitación de trabajadores"
+
+#: app/routes/wizard.py:565
+msgid "Template for documenting worker training"
+msgstr "Plantilla para documentar la capacitación de trabajadores"
+
+#: app/routes/wizard.py:570
+msgid "Traceability Template"
+msgstr "Plantilla de trazabilidad"
+
+#: app/routes/wizard.py:572
+msgid "Product traceability system template"
+msgstr "Plantilla del sistema de trazabilidad del producto"
+
+#: app/templates/base.html:56 app/templates/index.html:3
+msgid "Home"
+msgstr "Inicio"
+
+#: app/templates/base.html:60 app/templates/dashboard/dashboard.html:3
+#: app/templates/dashboard/dashboard.html:33
+#: app/templates/dashboard/index.html:3
+msgid "Dashboard"
+msgstr "Panel de control"
+
+#: app/templates/base.html:64 app/templates/dashboard/dashboard.html:50
+#: app/templates/dashboard/dashboard.html:240
+#: app/templates/setup/settings.html:3
+msgid "Settings"
+msgstr "Configuración"
+
+#: app/templates/base.html:72
+msgid "Profile"
+msgstr "Perfil"
+
+#: app/templates/base.html:74
+msgid "Logout"
+msgstr "Cerrar sesión"
+
+#: app/templates/auth/login.html:3 app/templates/auth/login.html:46
+#: app/templates/base.html:79
+msgid "Login"
+msgstr "Iniciar sesión"
+
+#: app/templates/base.html:126
+msgid "Aligned"
+msgstr "Alineado"
+
+#: app/templates/index.html:11
+msgid "Paperless Quality Management System for Fruit Growers & Packhouses"
+msgstr "Sistema de gestión de calidad sin papel para productores de fruta y empacadoras"
+
+#: app/templates/index.html:14
+msgid "System Status:"
+msgstr "Estado del sistema:"
+
+#: app/templates/index.html:20
+msgid "Go to Dashboard"
+msgstr "Ir al panel de control"
+
+#: app/templates/index.html:26
+msgid "Login to Get Started"
+msgstr "Inicie sesión para comenzar"
+
+#: app/templates/index.html:35
+msgid "Standards Supported"
+msgstr "Normas compatibles"
+
+#: app/templates/index.html:47
+msgid "Features"
+msgstr "Funcionalidades"
+
+#: app/templates/index.html:49
+msgid "User authentication & role-based access"
+msgstr "Autenticación de usuarios y acceso basado en roles"
+
+#: app/templates/index.html:50
+msgid "Packhouse setup & configuration"
+msgstr "Configuración de la empacadora"
+
+#: app/templates/index.html:51
+msgid "Grower & field management"
+msgstr "Gestión de productores y campos"
+
+#: app/templates/index.html:52
+msgid "GLOBALG.A.P. IFA v6.0 checklist"
+msgstr "Lista de verificación GLOBALG.A.P. IFA v6.0"
+
+#: app/templates/index.html:53
+msgid "CSV import/export"
+msgstr "Importación/exportación CSV"
+
+#: app/templates/index.html:54
+msgid "Scheme overlap tracking"
+msgstr "Seguimiento de superposición de esquemas"
+
+#: app/templates/index.html:55
+msgid "Mobile-responsive design"
+msgstr "Diseño adaptable a dispositivos móviles"
+
+#: app/templates/auth/login.html:10
+msgid "Login to FruitQMS"
+msgstr "Iniciar sesión en FruitQMS"
+
+#: app/templates/auth/login.html:13
+msgid "Demo Account:"
+msgstr "Cuenta de demostración:"
+
+#: app/templates/auth/login.html:14
+msgid "Email:"
+msgstr "Correo electrónico:"
+
+#: app/templates/auth/login.html:15
+msgid "Password:"
+msgstr "Contraseña:"
+
+#: app/templates/auth/login.html:53
+msgid "GLOBALG.A.P. IFA v6.0 Compliant"
+msgstr "Conforme con GLOBALG.A.P. IFA v6.0"
+
+#: app/templates/dashboard/dashboard.html:38
+msgid "No organisation set up yet"
+msgstr "Aún no se ha configurado una organización"
+
+#: app/templates/dashboard/dashboard.html:46
+msgid "Continue Setup"
+msgstr "Continuar configuración"
+
+#: app/templates/dashboard/dashboard.html:62
+msgid "Setup Steps"
+msgstr "Pasos de configuración"
+
+#: app/templates/dashboard/dashboard.html:70
+msgid "Growers"
+msgstr "Productores"
+
+#: app/templates/dashboard/dashboard.html:80
+msgid "Compliance"
+msgstr "Cumplimiento"
+
+#: app/templates/dashboard/dashboard.html:94
+msgid "Control Points Done"
+msgstr "Puntos de control completados"
+
+#: app/templates/dashboard/dashboard.html:110
+msgid "Action Required"
+msgstr "Acción requerida"
+
+#: app/templates/dashboard/dashboard.html:129
+msgid "Setup Progress"
+msgstr "Progreso de configuración"
+
+#: app/templates/dashboard/dashboard.html:145
+#, python-format
+msgid "Continue from Step %(step)s"
+msgstr "Continuar desde el paso %(step)s"
+
+#: app/templates/dashboard/dashboard.html:156
+msgid "Outstanding Control Points"
+msgstr "Puntos de control pendientes"
+
+#: app/templates/dashboard/dashboard.html:158
+msgid "View All"
+msgstr "Ver todos"
+
+#: app/templates/dashboard/dashboard.html:163
+#: app/templates/setup/settings.html:326
+msgid "Major Must"
+msgstr "Obligación mayor"
+
+#: app/templates/dashboard/dashboard.html:169
+msgid "Major"
+msgstr "Mayor"
+
+#: app/templates/dashboard/dashboard.html:172
+#: app/templates/dashboard/dashboard.html:189
+msgid "Not reviewed"
+msgstr "Sin revisar"
+
+#: app/templates/dashboard/dashboard.html:181
+msgid "Minor Must & Recommendations"
+msgstr "Obligaciones menores y recomendaciones"
+
+#: app/templates/dashboard/dashboard.html:196
+#, python-format
+msgid "... and %(count)s more"
+msgstr "... y %(count)s más"
+
+#: app/templates/dashboard/dashboard.html:212
+msgid "Recently Completed"
+msgstr "Completados recientemente"
+
+#: app/templates/dashboard/dashboard.html:229
+msgid "Quick Links"
+msgstr "Accesos rápidos"
+
+#: app/templates/dashboard/dashboard.html:235
+msgid "Continue Setup Wizard"
+msgstr "Continuar asistente de configuración"
+
+#: app/templates/dashboard/dashboard.html:243
+#: app/templates/dashboard/index.html:34
+msgid "GLOBALG.A.P. Checklist"
+msgstr "Lista de verificación GLOBALG.A.P."
+
+#: app/templates/dashboard/dashboard.html:246
+#: app/templates/dashboard/index.html:47
+msgid "Manage Growers"
+msgstr "Gestionar productores"
+
+#: app/templates/dashboard/dashboard.html:256
+#: app/templates/dashboard/index.html:69
+msgid "Supported Standards"
+msgstr "Normas compatibles"
+
+#: app/templates/dashboard/dashboard.html:287
+msgid "Geographic Overview"
+msgstr "Resumen geográfico"
+
+#: app/templates/dashboard/index.html:8
+#, python-format
+msgid "Welcome, %(name)s!"
+msgstr "¡Bienvenido/a, %(name)s!"
+
+#: app/templates/dashboard/index.html:9
+msgid "Role:"
+msgstr "Rol:"
+
+#: app/templates/dashboard/index.html:19
+msgid "Setup & Settings"
+msgstr "Configuración y ajustes"
+
+#: app/templates/dashboard/index.html:20
+msgid "Configure packhouse, growers, and GLOBALG.A.P. compliance"
+msgstr "Configurar empacadora, productores y cumplimiento GLOBALG.A.P."
+
+#: app/templates/dashboard/index.html:22
+msgid "Go to Settings"
+msgstr "Ir a configuración"
+
+#: app/templates/dashboard/index.html:24
+msgid "View Only"
+msgstr "Solo lectura"
+
+#: app/templates/dashboard/index.html:35
+msgid "Track compliance across IFA v6.0 control points"
+msgstr "Seguimiento de cumplimiento de los puntos de control IFA v6.0"
+
+#: app/templates/dashboard/index.html:36
+msgid "View Checklist"
+msgstr "Ver lista de verificación"
+
+#: app/templates/dashboard/index.html:45 app/templates/setup/settings.html:22
+msgid "Growers & Fields"
+msgstr "Productores y campos"
+
+#: app/templates/dashboard/index.html:46
+msgid "Manage grower database and field records"
+msgstr "Gestionar la base de datos de productores y registros de campos"
+
+#: app/templates/dashboard/index.html:56
+msgid "System Status"
+msgstr "Estado del sistema"
+
+#: app/templates/dashboard/index.html:58
+msgid "Organization:"
+msgstr "Organización:"
+
+#: app/templates/dashboard/index.html:58
+msgid "Not Set"
+msgstr "No configurado"
+
+#: app/templates/dashboard/index.html:59
+msgid "Type:"
+msgstr "Tipo:"
+
+#: app/templates/dashboard/index.html:59 app/templates/setup/settings.html:301
+#: app/templates/setup/settings.html:302 app/templates/setup/settings.html:406
+#: app/templates/setup/settings.html:544
+msgid "N/A"
+msgstr "N/D"
+
+#: app/templates/setup/settings.html:6
+msgid "System Settings & Setup"
+msgstr "Configuración del sistema"
+
+#: app/templates/setup/settings.html:9
+msgid "Transitioning from paper?"
+msgstr "¿Está en transición desde el papel?"
+
+#: app/templates/setup/settings.html:10
+msgid ""
+"Upload scanned forms below – system will pre-fill CSV where possible (OCR"
+" phase 2 coming soon)"
+msgstr ""
+"Cargue formularios escaneados a continuación – el sistema completará el CSV"
+" automáticamente donde sea posible (OCR fase 2 próximamente)"
+
+#: app/templates/setup/settings.html:17
+msgid "Packhouse Setup"
+msgstr "Configuración de empacadora"
+
+#: app/templates/setup/settings.html:32
+msgid "Grower Checklists"
+msgstr "Listas de verificación de productores"
+
+#: app/templates/setup/settings.html:44
+msgid "Packhouse Configuration"
+msgstr "Configuración de la empacadora"
+
+#: app/templates/setup/settings.html:51
+msgid "Basic Information"
+msgstr "Información básica"
+
+#: app/templates/setup/settings.html:65
+msgid "Document local regulations and compliance notes"
+msgstr "Documente regulaciones locales y notas de cumplimiento"
+
+#: app/templates/setup/settings.html:70
+msgid "Operations"
+msgstr "Operaciones"
+
+#: app/templates/setup/settings.html:114
+msgid "Protocols & Documentation"
+msgstr "Protocolos y documentación"
+
+#: app/templates/setup/settings.html:130
+msgid "File Uploads"
+msgstr "Carga de archivos"
+
+#: app/templates/setup/settings.html:132
+msgid ""
+"Upload HACCP plans, quality control checklists, and scanned legacy "
+"documents"
+msgstr ""
+"Cargue planes HACCP, listas de verificación de control de calidad y "
+"documentos heredados escaneados"
+
+#: app/templates/setup/settings.html:140
+msgid "Quality Control Checklist"
+msgstr "Lista de verificación de control de calidad"
+
+#: app/templates/setup/settings.html:146
+msgid "Legacy Paper Scans (for OCR processing)"
+msgstr "Escaneos de documentos en papel (para procesamiento OCR)"
+
+#: app/templates/setup/settings.html:148
+msgid "Upload scanned paper forms for automated data extraction (coming soon)"
+msgstr "Cargue formularios en papel escaneados para extracción automática de datos (próximamente)"
+
+#: app/templates/setup/settings.html:152
+msgid "Save Packhouse Settings"
+msgstr "Guardar configuración de la empacadora"
+
+#: app/templates/setup/settings.html:163
+msgid "Growers & Fields Management"
+msgstr "Gestión de productores y campos"
+
+#: app/templates/setup/settings.html:168
+msgid "Download Grower/Field CSV Template"
+msgstr "Descargar plantilla CSV de productores/campos"
+
+#: app/templates/setup/settings.html:171
+msgid "Upload Grower/Field CSV"
+msgstr "Cargar CSV de productores/campos"
+
+#: app/templates/setup/settings.html:177
+msgid "Add New Grower/Field"
+msgstr "Agregar nuevo productor/campo"
+
+#: app/templates/setup/settings.html:216
+msgid "Additional Details (Optional)"
+msgstr "Detalles adicionales (opcional)"
+
+#: app/templates/setup/settings.html:262
+msgid "Describe delicate environments"
+msgstr "Describa los ambientes delicados"
+
+#: app/templates/setup/settings.html:270
+msgid "Add Grower/Field"
+msgstr "Agregar productor/campo"
+
+#: app/templates/setup/settings.html:280
+msgid "Existing Growers/Fields"
+msgstr "Productores/campos existentes"
+
+#: app/templates/setup/settings.html:287
+msgid "Code"
+msgstr "Código"
+
+#: app/templates/setup/settings.html:288
+msgid "Grower Name"
+msgstr "Nombre del productor"
+
+#: app/templates/setup/settings.html:289
+msgid "Field Name"
+msgstr "Nombre del campo"
+
+#: app/templates/setup/settings.html:290
+msgid "Size (ha)"
+msgstr "Superficie (ha)"
+
+#: app/templates/setup/settings.html:292
+msgid "Actions"
+msgstr "Acciones"
+
+#: app/templates/setup/settings.html:304
+msgid "View"
+msgstr "Ver"
+
+#: app/templates/setup/settings.html:305
+msgid "Delete"
+msgstr "Eliminar"
+
+#: app/templates/setup/settings.html:321
+msgid "GLOBALG.A.P. IFA v6.0 Checklist"
+msgstr "Lista de verificación GLOBALG.A.P. IFA v6.0"
+
+#: app/templates/setup/settings.html:325
+msgid "Legend:"
+msgstr "Leyenda:"
+
+#: app/templates/setup/settings.html:326
+msgid "Suspension risk"
+msgstr "Riesgo de suspensión"
+
+#: app/templates/setup/settings.html:327
+msgid "Minor Must"
+msgstr "Obligación menor"
+
+#: app/templates/setup/settings.html:327
+msgid "Required"
+msgstr "Obligatorio"
+
+#: app/templates/setup/settings.html:328
+msgid "Recommendation"
+msgstr "Recomendación"
+
+#: app/templates/setup/settings.html:328
+msgid "Best practice"
+msgstr "Buena práctica"
+
+#: app/templates/setup/settings.html:333
+msgid "Download Compliance CSV Template"
+msgstr "Descargar plantilla CSV de cumplimiento"
+
+#: app/templates/setup/settings.html:336
+msgid "Upload Compliance CSV"
+msgstr "Cargar CSV de cumplimiento"
+
+#: app/templates/setup/settings.html:368
+msgid "Overlap"
+msgstr "Superposición"
+
+#: app/templates/setup/settings.html:375
+msgid "Full Details"
+msgstr "Detalles completos"
+
+#: app/templates/setup/settings.html:382
+msgid "Control Point:"
+msgstr "Punto de control:"
+
+#: app/templates/setup/settings.html:389
+msgid "Compliance Criteria:"
+msgstr "Criterios de cumplimiento:"
+
+#: app/templates/setup/settings.html:401
+msgid "Status:"
+msgstr "Estado:"
+
+#: app/templates/setup/settings.html:403
+msgid "Select"
+msgstr "Seleccionar"
+
+#: app/templates/setup/settings.html:404 app/templates/setup/settings.html:540
+msgid "Compliant"
+msgstr "Conforme"
+
+#: app/templates/setup/settings.html:405 app/templates/setup/settings.html:542
+msgid "Non-compliant"
+msgstr "No conforme"
+
+#: app/templates/setup/settings.html:410
+msgid "Evidence:"
+msgstr "Evidencia:"
+
+#: app/templates/setup/settings.html:418
+msgid "Implementation Notes:"
+msgstr "Notas de implementación:"
+
+#: app/templates/setup/settings.html:419
+msgid "Describe how you meet this requirement..."
+msgstr "Describa cómo cumple con este requisito..."
+
+#: app/templates/setup/settings.html:422
+msgid "Save"
+msgstr "Guardar"
+
+#: app/templates/setup/settings.html:437
+msgid "Save All Compliance Updates"
+msgstr "Guardar todas las actualizaciones de cumplimiento"
+
+#: app/templates/setup/settings.html:448
+msgid "Grower Checklists Management"
+msgstr "Gestión de listas de verificación de productores"
+
+#: app/templates/setup/settings.html:448 app/templates/wizard/wizard.html:162
+msgid "Multi-Site"
+msgstr "Multisitio"
+
+#: app/templates/setup/settings.html:452
+msgid "SMART Multi-Site Audit Scope"
+msgstr "Alcance de auditoría SMART multisitio"
+
+#: app/templates/setup/settings.html:453
+msgid ""
+"For operations with multiple contract growers, each grower must have "
+"their own checklist for field-level control points."
+msgstr ""
+"Para operaciones con múltiples productores contratados, cada productor debe tener "
+"su propia lista de verificación para los puntos de control a nivel de campo."
+
+#: app/templates/setup/settings.html:454
+msgid "Use the CSV template to manage multiple grower checklists efficiently."
+msgstr "Utilice la plantilla CSV para gestionar eficientemente las listas de verificación de múltiples productores."
+
+#: app/templates/setup/settings.html:459
+msgid "Bulk Grower Checklist Management"
+msgstr "Gestión masiva de listas de verificación de productores"
+
+#: app/templates/setup/settings.html:463
+msgid "Download Grower Checklist CSV Template"
+msgstr "Descargar plantilla CSV de lista de verificación de productores"
+
+#: app/templates/setup/settings.html:466
+msgid ""
+"Template includes all grower-applicable control points (FV 26, 28, 29, "
+"30, 31, 32) for all your growers."
+msgstr ""
+"La plantilla incluye todos los puntos de control aplicables a productores (FV 26, 28, 29, "
+"30, 31, 32) para todos sus productores."
+
+#: app/templates/setup/settings.html:476
+msgid "Upload Completed Checklist CSV"
+msgstr "Cargar CSV de lista de verificación completada"
+
+#: app/templates/setup/settings.html:480
+msgid ""
+"Upload CSV to create/update individual grower checklists in bulk. "
+"Supports common responses across growers."
+msgstr ""
+"Cargue un CSV para crear/actualizar listas de verificación individuales de productores de forma masiva. "
+"Admite respuestas comunes entre productores."
+
+#: app/templates/setup/settings.html:489
+msgid "Individual Grower Checklists"
+msgstr "Listas de verificación individuales de productores"
+
+#: app/templates/setup/settings.html:492
+msgid "Select a grower to view their field-level compliance checklist:"
+msgstr "Seleccione un productor para ver su lista de verificación de cumplimiento a nivel de campo:"
+
+#: app/templates/setup/settings.html:513
+msgid "Control Point"
+msgstr "Punto de control"
+
+#: app/templates/setup/settings.html:514
+msgid "Criticality"
+msgstr "Criticidad"
+
+#: app/templates/setup/settings.html:515
+msgid "Description"
+msgstr "Descripción"
+
+#: app/templates/setup/settings.html:516
+msgid "Status"
+msgstr "Estado"
+
+#: app/templates/setup/settings.html:517
+msgid "Evidence"
+msgstr "Evidencia"
+
+#: app/templates/setup/settings.html:518
+msgid "Common?"
+msgstr "¿Común?"
+
+#: app/templates/setup/settings.html:519
+msgid "Updated"
+msgstr "Actualizado"
+
+#: app/templates/setup/settings.html:550
+#: app/templates/wizard/step7_review.html:40
+#: app/templates/wizard/step7_review.html:65
+#: app/templates/wizard/step7_review.html:114
+#: app/templates/wizard/step7_review.html:115
+#: app/templates/wizard/step7_review.html:116
+#: app/templates/wizard/step7_review.html:117
+msgid "Yes"
+msgstr "Sí"
+
+#: app/templates/setup/settings.html:552
+#: app/templates/wizard/step7_review.html:114
+#: app/templates/wizard/step7_review.html:115
+#: app/templates/wizard/step7_review.html:116
+#: app/templates/wizard/step7_review.html:117
+msgid "No"
+msgstr "No"
+
+#: app/templates/setup/settings.html:562
+msgid "No checklist data for this grower yet."
+msgstr "Aún no hay datos de lista de verificación para este productor."
+
+#: app/templates/setup/settings.html:563
+msgid ""
+"Download the CSV template above, fill it in, and upload to create their "
+"checklist."
+msgstr ""
+"Descargue la plantilla CSV anterior, complétela y cárguela para crear su "
+"lista de verificación."
+
+#: app/templates/setup/settings.html:573
+msgid "No growers found."
+msgstr "No se encontraron productores."
+
+#: app/templates/setup/settings.html:574
+msgid ""
+"Please add growers in the \"Growers & Fields\" tab first, then return "
+"here to manage their checklists."
+msgstr ""
+"Por favor, agregue productores en la pestaña \"Productores y campos\" primero, luego regrese "
+"aquí para gestionar sus listas de verificación."
+
+#: app/templates/setup/settings.html:580
+msgid "Grower-Applicable Control Points (90 points):"
+msgstr "Puntos de control aplicables a productores (90 puntos):"
+
+#: app/templates/setup/settings.html:583
+msgid "Plant Propagation"
+msgstr "Propagación de plantas"
+
+#: app/templates/setup/settings.html:583 app/templates/setup/settings.html:584
+#: app/templates/setup/settings.html:585 app/templates/setup/settings.html:586
+#: app/templates/setup/settings.html:587 app/templates/setup/settings.html:588
+#, python-format
+msgid "%(count)s points"
+msgstr "%(count)s puntos"
+
+#: app/templates/setup/settings.html:584
+msgid "Soil Management"
+msgstr "Gestión del suelo"
+
+#: app/templates/setup/settings.html:585
+msgid "Fertilizers"
+msgstr "Fertilizantes"
+
+#: app/templates/setup/settings.html:586
+msgid "Water Management"
+msgstr "Gestión del agua"
+
+#: app/templates/setup/settings.html:587
+msgid "Integrated Pest Management"
+msgstr "Manejo Integrado de Plagas"
+
+#: app/templates/setup/settings.html:588
+msgid "Plant Protection Products"
+msgstr "Productos fitosanitarios"
+
+#: app/templates/wizard/_progress.html:2 app/templates/wizard/wizard.html:102
+msgid "Business Type"
+msgstr "Tipo de negocio"
+
+#: app/templates/wizard/_progress.html:3 app/templates/wizard/wizard.html:103
+msgid "Packhouse"
+msgstr "Empacadora"
+
+#: app/templates/wizard/_progress.html:4 app/templates/wizard/wizard.html:104
+msgid "Farm & Fields"
+msgstr "Finca y campos"
+
+#: app/templates/wizard/_progress.html:5 app/templates/wizard/wizard.html:105
+msgid "Environment"
+msgstr "Medio ambiente"
+
+#: app/templates/wizard/_progress.html:6 app/templates/wizard/wizard.html:106
+msgid "Analysis"
+msgstr "Análisis"
+
+#: app/templates/wizard/_progress.html:7 app/templates/wizard/wizard.html:107
+msgid "Policies"
+msgstr "Políticas"
+
+#: app/templates/wizard/_progress.html:8 app/templates/wizard/wizard.html:108
+msgid "Review"
+msgstr "Revisión"
+
+#: app/templates/wizard/_progress.html:85 app/templates/wizard/wizard.html:3
+#: app/templates/wizard/wizard.html:130
+msgid "Setup Wizard"
+msgstr "Asistente de configuración"
+
+#: app/templates/wizard/_progress.html:86
+#: app/templates/wizard/step5_analysis.html:3
+#: app/templates/wizard/wizard.html:3 app/templates/wizard/wizard.html:131
+#, python-format
+msgid "Step %(step)s of %(total)s"
+msgstr "Paso %(step)s de %(total)s"
+
+#: app/templates/wizard/step5_analysis.html:3
+msgid "GLOBALG.A.P. Analysis"
+msgstr "Análisis GLOBALG.A.P."
+
+#: app/templates/wizard/step5_analysis.html:11
+msgid ""
+"Based on your setup information, we've analysed which GLOBALG.A.P. "
+"control points apply to your operation."
+msgstr ""
+"Con base en la información de su configuración, hemos analizado qué puntos de control "
+"GLOBALG.A.P. se aplican a su operación."
+
+#: app/templates/wizard/step5_analysis.html:20
+msgid "Applicable Points"
+msgstr "Puntos aplicables"
+
+#: app/templates/wizard/step5_analysis.html:28
+msgid "Review Required"
+msgstr "Revisión requerida"
+
+#: app/templates/wizard/step5_analysis.html:36
+msgid "Not Applicable"
+msgstr "No aplicable"
+
+#: app/templates/wizard/step5_analysis.html:45
+msgid "Applicable Control Points"
+msgstr "Puntos de control aplicables"
+
+#: app/templates/wizard/step5_analysis.html:70
+msgid "Needs Review"
+msgstr "Requiere revisión"
+
+#: app/templates/wizard/step5_analysis.html:91
+#: app/templates/wizard/step6_policies.html:80
+#: app/templates/wizard/step7_review.html:141
+#: app/templates/wizard/wizard.html:239
+msgid "Previous"
+msgstr "Anterior"
+
+#: app/templates/wizard/step5_analysis.html:95
+msgid "Continue"
+msgstr "Continuar"
+
+#: app/templates/wizard/step5_analysis.html:97
+msgid "Next: Policy & Document Generation"
+msgstr "Siguiente: Generación de políticas y documentos"
+
+#: app/templates/wizard/step6_policies.html:3
+msgid "Policy Generation"
+msgstr "Generación de políticas"
+
+#: app/templates/wizard/step6_policies.html:3
+#, python-format
+msgid "Step 6 of %(total)s"
+msgstr "Paso 6 de %(total)s"
+
+#: app/templates/wizard/step6_policies.html:11
+msgid ""
+"Based on your operation, we've identified the policies below. You can "
+"<strong>download a pre-filled template</strong> or <strong>upload your "
+"own existing policy</strong> for each."
+msgstr ""
+"Con base en su operación, hemos identificado las políticas a continuación. Puede "
+"<strong>descargar una plantilla prellenada</strong> o <strong>cargar su "
+"propia política existente</strong> para cada una."
+
+#: app/templates/wizard/step6_policies.html:22
+msgid "High Priority"
+msgstr "Prioridad alta"
+
+#: app/templates/wizard/step6_policies.html:24
+msgid "Medium Priority"
+msgstr "Prioridad media"
+
+#: app/templates/wizard/step6_policies.html:26
+msgid "Optional"
+msgstr "Opcional"
+
+#: app/templates/wizard/step6_policies.html:33
+msgid "Download Template"
+msgstr "Descargar plantilla"
+
+#: app/templates/wizard/step6_policies.html:41
+msgid "Uploaded:"
+msgstr "Cargado:"
+
+#: app/templates/wizard/step6_policies.html:45
+msgid "Remove"
+msgstr "Eliminar"
+
+#: app/templates/wizard/step6_policies.html:56
+msgid "Upload"
+msgstr "Cargar"
+
+#: app/templates/wizard/step6_policies.html:59
+msgid "PDF, Word, or Excel — max 16MB"
+msgstr "PDF, Word o Excel — máximo 16MB"
+
+#: app/templates/wizard/step6_policies.html:69
+msgid "Tips:"
+msgstr "Consejos:"
+
+#: app/templates/wizard/step6_policies.html:71
+msgid ""
+"Download a template to see what's expected, then customise it for your "
+"operation"
+msgstr ""
+"Descargue una plantilla para ver lo que se espera, luego personalícela para su "
+"operación"
+
+#: app/templates/wizard/step6_policies.html:72
+msgid ""
+"If you already have policies in place, upload them directly — you can "
+"always update later"
+msgstr ""
+"Si ya tiene políticas vigentes, cárguelas directamente — siempre puede "
+"actualizarlas más adelante"
+
+#: app/templates/wizard/step6_policies.html:73
+msgid "Have policies reviewed and signed by management before your audit"
+msgstr "Haga que la gerencia revise y firme las políticas antes de su auditoría"
+
+#: app/templates/wizard/step6_policies.html:74
+msgid ""
+"You can return to this step from Settings to upload or replace policies "
+"at any time"
+msgstr ""
+"Puede regresar a este paso desde Configuración para cargar o reemplazar políticas "
+"en cualquier momento"
+
+#: app/templates/wizard/step6_policies.html:84
+msgid "Review & Complete Setup"
+msgstr "Revisar y completar configuración"
+
+#: app/templates/wizard/step6_policies.html:86
+msgid "Final Step: Review & confirm your setup"
+msgstr "Paso final: Revise y confirme su configuración"
+
+#: app/templates/wizard/step7_review.html:3
+msgid "Review & Complete"
+msgstr "Revisar y completar"
+
+#: app/templates/wizard/step7_review.html:3
+#, python-format
+msgid "Step 7 of %(total)s"
+msgstr "Paso 7 de %(total)s"
+
+#: app/templates/wizard/step7_review.html:11
+msgid "Almost done! Review your information below and complete the setup."
+msgstr "¡Casi listo! Revise su información a continuación y complete la configuración."
+
+#: app/templates/wizard/step7_review.html:17
+msgid "Business Information"
+msgstr "Información del negocio"
+
+#: app/templates/wizard/step7_review.html:22
+msgid "Business Type:"
+msgstr "Tipo de negocio:"
+
+#: app/templates/wizard/step7_review.html:24
+msgid "Grower/Farm Only"
+msgstr "Solo productor/finca"
+
+#: app/templates/wizard/step7_review.html:37
+msgid "Audit Scope:"
+msgstr "Alcance de auditoría:"
+
+#: app/templates/wizard/step7_review.html:37
+msgid "Not set"
+msgstr "No configurado"
+
+#: app/templates/wizard/step7_review.html:38
+msgid "GGN Number:"
+msgstr "Número GGN:"
+
+#: app/templates/wizard/step7_review.html:38
+msgid "Not provided"
+msgstr "No proporcionado"
+
+#: app/templates/wizard/step7_review.html:40
+msgid "Contract Growers:"
+msgstr "Productores contratados:"
+
+#: app/templates/wizard/step7_review.html:45
+msgid "Packhouse Name:"
+msgstr "Nombre de la empacadora:"
+
+#: app/templates/wizard/step7_review.html:46
+msgid "Country:"
+msgstr "País:"
+
+#: app/templates/wizard/step7_review.html:56
+msgid "Operations Summary"
+msgstr "Resumen de operaciones"
+
+#: app/templates/wizard/step7_review.html:62
+msgid "Packhouses:"
+msgstr "Empacadoras:"
+
+#: app/templates/wizard/step7_review.html:65
+msgid "Own Fields:"
+msgstr "Campos propios:"
+
+#: app/templates/wizard/step7_review.html:65
+msgid "hectares"
+msgstr "hectáreas"
+
+#: app/templates/wizard/step7_review.html:70
+msgid "Water Usage:"
+msgstr "Consumo de agua:"
+
+#: app/templates/wizard/step7_review.html:70
+msgid "m³/day per packhouse"
+msgstr "m³/día por empacadora"
+
+#: app/templates/wizard/step7_review.html:73
+msgid "Energy Usage:"
+msgstr "Consumo de energía:"
+
+#: app/templates/wizard/step7_review.html:73
+msgid "kWh/month per packhouse"
+msgstr "kWh/mes por empacadora"
+
+#: app/templates/wizard/step7_review.html:85
+msgid "Uploaded Policies"
+msgstr "Políticas cargadas"
+
+#: app/templates/wizard/step7_review.html:102
+msgid "GLOBALG.A.P. Compliance Status"
+msgstr "Estado de cumplimiento GLOBALG.A.P."
+
+#: app/templates/wizard/step7_review.html:106
+msgid "Applicable Control Points:"
+msgstr "Puntos de control aplicables:"
+
+#: app/templates/wizard/step7_review.html:107
+msgid "Review Required:"
+msgstr "Revisión requerida:"
+
+#: app/templates/wizard/step7_review.html:108
+msgid "Not Applicable:"
+msgstr "No aplicable:"
+
+#: app/templates/wizard/step7_review.html:112
+msgid "Existing Policies:"
+msgstr "Políticas existentes:"
+
+#: app/templates/wizard/step7_review.html:114
+msgid "HACCP Plan:"
+msgstr "Plan HACCP:"
+
+#: app/templates/wizard/step7_review.html:115
+msgid "Spray/IPM Program:"
+msgstr "Programa de fumigación/MIP:"
+
+#: app/templates/wizard/step7_review.html:116
+msgid "Environmental Policy:"
+msgstr "Política ambiental:"
+
+#: app/templates/wizard/step7_review.html:117
+msgid "Waste Management:"
+msgstr "Gestión de residuos:"
+
+#: app/templates/wizard/step7_review.html:126
+msgid "Ready to Complete"
+msgstr "Listo para completar"
+
+#: app/templates/wizard/step7_review.html:127
+msgid ""
+"By completing this wizard, your organisation profile will be created and "
+"you'll have access to all FruitQMS features."
+msgstr ""
+"Al completar este asistente, se creará el perfil de su organización y "
+"tendrá acceso a todas las funcionalidades de FruitQMS."
+
+#: app/templates/wizard/step7_review.html:128
+msgid "You can update any of these details later from the Settings page."
+msgstr "Puede actualizar cualquiera de estos detalles más adelante desde la página de Configuración."
+
+#: app/templates/wizard/step7_review.html:133
+msgid "Complete Setup & Create Organisation"
+msgstr "Completar configuración y crear organización"
+
+#: app/templates/wizard/wizard.html:112
+msgid ""
+"This determines your operation profile and which GLOBALG.A.P. checklist "
+"structure applies to you."
+msgstr ""
+"Esto determina el perfil de su operación y qué estructura de lista de verificación "
+"GLOBALG.A.P. se aplica a usted."
+
+#: app/templates/wizard/wizard.html:113
+msgid ""
+"Your packhouse details help us identify which facility-related control "
+"points apply and pre-fill compliance documents."
+msgstr ""
+"Los detalles de su empacadora nos ayudan a identificar qué puntos de control "
+"relacionados con la instalación se aplican y a prellenar documentos de cumplimiento."
+
+#: app/templates/wizard/wizard.html:114
+msgid ""
+"Field and crop information determines which agricultural control points "
+"are relevant to your operation."
+msgstr ""
+"La información de campos y cultivos determina qué puntos de control agrícolas "
+"son relevantes para su operación."
+
+#: app/templates/wizard/wizard.html:115
+msgid ""
+"Existing policies and environmental practices determine which documents "
+"you still need to prepare for certification."
+msgstr ""
+"Las políticas existentes y las prácticas ambientales determinan qué documentos "
+"aún necesita preparar para la certificación."
+
+#: app/templates/wizard/wizard.html:119 app/templates/wizard/wizard.html:166
+msgid "Packhouse Details"
+msgstr "Detalles de la empacadora"
+
+#: app/templates/wizard/wizard.html:119 app/templates/wizard/wizard.html:120
+#: app/templates/wizard/wizard.html:169
+msgid "Farm & Field Details"
+msgstr "Detalles de la finca y campos"
+
+#: app/templates/wizard/wizard.html:121 app/templates/wizard/wizard.html:172
+msgid "Environment & Compliance"
+msgstr "Medio ambiente y cumplimiento"
+
+#: app/templates/wizard/wizard.html:122
+msgid "GLOBALG.A.P. Analysis (auto-generated)"
+msgstr "Análisis GLOBALG.A.P. (generado automáticamente)"
+
+#: app/templates/wizard/wizard.html:156
+msgid "Business Type & Audit Scope"
+msgstr "Tipo de negocio y alcance de auditoría"
+
+#: app/templates/wizard/wizard.html:159
+msgid "Audit Scope Explained:"
+msgstr "Alcance de auditoría explicado:"
+
+#: app/templates/wizard/wizard.html:161
+msgid "Individual Producer"
+msgstr "Productor individual"
+
+#: app/templates/wizard/wizard.html:161
+msgid "Single grower OR single packhouse with one unified checklist."
+msgstr "Un solo productor O una sola empacadora con una lista de verificación unificada."
+
+#: app/templates/wizard/wizard.html:162
+msgid ""
+"Central management system + separate individual checklists for each "
+"contract grower."
+msgstr ""
+"Sistema de gestión central + listas de verificación individuales separadas para cada "
+"productor contratado."
+
+#: app/templates/wizard/wizard.html:243
+msgid "Cancel"
+msgstr "Cancelar"
+
+#: app/templates/wizard/wizard.html:249
+msgid "Save & Continue"
+msgstr "Guardar y continuar"
+
+#: app/templates/wizard/wizard.html:253
+msgid "Next:"
+msgstr "Siguiente:"

@@ -1,5 +1,6 @@
 from flask import Blueprint, render_template, redirect, url_for, flash, request, send_file, Response
 from flask_login import login_required, current_user
+from flask_babel import gettext as _
 from app import db
 from app.models import Organization, Grower, ControlPoint, GrowerControlPoint
 from app.forms import PackhouseSetupForm, GrowerSetupForm
@@ -13,7 +14,7 @@ setup_bp = Blueprint('setup', __name__, url_prefix='/setup')
 @login_required
 def settings():
     if current_user.role not in ['qa_manager', 'auditor']:
-        flash('You do not have permission to access this page.', 'danger')
+        flash(_('You do not have permission to access this page.'), 'danger')
         return redirect(url_for('dashboard.index'))
 
     # Get or create organization
@@ -36,7 +37,7 @@ def settings():
         if packhouse_form.validate():
             packhouse_form.populate_obj(organization)
             db.session.commit()
-            flash('Packhouse settings updated successfully!', 'success')
+            flash(_('Packhouse settings updated successfully!'), 'success')
             return redirect(url_for('setup.settings'))
 
     # Handle grower form submission
@@ -46,7 +47,7 @@ def settings():
             grower_form.populate_obj(grower)
             db.session.add(grower)
             db.session.commit()
-            flash('Grower/field added successfully!', 'success')
+            flash(_('Grower/field added successfully!'), 'success')
             return redirect(url_for('setup.settings'))
 
     # Get existing growers
@@ -137,12 +138,12 @@ def get_globalgap_control_points_from_db(organization_id):
 def download_grower_checklist_template():
     """Download CSV template for grower checklists"""
     if current_user.role not in ['qa_manager', 'auditor']:
-        flash('You do not have permission to access this page.', 'danger')
+        flash(_('You do not have permission to access this page.'), 'danger')
         return redirect(url_for('dashboard.index'))
 
     organization = current_user.organization
     if not organization:
-        flash('No organization found.', 'danger')
+        flash(_('No organization found.'), 'danger')
         return redirect(url_for('setup.settings'))
 
     # Get all grower-applicable control points (sections FV 26, 28, 29, 30, 31, 32)
@@ -158,7 +159,7 @@ def download_grower_checklist_template():
     growers = Grower.query.filter_by(organization_id=organization.id).all()
 
     if not growers:
-        flash('No growers found. Please add growers first.', 'warning')
+        flash(_('No growers found. Please add growers first.'), 'warning')
         return redirect(url_for('setup.settings'))
 
     # Create CSV
@@ -246,26 +247,26 @@ def download_grower_checklist_template():
 def upload_grower_checklist():
     """Upload and process CSV file with grower checklists"""
     if current_user.role not in ['qa_manager', 'auditor']:
-        flash('You do not have permission to access this page.', 'danger')
+        flash(_('You do not have permission to access this page.'), 'danger')
         return redirect(url_for('dashboard.index'))
 
     organization = current_user.organization
     if not organization:
-        flash('No organization found.', 'danger')
+        flash(_('No organization found.'), 'danger')
         return redirect(url_for('setup.settings'))
 
     # Check if file was uploaded
     if 'csv_file' not in request.files:
-        flash('No file uploaded.', 'danger')
+        flash(_('No file uploaded.'), 'danger')
         return redirect(url_for('setup.settings'))
 
     file = request.files['csv_file']
     if file.filename == '':
-        flash('No file selected.', 'danger')
+        flash(_('No file selected.'), 'danger')
         return redirect(url_for('setup.settings'))
 
     if not file.filename.endswith('.csv'):
-        flash('Please upload a CSV file.', 'danger')
+        flash(_('Please upload a CSV file.'), 'danger')
         return redirect(url_for('setup.settings'))
 
     try:
@@ -341,16 +342,18 @@ def upload_grower_checklist():
 
         # Provide feedback
         if errors:
-            flash(f'Processed {records_processed} records ({records_created} created, {records_updated} updated). {len(errors)} errors occurred.', 'warning')
+            flash(_('Processed %(processed)d records (%(created)d created, %(updated)d updated). %(errors)d errors occurred.',
+                     processed=records_processed, created=records_created, updated=records_updated, errors=len(errors)), 'warning')
             for error in errors[:5]:  # Show first 5 errors
                 flash(error, 'danger')
             if len(errors) > 5:
-                flash(f'... and {len(errors) - 5} more errors.', 'danger')
+                flash(_('... and %(count)d more errors.', count=len(errors) - 5), 'danger')
         else:
-            flash(f'Successfully processed {records_processed} records! ({records_created} created, {records_updated} updated)', 'success')
+            flash(_('Successfully processed %(processed)d records! (%(created)d created, %(updated)d updated)',
+                     processed=records_processed, created=records_created, updated=records_updated), 'success')
 
     except Exception as e:
         db.session.rollback()
-        flash(f'Error processing CSV file: {str(e)}', 'danger')
+        flash(_('Error processing CSV file: %(error)s', error=str(e)), 'danger')
 
     return redirect(url_for('setup.settings'))

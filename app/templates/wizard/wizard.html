@@ -1,6 +1,6 @@
 {% extends "base.html" %}
 
-{% block title %}Setup Wizard - Step {{ step }} of {{ total_steps }} - FruitQMS{% endblock %}
+{% block title %}{{ _('Setup Wizard') }} - {{ _('Step %(step)s of %(total)s', step=step, total=total_steps) }} - FruitQMS{% endblock %}
 
 {% block extra_css %}
 <style>
@@ -99,27 +99,27 @@
 {% endblock %}
 
 {% set step_labels = {
-    1: 'Business Type',
-    2: 'Packhouse',
-    3: 'Farm & Fields',
-    4: 'Environment',
-    5: 'Analysis',
-    6: 'Policies',
-    7: 'Review'
+    1: _('Business Type'),
+    2: _('Packhouse'),
+    3: _('Farm & Fields'),
+    4: _('Environment'),
+    5: _('Analysis'),
+    6: _('Policies'),
+    7: _('Review')
 } %}
 
 {% set step_why = {
-    1: 'This determines your operation profile and which GLOBALG.A.P. checklist structure applies to you.',
-    2: 'Your packhouse details help us identify which facility-related control points apply and pre-fill compliance documents.',
-    3: 'Field and crop information determines which agricultural control points are relevant to your operation.',
-    4: 'Existing policies and environmental practices determine which documents you still need to prepare for certification.'
+    1: _('This determines your operation profile and which GLOBALG.A.P. checklist structure applies to you.'),
+    2: _('Your packhouse details help us identify which facility-related control points apply and pre-fill compliance documents.'),
+    3: _('Field and crop information determines which agricultural control points are relevant to your operation.'),
+    4: _('Existing policies and environmental practices determine which documents you still need to prepare for certification.')
 } %}
 
 {% set step_next = {
-    1: 'Packhouse Details' if wizard.business_type != 'grower' else 'Farm & Field Details',
-    2: 'Farm & Field Details',
-    3: 'Environment & Compliance',
-    4: 'GLOBALG.A.P. Analysis (auto-generated)'
+    1: _('Packhouse Details') if wizard.business_type != 'grower' else _('Farm & Field Details'),
+    2: _('Farm & Field Details'),
+    3: _('Environment & Compliance'),
+    4: _('GLOBALG.A.P. Analysis (auto-generated)')
 } %}
 
 {% block content %}
@@ -127,8 +127,8 @@
     <div class="col-lg-8 mx-auto">
 
         <div class="d-flex align-items-center mb-3">
-            <h2 class="mb-0 me-3">Setup Wizard</h2>
-            <span class="badge bg-success fs-6">Step {{ step }} of {{ total_steps }}</span>
+            <h2 class="mb-0 me-3">{{ _('Setup Wizard') }}</h2>
+            <span class="badge bg-success fs-6">{{ _('Step %(step)s of %(total)s', step=step, total=total_steps) }}</span>
         </div>
 
         <!-- Progress Bar -->
@@ -153,23 +153,23 @@
         <div class="card wizard-card shadow-sm">
             <div class="card-body p-4">
                 {% if step == 1 %}
-                    <h4 class="card-title mb-2"><i class="bi bi-building"></i> Business Type & Audit Scope</h4>
+                    <h4 class="card-title mb-2"><i class="bi bi-building"></i> {{ _('Business Type & Audit Scope') }}</h4>
                     <div class="step-why">{{ step_why[1] }}</div>
                     <div class="alert alert-info mb-3">
-                        <h6 class="mb-1"><i class="bi bi-info-circle"></i> Audit Scope Explained:</h6>
+                        <h6 class="mb-1"><i class="bi bi-info-circle"></i> {{ _('Audit Scope Explained:') }}</h6>
                         <ul class="mb-0 small">
-                            <li><strong>GFS (Individual Producer):</strong> Single grower OR single packhouse with one unified checklist.</li>
-                            <li><strong>SMART (Multi-Site):</strong> Central management system + separate individual checklists for each contract grower.</li>
+                            <li><strong>GFS ({{ _('Individual Producer') }}):</strong> {{ _('Single grower OR single packhouse with one unified checklist.') }}</li>
+                            <li><strong>SMART ({{ _('Multi-Site') }}):</strong> {{ _('Central management system + separate individual checklists for each contract grower.') }}</li>
                         </ul>
                     </div>
                 {% elif step == 2 %}
-                    <h4 class="card-title mb-2"><i class="bi bi-box-seam"></i> Packhouse Details</h4>
+                    <h4 class="card-title mb-2"><i class="bi bi-box-seam"></i> {{ _('Packhouse Details') }}</h4>
                     <div class="step-why">{{ step_why[2] }}</div>
                 {% elif step == 3 %}
-                    <h4 class="card-title mb-2"><i class="bi bi-tree"></i> Farm & Field Details</h4>
+                    <h4 class="card-title mb-2"><i class="bi bi-tree"></i> {{ _('Farm & Field Details') }}</h4>
                     <div class="step-why">{{ step_why[3] }}</div>
                 {% elif step == 4 %}
-                    <h4 class="card-title mb-2"><i class="bi bi-globe"></i> Environment & Compliance</h4>
+                    <h4 class="card-title mb-2"><i class="bi bi-globe"></i> {{ _('Environment & Compliance') }}</h4>
                     <div class="step-why">{{ step_why[4] }}</div>
                 {% endif %}
 
@@ -236,21 +236,21 @@
                     <div class="d-flex justify-content-between align-items-center">
                         {% if step > 1 %}
                             <a href="{{ url_for('wizard.step' + (step - 1)|string) }}" class="btn btn-outline-secondary">
-                                <i class="bi bi-arrow-left"></i> Previous
+                                <i class="bi bi-arrow-left"></i> {{ _('Previous') }}
                             </a>
                         {% else %}
                             <a href="{{ url_for('dashboard.index') }}" class="btn btn-outline-secondary">
-                                <i class="bi bi-x-lg"></i> Cancel
+                                <i class="bi bi-x-lg"></i> {{ _('Cancel') }}
                             </a>
                         {% endif %}
 
                         <div class="text-end">
                             <button type="submit" class="btn btn-success btn-lg">
-                                Save & Continue <i class="bi bi-arrow-right"></i>
+                                {{ _('Save & Continue') }} <i class="bi bi-arrow-right"></i>
                             </button>
                             {% if step_next.get(step) %}
                                 <div class="next-step-hint">
-                                    <i class="bi bi-arrow-right-short"></i> Next: {{ step_next[step] }}
+                                    <i class="bi bi-arrow-right-short"></i> {{ _('Next:') }} {{ step_next[step] }}
                                 </div>
                             {% endif %}
                         </div>

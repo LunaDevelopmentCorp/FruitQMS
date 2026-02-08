@@ -1,6 +1,6 @@
 {% extends "base.html" %}
 
-{% block title %}Policy Generation - Step 6 of {{ total_steps }} - FruitQMS{% endblock %}
+{% block title %}{{ _('Policy Generation') }} - {{ _('Step 6 of %(total)s', total=total_steps) }} - FruitQMS{% endblock %}
 
 {% block content %}
 <div class="row">
@@ -8,7 +8,7 @@
         {% include "wizard/_progress.html" %}
 
         <div class="alert alert-success">
-            <i class="bi bi-file-earmark-text"></i> Based on your operation, we've identified the policies below. You can <strong>download a pre-filled template</strong> or <strong>upload your own existing policy</strong> for each.
+            <i class="bi bi-file-earmark-text"></i> {{ _('Based on your operation, we\'ve identified the policies below. You can <strong>download a pre-filled template</strong> or <strong>upload your own existing policy</strong> for each.') }}
         </div>
 
         <div class="row">
@@ -19,18 +19,18 @@
                             <h5 class="card-title">
                                 {{ policy.name }}
                                 {% if policy.priority == 'High' %}
-                                    <span class="badge bg-danger">High Priority</span>
+                                    <span class="badge bg-danger">{{ _('High Priority') }}</span>
                                 {% elif policy.priority == 'Medium' %}
-                                    <span class="badge bg-warning">Medium Priority</span>
+                                    <span class="badge bg-warning">{{ _('Medium Priority') }}</span>
                                 {% else %}
-                                    <span class="badge bg-info">Optional</span>
+                                    <span class="badge bg-info">{{ _('Optional') }}</span>
                                 {% endif %}
                             </h5>
                             <p class="card-text">{{ policy.description }}</p>
 
                             <!-- Download template -->
                             <a href="{{ url_for('wizard.generate_policy', policy_type=policy.type) }}" class="btn btn-success btn-sm me-1 mb-2">
-                                <i class="bi bi-download"></i> Download Template
+                                <i class="bi bi-download"></i> {{ _('Download Template') }}
                             </a>
 
                             <!-- Upload existing policy -->
@@ -38,11 +38,11 @@
                             {% if uploaded %}
                                 <div class="mt-2 p-2 bg-light rounded">
                                     <i class="bi bi-check-circle-fill text-success"></i>
-                                    <small class="text-success fw-bold">Uploaded:</small>
+                                    <small class="text-success fw-bold">{{ _('Uploaded:') }}</small>
                                     <small>{{ uploaded.filename }}</small>
                                     <form method="POST" action="{{ url_for('wizard.remove_policy_upload', policy_type=policy.type) }}" class="d-inline">
                                         <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
-                                        <button type="submit" class="btn btn-link btn-sm text-danger p-0 ms-1" title="Remove">
+                                        <button type="submit" class="btn btn-link btn-sm text-danger p-0 ms-1" title="{{ _('Remove') }}">
                                             <i class="bi bi-x-circle"></i>
                                         </button>
                                     </form>
@@ -53,10 +53,10 @@
                                     <div class="input-group input-group-sm">
                                         <input type="file" name="policy_file" class="form-control form-control-sm" accept=".pdf,.doc,.docx,.xlsx,.xls" required>
                                         <button type="submit" class="btn btn-outline-primary btn-sm">
-                                            <i class="bi bi-upload"></i> Upload
+                                            <i class="bi bi-upload"></i> {{ _('Upload') }}
                                         </button>
                                     </div>
-                                    <small class="text-muted">PDF, Word, or Excel — max 16MB</small>
+                                    <small class="text-muted">{{ _('PDF, Word, or Excel — max 16MB') }}</small>
                                 </form>
                             {% endif %}
                         </div>
@@ -66,24 +66,24 @@
         </div>
 
         <div class="alert alert-info mt-4">
-            <h6><i class="bi bi-lightbulb"></i> Tips:</h6>
+            <h6><i class="bi bi-lightbulb"></i> {{ _('Tips:') }}</h6>
             <ul class="mb-0">
-                <li>Download a template to see what's expected, then customise it for your operation</li>
-                <li>If you already have policies in place, upload them directly — you can always update later</li>
-                <li>Have policies reviewed and signed by management before your audit</li>
-                <li>You can return to this step from Settings to upload or replace policies at any time</li>
+                <li>{{ _('Download a template to see what\'s expected, then customise it for your operation') }}</li>
+                <li>{{ _('If you already have policies in place, upload them directly — you can always update later') }}</li>
+                <li>{{ _('Have policies reviewed and signed by management before your audit') }}</li>
+                <li>{{ _('You can return to this step from Settings to upload or replace policies at any time') }}</li>
             </ul>
         </div>
 
         <div class="d-flex justify-content-between align-items-center mt-4">
             <a href="{{ url_for('wizard.step5') }}" class="btn btn-outline-secondary">
-                <i class="bi bi-arrow-left"></i> Previous
+                <i class="bi bi-arrow-left"></i> {{ _('Previous') }}
             </a>
             <div class="text-end">
                 <a href="{{ url_for('wizard.step7') }}" class="btn btn-success btn-lg">
-                    Review & Complete Setup <i class="bi bi-arrow-right"></i>
+                    {{ _('Review & Complete Setup') }} <i class="bi bi-arrow-right"></i>
                 </a>
-                <div class="text-muted small mt-1"><i class="bi bi-arrow-right-short"></i> Final Step: Review & confirm your setup</div>
+                <div class="text-muted small mt-1"><i class="bi bi-arrow-right-short"></i> {{ _('Final Step: Review & confirm your setup') }}</div>
             </div>
         </div>
     </div>

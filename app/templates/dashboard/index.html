@@ -1,12 +1,12 @@
 {% extends "base.html" %}
 
-{% block title %}Dashboard - FruitQMS{% endblock %}
+{% block title %}{{ _('Dashboard') }} - FruitQMS{% endblock %}
 
 {% block content %}
 <div class="row">
     <div class="col-12">
-        <h1 class="mb-4">Welcome, {{ current_user.name }}!</h1>
-        <p class="lead">Role: <span class="badge bg-primary">{{ current_user.role|upper }}</span></p>
+        <h1 class="mb-4">{{ _('Welcome, %(name)s!', name=current_user.name) }}</h1>
+        <p class="lead">{{ _('Role:') }} <span class="badge bg-primary">{{ current_user.role|upper }}</span></p>
     </div>
 </div>
 
@@ -16,12 +16,12 @@
         <div class="card h-100 shadow-sm">
             <div class="card-body text-center">
                 <i class="bi bi-gear-fill text-success" style="font-size: 3rem;"></i>
-                <h5 class="card-title mt-3">Setup & Settings</h5>
-                <p class="card-text">Configure packhouse, growers, and GLOBALG.A.P. compliance</p>
+                <h5 class="card-title mt-3">{{ _('Setup & Settings') }}</h5>
+                <p class="card-text">{{ _('Configure packhouse, growers, and GLOBALG.A.P. compliance') }}</p>
                 {% if current_user.role in ['qa_manager', 'auditor'] %}
-                <a href="{{ url_for('setup.settings') }}" class="btn btn-success">Go to Settings</a>
+                <a href="{{ url_for('setup.settings') }}" class="btn btn-success">{{ _('Go to Settings') }}</a>
                 {% else %}
-                <button class="btn btn-secondary" disabled>View Only</button>
+                <button class="btn btn-secondary" disabled>{{ _('View Only') }}</button>
                 {% endif %}
             </div>
         </div>
@@ -31,9 +31,9 @@
         <div class="card h-100 shadow-sm">
             <div class="card-body text-center">
                 <i class="bi bi-clipboard-check text-primary" style="font-size: 3rem;"></i>
-                <h5 class="card-title mt-3">GLOBALG.A.P. Checklist</h5>
-                <p class="card-text">Track compliance across IFA v6.0 control points</p>
-                <a href="{{ url_for('setup.settings') }}#globalgap" class="btn btn-primary">View Checklist</a>
+                <h5 class="card-title mt-3">{{ _('GLOBALG.A.P. Checklist') }}</h5>
+                <p class="card-text">{{ _('Track compliance across IFA v6.0 control points') }}</p>
+                <a href="{{ url_for('setup.settings') }}#globalgap" class="btn btn-primary">{{ _('View Checklist') }}</a>
             </div>
         </div>
     </div>
@@ -42,9 +42,9 @@
         <div class="card h-100 shadow-sm">
             <div class="card-body text-center">
                 <i class="bi bi-people-fill text-warning" style="font-size: 3rem;"></i>
-                <h5 class="card-title mt-3">Growers & Fields</h5>
-                <p class="card-text">Manage grower database and field records</p>
-                <a href="{{ url_for('setup.settings') }}#growers" class="btn btn-warning">Manage Growers</a>
+                <h5 class="card-title mt-3">{{ _('Growers & Fields') }}</h5>
+                <p class="card-text">{{ _('Manage grower database and field records') }}</p>
+                <a href="{{ url_for('setup.settings') }}#growers" class="btn btn-warning">{{ _('Manage Growers') }}</a>
             </div>
         </div>
     </div>
@@ -53,10 +53,10 @@
 <div class="row mt-4">
     <div class="col-12">
         <div class="alert alert-info">
-            <h5 class="alert-heading"><i class="bi bi-info-circle"></i> System Status</h5>
+            <h5 class="alert-heading"><i class="bi bi-info-circle"></i> {{ _('System Status') }}</h5>
             <p class="mb-0">
-                Organization: <strong>{{ current_user.organization.name if current_user.organization else 'Not Set' }}</strong> |
-                Type: <strong>{{ current_user.organization.org_type|upper if current_user.organization else 'N/A' }}</strong>
+                {{ _('Organization:') }} <strong>{{ current_user.organization.name if current_user.organization else _('Not Set') }}</strong> |
+                {{ _('Type:') }} <strong>{{ current_user.organization.org_type|upper if current_user.organization else _('N/A') }}</strong>
             </p>
         </div>
     </div>
@@ -66,7 +66,7 @@
     <div class="col-12">
         <div class="card shadow-sm">
             <div class="card-header bg-success text-white">
-                <h5 class="mb-0">📋 Supported Standards</h5>
+                <h5 class="mb-0">📋 {{ _('Supported Standards') }}</h5>
             </div>
             <div class="card-body">
                 <div class="row">

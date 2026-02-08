@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="{{ current_locale }}">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -53,15 +53,15 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ url_for('main.index') }}">Home</a>
+                        <a class="nav-link" href="{{ url_for('main.index') }}">{{ _('Home') }}</a>
                     </li>
                     {% if current_user.is_authenticated %}
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ url_for('dashboard.index') }}">Dashboard</a>
+                        <a class="nav-link" href="{{ url_for('dashboard.index') }}">{{ _('Dashboard') }}</a>
                     </li>
                     {% if current_user.role in ['qa_manager', 'auditor'] %}
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ url_for('setup.settings') }}">Settings</a>
+                        <a class="nav-link" href="{{ url_for('setup.settings') }}">{{ _('Settings') }}</a>
                     </li>
                     {% endif %}
                     <li class="nav-item dropdown">
@@ -69,16 +69,33 @@
                             <i class="bi bi-person-circle"></i> {{ current_user.name }}
                         </a>
                         <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="#">Profile</a></li>
+                            <li><a class="dropdown-item" href="#">{{ _('Profile') }}</a></li>
                             <li><hr class="dropdown-divider"></li>
-                            <li><a class="dropdown-item" href="{{ url_for('auth.logout') }}">Logout</a></li>
+                            <li><a class="dropdown-item" href="{{ url_for('auth.logout') }}">{{ _('Logout') }}</a></li>
                         </ul>
                     </li>
                     {% else %}
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ url_for('auth.login') }}">Login</a>
+                        <a class="nav-link" href="{{ url_for('auth.login') }}">{{ _('Login') }}</a>
                     </li>
                     {% endif %}
+
+                    <!-- Language Switcher -->
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">
+                            <i class="bi bi-globe2"></i> {{ languages[current_locale.language] }}
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-end">
+                            {% for lang_code, lang_name in languages.items() %}
+                            <li>
+                                <a class="dropdown-item {% if current_locale.language == lang_code %}active{% endif %}"
+                                   href="{{ url_for('set_language', lang=lang_code) }}">
+                                    {{ lang_name }}
+                                </a>
+                            </li>
+                            {% endfor %}
+                        </ul>
+                    </li>
                 </ul>
             </div>
         </div>
@@ -106,7 +123,7 @@
     <!-- Footer -->
     <footer class="bg-light text-center text-muted py-3 mt-5">
         <div class="container">
-            <p class="mb-0">&copy; 2026 FruitQMS | GLOBALG.A.P. IFA v6.0 Aligned</p>
+            <p class="mb-0">&copy; 2026 FruitQMS | GLOBALG.A.P. IFA v6.0 {{ _('Aligned') }}</p>
         </div>
     </footer>
 

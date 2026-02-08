@@ -1,5 +1,6 @@
 from flask import Blueprint, render_template
 from flask_login import login_required, current_user
+from flask_babel import gettext as _
 from app.models import Organization, Grower, ControlPoint, SetupWizard
 import json
 
@@ -16,13 +17,13 @@ def index():
     setup_step = wizard.current_step if wizard else 0
 
     setup_tasks = [
-        {'label': 'Business type & audit scope', 'done': setup_step > 1 or setup_complete},
-        {'label': 'Packhouse details', 'done': setup_step > 2 or setup_complete},
-        {'label': 'Farm & field details', 'done': setup_step > 3 or setup_complete},
-        {'label': 'Environment & compliance', 'done': setup_step > 4 or setup_complete},
-        {'label': 'GLOBALG.A.P. analysis', 'done': setup_step > 5 or setup_complete},
-        {'label': 'Policy generation', 'done': setup_step > 6 or setup_complete},
-        {'label': 'Review & complete', 'done': setup_complete},
+        {'label': _('Business type & audit scope'), 'done': setup_step > 1 or setup_complete},
+        {'label': _('Packhouse details'), 'done': setup_step > 2 or setup_complete},
+        {'label': _('Farm & field details'), 'done': setup_step > 3 or setup_complete},
+        {'label': _('Environment & compliance'), 'done': setup_step > 4 or setup_complete},
+        {'label': _('GLOBALG.A.P. analysis'), 'done': setup_step > 5 or setup_complete},
+        {'label': _('Policy generation'), 'done': setup_step > 6 or setup_complete},
+        {'label': _('Review & complete'), 'done': setup_complete},
     ]
 
     # --- Growers ---
@@ -80,31 +81,31 @@ def index():
     todo_items = []
     if not setup_complete:
         todo_items.append({
-            'text': f'Complete Setup Wizard (currently on step {setup_step})',
+            'text': _('Complete Setup Wizard (currently on step %(step)d)', step=setup_step),
             'link': f'/wizard/step{setup_step}',
             'priority': 'high'
         })
     if setup_complete and grower_count == 0 and org and org.org_type != 'grower':
         todo_items.append({
-            'text': 'Add your first grower',
+            'text': _('Add your first grower'),
             'link': '/setup/settings#growers',
             'priority': 'high'
         })
     if cp_total > 0 and cp_not_addressed > 0:
         todo_items.append({
-            'text': f'Address {cp_not_addressed} unreviewed control points',
+            'text': _('Address %(count)d unreviewed control points', count=cp_not_addressed),
             'link': '/setup/settings#globalgap',
             'priority': 'high' if cp_not_addressed > cp_total * 0.5 else 'medium'
         })
     if cp_non_compliant > 0:
         todo_items.append({
-            'text': f'Resolve {cp_non_compliant} non-compliant control points',
+            'text': _('Resolve %(count)d non-compliant control points', count=cp_non_compliant),
             'link': '/setup/settings#globalgap',
             'priority': 'high'
         })
     if setup_complete and cp_total == 0:
         todo_items.append({
-            'text': 'Import GLOBALG.A.P. control points checklist',
+            'text': _('Import GLOBALG.A.P. control points checklist'),
             'link': '/setup/settings#globalgap',
             'priority': 'medium'
         })

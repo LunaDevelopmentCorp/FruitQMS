@@ -1,6 +1,6 @@
 {% extends "base.html" %}
 
-{% block title %}Review & Complete - Step 7 of {{ total_steps }} - FruitQMS{% endblock %}
+{% block title %}{{ _('Review & Complete') }} - {{ _('Step 7 of %(total)s', total=total_steps) }} - FruitQMS{% endblock %}
 
 {% block content %}
 <div class="row">
@@ -8,42 +8,42 @@
         {% include "wizard/_progress.html" %}
 
         <div class="alert alert-success">
-            <i class="bi bi-check-circle"></i> Almost done! Review your information below and complete the setup.
+            <i class="bi bi-check-circle"></i> {{ _('Almost done! Review your information below and complete the setup.') }}
         </div>
 
         <!-- Business Information -->
         <div class="card shadow-sm mb-3">
             <div class="card-header bg-primary text-white">
-                <h5 class="mb-0">Business Information</h5>
+                <h5 class="mb-0">{{ _('Business Information') }}</h5>
             </div>
             <div class="card-body">
                 <div class="row">
                     <div class="col-md-6">
-                        <p><strong>Business Type:</strong>
+                        <p><strong>{{ _('Business Type:') }}</strong>
                             {% if wizard.business_type == 'grower' %}
-                                Grower/Farm Only
+                                {{ _('Grower/Farm Only') }}
                             {% elif wizard.business_type == 'packhouse_only' %}
-                                Packhouse Only
+                                {{ _('Packhouse Only') }}
                             {% elif wizard.business_type == 'packhouse_farms' %}
-                                Packhouse and Farms
+                                {{ _('Packhouse and Farms') }}
                             {% elif wizard.business_type == 'packhouse_contract' %}
-                                Packhouse + Contract Growers
+                                {{ _('Packhouse + Contract Growers') }}
                             {% elif wizard.business_type == 'packhouse_mixed' %}
-                                Packhouse + Own Farm + Contract Growers
+                                {{ _('Packhouse + Own Farm + Contract Growers') }}
                             {% else %}
                                 {{ wizard.business_type|title }}
                             {% endif %}
                         </p>
-                        <p><strong>Audit Scope:</strong> {{ wizard.audit_scope or 'Not set' }}</p>
-                        <p><strong>GGN Number:</strong> {{ wizard.ggn_number or 'Not provided' }}</p>
+                        <p><strong>{{ _('Audit Scope:') }}</strong> {{ wizard.audit_scope or _('Not set') }}</p>
+                        <p><strong>{{ _('GGN Number:') }}</strong> {{ wizard.ggn_number or _('Not provided') }}</p>
                         {% if wizard.has_contract_growers %}
-                            <p><strong>Contract Growers:</strong> {{ wizard.number_of_contract_growers or 'Yes' }}</p>
+                            <p><strong>{{ _('Contract Growers:') }}</strong> {{ wizard.number_of_contract_growers or _('Yes') }}</p>
                         {% endif %}
                     </div>
                     <div class="col-md-6">
                         {% if wizard.packhouse_name %}
-                            <p><strong>Packhouse Name:</strong> {{ wizard.packhouse_name }}</p>
-                            <p><strong>Country:</strong> {{ wizard.packhouse_country }}</p>
+                            <p><strong>{{ _('Packhouse Name:') }}</strong> {{ wizard.packhouse_name }}</p>
+                            <p><strong>{{ _('Country:') }}</strong> {{ wizard.packhouse_country }}</p>
                         {% endif %}
                     </div>
                 </div>
@@ -53,24 +53,24 @@
         <!-- Operations Summary -->
         <div class="card shadow-sm mb-3">
             <div class="card-header bg-success text-white">
-                <h5 class="mb-0">Operations Summary</h5>
+                <h5 class="mb-0">{{ _('Operations Summary') }}</h5>
             </div>
             <div class="card-body">
                 <div class="row">
                     <div class="col-md-6">
                         {% if wizard.number_of_packhouses %}
-                            <p><strong>Packhouses:</strong> {{ wizard.number_of_packhouses }}</p>
+                            <p><strong>{{ _('Packhouses:') }}</strong> {{ wizard.number_of_packhouses }}</p>
                         {% endif %}
                         {% if wizard.has_own_fields %}
-                            <p><strong>Own Fields:</strong> Yes ({{ wizard.total_farm_size }} hectares)</p>
+                            <p><strong>{{ _('Own Fields:') }}</strong> {{ _('Yes') }} ({{ wizard.total_farm_size }} {{ _('hectares') }})</p>
                         {% endif %}
                     </div>
                     <div class="col-md-6">
                         {% if wizard.water_usage %}
-                            <p><strong>Water Usage:</strong> {{ wizard.water_usage }} m³/day per packhouse</p>
+                            <p><strong>{{ _('Water Usage:') }}</strong> {{ wizard.water_usage }} {{ _('m³/day per packhouse') }}</p>
                         {% endif %}
                         {% if wizard.energy_usage %}
-                            <p><strong>Energy Usage:</strong> {{ wizard.energy_usage }} kWh/month per packhouse</p>
+                            <p><strong>{{ _('Energy Usage:') }}</strong> {{ wizard.energy_usage }} {{ _('kWh/month per packhouse') }}</p>
                         {% endif %}
                     </div>
                 </div>
@@ -82,7 +82,7 @@
         {% if uploaded and uploaded != '{}' %}
         <div class="card shadow-sm mb-3">
             <div class="card-header bg-info text-white">
-                <h5 class="mb-0">Uploaded Policies</h5>
+                <h5 class="mb-0">{{ _('Uploaded Policies') }}</h5>
             </div>
             <div class="card-body">
                 {% for key, val in (uploaded|from_json).items() if uploaded != '{}' %}
@@ -99,22 +99,22 @@
         <!-- Compliance Status -->
         <div class="card shadow-sm mb-3">
             <div class="card-header bg-warning">
-                <h5 class="mb-0">GLOBALG.A.P. Compliance Status</h5>
+                <h5 class="mb-0">{{ _('GLOBALG.A.P. Compliance Status') }}</h5>
             </div>
             <div class="card-body">
                 {% if analysis %}
-                    <p><strong>Applicable Control Points:</strong> {{ analysis.applicable|length }}</p>
-                    <p><strong>Review Required:</strong> {{ analysis.maybe_applicable|length }}</p>
-                    <p><strong>Not Applicable:</strong> {{ analysis.not_applicable|length }}</p>
+                    <p><strong>{{ _('Applicable Control Points:') }}</strong> {{ analysis.applicable|length }}</p>
+                    <p><strong>{{ _('Review Required:') }}</strong> {{ analysis.maybe_applicable|length }}</p>
+                    <p><strong>{{ _('Not Applicable:') }}</strong> {{ analysis.not_applicable|length }}</p>
                 {% endif %}
 
                 <div class="mt-3">
-                    <h6>Existing Policies:</h6>
+                    <h6>{{ _('Existing Policies:') }}</h6>
                     <ul>
-                        <li>HACCP Plan: {% if wizard.has_haccp_plan %}<span class="text-success">Yes</span>{% else %}<span class="text-danger">No</span>{% endif %}</li>
-                        <li>Spray/IPM Program: {% if wizard.has_spray_program %}<span class="text-success">Yes</span>{% else %}<span class="text-danger">No</span>{% endif %}</li>
-                        <li>Environmental Policy: {% if wizard.has_environmental_policy %}<span class="text-success">Yes</span>{% else %}<span class="text-danger">No</span>{% endif %}</li>
-                        <li>Waste Management: {% if wizard.waste_management_plan %}<span class="text-success">Yes</span>{% else %}<span class="text-danger">No</span>{% endif %}</li>
+                        <li>{{ _('HACCP Plan:') }} {% if wizard.has_haccp_plan %}<span class="text-success">{{ _('Yes') }}</span>{% else %}<span class="text-danger">{{ _('No') }}</span>{% endif %}</li>
+                        <li>{{ _('Spray/IPM Program:') }} {% if wizard.has_spray_program %}<span class="text-success">{{ _('Yes') }}</span>{% else %}<span class="text-danger">{{ _('No') }}</span>{% endif %}</li>
+                        <li>{{ _('Environmental Policy:') }} {% if wizard.has_environmental_policy %}<span class="text-success">{{ _('Yes') }}</span>{% else %}<span class="text-danger">{{ _('No') }}</span>{% endif %}</li>
+                        <li>{{ _('Waste Management:') }} {% if wizard.waste_management_plan %}<span class="text-success">{{ _('Yes') }}</span>{% else %}<span class="text-danger">{{ _('No') }}</span>{% endif %}</li>
                     </ul>
                 </div>
             </div>
@@ -123,14 +123,14 @@
         <!-- Completion -->
         <div class="card shadow-sm border-success mb-4">
             <div class="card-body text-center p-4">
-                <h4 class="text-success mb-3"><i class="bi bi-check-circle-fill"></i> Ready to Complete</h4>
-                <p class="mb-2">By completing this wizard, your organisation profile will be created and you'll have access to all FruitQMS features.</p>
-                <p class="text-muted small mb-4">You can update any of these details later from the Settings page.</p>
+                <h4 class="text-success mb-3"><i class="bi bi-check-circle-fill"></i> {{ _('Ready to Complete') }}</h4>
+                <p class="mb-2">{{ _('By completing this wizard, your organisation profile will be created and you\'ll have access to all FruitQMS features.') }}</p>
+                <p class="text-muted small mb-4">{{ _('You can update any of these details later from the Settings page.') }}</p>
 
                 <form method="POST">
                     <input type="hidden" name="csrf_token" value="{{ csrf_token() }}"/>
                     <button type="submit" class="btn btn-success btn-lg">
-                        <i class="bi bi-check-circle"></i> Complete Setup & Create Organisation
+                        <i class="bi bi-check-circle"></i> {{ _('Complete Setup & Create Organisation') }}
                     </button>
                 </form>
             </div>
@@ -138,7 +138,7 @@
 
         <div class="d-flex justify-content-between">
             <a href="{{ url_for('wizard.step6') }}" class="btn btn-outline-secondary">
-                <i class="bi bi-arrow-left"></i> Previous
+                <i class="bi bi-arrow-left"></i> {{ _('Previous') }}
             </a>
             <div></div>
         </div>

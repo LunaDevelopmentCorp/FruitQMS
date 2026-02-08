@@ -1,25 +1,25 @@
 {% extends "base.html" %}
 
-{% block title %}Settings - FruitQMS{% endblock %}
+{% block title %}{{ _('Settings') }} - FruitQMS{% endblock %}
 
 {% block content %}
-<h1 class="mb-4">System Settings & Setup</h1>
+<h1 class="mb-4">{{ _('System Settings & Setup') }}</h1>
 
 <div class="alert alert-warning">
-    <i class="bi bi-exclamation-triangle"></i> <strong>Transitioning from paper?</strong>
-    Upload scanned forms below – system will pre-fill CSV where possible (OCR phase 2 coming soon)
+    <i class="bi bi-exclamation-triangle"></i> <strong>{{ _('Transitioning from paper?') }}</strong>
+    {{ _('Upload scanned forms below – system will pre-fill CSV where possible (OCR phase 2 coming soon)') }}
 </div>
 
 <!-- Tabs Navigation -->
 <ul class="nav nav-tabs mb-4" role="tablist">
     <li class="nav-item" role="presentation">
         <button class="nav-link active" id="packhouse-tab" data-bs-toggle="tab" data-bs-target="#packhouse" type="button">
-            <i class="bi bi-building"></i> Packhouse Setup
+            <i class="bi bi-building"></i> {{ _('Packhouse Setup') }}
         </button>
     </li>
     <li class="nav-item" role="presentation">
         <button class="nav-link" id="growers-tab" data-bs-toggle="tab" data-bs-target="#growers" type="button">
-            <i class="bi bi-people"></i> Growers & Fields
+            <i class="bi bi-people"></i> {{ _('Growers & Fields') }}
         </button>
     </li>
     <li class="nav-item" role="presentation">
@@ -29,7 +29,7 @@
     </li>
     <li class="nav-item" role="presentation">
         <button class="nav-link" id="grower-checklists-tab" data-bs-toggle="tab" data-bs-target="#grower-checklists" type="button">
-            <i class="bi bi-card-checklist"></i> Grower Checklists (SMART)
+            <i class="bi bi-card-checklist"></i> {{ _('Grower Checklists') }} (SMART)
         </button>
     </li>
 </ul>
@@ -41,14 +41,14 @@
     <div class="tab-pane fade show active" id="packhouse" role="tabpanel">
         <div class="card shadow-sm">
             <div class="card-header bg-success text-white">
-                <h5 class="mb-0"><i class="bi bi-building"></i> Packhouse Configuration</h5>
+                <h5 class="mb-0"><i class="bi bi-building"></i> {{ _('Packhouse Configuration') }}</h5>
             </div>
             <div class="card-body">
                 <form method="POST" enctype="multipart/form-data">
                     {{ packhouse_form.hidden_tag() }}
                     <input type="hidden" name="packhouse_submit" value="1">
 
-                    <h6 class="text-success mb-3">Basic Information</h6>
+                    <h6 class="text-success mb-3">{{ _('Basic Information') }}</h6>
                     <div class="row">
                         <div class="col-md-6 mb-3">
                             {{ packhouse_form.address.label(class="form-label required-field") }}
@@ -62,12 +62,12 @@
 
                     <div class="mb-3">
                         {{ packhouse_form.local_laws_notes.label(class="form-label") }}
-                        {{ packhouse_form.local_laws_notes(class="form-control", rows=3, placeholder="Document local regulations and compliance notes") }}
+                        {{ packhouse_form.local_laws_notes(class="form-control", rows=3, placeholder=_("Document local regulations and compliance notes")) }}
                     </div>
 
                     <hr>
 
-                    <h6 class="text-success mb-3">Operations</h6>
+                    <h6 class="text-success mb-3">{{ _('Operations') }}</h6>
                     <div class="row">
                         <div class="col-md-4 mb-3">
                             {{ packhouse_form.packing_system.label(class="form-label") }}
@@ -111,7 +111,7 @@
 
                     <hr>
 
-                    <h6 class="text-success mb-3">Protocols & Documentation</h6>
+                    <h6 class="text-success mb-3">{{ _('Protocols & Documentation') }}</h6>
                     <div class="mb-3">
                         {{ packhouse_form.intake_protocols.label(class="form-label") }}
                         {{ packhouse_form.intake_protocols(class="form-control", rows=3) }}
@@ -127,29 +127,29 @@
 
                     <hr>
 
-                    <h6 class="text-success mb-3">File Uploads</h6>
+                    <h6 class="text-success mb-3">{{ _('File Uploads') }}</h6>
                     <div class="alert alert-info">
-                        <i class="bi bi-info-circle"></i> Upload HACCP plans, quality control checklists, and scanned legacy documents
+                        <i class="bi bi-info-circle"></i> {{ _('Upload HACCP plans, quality control checklists, and scanned legacy documents') }}
                     </div>
                     <div class="row">
                         <div class="col-md-6 mb-3">
-                            <label class="form-label">HACCP Plan</label>
+                            <label class="form-label">{{ _('HACCP Plan') }}</label>
                             <input type="file" class="form-control" name="haccp_plan" accept=".pdf,.doc,.docx">
                         </div>
                         <div class="col-md-6 mb-3">
-                            <label class="form-label">Quality Control Checklist</label>
+                            <label class="form-label">{{ _('Quality Control Checklist') }}</label>
                             <input type="file" class="form-control" name="quality_control_checklist" accept=".pdf,.doc,.docx">
                         </div>
                     </div>
 
                     <div class="mb-3">
-                        <label class="form-label">Legacy Paper Scans (for OCR processing)</label>
+                        <label class="form-label">{{ _('Legacy Paper Scans (for OCR processing)') }}</label>
                         <input type="file" class="form-control" name="legacy_scans" accept=".pdf,.jpg,.png" multiple>
-                        <small class="text-muted">Upload scanned paper forms for automated data extraction (coming soon)</small>
+                        <small class="text-muted">{{ _('Upload scanned paper forms for automated data extraction (coming soon)') }}</small>
                     </div>
 
                     <button type="submit" class="btn btn-success btn-lg">
-                        <i class="bi bi-save"></i> Save Packhouse Settings
+                        <i class="bi bi-save"></i> {{ _('Save Packhouse Settings') }}
                     </button>
                 </form>
             </div>
@@ -160,21 +160,21 @@
     <div class="tab-pane fade" id="growers" role="tabpanel">
         <div class="card shadow-sm mb-3">
             <div class="card-header bg-primary text-white">
-                <h5 class="mb-0"><i class="bi bi-people"></i> Growers & Fields Management</h5>
+                <h5 class="mb-0"><i class="bi bi-people"></i> {{ _('Growers & Fields Management') }}</h5>
             </div>
             <div class="card-body">
                 <div class="mb-3">
                     <button class="btn btn-outline-primary me-2">
-                        <i class="bi bi-download"></i> Download Grower/Field CSV Template
+                        <i class="bi bi-download"></i> {{ _('Download Grower/Field CSV Template') }}
                     </button>
                     <button class="btn btn-outline-success">
-                        <i class="bi bi-upload"></i> Upload Grower/Field CSV
+                        <i class="bi bi-upload"></i> {{ _('Upload Grower/Field CSV') }}
                     </button>
                 </div>
 
                 <hr>
 
-                <h6 class="text-primary mb-3">Add New Grower/Field</h6>
+                <h6 class="text-primary mb-3">{{ _('Add New Grower/Field') }}</h6>
                 <form method="POST">
                     {{ grower_form.hidden_tag() }}
                     <input type="hidden" name="grower_submit" value="1">
@@ -213,7 +213,7 @@
                         <div class="accordion-item">
                             <h2 class="accordion-header">
                                 <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#growerDetails">
-                                    Additional Details (Optional)
+                                    {{ _('Additional Details (Optional)') }}
                                 </button>
                             </h2>
                             <div id="growerDetails" class="accordion-collapse collapse" data-bs-parent="#growerDetailsAccordion">
@@ -259,7 +259,7 @@
                                             {{ grower_form.delicate_environments(class="form-check-input") }}
                                             {{ grower_form.delicate_environments.label(class="form-check-label") }}
                                         </div>
-                                        {{ grower_form.delicate_environments_notes(class="form-control mt-2", rows=2, placeholder="Describe delicate environments") }}
+                                        {{ grower_form.delicate_environments_notes(class="form-control mt-2", rows=2, placeholder=_("Describe delicate environments")) }}
                                     </div>
                                 </div>
                             </div>
@@ -267,7 +267,7 @@
                     </div>
 
                     <button type="submit" class="btn btn-primary">
-                        <i class="bi bi-plus-circle"></i> Add Grower/Field
+                        <i class="bi bi-plus-circle"></i> {{ _('Add Grower/Field') }}
                     </button>
                 </form>
             </div>
@@ -277,19 +277,19 @@
         {% if growers %}
         <div class="card shadow-sm">
             <div class="card-header">
-                <h6 class="mb-0">Existing Growers/Fields ({{ growers|length }})</h6>
+                <h6 class="mb-0">{{ _('Existing Growers/Fields') }} ({{ growers|length }})</h6>
             </div>
             <div class="card-body">
                 <div class="table-responsive">
                     <table class="table table-hover">
                         <thead>
                             <tr>
-                                <th>Code</th>
-                                <th>Grower Name</th>
-                                <th>Field Name</th>
-                                <th>Size (ha)</th>
-                                <th>Crop Type</th>
-                                <th>Actions</th>
+                                <th>{{ _('Code') }}</th>
+                                <th>{{ _('Grower Name') }}</th>
+                                <th>{{ _('Field Name') }}</th>
+                                <th>{{ _('Size (ha)') }}</th>
+                                <th>{{ _('Crop Type') }}</th>
+                                <th>{{ _('Actions') }}</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -298,11 +298,11 @@
                                 <td><code>{{ grower.grower_code }}</code></td>
                                 <td>{{ grower.grower_name }}</td>
                                 <td>{{ grower.field_name }}</td>
-                                <td>{{ grower.size_hectares or 'N/A' }}</td>
-                                <td><span class="badge bg-success">{{ grower.crop_type or 'N/A' }}</span></td>
+                                <td>{{ grower.size_hectares or _('N/A') }}</td>
+                                <td><span class="badge bg-success">{{ grower.crop_type or _('N/A') }}</span></td>
                                 <td>
-                                    <button class="btn btn-sm btn-outline-primary">View</button>
-                                    <button class="btn btn-sm btn-outline-danger">Delete</button>
+                                    <button class="btn btn-sm btn-outline-primary">{{ _('View') }}</button>
+                                    <button class="btn btn-sm btn-outline-danger">{{ _('Delete') }}</button>
                                 </td>
                             </tr>
                             {% endfor %}
@@ -318,22 +318,22 @@
     <div class="tab-pane fade" id="globalgap" role="tabpanel">
         <div class="card shadow-sm mb-3">
             <div class="card-header bg-danger text-white">
-                <h5 class="mb-0"><i class="bi bi-clipboard-check"></i> GLOBALG.A.P. IFA v6.0 Checklist</h5>
+                <h5 class="mb-0"><i class="bi bi-clipboard-check"></i> {{ _('GLOBALG.A.P. IFA v6.0 Checklist') }}</h5>
             </div>
             <div class="card-body">
                 <div class="alert alert-info">
-                    <i class="bi bi-info-circle"></i> <strong>Legend:</strong>
-                    <span class="badge criticality-major ms-2">Major Must</span> = Suspension risk |
-                    <span class="badge criticality-minor ms-2">Minor Must</span> = Required |
-                    <span class="badge criticality-recommendation ms-2">Recommendation</span> = Best practice
+                    <i class="bi bi-info-circle"></i> <strong>{{ _('Legend:') }}</strong>
+                    <span class="badge criticality-major ms-2">{{ _('Major Must') }}</span> = {{ _('Suspension risk') }} |
+                    <span class="badge criticality-minor ms-2">{{ _('Minor Must') }}</span> = {{ _('Required') }} |
+                    <span class="badge criticality-recommendation ms-2">{{ _('Recommendation') }}</span> = {{ _('Best practice') }}
                 </div>
 
                 <div class="mb-3">
                     <button class="btn btn-outline-primary">
-                        <i class="bi bi-download"></i> Download Compliance CSV Template
+                        <i class="bi bi-download"></i> {{ _('Download Compliance CSV Template') }}
                     </button>
                     <button class="btn btn-outline-success">
-                        <i class="bi bi-upload"></i> Upload Compliance CSV
+                        <i class="bi bi-upload"></i> {{ _('Upload Compliance CSV') }}
                     </button>
                 </div>
 
@@ -365,28 +365,28 @@
                                                     </span>
                                                     {% if point.overlap %}
                                                     <span class="badge bg-info ms-1" title="{{ point.overlap }}">
-                                                        <i class="bi bi-link-45deg"></i> Overlap
+                                                        <i class="bi bi-link-45deg"></i> {{ _('Overlap') }}
                                                     </span>
                                                     {% endif %}
                                                 </h6>
                                             </div>
                                             <button class="btn btn-sm btn-outline-secondary" type="button" data-bs-toggle="collapse"
                                                     data-bs-target="#details-{{ loop.index }}-{{ loop.index0 }}">
-                                                <i class="bi bi-chevron-down"></i> Full Details
+                                                <i class="bi bi-chevron-down"></i> {{ _('Full Details') }}
                                             </button>
                                         </div>
                                     </div>
                                     <div class="card-body">
                                         <!-- Control Point -->
                                         <div class="mb-2">
-                                            <strong class="text-success"><i class="bi bi-question-circle"></i> Control Point:</strong>
+                                            <strong class="text-success"><i class="bi bi-question-circle"></i> {{ _('Control Point:') }}</strong>
                                             <p class="mb-0 mt-1 fs-6">{{ point.description }}</p>
                                         </div>
 
                                         <!-- Compliance Criteria - ALWAYS SHOWN -->
                                         {% if point.compliance_criteria %}
                                         <div class="mt-3">
-                                            <strong class="text-primary"><i class="bi bi-clipboard-check"></i> Compliance Criteria:</strong>
+                                            <strong class="text-primary"><i class="bi bi-clipboard-check"></i> {{ _('Compliance Criteria:') }}</strong>
                                             <div class="alert alert-light border mt-2 mb-0">
                                                 <small>{{ point.compliance_criteria }}</small>
                                             </div>
@@ -398,16 +398,16 @@
                                             <hr>
                                             <div class="row">
                                                 <div class="col-md-3 mb-3">
-                                                    <label class="form-label fw-bold">Status:</label>
+                                                    <label class="form-label fw-bold">{{ _('Status:') }}</label>
                                                     <select class="form-select" data-cp-id="{{ point.id }}">
-                                                        <option value="">Select</option>
-                                                        <option value="Compliant" {% if point.compliance_status == 'Compliant' %}selected{% endif %}>✅ Compliant</option>
-                                                        <option value="Non-compliant" {% if point.compliance_status == 'Non-compliant' %}selected{% endif %}>❌ Non-compliant</option>
-                                                        <option value="N/A" {% if point.compliance_status == 'N/A' %}selected{% endif %}>⚠️ N/A</option>
+                                                        <option value="">{{ _('Select') }}</option>
+                                                        <option value="Compliant" {% if point.compliance_status == 'Compliant' %}selected{% endif %}>{{ _('Compliant') }}</option>
+                                                        <option value="Non-compliant" {% if point.compliance_status == 'Non-compliant' %}selected{% endif %}>{{ _('Non-compliant') }}</option>
+                                                        <option value="N/A" {% if point.compliance_status == 'N/A' %}selected{% endif %}>{{ _('N/A') }}</option>
                                                     </select>
                                                 </div>
                                                 <div class="col-md-9 mb-3">
-                                                    <label class="form-label fw-bold">Evidence:</label>
+                                                    <label class="form-label fw-bold">{{ _('Evidence:') }}</label>
                                                     <input type="file" class="form-control" accept=".pdf,.doc,.docx,.jpg,.png">
                                                     {% if point.evidence_file %}
                                                     <small class="text-success"><i class="bi bi-check-circle"></i> {{ point.evidence_file }}</small>
@@ -415,11 +415,11 @@
                                                 </div>
                                             </div>
                                             <div class="mb-2">
-                                                <label class="form-label fw-bold">Implementation Notes:</label>
-                                                <textarea class="form-control" rows="2" placeholder="Describe how you meet this requirement..."></textarea>
+                                                <label class="form-label fw-bold">{{ _('Implementation Notes:') }}</label>
+                                                <textarea class="form-control" rows="2" placeholder="{{ _('Describe how you meet this requirement...') }}"></textarea>
                                             </div>
                                             <button class="btn btn-sm btn-success">
-                                                <i class="bi bi-save"></i> Save
+                                                <i class="bi bi-save"></i> {{ _('Save') }}
                                             </button>
                                         </div>
                                     </div>
@@ -434,7 +434,7 @@
 
                 <div class="mt-4">
                     <button class="btn btn-success btn-lg">
-                        <i class="bi bi-save"></i> Save All Compliance Updates
+                        <i class="bi bi-save"></i> {{ _('Save All Compliance Updates') }}
                     </button>
                 </div>
             </div>
@@ -445,25 +445,25 @@
     <div class="tab-pane fade" id="grower-checklists" role="tabpanel">
         <div class="card shadow-sm">
             <div class="card-header bg-info text-white">
-                <h5 class="mb-0"><i class="bi bi-card-checklist"></i> Grower Checklists Management (SMART Multi-Site)</h5>
+                <h5 class="mb-0"><i class="bi bi-card-checklist"></i> {{ _('Grower Checklists Management') }} (SMART {{ _('Multi-Site') }})</h5>
             </div>
             <div class="card-body">
                 <div class="alert alert-info">
-                    <i class="bi bi-info-circle"></i> <strong>SMART Multi-Site Audit Scope</strong><br>
-                    For operations with multiple contract growers, each grower must have their own checklist for field-level control points.
-                    Use the CSV template to manage multiple grower checklists efficiently.
+                    <i class="bi bi-info-circle"></i> <strong>{{ _('SMART Multi-Site Audit Scope') }}</strong><br>
+                    {{ _('For operations with multiple contract growers, each grower must have their own checklist for field-level control points.') }}
+                    {{ _('Use the CSV template to manage multiple grower checklists efficiently.') }}
                 </div>
 
                 <!-- CSV Download/Upload Section -->
                 <div class="mb-4">
-                    <h6 class="text-info mb-3">Bulk Grower Checklist Management</h6>
+                    <h6 class="text-info mb-3">{{ _('Bulk Grower Checklist Management') }}</h6>
                     <div class="row">
                         <div class="col-md-6 mb-3">
                             <a href="{{ url_for('setup.download_grower_checklist_template') }}" class="btn btn-primary w-100">
-                                <i class="bi bi-download"></i> Download Grower Checklist CSV Template
+                                <i class="bi bi-download"></i> {{ _('Download Grower Checklist CSV Template') }}
                             </a>
                             <small class="text-muted d-block mt-2">
-                                Template includes all grower-applicable control points (FV 26, 28, 29, 30, 31, 32) for all your growers.
+                                {{ _('Template includes all grower-applicable control points (FV 26, 28, 29, 30, 31, 32) for all your growers.') }}
                             </small>
                         </div>
                         <div class="col-md-6 mb-3">
@@ -473,11 +473,11 @@
                                     <input type="file" class="form-control" name="csv_file" accept=".csv" required>
                                 </div>
                                 <button type="submit" class="btn btn-success w-100">
-                                    <i class="bi bi-upload"></i> Upload Completed Checklist CSV
+                                    <i class="bi bi-upload"></i> {{ _('Upload Completed Checklist CSV') }}
                                 </button>
                             </form>
                             <small class="text-muted d-block mt-2">
-                                Upload CSV to create/update individual grower checklists in bulk. Supports common responses across growers.
+                                {{ _('Upload CSV to create/update individual grower checklists in bulk. Supports common responses across growers.') }}
                             </small>
                         </div>
                     </div>
@@ -486,10 +486,10 @@
                 <hr>
 
                 <!-- Grower Checklists Display -->
-                <h6 class="text-info mb-3">Individual Grower Checklists</h6>
+                <h6 class="text-info mb-3">{{ _('Individual Grower Checklists') }}</h6>
 
                 {% if growers|length > 0 %}
-                    <p class="text-muted">Select a grower to view their field-level compliance checklist:</p>
+                    <p class="text-muted">{{ _('Select a grower to view their field-level compliance checklist:') }}</p>
 
                     <div class="accordion" id="growerChecklistsAccordion">
                         {% for grower in growers %}
@@ -510,13 +510,13 @@
                                         <table class="table table-sm table-hover">
                                             <thead class="table-light">
                                                 <tr>
-                                                    <th style="width: 15%">Control Point</th>
-                                                    <th style="width: 10%">Criticality</th>
-                                                    <th style="width: 30%">Description</th>
-                                                    <th style="width: 15%">Status</th>
-                                                    <th style="width: 15%">Evidence</th>
-                                                    <th style="width: 10%">Common?</th>
-                                                    <th style="width: 5%">Updated</th>
+                                                    <th style="width: 15%">{{ _('Control Point') }}</th>
+                                                    <th style="width: 10%">{{ _('Criticality') }}</th>
+                                                    <th style="width: 30%">{{ _('Description') }}</th>
+                                                    <th style="width: 15%">{{ _('Status') }}</th>
+                                                    <th style="width: 15%">{{ _('Evidence') }}</th>
+                                                    <th style="width: 10%">{{ _('Common?') }}</th>
+                                                    <th style="width: 5%">{{ _('Updated') }}</th>
                                                 </tr>
                                             </thead>
                                             <tbody>
@@ -537,19 +537,19 @@
                                                     </td>
                                                     <td>
                                                         {% if gcp.compliance_status == 'Compliant' %}
-                                                            <span class="badge bg-success">Compliant</span>
+                                                            <span class="badge bg-success">{{ _('Compliant') }}</span>
                                                         {% elif gcp.compliance_status == 'Non-compliant' %}
-                                                            <span class="badge bg-danger">Non-compliant</span>
+                                                            <span class="badge bg-danger">{{ _('Non-compliant') }}</span>
                                                         {% else %}
-                                                            <span class="badge bg-secondary">N/A</span>
+                                                            <span class="badge bg-secondary">{{ _('N/A') }}</span>
                                                         {% endif %}
                                                     </td>
                                                     <td><small>{{ gcp.evidence_file or '-' }}</small></td>
                                                     <td>
                                                         {% if gcp.is_common_response %}
-                                                            <span class="badge bg-info">Yes</span>
+                                                            <span class="badge bg-info">{{ _('Yes') }}</span>
                                                         {% else %}
-                                                            <span class="badge bg-secondary">No</span>
+                                                            <span class="badge bg-secondary">{{ _('No') }}</span>
                                                         {% endif %}
                                                     </td>
                                                     <td><small>{{ gcp.updated_at.strftime('%Y-%m-%d') if gcp.updated_at else '-' }}</small></td>
@@ -559,8 +559,8 @@
                                         </table>
                                     {% else %}
                                         <div class="alert alert-warning">
-                                            <i class="bi bi-exclamation-triangle"></i> No checklist data for this grower yet.
-                                            Download the CSV template above, fill it in, and upload to create their checklist.
+                                            <i class="bi bi-exclamation-triangle"></i> {{ _('No checklist data for this grower yet.') }}
+                                            {{ _('Download the CSV template above, fill it in, and upload to create their checklist.') }}
                                         </div>
                                     {% endif %}
                                 </div>
@@ -570,22 +570,22 @@
                     </div>
                 {% else %}
                     <div class="alert alert-warning">
-                        <i class="bi bi-exclamation-triangle"></i> No growers found.
-                        Please add growers in the "Growers & Fields" tab first, then return here to manage their checklists.
+                        <i class="bi bi-exclamation-triangle"></i> {{ _('No growers found.') }}
+                        {{ _('Please add growers in the "Growers & Fields" tab first, then return here to manage their checklists.') }}
                     </div>
                 {% endif %}
 
                 <div class="mt-4">
                     <p class="text-muted">
-                        <strong>Grower-Applicable Control Points (90 points):</strong>
+                        <strong>{{ _('Grower-Applicable Control Points (90 points):') }}</strong>
                     </p>
                     <ul class="text-muted small">
-                        <li><strong>FV 26</strong> - Plant Propagation (5 points)</li>
-                        <li><strong>FV 28</strong> - Soil Management (10 points)</li>
-                        <li><strong>FV 29</strong> - Fertilizers (14 points)</li>
-                        <li><strong>FV 30</strong> - Water Management (18 points)</li>
-                        <li><strong>FV 31</strong> - Integrated Pest Management (8 points)</li>
-                        <li><strong>FV 32</strong> - Plant Protection Products (35 points)</li>
+                        <li><strong>FV 26</strong> - {{ _('Plant Propagation') }} ({{ _('%(count)s points', count=5) }})</li>
+                        <li><strong>FV 28</strong> - {{ _('Soil Management') }} ({{ _('%(count)s points', count=10) }})</li>
+                        <li><strong>FV 29</strong> - {{ _('Fertilizers') }} ({{ _('%(count)s points', count=14) }})</li>
+                        <li><strong>FV 30</strong> - {{ _('Water Management') }} ({{ _('%(count)s points', count=18) }})</li>
+                        <li><strong>FV 31</strong> - {{ _('Integrated Pest Management') }} ({{ _('%(count)s points', count=8) }})</li>
+                        <li><strong>FV 32</strong> - {{ _('Plant Protection Products') }} ({{ _('%(count)s points', count=35) }})</li>
                     </ul>
                 </div>
             </div>

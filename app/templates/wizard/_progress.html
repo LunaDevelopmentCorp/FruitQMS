@@ -1,11 +1,11 @@
 {% set step_labels = {
-    1: 'Business Type',
-    2: 'Packhouse',
-    3: 'Farm & Fields',
-    4: 'Environment',
-    5: 'Analysis',
-    6: 'Policies',
-    7: 'Review'
+    1: _('Business Type'),
+    2: _('Packhouse'),
+    3: _('Farm & Fields'),
+    4: _('Environment'),
+    5: _('Analysis'),
+    6: _('Policies'),
+    7: _('Review')
 } %}
 
 <style>
@@ -82,8 +82,8 @@
 </style>
 
 <div class="d-flex align-items-center mb-3">
-    <h2 class="mb-0 me-3">Setup Wizard</h2>
-    <span class="badge bg-success fs-6">Step {{ step }} of {{ total_steps }}</span>
+    <h2 class="mb-0 me-3">{{ _('Setup Wizard') }}</h2>
+    <span class="badge bg-success fs-6">{{ _('Step %(step)s of %(total)s', step=step, total=total_steps) }}</span>
 </div>
 
 <div class="wizard-progress-bar mb-4">

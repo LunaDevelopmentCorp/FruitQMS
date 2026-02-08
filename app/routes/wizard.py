@@ -1,5 +1,6 @@
 from flask import Blueprint, render_template, redirect, url_for, flash, request, session, send_file
 from flask_login import login_required, current_user
+from flask_babel import gettext as _
 from app import db
 from app.models import SetupWizard, Organization
 from app.forms_wizard import (
@@ -45,7 +46,7 @@ def step1():
         wizard.number_of_contract_growers = form.number_of_contract_growers.data
         wizard.current_step = 2
         db.session.commit()
-        flash('Business type and audit scope saved!', 'success')
+        flash(_('Business type and audit scope saved!'), 'success')
 
         # Skip packhouse step if grower only
         if wizard.business_type == 'grower':
@@ -92,7 +93,7 @@ def step2():
         wizard.energy_usage = form.energy_usage.data
         wizard.current_step = 3
         db.session.commit()
-        flash('Packhouse details saved!', 'success')
+        flash(_('Packhouse details saved!'), 'success')
         return redirect(url_for('wizard.step3'))
 
     # Pre-fill form
@@ -134,7 +135,7 @@ def step3():
         wizard.irrigation_types = json.dumps(form.irrigation_types.data) if form.irrigation_types.data else None
         wizard.current_step = 4
         db.session.commit()
-        flash('Farm details saved!', 'success')
+        flash(_('Farm details saved!'), 'success')
         return redirect(url_for('wizard.step4'))
 
     # Pre-fill form
@@ -175,7 +176,7 @@ def step4():
         wizard.waste_management_plan = form.waste_management_plan.data
         wizard.current_step = 5
         db.session.commit()
-        flash('Environmental details saved!', 'success')
+        flash(_('Environmental details saved!'), 'success')
         return redirect(url_for('wizard.step5'))
 
     # Pre-fill form
@@ -253,18 +254,18 @@ def upload_policy(policy_type):
     wizard = get_or_create_wizard()
 
     if 'policy_file' not in request.files:
-        flash('No file selected.', 'warning')
+        flash(_('No file selected.'), 'warning')
         return redirect(url_for('wizard.step6'))
 
     file = request.files['policy_file']
     if file.filename == '':
-        flash('No file selected.', 'warning')
+        flash(_('No file selected.'), 'warning')
         return redirect(url_for('wizard.step6'))
 
     ALLOWED_EXTENSIONS = {'pdf', 'doc', 'docx', 'xlsx', 'xls'}
     ext = file.filename.rsplit('.', 1)[-1].lower() if '.' in file.filename else ''
     if ext not in ALLOWED_EXTENSIONS:
-        flash('File type not allowed. Please upload PDF, Word, or Excel files.', 'danger')
+        flash(_('File type not allowed. Please upload PDF, Word, or Excel files.'), 'danger')
         return redirect(url_for('wizard.step6'))
 
     filename = secure_filename(file.filename)
@@ -289,7 +290,7 @@ def upload_policy(policy_type):
     wizard.policies_generated = json.dumps(uploaded)
     db.session.commit()
 
-    flash(f'Policy "{filename}" uploaded successfully.', 'success')
+    flash(_('Policy "%(filename)s" uploaded successfully.', filename=filename), 'success')
     return redirect(url_for('wizard.step6'))
 
 
@@ -319,7 +320,7 @@ def remove_policy_upload(policy_type):
         del uploaded[policy_type]
         wizard.policies_generated = json.dumps(uploaded)
         db.session.commit()
-        flash('Policy removed.', 'info')
+        flash(_('Policy removed.'), 'info')
 
     return redirect(url_for('wizard.step6'))
 
@@ -357,11 +358,11 @@ def step7():
             wizard.completed_at = datetime.utcnow()
             db.session.commit()
 
-            flash('Setup wizard completed successfully! Your organization has been created.', 'success')
+            flash(_('Setup wizard completed successfully! Your organization has been created.'), 'success')
             return redirect(url_for('dashboard.index'))
         except Exception as e:
             db.session.rollback()
-            flash(f'Error completing setup: {str(e)}', 'danger')
+            flash(_('Error completing setup: %(error)s', error=str(e)), 'danger')
             return redirect(url_for('wizard.step7'))
 
     # Load analysis for review
@@ -387,7 +388,7 @@ def generate_policy(policy_type):
 
         # Verify file exists
         if not os.path.exists(pdf_path):
-            flash(f'Error: PDF file not created for {policy_type}', 'danger')
+            flash(_('Error: PDF file not created for %(type)s', type=policy_type), 'danger')
             return redirect(url_for('wizard.step6'))
 
         return send_file(
@@ -397,7 +398,7 @@ def generate_policy(policy_type):
             mimetype='application/pdf'
         )
     except Exception as e:
-        flash(f'Error generating policy PDF: {str(e)}', 'danger')
+        flash(_('Error generating policy PDF: %(error)s', error=str(e)), 'danger')
         return redirect(url_for('wizard.step6'))
 
 
@@ -527,48 +528,48 @@ def determine_policies_needed(wizard):
 
     if not wizard.has_haccp_plan:
         policies.append({
-            'name': 'HACCP Plan',
+            'name': _('HACCP Plan'),
             'type': 'haccp',
-            'description': 'Food safety management system required by GLOBALG.A.P.',
+            'description': _('Food safety management system required by GLOBALG.A.P.'),
             'priority': 'High'
         })
 
     if not wizard.has_spray_program and (wizard.business_type in ['grower', 'packhouse_farms', 'packhouse_mixed'] or wizard.has_own_fields):
         policies.append({
-            'name': 'Spray/IPM Program',
+            'name': _('Spray/IPM Program'),
             'type': 'spray_program',
-            'description': 'Integrated Pest Management and spray application records',
+            'description': _('Integrated Pest Management and spray application records'),
             'priority': 'High'
         })
 
     if not wizard.has_environmental_policy:
         policies.append({
-            'name': 'Environmental Policy',
+            'name': _('Environmental Policy'),
             'type': 'environmental',
-            'description': 'Site management and conservation policy',
+            'description': _('Site management and conservation policy'),
             'priority': 'Medium'
         })
 
     if not wizard.waste_management_plan:
         policies.append({
-            'name': 'Waste Management Plan',
+            'name': _('Waste Management Plan'),
             'type': 'waste_management',
-            'description': 'Waste handling and disposal procedures',
+            'description': _('Waste handling and disposal procedures'),
             'priority': 'Medium'
         })
 
     # Always offer these templates
     policies.append({
-        'name': 'Worker Training Log',
+        'name': _('Worker Training Log'),
         'type': 'training_log',
-        'description': 'Template for documenting worker training',
+        'description': _('Template for documenting worker training'),
         'priority': 'Low'
     })
 
     policies.append({
-        'name': 'Traceability Template',
+        'name': _('Traceability Template'),
         'type': 'traceability',
-        'description': 'Product traceability system template',
+        'description': _('Product traceability system template'),
         'priority': 'Medium'
     })
 

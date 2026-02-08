@@ -1,45 +1,46 @@
 from flask_wtf import FlaskForm
 from wtforms import StringField, PasswordField, TextAreaField, SelectField, FloatField, IntegerField, BooleanField, DateField, FileField
 from wtforms.validators import DataRequired, Email, Length, Optional
+from flask_babel import lazy_gettext as _l
 from app.utils.countries import get_country_choices
 
 class LoginForm(FlaskForm):
-    email = StringField('Email', validators=[DataRequired(), Email()])
-    password = PasswordField('Password', validators=[DataRequired()])
+    email = StringField(_l('Email'), validators=[DataRequired(), Email()])
+    password = PasswordField(_l('Password'), validators=[DataRequired()])
 
 
 class PackhouseSetupForm(FlaskForm):
-    address = TextAreaField('Address *', validators=[DataRequired()])
-    country = SelectField('Country *', choices=get_country_choices(), validators=[DataRequired()])
-    local_laws_notes = TextAreaField('Local Laws & Regulations Notes')
+    address = TextAreaField(_l('Address *'), validators=[DataRequired()])
+    country = SelectField(_l('Country *'), choices=get_country_choices(), validators=[DataRequired()])
+    local_laws_notes = TextAreaField(_l('Local Laws & Regulations Notes'))
 
-    packing_system = SelectField('Packing System', choices=[
-        ('', 'Select System'),
-        ('manual', 'Manual'),
-        ('semi_automated', 'Semi-Automated'),
-        ('fully_automated', 'Fully Automated')
+    packing_system = SelectField(_l('Packing System'), choices=[
+        ('', _l('Select System')),
+        ('manual', _l('Manual')),
+        ('semi_automated', _l('Semi-Automated')),
+        ('fully_automated', _l('Fully Automated'))
     ])
-    water_usage_m3_day = FloatField('Water Usage (m³/day)', validators=[Optional()])
-    water_treatment_method = StringField('Water Treatment Method')
-    energy_usage_kwh_month = FloatField('Energy Usage (kWh/month)', validators=[Optional()])
-    staff_count = IntegerField('Staff Count', validators=[Optional()])
-    supervisors_count = IntegerField('Supervisors Count', validators=[Optional()])
-    avg_working_hours_per_week = FloatField('Avg Working Hours/Week', validators=[Optional()])
-    shifts_per_day = IntegerField('Shifts per Day', validators=[Optional()])
+    water_usage_m3_day = FloatField(_l('Water Usage (m\u00b3/day)'), validators=[Optional()])
+    water_treatment_method = StringField(_l('Water Treatment Method'))
+    energy_usage_kwh_month = FloatField(_l('Energy Usage (kWh/month)'), validators=[Optional()])
+    staff_count = IntegerField(_l('Staff Count'), validators=[Optional()])
+    supervisors_count = IntegerField(_l('Supervisors Count'), validators=[Optional()])
+    avg_working_hours_per_week = FloatField(_l('Avg Working Hours/Week'), validators=[Optional()])
+    shifts_per_day = IntegerField(_l('Shifts per Day'), validators=[Optional()])
 
-    intake_protocols = TextAreaField('Intake Protocols')
-    online_monitoring = TextAreaField('Online Monitoring')
-    final_packing_inspections = TextAreaField('Final Packing Inspections')
+    intake_protocols = TextAreaField(_l('Intake Protocols'))
+    online_monitoring = TextAreaField(_l('Online Monitoring'))
+    final_packing_inspections = TextAreaField(_l('Final Packing Inspections'))
 
 
 class GrowerSetupForm(FlaskForm):
-    grower_code = StringField('Grower Code *', validators=[DataRequired()])
-    grower_name = StringField('Grower Name *', validators=[DataRequired()])
-    field_name = StringField('Field Name *', validators=[DataRequired()])
-    size_hectares = FloatField('Size (hectares)', validators=[Optional()])
-    gps_coordinates = StringField('GPS Coordinates')
-    crop_type = SelectField('Crop Type', choices=[
-        ('', 'Select Crop'),
+    grower_code = StringField(_l('Grower Code *'), validators=[DataRequired()])
+    grower_name = StringField(_l('Grower Name *'), validators=[DataRequired()])
+    field_name = StringField(_l('Field Name *'), validators=[DataRequired()])
+    size_hectares = FloatField(_l('Size (hectares)'), validators=[Optional()])
+    gps_coordinates = StringField(_l('GPS Coordinates'))
+    crop_type = SelectField(_l('Crop Type'), choices=[
+        ('', _l('Select Crop')),
         # Pome Fruit
         ('apples', 'Apples'),
         ('pears', 'Pears'),
@@ -87,17 +88,17 @@ class GrowerSetupForm(FlaskForm):
         # Other
         ('persimmons', 'Persimmons'),
         ('rhubarb', 'Rhubarb'),
-        ('other', 'Other')
+        ('other', _l('Other'))
     ])
 
-    spray_program = TextAreaField('Spray Program')
-    harvest_schedule = TextAreaField('Harvest Schedule')
-    fertilisation_plan = TextAreaField('Fertilisation Plan')
-    irrigation_type = StringField('Irrigation Type')
-    planting_date = DateField('Planting Date', validators=[Optional()])
-    pruning_method = TextAreaField('Pruning Method')
+    spray_program = TextAreaField(_l('Spray Program'))
+    harvest_schedule = TextAreaField(_l('Harvest Schedule'))
+    fertilisation_plan = TextAreaField(_l('Fertilisation Plan'))
+    irrigation_type = StringField(_l('Irrigation Type'))
+    planting_date = DateField(_l('Planting Date'), validators=[Optional()])
+    pruning_method = TextAreaField(_l('Pruning Method'))
 
-    conservation_points = TextAreaField('Conservation Points')
-    biodiversity_measures = TextAreaField('Biodiversity Measures')
-    delicate_environments = BooleanField('Delicate Environments Present')
-    delicate_environments_notes = TextAreaField('Delicate Environments Notes')
+    conservation_points = TextAreaField(_l('Conservation Points'))
+    biodiversity_measures = TextAreaField(_l('Biodiversity Measures'))
+    delicate_environments = BooleanField(_l('Delicate Environments Present'))
+    delicate_environments_notes = TextAreaField(_l('Delicate Environments Notes'))

@@ -1,6 +1,6 @@
 {% extends "base.html" %}
 
-{% block title %}GLOBALG.A.P. Analysis - Step 5 of {{ total_steps }} - FruitQMS{% endblock %}
+{% block title %}{{ _('GLOBALG.A.P. Analysis') }} - {{ _('Step %(step)s of %(total)s', step=5, total=total_steps) }} - FruitQMS{% endblock %}
 
 {% block content %}
 <div class="row">
@@ -8,7 +8,7 @@
         {% include "wizard/_progress.html" %}
 
         <div class="alert alert-info">
-            <i class="bi bi-info-circle"></i> Based on your setup information, we've analysed which GLOBALG.A.P. control points apply to your operation.
+            <i class="bi bi-info-circle"></i> {{ _("Based on your setup information, we've analysed which GLOBALG.A.P. control points apply to your operation.") }}
         </div>
 
         <!-- Summary Cards -->
@@ -17,7 +17,7 @@
                 <div class="card text-white bg-success">
                     <div class="card-body text-center">
                         <h3>{{ analysis.applicable|length }}</h3>
-                        <p class="mb-0">Applicable Points</p>
+                        <p class="mb-0">{{ _('Applicable Points') }}</p>
                     </div>
                 </div>
             </div>
@@ -25,7 +25,7 @@
                 <div class="card text-white bg-warning">
                     <div class="card-body text-center">
                         <h3>{{ analysis.maybe_applicable|length }}</h3>
-                        <p class="mb-0">Review Required</p>
+                        <p class="mb-0">{{ _('Review Required') }}</p>
                     </div>
                 </div>
             </div>
@@ -33,7 +33,7 @@
                 <div class="card text-white bg-secondary">
                     <div class="card-body text-center">
                         <h3>{{ analysis.not_applicable|length }}</h3>
-                        <p class="mb-0">Not Applicable</p>
+                        <p class="mb-0">{{ _('Not Applicable') }}</p>
                     </div>
                 </div>
             </div>
@@ -42,7 +42,7 @@
         <!-- Applicable Control Points -->
         <div class="card shadow-sm mb-4">
             <div class="card-header bg-success text-white">
-                <h5 class="mb-0"><i class="bi bi-check-circle"></i> Applicable Control Points</h5>
+                <h5 class="mb-0"><i class="bi bi-check-circle"></i> {{ _('Applicable Control Points') }}</h5>
             </div>
             <div class="card-body">
                 {% for point in analysis.applicable %}
@@ -67,7 +67,7 @@
         {% if analysis.maybe_applicable %}
         <div class="card shadow-sm mb-4">
             <div class="card-header bg-warning">
-                <h5 class="mb-0"><i class="bi bi-exclamation-circle"></i> Needs Review</h5>
+                <h5 class="mb-0"><i class="bi bi-exclamation-circle"></i> {{ _('Needs Review') }}</h5>
             </div>
             <div class="card-body">
                 {% for point in analysis.maybe_applicable %}
@@ -88,13 +88,13 @@
 
         <div class="d-flex justify-content-between align-items-center mt-4">
             <a href="{{ url_for('wizard.step4') }}" class="btn btn-outline-secondary">
-                <i class="bi bi-arrow-left"></i> Previous
+                <i class="bi bi-arrow-left"></i> {{ _('Previous') }}
             </a>
             <div class="text-end">
                 <a href="{{ url_for('wizard.step6') }}" class="btn btn-success btn-lg">
-                    Continue <i class="bi bi-arrow-right"></i>
+                    {{ _('Continue') }} <i class="bi bi-arrow-right"></i>
                 </a>
-                <div class="text-muted small mt-1"><i class="bi bi-arrow-right-short"></i> Next: Policy & Document Generation</div>
+                <div class="text-muted small mt-1"><i class="bi bi-arrow-right-short"></i> {{ _('Next: Policy & Document Generation') }}</div>
             </div>
         </div>
     </div>

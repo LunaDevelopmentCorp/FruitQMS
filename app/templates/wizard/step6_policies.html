@@ -8,7 +8,7 @@
         {% include "wizard/_progress.html" %}
 
         <div class="alert alert-success">
-            <i class="bi bi-file-earmark-text"></i> We've identified the following policies and templates that you need. Click to download pre-filled templates.
+            <i class="bi bi-file-earmark-text"></i> Based on your operation, we've identified the policies below. You can <strong>download a pre-filled template</strong> or <strong>upload your own existing policy</strong> for each.
         </div>
 
         <div class="row">
@@ -27,9 +27,38 @@
                                 {% endif %}
                             </h5>
                             <p class="card-text">{{ policy.description }}</p>
-                            <a href="{{ url_for('wizard.generate_policy', policy_type=policy.type) }}" class="btn btn-success btn-sm">
-                                <i class="bi bi-download"></i> Download PDF Template
+
+                            <!-- Download template -->
+                            <a href="{{ url_for('wizard.generate_policy', policy_type=policy.type) }}" class="btn btn-success btn-sm me-1 mb-2">
+                                <i class="bi bi-download"></i> Download Template
                             </a>
+
+                            <!-- Upload existing policy -->
+                            {% set uploaded = uploaded_policies.get(policy.type) if uploaded_policies else None %}
+                            {% if uploaded %}
+                                <div class="mt-2 p-2 bg-light rounded">
+                                    <i class="bi bi-check-circle-fill text-success"></i>
+                                    <small class="text-success fw-bold">Uploaded:</small>
+                                    <small>{{ uploaded.filename }}</small>
+                                    <form method="POST" action="{{ url_for('wizard.remove_policy_upload', policy_type=policy.type) }}" class="d-inline">
+                                        <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+                                        <button type="submit" class="btn btn-link btn-sm text-danger p-0 ms-1" title="Remove">
+                                            <i class="bi bi-x-circle"></i>
+                                        </button>
+                                    </form>
+                                </div>
+                            {% else %}
+                                <form method="POST" action="{{ url_for('wizard.upload_policy', policy_type=policy.type) }}" enctype="multipart/form-data" class="mt-2">
+                                    <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+                                    <div class="input-group input-group-sm">
+                                        <input type="file" name="policy_file" class="form-control form-control-sm" accept=".pdf,.doc,.docx,.xlsx,.xls" required>
+                                        <button type="submit" class="btn btn-outline-primary btn-sm">
+                                            <i class="bi bi-upload"></i> Upload
+                                        </button>
+                                    </div>
+                                    <small class="text-muted">PDF, Word, or Excel — max 16MB</small>
+                                </form>
+                            {% endif %}
                         </div>
                     </div>
                 </div>
@@ -37,13 +66,12 @@
         </div>
 
         <div class="alert alert-info mt-4">
-            <h6><i class="bi bi-lightbulb"></i> Next Steps After Download:</h6>
+            <h6><i class="bi bi-lightbulb"></i> Tips:</h6>
             <ul class="mb-0">
-                <li>Review each template and customise for your operation</li>
-                <li>Fill in your specific details and procedures</li>
-                <li>Have policies reviewed and signed by management</li>
-                <li>Train all staff on new policies and procedures</li>
-                <li>Upload completed policies to FruitQMS for record keeping</li>
+                <li>Download a template to see what's expected, then customise it for your operation</li>
+                <li>If you already have policies in place, upload them directly — you can always update later</li>
+                <li>Have policies reviewed and signed by management before your audit</li>
+                <li>You can return to this step from Settings to upload or replace policies at any time</li>
             </ul>
         </div>
 

@@ -23,11 +23,13 @@
                             {% if wizard.business_type == 'grower' %}
                                 Grower/Farm Only
                             {% elif wizard.business_type == 'packhouse_only' %}
-                                Packhouse Only (contract growers)
-                            {% elif wizard.business_type == 'packhouse_own_farms' %}
-                                Packhouse + Own Farms
+                                Packhouse Only
+                            {% elif wizard.business_type == 'packhouse_farms' %}
+                                Packhouse and Farms
+                            {% elif wizard.business_type == 'packhouse_contract' %}
+                                Packhouse + Contract Growers
                             {% elif wizard.business_type == 'packhouse_mixed' %}
-                                Packhouse + Own Farms + Contract Growers
+                                Packhouse + Own Farm + Contract Growers
                             {% else %}
                                 {{ wizard.business_type|title }}
                             {% endif %}
@@ -56,8 +58,8 @@
             <div class="card-body">
                 <div class="row">
                     <div class="col-md-6">
-                        {% if wizard.staff_count %}
-                            <p><strong>Staff Count:</strong> {{ wizard.staff_count }}</p>
+                        {% if wizard.number_of_packhouses %}
+                            <p><strong>Packhouses:</strong> {{ wizard.number_of_packhouses }}</p>
                         {% endif %}
                         {% if wizard.has_own_fields %}
                             <p><strong>Own Fields:</strong> Yes ({{ wizard.total_farm_size }} hectares)</p>
@@ -65,15 +67,34 @@
                     </div>
                     <div class="col-md-6">
                         {% if wizard.water_usage %}
-                            <p><strong>Water Usage:</strong> {{ wizard.water_usage }} m3/day</p>
+                            <p><strong>Water Usage:</strong> {{ wizard.water_usage }} m³/day per packhouse</p>
                         {% endif %}
                         {% if wizard.energy_usage %}
-                            <p><strong>Energy Usage:</strong> {{ wizard.energy_usage }} kWh/month</p>
+                            <p><strong>Energy Usage:</strong> {{ wizard.energy_usage }} kWh/month per packhouse</p>
                         {% endif %}
                     </div>
                 </div>
             </div>
         </div>
+
+        <!-- Uploaded Policies -->
+        {% set uploaded = wizard.policies_generated|default('{}', true) %}
+        {% if uploaded and uploaded != '{}' %}
+        <div class="card shadow-sm mb-3">
+            <div class="card-header bg-info text-white">
+                <h5 class="mb-0">Uploaded Policies</h5>
+            </div>
+            <div class="card-body">
+                {% for key, val in (uploaded|from_json).items() if uploaded != '{}' %}
+                <div class="d-flex align-items-center mb-1">
+                    <i class="bi bi-file-earmark-check text-success me-2"></i>
+                    <strong class="me-2">{{ key|replace('_', ' ')|title }}:</strong>
+                    <span>{{ val.filename }}</span>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+        {% endif %}
 
         <!-- Compliance Status -->
         <div class="card shadow-sm mb-3">

@@ -80,6 +80,7 @@ def step2():
     form = Step2PackhouseForm()
 
     if form.validate_on_submit():
+        wizard.number_of_packhouses = form.number_of_packhouses.data
         wizard.packhouse_name = form.packhouse_name.data
         wizard.packhouse_address = form.packhouse_address.data
         wizard.packhouse_country = form.packhouse_country.data
@@ -89,7 +90,6 @@ def step2():
         wizard.crops_packed = json.dumps(form.crops_packed.data) if form.crops_packed.data else None
         wizard.water_usage = form.water_usage.data
         wizard.energy_usage = form.energy_usage.data
-        wizard.staff_count = form.staff_count.data
         wizard.current_step = 3
         db.session.commit()
         flash('Packhouse details saved!', 'success')
@@ -97,6 +97,7 @@ def step2():
 
     # Pre-fill form
     if wizard.packhouse_name:
+        form.number_of_packhouses.data = wizard.number_of_packhouses
         form.packhouse_name.data = wizard.packhouse_name
         form.packhouse_address.data = wizard.packhouse_address
         form.packhouse_country.data = wizard.packhouse_country
@@ -110,7 +111,6 @@ def step2():
                 form.crops_packed.data = []
         form.water_usage.data = wizard.water_usage
         form.energy_usage.data = wizard.energy_usage
-        form.staff_count.data = wizard.staff_count
 
     return render_template('wizard/wizard.html',
                          form=form,
@@ -173,7 +173,6 @@ def step4():
         wizard.has_spray_program = form.has_spray_program.data
         wizard.water_treatment_method = form.water_treatment_method.data
         wizard.waste_management_plan = form.waste_management_plan.data
-        wizard.local_regulations_notes = form.local_regulations_notes.data
         wizard.current_step = 5
         db.session.commit()
         flash('Environmental details saved!', 'success')
@@ -186,8 +185,6 @@ def step4():
     if wizard.water_treatment_method:
         form.water_treatment_method.data = wizard.water_treatment_method
     form.waste_management_plan.data = wizard.waste_management_plan
-    if wizard.local_regulations_notes:
-        form.local_regulations_notes.data = wizard.local_regulations_notes
 
     return render_template('wizard/wizard.html',
                          form=form,
@@ -227,6 +224,14 @@ def step6():
     # Determine which policies to generate
     policies_needed = determine_policies_needed(wizard)
 
+    # Load any already-uploaded policies
+    uploaded_policies = {}
+    if wizard.policies_generated:
+        try:
+            uploaded_policies = json.loads(wizard.policies_generated)
+        except:
+            uploaded_policies = {}
+
     wizard.current_step = 7
     db.session.commit()
 
@@ -234,7 +239,89 @@ def step6():
                          step=6,
                          total_steps=7,
                          wizard=wizard,
-                         policies=policies_needed)
+                         policies=policies_needed,
+                         uploaded_policies=uploaded_policies)
+
+
+@wizard_bp.route('/upload-policy/<policy_type>', methods=['POST'])
+@login_required
+def upload_policy(policy_type):
+    """Upload a policy document"""
+    from flask import current_app
+    from werkzeug.utils import secure_filename
+
+    wizard = get_or_create_wizard()
+
+    if 'policy_file' not in request.files:
+        flash('No file selected.', 'warning')
+        return redirect(url_for('wizard.step6'))
+
+    file = request.files['policy_file']
+    if file.filename == '':
+        flash('No file selected.', 'warning')
+        return redirect(url_for('wizard.step6'))
+
+    ALLOWED_EXTENSIONS = {'pdf', 'doc', 'docx', 'xlsx', 'xls'}
+    ext = file.filename.rsplit('.', 1)[-1].lower() if '.' in file.filename else ''
+    if ext not in ALLOWED_EXTENSIONS:
+        flash('File type not allowed. Please upload PDF, Word, or Excel files.', 'danger')
+        return redirect(url_for('wizard.step6'))
+
+    filename = secure_filename(file.filename)
+    # Prefix with wizard id and policy type to avoid collisions
+    stored_name = f"w{wizard.id}_{policy_type}_{filename}"
+    upload_dir = os.path.join(current_app.config['UPLOAD_FOLDER'], 'policies')
+    file.save(os.path.join(upload_dir, stored_name))
+
+    # Track in wizard
+    uploaded = {}
+    if wizard.policies_generated:
+        try:
+            uploaded = json.loads(wizard.policies_generated)
+        except:
+            uploaded = {}
+
+    uploaded[policy_type] = {
+        'filename': filename,
+        'stored_name': stored_name,
+        'uploaded_at': datetime.utcnow().isoformat()
+    }
+    wizard.policies_generated = json.dumps(uploaded)
+    db.session.commit()
+
+    flash(f'Policy "{filename}" uploaded successfully.', 'success')
+    return redirect(url_for('wizard.step6'))
+
+
+@wizard_bp.route('/remove-policy/<policy_type>', methods=['POST'])
+@login_required
+def remove_policy_upload(policy_type):
+    """Remove an uploaded policy document"""
+    from flask import current_app
+
+    wizard = get_or_create_wizard()
+
+    uploaded = {}
+    if wizard.policies_generated:
+        try:
+            uploaded = json.loads(wizard.policies_generated)
+        except:
+            uploaded = {}
+
+    if policy_type in uploaded:
+        # Delete the file from disk
+        stored_name = uploaded[policy_type].get('stored_name')
+        if stored_name:
+            file_path = os.path.join(current_app.config['UPLOAD_FOLDER'], 'policies', stored_name)
+            if os.path.exists(file_path):
+                os.remove(file_path)
+
+        del uploaded[policy_type]
+        wizard.policies_generated = json.dumps(uploaded)
+        db.session.commit()
+        flash('Policy removed.', 'info')
+
+    return redirect(url_for('wizard.step6'))
 
 
 @wizard_bp.route('/step7', methods=['GET', 'POST'])
@@ -258,7 +345,6 @@ def step7():
                 packing_system=wizard.packing_system_type,
                 water_usage_m3_day=wizard.water_usage,
                 energy_usage_kwh_month=wizard.energy_usage,
-                staff_count=wizard.staff_count,
                 water_treatment_method=wizard.water_treatment_method
             )
             db.session.add(org)
@@ -317,36 +403,45 @@ def generate_policy(policy_type):
 
 def analyze_control_points(wizard):
     """Analyze which GLOBALG.A.P. control points apply"""
-    from app.routes.setup import get_globalgap_control_points
+    from app.models import ControlPoint
 
-    all_points = get_globalgap_control_points()
+    # Get control points from any existing org, or all if none yet
+    all_cps = ControlPoint.query.order_by(ControlPoint.code).all()
+
     analysis = {
         'applicable': [],
         'not_applicable': [],
         'maybe_applicable': []
     }
 
-    for section, categories in all_points.items():
-        for category, points in categories.items():
-            for point in points:
-                applicability = determine_applicability(wizard, point)
+    if not all_cps:
+        return analysis
 
-                point_data = {
-                    'section': section,
-                    'category': category,
-                    'code': point['code'],
-                    'description': point['description'],
-                    'criticality': point['criticality'],
-                    'overlap': point.get('overlap'),
-                    'reason': applicability['reason']
-                }
+    for cp in all_cps:
+        point = {
+            'code': cp.code,
+            'description': cp.description,
+            'criticality': cp.criticality,
+            'overlap': cp.overlap_hint
+        }
+        applicability = determine_applicability(wizard, point)
 
-                if applicability['status'] == 'applicable':
-                    analysis['applicable'].append(point_data)
-                elif applicability['status'] == 'not_applicable':
-                    analysis['not_applicable'].append(point_data)
-                else:
-                    analysis['maybe_applicable'].append(point_data)
+        point_data = {
+            'section': cp.category,
+            'category': cp.category,
+            'code': cp.code,
+            'description': cp.description,
+            'criticality': cp.criticality,
+            'overlap': cp.overlap_hint,
+            'reason': applicability['reason']
+        }
+
+        if applicability['status'] == 'applicable':
+            analysis['applicable'].append(point_data)
+        elif applicability['status'] == 'not_applicable':
+            analysis['not_applicable'].append(point_data)
+        else:
+            analysis['maybe_applicable'].append(point_data)
 
     return analysis
 
@@ -358,8 +453,8 @@ def determine_applicability(wizard, point):
 
     # Packhouse-specific points (FV 2.x series)
     if 'FV 2' in code or 'produce handling' in description or 'packing' in description:
-        # Applies to packhouse_only, packhouse_own_farms, packhouse_mixed
-        if wizard.business_type in ['packhouse_only', 'packhouse_own_farms', 'packhouse_mixed']:
+        # Applies to all packhouse types
+        if wizard.business_type in ['packhouse_only', 'packhouse_farms', 'packhouse_contract', 'packhouse_mixed']:
             return {'status': 'applicable', 'reason': 'Packhouse operation'}
         else:
             return {'status': 'not_applicable', 'reason': 'No packhouse operations'}
@@ -369,7 +464,7 @@ def determine_applicability(wizard, point):
         # Applies if they have own fields OR are grower-only
         if wizard.business_type == 'grower' or wizard.has_own_fields:
             return {'status': 'applicable', 'reason': 'Own farm/harvest operations'}
-        elif wizard.business_type == 'packhouse_only' and wizard.has_contract_growers:
+        elif wizard.business_type in ['packhouse_only', 'packhouse_contract'] and wizard.has_contract_growers:
             return {'status': 'maybe_applicable', 'reason': 'Contract grower oversight may require'}
         else:
             return {'status': 'not_applicable', 'reason': 'No own harvest operations'}
@@ -400,7 +495,7 @@ def determine_applicability(wizard, point):
 
     # HACCP specific
     if 'haccp' in description or 'food safety' in description:
-        if wizard.business_type in ['packhouse_only', 'packhouse_own_farms', 'packhouse_mixed']:
+        if wizard.business_type in ['packhouse_only', 'packhouse_farms', 'packhouse_contract', 'packhouse_mixed']:
             if wizard.has_haccp_plan:
                 return {'status': 'applicable', 'reason': 'HACCP plan in place'}
             else:
@@ -438,7 +533,7 @@ def determine_policies_needed(wizard):
             'priority': 'High'
         })
 
-    if not wizard.has_spray_program and (wizard.business_type in ['grower', 'both'] or wizard.has_own_fields):
+    if not wizard.has_spray_program and (wizard.business_type in ['grower', 'packhouse_farms', 'packhouse_mixed'] or wizard.has_own_fields):
         policies.append({
             'name': 'Spray/IPM Program',
             'type': 'spray_program',

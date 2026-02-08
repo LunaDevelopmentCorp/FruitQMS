@@ -5,6 +5,7 @@ from flask_login import LoginManager
 from flask_babel import Babel
 from flask_wtf.csrf import CSRFProtect
 import os
+import json
 
 db = SQLAlchemy()
 migrate = Migrate()
@@ -26,6 +27,11 @@ def create_app():
     app.config['SESSION_COOKIE_SECURE'] = False
     app.config['SESSION_COOKIE_HTTPONLY'] = True
     app.config['SESSION_COOKIE_SAMESITE'] = 'Lax'
+
+    # File uploads
+    app.config['UPLOAD_FOLDER'] = os.path.join(app.instance_path, 'uploads')
+    app.config['MAX_CONTENT_LENGTH'] = 16 * 1024 * 1024  # 16MB max
+    os.makedirs(os.path.join(app.instance_path, 'uploads', 'policies'), exist_ok=True)
 
     # Initialize extensions
     db.init_app(app)
@@ -58,6 +64,14 @@ def create_app():
     app.register_blueprint(dashboard_bp)
     app.register_blueprint(setup_bp)
     app.register_blueprint(wizard_bp)
+
+    # Custom Jinja2 filters
+    @app.template_filter('from_json')
+    def from_json_filter(value):
+        try:
+            return json.loads(value)
+        except (ValueError, TypeError):
+            return {}
 
     # Create database tables
     with app.app_context():

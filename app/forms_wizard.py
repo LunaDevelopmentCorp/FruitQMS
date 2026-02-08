@@ -12,10 +12,11 @@ class MultiCheckboxField(SelectMultipleField):
 class Step1BusinessTypeForm(FlaskForm):
     business_type = SelectField('Business Type *', choices=[
         ('', 'Select Type'),
-        ('grower', 'Grower/Farm Only (no packhouse)'),
-        ('packhouse_only', 'Packhouse Only (contract growers only)'),
-        ('packhouse_own_farms', 'Packhouse + Own Farms'),
-        ('packhouse_mixed', 'Packhouse + Own Farms + Contract Growers')
+        ('grower', 'Growers Only'),
+        ('packhouse_only', 'Packhouse Only'),
+        ('packhouse_farms', 'Packhouse and Farms'),
+        ('packhouse_contract', 'Packhouse + Contract Growers'),
+        ('packhouse_mixed', 'Packhouse + Own Farm + Contract Growers')
     ], validators=[DataRequired()])
 
     audit_scope = SelectField('GLOBALG.A.P. Audit Scope *', choices=[
@@ -26,11 +27,12 @@ class Step1BusinessTypeForm(FlaskForm):
 
     ggn_number = StringField('GLOBALG.A.P. Number (GGN)', validators=[Optional()])
 
-    has_contract_growers = BooleanField('Do you work with contract growers?')
-    number_of_contract_growers = IntegerField('Number of Contract Growers', validators=[Optional()])
+    has_contract_growers = BooleanField('Do you have contract growers?')
+    number_of_contract_growers = IntegerField('How many contract growers?', validators=[Optional()])
 
 
 class Step2PackhouseForm(FlaskForm):
+    number_of_packhouses = IntegerField('How many packhouses do you operate?', validators=[Optional()])
     packhouse_name = StringField('Packhouse Name *', validators=[DataRequired()])
     packhouse_address = TextAreaField('Address *', validators=[DataRequired()])
     packhouse_country = SelectField('Country *', choices=get_country_choices(), validators=[DataRequired()])
@@ -59,9 +61,8 @@ class Step2PackhouseForm(FlaskForm):
         ('other', 'Other')
     ])
 
-    water_usage = FloatField('Daily Water Usage (m³/day)', validators=[Optional()])
-    energy_usage = FloatField('Monthly Energy Usage (kWh/month)', validators=[Optional()])
-    staff_count = IntegerField('Total Staff Count', validators=[Optional()])
+    water_usage = FloatField('Water Usage per packhouse (m³/day)', validators=[Optional()])
+    energy_usage = FloatField('Energy Usage per packhouse (kWh/month)', validators=[Optional()])
 
 
 class Step3GrowerFieldForm(FlaskForm):
@@ -99,7 +100,7 @@ class Step4EnvironmentForm(FlaskForm):
     has_haccp_plan = BooleanField('Do you have a HACCP plan?')
     has_spray_program = BooleanField('Do you have a documented spray/IPM program?')
 
-    water_treatment_method = SelectField('Water Treatment Method', choices=[
+    water_treatment_method = SelectField('What is your water treatment method?', choices=[
         ('', 'Select Method'),
         ('chlorination', 'Chlorination'),
         ('uv', 'UV Treatment'),
@@ -110,4 +111,3 @@ class Step4EnvironmentForm(FlaskForm):
     ])
 
     waste_management_plan = BooleanField('Do you have a waste management plan?')
-    local_regulations_notes = TextAreaField('Local Regulations & Compliance Notes')

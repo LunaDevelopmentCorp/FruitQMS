@@ -146,6 +146,7 @@ class SetupWizard(db.Model):
     number_of_contract_growers = db.Column(db.Integer, nullable=True)
 
     # Step 2: Packhouse Details
+    number_of_packhouses = db.Column(db.Integer, nullable=True)
     packhouse_name = db.Column(db.String(200), nullable=True)
     packhouse_address = db.Column(db.Text, nullable=True)
     packhouse_country = db.Column(db.String(100), nullable=True)

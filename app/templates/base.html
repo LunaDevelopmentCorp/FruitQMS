@@ -25,15 +25,20 @@
             font-weight: bold;
             color: #28a745 !important;
         }
-        .badge.criticality-major {
+        .badge.criticality-major, .badge.criticality-major-must {
             background-color: #dc3545;
         }
-        .badge.criticality-minor {
+        .badge.criticality-minor, .badge.criticality-minor-must {
             background-color: #fd7e14;
         }
-        .badge.criticality-recommendation {
+        .badge.criticality-recommendation, .badge.criticality-recom {
             background-color: #28a745;
         }
+        .border-criticality-major { border-left-color: #dc3545 !important; }
+        .border-criticality-minor { border-left-color: #fd7e14 !important; }
+        .border-criticality-recommendation { border-left-color: #28a745 !important; }
+        .overlap-badge { font-size: 0.7rem; }
+        .applicability-na { opacity: 0.5; }
         .required-field::after {
             content: " *";
             color: red;
@@ -64,19 +69,40 @@
                         <a class="nav-link" href="{{ url_for('setup.settings') }}">{{ _('Settings') }}</a>
                     </li>
                     {% endif %}
+                    <!-- Notifications Bell -->
+                    <li class="nav-item">
+                        <a class="nav-link position-relative" href="{{ url_for('dashboard.notifications') }}">
+                            <i class="bi bi-bell"></i>
+                            {% if unread_notification_count is defined and unread_notification_count > 0 %}
+                            <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger" style="font-size: 0.6rem;">
+                                {{ unread_notification_count }}
+                            </span>
+                            {% endif %}
+                        </a>
+                    </li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">
                             <i class="bi bi-person-circle"></i> {{ current_user.name }}
                         </a>
                         <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="#">{{ _('Profile') }}</a></li>
+                            <li><a class="dropdown-item" href="{{ url_for('auth.profile') }}"><i class="bi bi-person me-2"></i>{{ _('Profile') }}</a></li>
+                            <li><a class="dropdown-item" href="{{ url_for('auth.change_password') }}"><i class="bi bi-key me-2"></i>{{ _('Change Password') }}</a></li>
+                            {% if current_user.role == 'qa_manager' %}
+                            <li><a class="dropdown-item" href="{{ url_for('auth.manage_users') }}"><i class="bi bi-people me-2"></i>{{ _('Manage Users') }}</a></li>
+                            {% endif %}
+                            {% if current_user.role in ['qa_manager', 'auditor'] %}
+                            <li><a class="dropdown-item" href="{{ url_for('setup.audit_log') }}"><i class="bi bi-clock-history me-2"></i>{{ _('Audit Trail') }}</a></li>
+                            {% endif %}
                             <li><hr class="dropdown-divider"></li>
-                            <li><a class="dropdown-item" href="{{ url_for('auth.logout') }}">{{ _('Logout') }}</a></li>
+                            <li><a class="dropdown-item" href="{{ url_for('auth.logout') }}"><i class="bi bi-box-arrow-right me-2"></i>{{ _('Logout') }}</a></li>
                         </ul>
                     </li>
                     {% else %}
                     <li class="nav-item">
                         <a class="nav-link" href="{{ url_for('auth.login') }}">{{ _('Login') }}</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ url_for('auth.register') }}">{{ _('Register') }}</a>
                     </li>
                     {% endif %}
 

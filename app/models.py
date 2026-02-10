@@ -115,9 +115,16 @@ class ControlPoint(db.Model):
     organization_id = db.Column(db.Integer, db.ForeignKey('organizations.id'), nullable=False)
 
     code = db.Column(db.String(20), nullable=False)  # e.g., AF 1.1.1
+    section = db.Column(db.String(100), nullable=True)  # e.g., FV 01 Site Management
     category = db.Column(db.String(100), nullable=False)  # e.g., Site Management
     description = db.Column(db.Text, nullable=False)
+    compliance_criteria = db.Column(db.Text, nullable=True)  # What evidence is needed
     criticality = db.Column(db.String(50), nullable=False)  # Major Must, Minor Must, Recommendation
+    applies_to = db.Column(db.String(50), default='all')  # all, grower, packhouse, mixed
+
+    # Applicability filtering (set by wizard analysis or manual refresh)
+    is_applicable = db.Column(db.Boolean, default=True)
+    applicability_reason = db.Column(db.String(255), nullable=True)
 
     compliance_status = db.Column(db.String(50), nullable=True)  # Compliant, Non-compliant, N/A
     evidence_file = db.Column(db.String(255), nullable=True)
@@ -225,3 +232,45 @@ class GrowerControlPoint(db.Model):
 
     def __repr__(self):
         return f'<GrowerControlPoint Grower:{self.grower_id} CP:{self.control_point_id}>'
+
+
+class AuditLog(db.Model):
+    """Track all compliance-related changes for audit trail"""
+    __tablename__ = 'audit_logs'
+
+    id = db.Column(db.Integer, primary_key=True)
+    user_id = db.Column(db.Integer, db.ForeignKey('users.id'), nullable=False)
+    organization_id = db.Column(db.Integer, db.ForeignKey('organizations.id'), nullable=False)
+    action = db.Column(db.String(50), nullable=False)  # e.g., 'update_compliance', 'upload_evidence'
+    entity_type = db.Column(db.String(50), nullable=False)  # e.g., 'control_point', 'grower'
+    entity_id = db.Column(db.Integer, nullable=False)
+    field_changed = db.Column(db.String(100), nullable=True)
+    old_value = db.Column(db.Text, nullable=True)
+    new_value = db.Column(db.Text, nullable=True)
+    details = db.Column(db.Text, nullable=True)
+    created_at = db.Column(db.DateTime, default=datetime.utcnow)
+
+    user = db.relationship('User', backref='audit_logs', lazy=True)
+
+    def __repr__(self):
+        return f'<AuditLog {self.action} by User:{self.user_id}>'
+
+
+class Notification(db.Model):
+    """User notifications and reminders"""
+    __tablename__ = 'notifications'
+
+    id = db.Column(db.Integer, primary_key=True)
+    user_id = db.Column(db.Integer, db.ForeignKey('users.id'), nullable=False)
+    organization_id = db.Column(db.Integer, db.ForeignKey('organizations.id'), nullable=True)
+    title = db.Column(db.String(200), nullable=False)
+    message = db.Column(db.Text, nullable=False)
+    category = db.Column(db.String(50), default='info')  # info, warning, danger, success
+    link = db.Column(db.String(500), nullable=True)
+    is_read = db.Column(db.Boolean, default=False)
+    created_at = db.Column(db.DateTime, default=datetime.utcnow)
+
+    user = db.relationship('User', backref='notifications', lazy=True)
+
+    def __repr__(self):
+        return f'<Notification {self.title}>'

@@ -5,9 +5,50 @@
 {% block content %}
 <h1 class="mb-4">{{ _('System Settings & Setup') }}</h1>
 
+{% if stats and stats.total > 0 %}
+<!-- Compliance Summary Dashboard -->
+<div class="row mb-4">
+    <div class="col-md-3">
+        <div class="card border-0 shadow-sm text-center">
+            <div class="card-body py-3">
+                <h2 class="mb-0 {% if stats.pct >= 80 %}text-success{% elif stats.pct >= 50 %}text-warning{% else %}text-danger{% endif %}">{{ stats.pct }}%</h2>
+                <small class="text-muted">{{ _('Overall Compliance') }}</small>
+                <div class="progress mt-2" style="height: 6px;">
+                    <div class="progress-bar {% if stats.pct >= 80 %}bg-success{% elif stats.pct >= 50 %}bg-warning{% else %}bg-danger{% endif %}" style="width: {{ stats.pct }}%"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div class="card border-0 shadow-sm text-center">
+            <div class="card-body py-3">
+                <h2 class="mb-0 text-success">{{ stats.compliant }}</h2>
+                <small class="text-muted">{{ _('Compliant') }} / {{ stats.applicable }} {{ _('applicable') }}</small>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div class="card border-0 shadow-sm text-center">
+            <div class="card-body py-3">
+                <h2 class="mb-0 text-danger">{{ stats.non_compliant }}</h2>
+                <small class="text-muted">{{ _('Non-Compliant') }}</small>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div class="card border-0 shadow-sm text-center">
+            <div class="card-body py-3">
+                <h2 class="mb-0 text-secondary">{{ stats.not_assessed }}</h2>
+                <small class="text-muted">{{ _('Not Yet Assessed') }}</small>
+            </div>
+        </div>
+    </div>
+</div>
+{% endif %}
+
 <div class="alert alert-warning">
     <i class="bi bi-exclamation-triangle"></i> <strong>{{ _('Transitioning from paper?') }}</strong>
-    {{ _('Upload scanned forms below – system will pre-fill CSV where possible (OCR phase 2 coming soon)') }}
+    {{ _('Upload scanned forms below \u2013 system will pre-fill CSV where possible (OCR phase 2 coming soon)') }}
 </div>
 
 <!-- Tabs Navigation -->
@@ -32,12 +73,19 @@
             <i class="bi bi-card-checklist"></i> {{ _('Grower Checklists') }} (SMART)
         </button>
     </li>
+    <li class="nav-item" role="presentation">
+        <button class="nav-link" id="policies-tab" data-bs-toggle="tab" data-bs-target="#policies" type="button">
+            <i class="bi bi-file-earmark-pdf"></i> {{ _('Policies & Documents') }}
+        </button>
+    </li>
 </ul>
 
 <!-- Tabs Content -->
 <div class="tab-content">
 
+    <!-- ═══════════════════════════════════════════════════════════ -->
     <!-- Packhouse Setup Tab -->
+    <!-- ═══════════════════════════════════════════════════════════ -->
     <div class="tab-pane fade show active" id="packhouse" role="tabpanel">
         <div class="card shadow-sm">
             <div class="card-header bg-success text-white">
@@ -156,20 +204,31 @@
         </div>
     </div>
 
+    <!-- ═══════════════════════════════════════════════════════════ -->
     <!-- Growers & Fields Tab -->
+    <!-- ═══════════════════════════════════════════════════════════ -->
     <div class="tab-pane fade" id="growers" role="tabpanel">
         <div class="card shadow-sm mb-3">
             <div class="card-header bg-primary text-white">
                 <h5 class="mb-0"><i class="bi bi-people"></i> {{ _('Growers & Fields Management') }}</h5>
             </div>
             <div class="card-body">
-                <div class="mb-3">
-                    <button class="btn btn-outline-primary me-2">
-                        <i class="bi bi-download"></i> {{ _('Download Grower/Field CSV Template') }}
-                    </button>
-                    <button class="btn btn-outline-success">
-                        <i class="bi bi-upload"></i> {{ _('Upload Grower/Field CSV') }}
-                    </button>
+                <!-- CSV Download/Upload -->
+                <div class="row mb-3">
+                    <div class="col-md-6 mb-2">
+                        <a href="{{ url_for('setup.download_grower_csv') }}" class="btn btn-outline-primary w-100">
+                            <i class="bi bi-download"></i> {{ _('Download Grower/Field CSV Template') }}
+                        </a>
+                    </div>
+                    <div class="col-md-6 mb-2">
+                        <form method="POST" action="{{ url_for('setup.upload_grower_csv') }}" enctype="multipart/form-data" class="d-flex gap-2">
+                            <input type="hidden" name="csrf_token" value="{{ csrf_token() }}"/>
+                            <input type="file" class="form-control" name="csv_file" accept=".csv" required>
+                            <button type="submit" class="btn btn-outline-success flex-shrink-0">
+                                <i class="bi bi-upload"></i> {{ _('Upload') }}
+                            </button>
+                        </form>
+                    </div>
                 </div>
 
                 <hr>
@@ -289,6 +348,7 @@
                                 <th>{{ _('Field Name') }}</th>
                                 <th>{{ _('Size (ha)') }}</th>
                                 <th>{{ _('Crop Type') }}</th>
+                                <th>{{ _('GPS') }}</th>
                                 <th>{{ _('Actions') }}</th>
                             </tr>
                         </thead>
@@ -300,9 +360,15 @@
                                 <td>{{ grower.field_name }}</td>
                                 <td>{{ grower.size_hectares or _('N/A') }}</td>
                                 <td><span class="badge bg-success">{{ grower.crop_type or _('N/A') }}</span></td>
+                                <td><small>{{ grower.gps_coordinates or '-' }}</small></td>
                                 <td>
-                                    <button class="btn btn-sm btn-outline-primary">{{ _('View') }}</button>
-                                    <button class="btn btn-sm btn-outline-danger">{{ _('Delete') }}</button>
+                                    <form method="POST" action="{{ url_for('setup.delete_grower', grower_id=grower.id) }}"
+                                          style="display:inline" onsubmit="return confirm('{{ _('Delete this grower?') }}');">
+                                        <input type="hidden" name="csrf_token" value="{{ csrf_token() }}"/>
+                                        <button type="submit" class="btn btn-sm btn-outline-danger">
+                                            <i class="bi bi-trash"></i> {{ _('Delete') }}
+                                        </button>
+                                    </form>
                                 </td>
                             </tr>
                             {% endfor %}
@@ -314,32 +380,69 @@
         {% endif %}
     </div>
 
+    <!-- ═══════════════════════════════════════════════════════════ -->
     <!-- GLOBALG.A.P. Tab -->
+    <!-- ═══════════════════════════════════════════════════════════ -->
     <div class="tab-pane fade" id="globalgap" role="tabpanel">
         <div class="card shadow-sm mb-3">
-            <div class="card-header bg-danger text-white">
+            <div class="card-header bg-danger text-white d-flex justify-content-between align-items-center">
                 <h5 class="mb-0"><i class="bi bi-clipboard-check"></i> {{ _('GLOBALG.A.P. IFA v6.0 Checklist') }}</h5>
+                <div class="d-flex gap-2">
+                    <div class="form-check form-switch mb-0">
+                        <input class="form-check-input" type="checkbox" id="showAllToggle" checked>
+                        <label class="form-check-label text-white small" for="showAllToggle">{{ _('Show all') }}</label>
+                    </div>
+                </div>
             </div>
             <div class="card-body">
                 <div class="alert alert-info">
                     <i class="bi bi-info-circle"></i> <strong>{{ _('Legend:') }}</strong>
-                    <span class="badge criticality-major ms-2">{{ _('Major Must') }}</span> = {{ _('Suspension risk') }} |
-                    <span class="badge criticality-minor ms-2">{{ _('Minor Must') }}</span> = {{ _('Required') }} |
+                    <span class="badge criticality-major-must ms-2">{{ _('Major Must') }}</span> = {{ _('Suspension risk') }} |
+                    <span class="badge criticality-minor-must ms-2">{{ _('Minor Must') }}</span> = {{ _('Required') }} |
                     <span class="badge criticality-recommendation ms-2">{{ _('Recommendation') }}</span> = {{ _('Best practice') }}
+                    {% if stats and stats.total > 0 %}
+                    <span class="float-end">
+                        <strong>{{ stats.major_must_compliant }}/{{ stats.major_must_total }}</strong> Major |
+                        <strong>{{ stats.minor_must_compliant }}/{{ stats.minor_must_total }}</strong> Minor |
+                        <strong>{{ stats.recom_compliant }}/{{ stats.recom_total }}</strong> Recom
+                    </span>
+                    {% endif %}
                 </div>
 
-                <div class="mb-3">
-                    <button class="btn btn-outline-primary">
-                        <i class="bi bi-download"></i> {{ _('Download Compliance CSV Template') }}
-                    </button>
-                    <button class="btn btn-outline-success">
-                        <i class="bi bi-upload"></i> {{ _('Upload Compliance CSV') }}
-                    </button>
+                <!-- CSV & Report Buttons -->
+                <div class="row mb-3">
+                    <div class="col-md-3 mb-2">
+                        <a href="{{ url_for('setup.download_compliance_csv') }}" class="btn btn-outline-primary w-100">
+                            <i class="bi bi-download"></i> {{ _('Download CSV') }}
+                        </a>
+                    </div>
+                    <div class="col-md-3 mb-2">
+                        <form method="POST" action="{{ url_for('setup.upload_compliance_csv') }}" enctype="multipart/form-data" class="d-flex gap-2">
+                            <input type="hidden" name="csrf_token" value="{{ csrf_token() }}"/>
+                            <input type="file" class="form-control" name="csv_file" accept=".csv" required>
+                            <button type="submit" class="btn btn-outline-success flex-shrink-0">
+                                <i class="bi bi-upload"></i>
+                            </button>
+                        </form>
+                    </div>
+                    <div class="col-md-3 mb-2">
+                        <a href="{{ url_for('setup.export_compliance_report') }}" class="btn btn-outline-secondary w-100">
+                            <i class="bi bi-file-earmark-spreadsheet"></i> {{ _('Export Report') }}
+                        </a>
+                    </div>
+                    <div class="col-md-3 mb-2">
+                        <form method="POST" action="{{ url_for('setup.refresh_applicability') }}">
+                            <input type="hidden" name="csrf_token" value="{{ csrf_token() }}"/>
+                            <button type="submit" class="btn btn-outline-warning w-100">
+                                <i class="bi bi-arrow-clockwise"></i> {{ _('Refresh Applicability') }}
+                            </button>
+                        </form>
+                    </div>
                 </div>
 
                 <hr>
 
-                <!-- GLOBALG.A.P. Accordion - COMPLETE DETAILS -->
+                <!-- GLOBALG.A.P. Accordion -->
                 <div class="accordion" id="globalgapAccordion">
                     {% for section, categories in control_points.items() %}
                     <div class="accordion-item">
@@ -347,6 +450,13 @@
                             <button class="accordion-button {% if not loop.first %}collapsed{% endif %}" type="button"
                                     data-bs-toggle="collapse" data-bs-target="#section{{ loop.index }}">
                                 <strong>{{ section }}</strong>
+                                {% set section_points = categories['Control Points'] %}
+                                {% set section_applicable = section_points|selectattr('is_applicable')|list|length %}
+                                {% set section_compliant = section_points|selectattr('compliance_status', 'equalto', 'Compliant')|list|length %}
+                                <span class="badge bg-secondary ms-2">{{ section_applicable }} {{ _('applicable') }}</span>
+                                {% if section_compliant > 0 %}
+                                <span class="badge bg-success ms-1">{{ section_compliant }} {{ _('done') }}</span>
+                                {% endif %}
                             </button>
                         </h2>
                         <div id="section{{ loop.index }}" class="accordion-collapse collapse {% if loop.first %}show{% endif %}"
@@ -354,7 +464,8 @@
                             <div class="accordion-body">
                                 {% for category, points in categories.items() %}
                                 {% for point in points %}
-                                <div class="card mb-3 border-start border-4 {% if point.criticality == 'Major Must' %}border-danger{% elif point.criticality == 'Minor Must' %}border-warning{% else %}border-success{% endif %}">
+                                <div class="card mb-3 border-start border-4 cp-card {% if not point.is_applicable %}applicability-na{% endif %} {% if point.compliance_status == 'Compliant' %}border-success{% elif point.criticality == 'Major Must' %}border-danger{% elif point.criticality == 'Minor Must' %}border-warning{% else %}border-success{% endif %}"
+                                     id="cp-card-{{ point.id }}" data-applicable="{{ 'true' if point.is_applicable else 'false' }}">
                                     <div class="card-header bg-light">
                                         <div class="d-flex justify-content-between align-items-center">
                                             <div>
@@ -364,16 +475,33 @@
                                                         {{ point.criticality }}
                                                     </span>
                                                     {% if point.overlap %}
-                                                    <span class="badge bg-info ms-1" title="{{ point.overlap }}">
-                                                        <i class="bi bi-link-45deg"></i> {{ _('Overlap') }}
+                                                    {% for scheme in point.overlap.split(', ') %}
+                                                    <span class="badge bg-info overlap-badge ms-1" data-bs-toggle="tooltip" title="{{ _('Also covers') }} {{ scheme }}">
+                                                        {{ scheme }}
                                                     </span>
+                                                    {% endfor %}
+                                                    {% endif %}
+                                                    {% if not point.is_applicable %}
+                                                    <span class="badge bg-secondary ms-1"><i class="bi bi-dash-circle"></i> {{ _('N/A') }}</span>
+                                                    {% elif point.compliance_status == 'Compliant' %}
+                                                    <span class="badge bg-success ms-1"><i class="bi bi-check-circle"></i> {{ _('Compliant') }}</span>
+                                                    {% elif point.compliance_status == 'Non-compliant' %}
+                                                    <span class="badge bg-danger ms-1"><i class="bi bi-x-circle"></i> {{ _('Non-compliant') }}</span>
                                                     {% endif %}
                                                 </h6>
                                             </div>
-                                            <button class="btn btn-sm btn-outline-secondary" type="button" data-bs-toggle="collapse"
-                                                    data-bs-target="#details-{{ loop.index }}-{{ loop.index0 }}">
-                                                <i class="bi bi-chevron-down"></i> {{ _('Full Details') }}
-                                            </button>
+                                            <div class="d-flex gap-1 align-items-center">
+                                                {% if point.id %}
+                                                <button class="btn btn-sm btn-outline-secondary toggle-applicable-btn" data-cp-id="{{ point.id }}"
+                                                        title="{{ _('Toggle applicability') }}">
+                                                    <i class="bi bi-{% if point.is_applicable %}eye{% else %}eye-slash{% endif %}"></i>
+                                                </button>
+                                                {% endif %}
+                                                <button class="btn btn-sm btn-outline-secondary" type="button" data-bs-toggle="collapse"
+                                                        data-bs-target="#details-{{ point.id }}">
+                                                    <i class="bi bi-chevron-down"></i>
+                                                </button>
+                                            </div>
                                         </div>
                                     </div>
                                     <div class="card-body">
@@ -383,7 +511,7 @@
                                             <p class="mb-0 mt-1 fs-6">{{ point.description }}</p>
                                         </div>
 
-                                        <!-- Compliance Criteria - ALWAYS SHOWN -->
+                                        <!-- Compliance Criteria -->
                                         {% if point.compliance_criteria %}
                                         <div class="mt-3">
                                             <strong class="text-primary"><i class="bi bi-clipboard-check"></i> {{ _('Compliance Criteria:') }}</strong>
@@ -393,13 +521,19 @@
                                         </div>
                                         {% endif %}
 
+                                        {% if point.applicability_reason %}
+                                        <div class="mt-2">
+                                            <small class="text-muted"><i class="bi bi-info-circle"></i> {{ point.applicability_reason }}</small>
+                                        </div>
+                                        {% endif %}
+
                                         <!-- Expandable Actions -->
-                                        <div class="collapse mt-3" id="details-{{ loop.index }}-{{ loop.index0 }}">
+                                        <div class="collapse mt-3" id="details-{{ point.id }}">
                                             <hr>
                                             <div class="row">
                                                 <div class="col-md-3 mb-3">
                                                     <label class="form-label fw-bold">{{ _('Status:') }}</label>
-                                                    <select class="form-select" data-cp-id="{{ point.id }}">
+                                                    <select class="form-select cp-status" data-cp-id="{{ point.id }}">
                                                         <option value="">{{ _('Select') }}</option>
                                                         <option value="Compliant" {% if point.compliance_status == 'Compliant' %}selected{% endif %}>{{ _('Compliant') }}</option>
                                                         <option value="Non-compliant" {% if point.compliance_status == 'Non-compliant' %}selected{% endif %}>{{ _('Non-compliant') }}</option>
@@ -408,19 +542,32 @@
                                                 </div>
                                                 <div class="col-md-9 mb-3">
                                                     <label class="form-label fw-bold">{{ _('Evidence:') }}</label>
-                                                    <input type="file" class="form-control" accept=".pdf,.doc,.docx,.jpg,.png">
+                                                    <div class="d-flex gap-2">
+                                                        <input type="file" class="form-control cp-evidence" data-cp-id="{{ point.id }}"
+                                                               accept=".pdf,.doc,.docx,.jpg,.jpeg,.png,.xls,.xlsx">
+                                                        <button type="button" class="btn btn-sm btn-outline-primary upload-evidence-btn flex-shrink-0"
+                                                                data-cp-id="{{ point.id }}">
+                                                            <i class="bi bi-cloud-upload"></i>
+                                                        </button>
+                                                    </div>
                                                     {% if point.evidence_file %}
-                                                    <small class="text-success"><i class="bi bi-check-circle"></i> {{ point.evidence_file }}</small>
+                                                    <small class="text-success mt-1 d-block">
+                                                        <i class="bi bi-check-circle"></i>
+                                                        <a href="{{ url_for('setup.download_evidence', cp_id=point.id) }}">{{ point.evidence_file }}</a>
+                                                    </small>
                                                     {% endif %}
+                                                    <div class="evidence-status mt-1" id="evidence-status-{{ point.id }}"></div>
                                                 </div>
                                             </div>
                                             <div class="mb-2">
                                                 <label class="form-label fw-bold">{{ _('Implementation Notes:') }}</label>
-                                                <textarea class="form-control" rows="2" placeholder="{{ _('Describe how you meet this requirement...') }}"></textarea>
+                                                <textarea class="form-control cp-notes" data-cp-id="{{ point.id }}" rows="2"
+                                                          placeholder="{{ _('Describe how you meet this requirement...') }}">{{ point.notes_field or '' }}</textarea>
                                             </div>
-                                            <button class="btn btn-sm btn-success">
+                                            <button class="btn btn-sm btn-success save-cp-btn" data-cp-id="{{ point.id }}">
                                                 <i class="bi bi-save"></i> {{ _('Save') }}
                                             </button>
+                                            <span class="save-feedback ms-2" id="feedback-{{ point.id }}"></span>
                                         </div>
                                     </div>
                                 </div>
@@ -431,17 +578,13 @@
                     </div>
                     {% endfor %}
                 </div>
-
-                <div class="mt-4">
-                    <button class="btn btn-success btn-lg">
-                        <i class="bi bi-save"></i> {{ _('Save All Compliance Updates') }}
-                    </button>
-                </div>
             </div>
         </div>
     </div>
 
+    <!-- ═══════════════════════════════════════════════════════════ -->
     <!-- Grower Checklists Tab (SMART Multi-Site) -->
+    <!-- ═══════════════════════════════════════════════════════════ -->
     <div class="tab-pane fade" id="grower-checklists" role="tabpanel">
         <div class="card shadow-sm">
             <div class="card-header bg-info text-white">
@@ -592,6 +735,70 @@
         </div>
     </div>
 
+    <!-- ═══════════════════════════════════════════════════════════ -->
+    <!-- Policies & Documents Tab (NEW) -->
+    <!-- ═══════════════════════════════════════════════════════════ -->
+    <div class="tab-pane fade" id="policies" role="tabpanel">
+        <div class="card shadow-sm">
+            <div class="card-header bg-dark text-white">
+                <h5 class="mb-0"><i class="bi bi-file-earmark-pdf"></i> {{ _('Policies & Documents') }}</h5>
+            </div>
+            <div class="card-body">
+                <div class="alert alert-info">
+                    <i class="bi bi-info-circle"></i>
+                    {{ _('Generate GLOBALG.A.P.-compliant policy templates pre-filled with your organization data, or upload your own existing policies.') }}
+                </div>
+
+                {% if policies_info and policies_info.has_wizard %}
+
+                <div class="row">
+                    {% for policy in policies_info.policies %}
+                    <div class="col-md-6 col-lg-4 mb-3">
+                        <div class="card h-100 {% if policy.uploaded %}border-success{% endif %}">
+                            <div class="card-body">
+                                <h6 class="card-title">
+                                    <i class="bi {{ policy.icon }} text-success"></i> {{ policy.name }}
+                                    {% if policy.priority == 'High' %}
+                                    <span class="badge bg-danger ms-1">{{ _('High') }}</span>
+                                    {% elif policy.priority == 'Medium' %}
+                                    <span class="badge bg-warning text-dark ms-1">{{ _('Medium') }}</span>
+                                    {% else %}
+                                    <span class="badge bg-info ms-1">{{ _('Low') }}</span>
+                                    {% endif %}
+                                </h6>
+                                <p class="card-text small text-muted">{{ policy.description }}</p>
+
+                                {% if policy.uploaded %}
+                                <div class="alert alert-success py-1 px-2 mb-2">
+                                    <small><i class="bi bi-check-circle"></i> {{ _('Uploaded:') }} {{ policy.upload_info.filename }}</small>
+                                </div>
+                                {% endif %}
+
+                                <div class="d-flex gap-2">
+                                    <a href="{{ url_for('setup.generate_policy', policy_type=policy.type) }}"
+                                       class="btn btn-sm btn-outline-success">
+                                        <i class="bi bi-file-earmark-pdf"></i> {{ _('Generate PDF') }}
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+
+                {% else %}
+                <div class="alert alert-warning">
+                    <i class="bi bi-exclamation-triangle"></i>
+                    {{ _('Please complete the Setup Wizard first to enable policy generation.') }}
+                    <a href="{{ url_for('wizard.start') }}" class="btn btn-sm btn-warning ms-2">
+                        <i class="bi bi-magic"></i> {{ _('Start Wizard') }}
+                    </a>
+                </div>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+
 </div>
 {% endblock %}
 
@@ -602,5 +809,169 @@
     var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
         return new bootstrap.Tooltip(tooltipTriggerEl)
     })
+
+    // CSRF token for AJAX requests
+    var csrfToken = '{{ csrf_token() }}';
+
+    // ==============================
+    // Show All / Applicable Only Toggle
+    // ==============================
+    var showAllToggle = document.getElementById('showAllToggle');
+    if (showAllToggle) {
+        showAllToggle.addEventListener('change', function() {
+            var cards = document.querySelectorAll('.cp-card');
+            cards.forEach(function(card) {
+                if (!showAllToggle.checked && card.dataset.applicable === 'false') {
+                    card.style.display = 'none';
+                } else {
+                    card.style.display = '';
+                }
+            });
+        });
+    }
+
+    // ==============================
+    // Toggle Applicability (AJAX)
+    // ==============================
+    document.querySelectorAll('.toggle-applicable-btn').forEach(function(btn) {
+        btn.addEventListener('click', function() {
+            var cpId = this.dataset.cpId;
+            var card = document.getElementById('cp-card-' + cpId);
+            var icon = this.querySelector('i');
+
+            btn.disabled = true;
+
+            fetch('/setup/toggle-applicability/' + cpId, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'X-CSRFToken': csrfToken
+                }
+            })
+            .then(function(resp) { return resp.json(); })
+            .then(function(data) {
+                btn.disabled = false;
+                if (data.success) {
+                    if (data.is_applicable) {
+                        card.classList.remove('applicability-na');
+                        card.dataset.applicable = 'true';
+                        icon.className = 'bi bi-eye';
+                    } else {
+                        card.classList.add('applicability-na');
+                        card.dataset.applicable = 'false';
+                        icon.className = 'bi bi-eye-slash';
+                    }
+                }
+            })
+            .catch(function(err) {
+                btn.disabled = false;
+            });
+        });
+    });
+
+    // ==============================
+    // Save Control Point (AJAX)
+    // ==============================
+    document.querySelectorAll('.save-cp-btn').forEach(function(btn) {
+        btn.addEventListener('click', function() {
+            var cpId = this.dataset.cpId;
+            var statusEl = document.querySelector('.cp-status[data-cp-id="' + cpId + '"]');
+            var notesEl = document.querySelector('.cp-notes[data-cp-id="' + cpId + '"]');
+            var feedbackEl = document.getElementById('feedback-' + cpId);
+
+            btn.disabled = true;
+            feedbackEl.innerHTML = '<span class="text-muted"><i class="bi bi-hourglass-split"></i> Saving...</span>';
+
+            fetch('{{ url_for("setup.save_control_point") }}', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'X-CSRFToken': csrfToken
+                },
+                body: JSON.stringify({
+                    cp_id: parseInt(cpId),
+                    compliance_status: statusEl.value,
+                    notes: notesEl.value
+                })
+            })
+            .then(function(resp) { return resp.json(); })
+            .then(function(data) {
+                btn.disabled = false;
+                if (data.success) {
+                    feedbackEl.innerHTML = '<span class="text-success"><i class="bi bi-check-circle"></i> Saved!</span>';
+                    // Update card border color based on new status
+                    var card = document.getElementById('cp-card-' + cpId);
+                    if (card) {
+                        card.classList.remove('border-danger', 'border-warning', 'border-success');
+                        if (statusEl.value === 'Compliant') {
+                            card.classList.add('border-success');
+                        } else if (statusEl.value === 'Non-compliant') {
+                            card.classList.add('border-danger');
+                        } else {
+                            card.classList.add('border-warning');
+                        }
+                    }
+                    setTimeout(function() { feedbackEl.innerHTML = ''; }, 3000);
+                } else {
+                    feedbackEl.innerHTML = '<span class="text-danger"><i class="bi bi-x-circle"></i> ' + (data.error || 'Error') + '</span>';
+                }
+            })
+            .catch(function(err) {
+                btn.disabled = false;
+                feedbackEl.innerHTML = '<span class="text-danger"><i class="bi bi-x-circle"></i> Network error</span>';
+            });
+        });
+    });
+
+    // ==============================
+    // Upload Evidence File (AJAX)
+    // ==============================
+    document.querySelectorAll('.upload-evidence-btn').forEach(function(btn) {
+        btn.addEventListener('click', function() {
+            var cpId = this.dataset.cpId;
+            var fileInput = document.querySelector('.cp-evidence[data-cp-id="' + cpId + '"]');
+            var statusEl = document.getElementById('evidence-status-' + cpId);
+
+            if (!fileInput.files.length) {
+                statusEl.innerHTML = '<small class="text-warning">Please select a file first</small>';
+                return;
+            }
+
+            var formData = new FormData();
+            formData.append('evidence_file', fileInput.files[0]);
+
+            btn.disabled = true;
+            statusEl.innerHTML = '<small class="text-muted"><i class="bi bi-hourglass-split"></i> Uploading...</small>';
+
+            fetch('/setup/upload-evidence/' + cpId, {
+                method: 'POST',
+                headers: { 'X-CSRFToken': csrfToken },
+                body: formData
+            })
+            .then(function(resp) { return resp.json(); })
+            .then(function(data) {
+                btn.disabled = false;
+                if (data.success) {
+                    statusEl.innerHTML = '<small class="text-success"><i class="bi bi-check-circle"></i> Uploaded: ' + data.filename + '</small>';
+                } else {
+                    statusEl.innerHTML = '<small class="text-danger"><i class="bi bi-x-circle"></i> ' + (data.error || 'Upload failed') + '</small>';
+                }
+            })
+            .catch(function(err) {
+                btn.disabled = false;
+                statusEl.innerHTML = '<small class="text-danger"><i class="bi bi-x-circle"></i> Network error</small>';
+            });
+        });
+    });
+
+    // Activate tab from URL hash
+    var hash = window.location.hash;
+    if (hash) {
+        var tabId = hash.replace('#', '') + '-tab';
+        var tabEl = document.getElementById(tabId);
+        if (tabEl) {
+            new bootstrap.Tab(tabEl).show();
+        }
+    }
 </script>
 {% endblock %}

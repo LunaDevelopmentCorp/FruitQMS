@@ -9,6 +9,24 @@ class LoginForm(FlaskForm):
     password = PasswordField(_l('Password'), validators=[DataRequired()])
 
 
+class RegistrationForm(FlaskForm):
+    name = StringField(_l('Full Name'), validators=[DataRequired(), Length(min=2, max=100)])
+    username = StringField(_l('Username'), validators=[DataRequired(), Length(min=3, max=80)])
+    email = StringField(_l('Email'), validators=[DataRequired(), Email()])
+    password = PasswordField(_l('Password'), validators=[DataRequired(), Length(min=6)])
+    role = SelectField(_l('Role'), choices=[
+        ('viewer', _l('Viewer')),
+        ('auditor', _l('Auditor')),
+        ('qa_manager', _l('QA Manager'))
+    ])
+
+
+class ChangePasswordForm(FlaskForm):
+    current_password = PasswordField(_l('Current Password'), validators=[DataRequired()])
+    new_password = PasswordField(_l('New Password'), validators=[DataRequired(), Length(min=6)])
+    confirm_password = PasswordField(_l('Confirm New Password'), validators=[DataRequired()])
+
+
 class PackhouseSetupForm(FlaskForm):
     address = TextAreaField(_l('Address *'), validators=[DataRequired()])
     country = SelectField(_l('Country *'), choices=get_country_choices(), validators=[DataRequired()])

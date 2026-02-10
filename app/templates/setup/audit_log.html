@@ -1,0 +1,92 @@
+{% extends "base.html" %}
+
+{% block title %}{{ _('Audit Trail') }} - FruitQMS{% endblock %}
+
+{% block content %}
+<div class="d-flex justify-content-between align-items-center mb-4">
+    <h2><i class="bi bi-clock-history text-success"></i> {{ _('Audit Trail') }}</h2>
+    <a href="{{ url_for('setup.settings') }}" class="btn btn-outline-secondary">
+        <i class="bi bi-arrow-left"></i> {{ _('Back to Settings') }}
+    </a>
+</div>
+
+<div class="card shadow-sm">
+    <div class="card-body">
+        {% if logs.items %}
+        <div class="table-responsive">
+            <table class="table table-hover table-sm">
+                <thead>
+                    <tr>
+                        <th>{{ _('Date') }}</th>
+                        <th>{{ _('User') }}</th>
+                        <th>{{ _('Action') }}</th>
+                        <th>{{ _('Entity') }}</th>
+                        <th>{{ _('Field') }}</th>
+                        <th>{{ _('Old Value') }}</th>
+                        <th>{{ _('New Value') }}</th>
+                        <th>{{ _('Details') }}</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for log in logs.items %}
+                    <tr>
+                        <td><small>{{ log.created_at.strftime('%Y-%m-%d %H:%M') }}</small></td>
+                        <td><small>{{ log.user.name if log.user else 'System' }}</small></td>
+                        <td>
+                            {% if 'update' in log.action %}
+                                <span class="badge bg-primary">{{ log.action }}</span>
+                            {% elif 'create' in log.action or 'upload' in log.action %}
+                                <span class="badge bg-success">{{ log.action }}</span>
+                            {% elif 'delete' in log.action %}
+                                <span class="badge bg-danger">{{ log.action }}</span>
+                            {% else %}
+                                <span class="badge bg-secondary">{{ log.action }}</span>
+                            {% endif %}
+                        </td>
+                        <td><small>{{ log.entity_type }} #{{ log.entity_id }}</small></td>
+                        <td><small>{{ log.field_changed or '-' }}</small></td>
+                        <td><small class="text-muted">{{ log.old_value[:50] if log.old_value else '-' }}</small></td>
+                        <td><small class="text-success">{{ log.new_value[:50] if log.new_value else '-' }}</small></td>
+                        <td><small>{{ log.details or '' }}</small></td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Pagination -->
+        {% if logs.pages > 1 %}
+        <nav>
+            <ul class="pagination justify-content-center">
+                {% if logs.has_prev %}
+                <li class="page-item">
+                    <a class="page-link" href="{{ url_for('setup.audit_log', page=logs.prev_num) }}">{{ _('Previous') }}</a>
+                </li>
+                {% endif %}
+                {% for page_num in logs.iter_pages(left_edge=1, right_edge=1, left_current=2, right_current=2) %}
+                    {% if page_num %}
+                    <li class="page-item {% if page_num == logs.page %}active{% endif %}">
+                        <a class="page-link" href="{{ url_for('setup.audit_log', page=page_num) }}">{{ page_num }}</a>
+                    </li>
+                    {% else %}
+                    <li class="page-item disabled"><span class="page-link">...</span></li>
+                    {% endif %}
+                {% endfor %}
+                {% if logs.has_next %}
+                <li class="page-item">
+                    <a class="page-link" href="{{ url_for('setup.audit_log', page=logs.next_num) }}">{{ _('Next') }}</a>
+                </li>
+                {% endif %}
+            </ul>
+        </nav>
+        {% endif %}
+
+        {% else %}
+        <div class="text-center text-muted py-4">
+            <i class="bi bi-clock-history" style="font-size: 3rem;"></i>
+            <p class="mt-2">{{ _('No audit entries yet. Changes will be logged as you update compliance data.') }}</p>
+        </div>
+        {% endif %}
+    </div>
+</div>
+{% endblock %}

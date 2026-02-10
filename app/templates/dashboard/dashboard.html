@@ -245,6 +245,12 @@
                     <a href="{{ url_for('setup.settings') }}#growers" class="btn btn-outline-secondary">
                         <i class="bi bi-people me-1"></i> {{ _('Manage Growers') }}
                     </a>
+                    <a href="{{ url_for('setup.export_compliance_report') }}" class="btn btn-outline-secondary">
+                        <i class="bi bi-file-earmark-spreadsheet me-1"></i> {{ _('Export Compliance Report') }}
+                    </a>
+                    <a href="{{ url_for('setup.audit_log') }}" class="btn btn-outline-secondary">
+                        <i class="bi bi-clock-history me-1"></i> {{ _('Audit Trail') }}
+                    </a>
                     {% endif %}
                 </div>
             </div>

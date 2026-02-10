@@ -1,0 +1,72 @@
+{% extends "base.html" %}
+
+{% block title %}{{ _('Notifications') }} - FruitQMS{% endblock %}
+
+{% block content %}
+<div class="d-flex justify-content-between align-items-center mb-4">
+    <h2><i class="bi bi-bell text-success"></i> {{ _('Notifications') }}</h2>
+    <div>
+        {% if notifications.items %}
+        <form method="POST" action="{{ url_for('dashboard.clear_notifications') }}" style="display:inline">
+            <input type="hidden" name="csrf_token" value="{{ csrf_token() }}"/>
+            <button type="submit" class="btn btn-outline-danger btn-sm" onclick="return confirm('{{ _('Clear all notifications?') }}')">
+                <i class="bi bi-trash"></i> {{ _('Clear All') }}
+            </button>
+        </form>
+        {% endif %}
+        <a href="{{ url_for('dashboard.index') }}" class="btn btn-outline-secondary btn-sm">
+            <i class="bi bi-arrow-left"></i> {{ _('Back to Dashboard') }}
+        </a>
+    </div>
+</div>
+
+{% if notifications.items %}
+<div class="list-group">
+    {% for notif in notifications.items %}
+    <a href="{{ notif.link or '#' }}" class="list-group-item list-group-item-action {% if not notif.is_read %}list-group-item-light{% endif %}">
+        <div class="d-flex justify-content-between align-items-start">
+            <div>
+                <i class="bi {% if notif.category == 'danger' %}bi-exclamation-triangle-fill text-danger{% elif notif.category == 'warning' %}bi-exclamation-circle-fill text-warning{% elif notif.category == 'success' %}bi-check-circle-fill text-success{% else %}bi-info-circle-fill text-info{% endif %} me-2"></i>
+                <strong>{{ notif.title }}</strong>
+                <p class="mb-0 text-muted mt-1">{{ notif.message }}</p>
+            </div>
+            <small class="text-muted flex-shrink-0 ms-3">{{ notif.created_at.strftime('%Y-%m-%d %H:%M') }}</small>
+        </div>
+    </a>
+    {% endfor %}
+</div>
+
+<!-- Pagination -->
+{% if notifications.pages > 1 %}
+<nav class="mt-3">
+    <ul class="pagination justify-content-center">
+        {% if notifications.has_prev %}
+        <li class="page-item">
+            <a class="page-link" href="{{ url_for('dashboard.notifications', page=notifications.prev_num) }}">{{ _('Previous') }}</a>
+        </li>
+        {% endif %}
+        {% for page_num in notifications.iter_pages(left_edge=1, right_edge=1, left_current=2, right_current=2) %}
+            {% if page_num %}
+            <li class="page-item {% if page_num == notifications.page %}active{% endif %}">
+                <a class="page-link" href="{{ url_for('dashboard.notifications', page=page_num) }}">{{ page_num }}</a>
+            </li>
+            {% else %}
+            <li class="page-item disabled"><span class="page-link">...</span></li>
+            {% endif %}
+        {% endfor %}
+        {% if notifications.has_next %}
+        <li class="page-item">
+            <a class="page-link" href="{{ url_for('dashboard.notifications', page=notifications.next_num) }}">{{ _('Next') }}</a>
+        </li>
+        {% endif %}
+    </ul>
+</nav>
+{% endif %}
+
+{% else %}
+<div class="text-center text-muted py-5">
+    <i class="bi bi-bell-slash" style="font-size: 3rem;"></i>
+    <p class="mt-2">{{ _('No notifications yet.') }}</p>
+</div>
+{% endif %}
+{% endblock %}

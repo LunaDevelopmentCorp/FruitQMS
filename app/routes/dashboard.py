@@ -1,7 +1,8 @@
-from flask import Blueprint, render_template
+from flask import Blueprint, render_template, redirect, url_for, flash, request
 from flask_login import login_required, current_user
 from flask_babel import gettext as _
-from app.models import Organization, Grower, ControlPoint, SetupWizard
+from app import db
+from app.models import Organization, Grower, ControlPoint, SetupWizard, Notification
 import json
 
 dashboard_bp = Blueprint('dashboard', __name__, url_prefix='/dashboard')
@@ -110,6 +111,9 @@ def index():
             'priority': 'medium'
         })
 
+    # --- Auto-generate notifications for reminders ---
+    _generate_reminders(current_user, org, setup_complete, setup_step, cp_non_compliant, cp_not_addressed)
+
     # --- Map data ---
     map_data = {
         'packhouse': None,
@@ -159,3 +163,90 @@ def index():
         recently_completed=recently_completed,
         map_data=json.dumps(map_data)
     )
+
+
+# ============================================================
+# NOTIFICATIONS
+# ============================================================
+
+@dashboard_bp.route('/notifications')
+@login_required
+def notifications():
+    """View all notifications"""
+    page = request.args.get('page', 1, type=int)
+    notifs = Notification.query.filter_by(
+        user_id=current_user.id
+    ).order_by(Notification.created_at.desc()).paginate(page=page, per_page=20, error_out=False)
+
+    # Mark all as read
+    Notification.query.filter_by(user_id=current_user.id, is_read=False).update({'is_read': True})
+    db.session.commit()
+
+    return render_template('dashboard/notifications.html', notifications=notifs)
+
+
+@dashboard_bp.route('/notifications/clear', methods=['POST'])
+@login_required
+def clear_notifications():
+    """Clear all notifications"""
+    Notification.query.filter_by(user_id=current_user.id).delete()
+    db.session.commit()
+    flash(_('All notifications cleared.'), 'info')
+    return redirect(url_for('dashboard.notifications'))
+
+
+def _generate_reminders(user, org, setup_complete, setup_step, non_compliant_count, not_addressed_count):
+    """Generate automatic reminder notifications (idempotent - checks for duplicates)"""
+    from datetime import datetime, timedelta
+
+    if not org:
+        return
+
+    today = datetime.utcnow().date()
+
+    def _create_if_not_exists(title, message, category='info', link=None):
+        """Create notification only if no similar one exists today"""
+        existing = Notification.query.filter(
+            Notification.user_id == user.id,
+            Notification.title == title,
+            Notification.created_at >= datetime(today.year, today.month, today.day)
+        ).first()
+        if not existing:
+            notif = Notification(
+                user_id=user.id,
+                organization_id=org.id,
+                title=title,
+                message=message,
+                category=category,
+                link=link
+            )
+            db.session.add(notif)
+
+    # Reminder: Complete setup wizard
+    if not setup_complete:
+        _create_if_not_exists(
+            _('Complete Setup Wizard'),
+            _('You are on step %(step)d of 7. Complete the wizard to unlock all features.', step=setup_step),
+            category='warning',
+            link=f'/wizard/step{setup_step}'
+        )
+
+    # Reminder: Non-compliant control points
+    if non_compliant_count > 0:
+        _create_if_not_exists(
+            _('Non-Compliant Control Points'),
+            _('You have %(count)d non-compliant control points that need attention.', count=non_compliant_count),
+            category='danger',
+            link='/setup/settings#globalgap'
+        )
+
+    # Reminder: Unreviewed control points
+    if not_addressed_count > 20:
+        _create_if_not_exists(
+            _('Unreviewed Control Points'),
+            _('%(count)d control points have not been reviewed yet.', count=not_addressed_count),
+            category='warning',
+            link='/setup/settings#globalgap'
+        )
+
+    db.session.commit()

@@ -50,6 +50,8 @@ def generate_policy_pdf(wizard, policy_type):
         story = generate_waste_management_content(wizard, title_style, heading_style, styles)
     elif policy_type == 'training_log':
         story = generate_training_log_content(wizard, title_style, heading_style, styles)
+    elif policy_type == 'worker_welfare':
+        story = generate_worker_welfare_content(wizard, title_style, heading_style, styles)
     elif policy_type == 'traceability':
         story = generate_traceability_content(wizard, title_style, heading_style, styles)
 
@@ -327,5 +329,114 @@ def generate_traceability_content(wizard, title_style, heading_style, styles):
         ('GRID', (0, 0), (-1, -1), 1, colors.black)
     ]))
     story.append(trace_table)
+
+    return story
+
+
+def generate_worker_welfare_content(wizard, title_style, heading_style, styles):
+    """Generate Worker Health, Safety & Welfare Policy (GRASP-aligned)"""
+    story = []
+
+    story.append(Paragraph("Worker Health, Safety &amp; Welfare Policy", title_style))
+    story.append(Paragraph(f"<b>Organization:</b> {wizard.packhouse_name or 'Not Specified'}", styles['Normal']))
+    story.append(Paragraph(f"<b>Effective Date:</b> {datetime.now().strftime('%Y-%m-%d')}", styles['Normal']))
+    story.append(Paragraph(f"<b>Staff Count:</b> {wizard.staff_count or 'N/A'}", styles['Normal']))
+    story.append(Spacer(1, 0.3*inch))
+
+    story.append(Paragraph("Policy Statement", heading_style))
+    story.append(Paragraph(
+        "This organization is committed to providing a safe, healthy and fair working environment "
+        "for all employees, seasonal workers, and subcontractors. This policy complies with "
+        "GLOBALG.A.P. IFA v6.0 (AF 04) and the GRASP social practice add-on.",
+        styles['Normal']
+    ))
+    story.append(Spacer(1, 0.3*inch))
+
+    story.append(Paragraph("1. Health &amp; Safety Risk Assessment", heading_style))
+    story.append(Paragraph("A documented risk assessment covering all work activities must be:", styles['Normal']))
+    story.append(Paragraph("&bull; Conducted annually and after any significant changes", styles['Normal']))
+    story.append(Paragraph("&bull; Covering chemical handling, machinery, manual tasks, heat stress", styles['Normal']))
+    story.append(Paragraph("&bull; Reviewed by a competent person", styles['Normal']))
+    story.append(Paragraph("&bull; Communicated to all affected workers", styles['Normal']))
+    story.append(Spacer(1, 0.2*inch))
+
+    story.append(Paragraph("2. Personal Protective Equipment (PPE)", heading_style))
+    story.append(Paragraph("Appropriate PPE shall be provided free of charge for all tasks, including:", styles['Normal']))
+    story.append(Paragraph("&bull; Gloves, boots, and overalls for field and packhouse work", styles['Normal']))
+    story.append(Paragraph("&bull; Respirators and chemical-resistant clothing for PPP application", styles['Normal']))
+    story.append(Paragraph("&bull; Eye protection, ear protection where required", styles['Normal']))
+    story.append(Paragraph("&bull; PPE must be maintained, replaced, and stored correctly", styles['Normal']))
+    story.append(Spacer(1, 0.2*inch))
+
+    story.append(Paragraph("3. Emergency Procedures &amp; First Aid", heading_style))
+    story.append(Paragraph("&bull; Written emergency procedures posted at all work areas", styles['Normal']))
+    story.append(Paragraph("&bull; At least one trained first-aider per shift / work area", styles['Normal']))
+    story.append(Paragraph("&bull; First-aid kits accessible and regularly inspected", styles['Normal']))
+    story.append(Paragraph("&bull; Emergency contact numbers clearly displayed", styles['Normal']))
+    story.append(Spacer(1, 0.2*inch))
+
+    story.append(Paragraph("4. Training &amp; Competence", heading_style))
+    story.append(Paragraph("All workers receive training upon induction and at least annually on:", styles['Normal']))
+
+    training_data = [
+        ['Topic', 'Frequency', 'Record'],
+        ['Health &amp; Safety Induction', 'On hire', 'Signed register'],
+        ['Pesticide Safety (if applicable)', 'Annual', 'Certificate / register'],
+        ['Hygiene &amp; Food Safety', 'Annual', 'Signed register'],
+        ['First Aid (designated persons)', 'Every 2 years', 'Certificate'],
+        ['Fire / Emergency Drill', 'Annual', 'Drill report'],
+    ]
+    training_table = Table(training_data, colWidths=[2.5*inch, 1.5*inch, 2.5*inch])
+    training_table.setStyle(TableStyle([
+        ('BACKGROUND', (0, 0), (-1, 0), colors.HexColor('#28a745')),
+        ('TEXTCOLOR', (0, 0), (-1, 0), colors.whitesmoke),
+        ('FONTNAME', (0, 0), (-1, 0), 'Helvetica-Bold'),
+        ('FONTSIZE', (0, 0), (-1, -1), 8),
+        ('GRID', (0, 0), (-1, -1), 1, colors.black),
+        ('VALIGN', (0, 0), (-1, -1), 'TOP')
+    ]))
+    story.append(training_table)
+    story.append(Spacer(1, 0.3*inch))
+
+    story.append(Paragraph("5. GRASP Social Practice Requirements", heading_style))
+    story.append(Paragraph("&bull; Workers' representative elected and documented", styles['Normal']))
+    story.append(Paragraph("&bull; Grievance procedure accessible to all workers", styles['Normal']))
+    story.append(Paragraph("&bull; Written employment contracts for all staff", styles['Normal']))
+    story.append(Paragraph("&bull; Payslips with transparent deductions", styles['Normal']))
+    story.append(Paragraph("&bull; Working hours documented and within legal limits", styles['Normal']))
+    story.append(Paragraph("&bull; No child labour or forced labour; age verification in place", styles['Normal']))
+    story.append(Spacer(1, 0.2*inch))
+
+    story.append(Paragraph("6. Facilities &amp; Welfare", heading_style))
+    story.append(Paragraph("&bull; Clean drinking water available at all work sites", styles['Normal']))
+    story.append(Paragraph("&bull; Toilet and handwashing facilities within reasonable distance", styles['Normal']))
+    story.append(Paragraph("&bull; Rest areas / shade for break times", styles['Normal']))
+    story.append(Paragraph("&bull; Adequate housing if accommodation is provided", styles['Normal']))
+    story.append(Spacer(1, 0.3*inch))
+
+    story.append(Paragraph("7. Accident Reporting &amp; Records", heading_style))
+    story.append(Paragraph("All workplace incidents must be recorded in the Accident Register:", styles['Normal']))
+
+    accident_data = [
+        ['Date', 'Worker Name', 'Description of Incident', 'Action Taken', 'Follow-Up'],
+        ['', '', '', '', ''],
+        ['', '', '', '', ''],
+        ['', '', '', '', ''],
+    ]
+    accident_table = Table(accident_data, colWidths=[0.8*inch, 1.5*inch, 2*inch, 1.5*inch, 1.5*inch])
+    accident_table.setStyle(TableStyle([
+        ('BACKGROUND', (0, 0), (-1, 0), colors.HexColor('#28a745')),
+        ('TEXTCOLOR', (0, 0), (-1, 0), colors.whitesmoke),
+        ('FONTNAME', (0, 0), (-1, 0), 'Helvetica-Bold'),
+        ('FONTSIZE', (0, 0), (-1, -1), 7),
+        ('GRID', (0, 0), (-1, -1), 1, colors.black)
+    ]))
+    story.append(accident_table)
+
+    story.append(Spacer(1, 0.5*inch))
+    story.append(Paragraph("Signed: _____________________ Date: _____________________", styles['Normal']))
+    story.append(Spacer(1, 0.2*inch))
+    story.append(Paragraph("_" * 80, styles['Normal']))
+    story.append(Paragraph("<b>Generated by FruitQMS - GLOBALG.A.P. &amp; GRASP Compliant</b>", styles['Normal']))
 
     return story

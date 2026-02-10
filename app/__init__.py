@@ -40,6 +40,7 @@ def create_app():
     app.config['UPLOAD_FOLDER'] = os.path.join(app.instance_path, 'uploads')
     app.config['MAX_CONTENT_LENGTH'] = 16 * 1024 * 1024  # 16MB max
     os.makedirs(os.path.join(app.instance_path, 'uploads', 'policies'), exist_ok=True)
+    os.makedirs(os.path.join(app.instance_path, 'uploads', 'evidence'), exist_ok=True)
 
     # Initialize extensions
     db.init_app(app)
@@ -76,13 +77,21 @@ def create_app():
             session['lang'] = lang
         return redirect(request.referrer or url_for('main.index'))
 
-    # Inject language data into all templates
+    # Inject language data and notification count into all templates
     @app.context_processor
-    def inject_locale():
+    def inject_globals():
         from flask_babel import get_locale as _get_locale
+        from flask_login import current_user as _cu
+        unread_count = 0
+        if _cu.is_authenticated:
+            from app.models import Notification
+            unread_count = Notification.query.filter_by(
+                user_id=_cu.id, is_read=False
+            ).count()
         return {
             'languages': LANGUAGES,
-            'current_locale': _get_locale()
+            'current_locale': _get_locale(),
+            'unread_notification_count': unread_count
         }
 
     # Register blueprints

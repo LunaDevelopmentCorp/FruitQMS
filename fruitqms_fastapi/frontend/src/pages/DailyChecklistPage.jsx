@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react'
+import { useTranslation } from 'react-i18next'
 import api from '../api'
 
 const STATUS_COLORS = {
@@ -15,6 +16,7 @@ export default function DailyChecklistPage() {
   const [showForm, setShowForm] = useState(false)
   const [form, setForm] = useState({ checklist_type: 'hygiene', shift: 'day' })
   const [loading, setLoading] = useState(true)
+  const { t } = useTranslation()
 
   const load = () => {
     Promise.all([
@@ -53,47 +55,47 @@ export default function DailyChecklistPage() {
   return (
     <div>
       <div className="flex justify-between items-center mb-6">
-        <h1 className="text-2xl font-bold text-gray-800">Daily Checklists</h1>
+        <h1 className="text-2xl font-bold text-gray-800">{t('dailyChecklists.title')}</h1>
         <button onClick={() => setShowForm(!showForm)} className="bg-brand-600 text-white px-4 py-2 rounded-lg text-sm hover:bg-brand-700">
-          {showForm ? 'Cancel' : '+ New Checklist'}
+          {showForm ? t('fields.cancel') : t('dailyChecklists.newChecklist')}
         </button>
       </div>
 
       {showForm && (
         <form onSubmit={handleSubmit} className="bg-white border rounded-xl p-5 mb-6">
-          <h3 className="font-semibold text-gray-800 mb-4">New Daily Checklist</h3>
+          <h3 className="font-semibold text-gray-800 mb-4">{t('dailyChecklists.formTitle')}</h3>
           <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
             <div>
-              <label className="block text-xs text-gray-600 mb-1">Packhouse *</label>
+              <label className="block text-xs text-gray-600 mb-1">{t('intake.packhouse')} *</label>
               <select value={form.packhouse_id || ''} onChange={set('packhouse_id')} required
                 className="w-full px-3 py-2 border rounded-lg text-sm focus:ring-2 focus:ring-brand-500 outline-none">
-                <option value="">Select...</option>
+                <option value="">{t('fields.select')}</option>
                 {packhouses.map((p) => <option key={p.id} value={p.id}>{p.name}</option>)}
               </select>
             </div>
             <div>
-              <label className="block text-xs text-gray-600 mb-1">Type *</label>
+              <label className="block text-xs text-gray-600 mb-1">{t('dailyChecklists.checklistType')} *</label>
               <select value={form.checklist_type} onChange={set('checklist_type')} required
                 className="w-full px-3 py-2 border rounded-lg text-sm focus:ring-2 focus:ring-brand-500 outline-none">
-                {TYPES.map((t) => <option key={t} value={t}>{t.replace('_', ' ')}</option>)}
+                {TYPES.map((tp) => <option key={tp} value={tp}>{t(`dailyChecklists.types.${tp}`)}</option>)}
               </select>
             </div>
             <div>
-              <label className="block text-xs text-gray-600 mb-1">Date</label>
+              <label className="block text-xs text-gray-600 mb-1">{t('fields.date')}</label>
               <input type="date" value={form.checklist_date || ''} onChange={set('checklist_date')}
                 className="w-full px-3 py-2 border rounded-lg text-sm focus:ring-2 focus:ring-brand-500 outline-none" />
             </div>
             <div>
-              <label className="block text-xs text-gray-600 mb-1">Shift</label>
+              <label className="block text-xs text-gray-600 mb-1">{t('fields.shift')}</label>
               <select value={form.shift} onChange={set('shift')}
                 className="w-full px-3 py-2 border rounded-lg text-sm focus:ring-2 focus:ring-brand-500 outline-none">
-                <option value="day">Day</option>
-                <option value="night">Night</option>
+                <option value="day">{t('processChecks.shifts.day')}</option>
+                <option value="night">{t('processChecks.shifts.night')}</option>
               </select>
             </div>
           </div>
           <button type="submit" className="mt-4 bg-brand-600 text-white px-6 py-2 rounded-lg text-sm hover:bg-brand-700">
-            Create Checklist
+            {t('dailyChecklists.createChecklist')}
           </button>
         </form>
       )}
@@ -102,20 +104,20 @@ export default function DailyChecklistPage() {
         <table className="w-full text-sm">
           <thead>
             <tr className="border-b bg-gray-50">
-              <th className="text-left px-4 py-3 font-medium text-gray-600">ID</th>
-              <th className="text-left px-4 py-3 font-medium text-gray-600">Type</th>
-              <th className="text-left px-4 py-3 font-medium text-gray-600">Date</th>
-              <th className="text-left px-4 py-3 font-medium text-gray-600">Shift</th>
-              <th className="text-left px-4 py-3 font-medium text-gray-600">Status</th>
-              <th className="text-left px-4 py-3 font-medium text-gray-600">Passed</th>
-              <th className="text-left px-4 py-3 font-medium text-gray-600">Actions</th>
+              <th className="text-left px-4 py-3 font-medium text-gray-600">{t('fields.id')}</th>
+              <th className="text-left px-4 py-3 font-medium text-gray-600">{t('fields.type')}</th>
+              <th className="text-left px-4 py-3 font-medium text-gray-600">{t('fields.date')}</th>
+              <th className="text-left px-4 py-3 font-medium text-gray-600">{t('fields.shift')}</th>
+              <th className="text-left px-4 py-3 font-medium text-gray-600">{t('fields.status')}</th>
+              <th className="text-left px-4 py-3 font-medium text-gray-600">{t('fields.passed')}</th>
+              <th className="text-left px-4 py-3 font-medium text-gray-600">{t('fields.actions')}</th>
             </tr>
           </thead>
           <tbody className="divide-y">
             {items.map((item) => (
               <tr key={item.id} className="hover:bg-gray-50">
                 <td className="px-4 py-3 text-gray-500">#{item.id}</td>
-                <td className="px-4 py-3 font-medium capitalize">{(item.checklist_type || '').replace('_', ' ')}</td>
+                <td className="px-4 py-3 font-medium capitalize">{t(`dailyChecklists.types.${item.checklist_type}`, { defaultValue: (item.checklist_type || '').replace('_', ' ') })}</td>
                 <td className="px-4 py-3">{item.checklist_date || '—'}</td>
                 <td className="px-4 py-3">{item.shift || '—'}</td>
                 <td className="px-4 py-3">
@@ -127,8 +129,8 @@ export default function DailyChecklistPage() {
                 <td className="px-4 py-3">
                   {item.status === 'submitted' && (
                     <div className="flex gap-1">
-                      <button onClick={() => updateStatus(item.id, 'reviewed')} className="text-xs bg-yellow-100 text-yellow-700 px-2 py-1 rounded hover:bg-yellow-200">Review</button>
-                      <button onClick={() => updateStatus(item.id, 'approved')} className="text-xs bg-green-100 text-green-700 px-2 py-1 rounded hover:bg-green-200">Approve</button>
+                      <button onClick={() => updateStatus(item.id, 'reviewed')} className="text-xs bg-yellow-100 text-yellow-700 px-2 py-1 rounded hover:bg-yellow-200">{t('dailyChecklists.review')}</button>
+                      <button onClick={() => updateStatus(item.id, 'approved')} className="text-xs bg-green-100 text-green-700 px-2 py-1 rounded hover:bg-green-200">{t('dailyChecklists.approve')}</button>
                     </div>
                   )}
                 </td>
@@ -136,7 +138,7 @@ export default function DailyChecklistPage() {
             ))}
           </tbody>
         </table>
-        {items.length === 0 && <p className="text-center py-8 text-gray-400 text-sm">No daily checklists yet</p>}
+        {items.length === 0 && <p className="text-center py-8 text-gray-400 text-sm">{t('dailyChecklists.noChecklists')}</p>}
       </div>
     </div>
   )

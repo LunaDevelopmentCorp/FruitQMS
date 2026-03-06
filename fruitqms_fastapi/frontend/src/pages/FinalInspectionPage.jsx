@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react'
+import { useTranslation } from 'react-i18next'
 import api from '../api'
 
 const STATUS_COLORS = {
@@ -14,6 +15,7 @@ export default function FinalInspectionPage() {
   const [showForm, setShowForm] = useState(false)
   const [form, setForm] = useState({})
   const [loading, setLoading] = useState(true)
+  const { t } = useTranslation()
 
   const load = () => {
     Promise.all([
@@ -53,52 +55,52 @@ export default function FinalInspectionPage() {
   return (
     <div>
       <div className="flex justify-between items-center mb-6">
-        <h1 className="text-2xl font-bold text-gray-800">Final Inspections</h1>
+        <h1 className="text-2xl font-bold text-gray-800">{t('finalInspections.title')}</h1>
         <button onClick={() => setShowForm(!showForm)} className="bg-brand-600 text-white px-4 py-2 rounded-lg text-sm hover:bg-brand-700">
-          {showForm ? 'Cancel' : '+ New Inspection'}
+          {showForm ? t('fields.cancel') : t('finalInspections.newInspection')}
         </button>
       </div>
 
       {showForm && (
         <form onSubmit={handleSubmit} className="bg-white border rounded-xl p-5 mb-6">
-          <h3 className="font-semibold text-gray-800 mb-4">New Final Inspection</h3>
+          <h3 className="font-semibold text-gray-800 mb-4">{t('finalInspections.formTitle')}</h3>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
             <div>
-              <label className="block text-xs text-gray-600 mb-1">Packhouse *</label>
+              <label className="block text-xs text-gray-600 mb-1">{t('intake.packhouse')} *</label>
               <select value={form.packhouse_id || ''} onChange={set('packhouse_id')} required
                 className="w-full px-3 py-2 border rounded-lg text-sm focus:ring-2 focus:ring-brand-500 outline-none">
-                <option value="">Select...</option>
+                <option value="">{t('fields.select')}</option>
                 {packhouses.map((p) => <option key={p.id} value={p.id}>{p.name}</option>)}
               </select>
             </div>
             <div>
-              <label className="block text-xs text-gray-600 mb-1">Pallet Code</label>
+              <label className="block text-xs text-gray-600 mb-1">{t('finalInspections.palletCode')}</label>
               <input value={form.pallet_code || ''} onChange={set('pallet_code')}
                 className="w-full px-3 py-2 border rounded-lg text-sm focus:ring-2 focus:ring-brand-500 outline-none" />
             </div>
             <div>
-              <label className="block text-xs text-gray-600 mb-1">Batch Code</label>
+              <label className="block text-xs text-gray-600 mb-1">{t('fields.batchCode')}</label>
               <input value={form.batch_code || ''} onChange={set('batch_code')}
                 className="w-full px-3 py-2 border rounded-lg text-sm focus:ring-2 focus:ring-brand-500 outline-none" />
             </div>
             <div>
-              <label className="block text-xs text-gray-600 mb-1">Box Count</label>
+              <label className="block text-xs text-gray-600 mb-1">{t('finalInspections.boxCount')}</label>
               <input type="number" value={form.box_count || ''} onChange={set('box_count')}
                 className="w-full px-3 py-2 border rounded-lg text-sm focus:ring-2 focus:ring-brand-500 outline-none" />
             </div>
             <div>
-              <label className="block text-xs text-gray-600 mb-1">Total Weight (kg)</label>
+              <label className="block text-xs text-gray-600 mb-1">{t('finalInspections.totalWeight')}</label>
               <input type="number" step="0.1" value={form.total_weight_kg || ''} onChange={set('total_weight_kg')}
                 className="w-full px-3 py-2 border rounded-lg text-sm focus:ring-2 focus:ring-brand-500 outline-none" />
             </div>
             <div>
-              <label className="block text-xs text-gray-600 mb-1">Product Description</label>
+              <label className="block text-xs text-gray-600 mb-1">{t('finalInspections.productDescription')}</label>
               <input value={form.product_description || ''} onChange={set('product_description')}
                 className="w-full px-3 py-2 border rounded-lg text-sm focus:ring-2 focus:ring-brand-500 outline-none" />
             </div>
           </div>
           <button type="submit" className="mt-4 bg-brand-600 text-white px-6 py-2 rounded-lg text-sm hover:bg-brand-700">
-            Create Inspection
+            {t('finalInspections.createInspection')}
           </button>
         </form>
       )}
@@ -107,14 +109,14 @@ export default function FinalInspectionPage() {
         <table className="w-full text-sm">
           <thead>
             <tr className="border-b bg-gray-50">
-              <th className="text-left px-4 py-3 font-medium text-gray-600">ID</th>
-              <th className="text-left px-4 py-3 font-medium text-gray-600">Pallet</th>
-              <th className="text-left px-4 py-3 font-medium text-gray-600">Batch</th>
-              <th className="text-left px-4 py-3 font-medium text-gray-600">Boxes</th>
-              <th className="text-left px-4 py-3 font-medium text-gray-600">Weight</th>
-              <th className="text-left px-4 py-3 font-medium text-gray-600">Status</th>
-              <th className="text-left px-4 py-3 font-medium text-gray-600">Date</th>
-              <th className="text-left px-4 py-3 font-medium text-gray-600">Actions</th>
+              <th className="text-left px-4 py-3 font-medium text-gray-600">{t('fields.id')}</th>
+              <th className="text-left px-4 py-3 font-medium text-gray-600">{t('fields.pallet')}</th>
+              <th className="text-left px-4 py-3 font-medium text-gray-600">{t('fields.batch')}</th>
+              <th className="text-left px-4 py-3 font-medium text-gray-600">{t('fields.boxes')}</th>
+              <th className="text-left px-4 py-3 font-medium text-gray-600">{t('fields.weight')}</th>
+              <th className="text-left px-4 py-3 font-medium text-gray-600">{t('fields.status')}</th>
+              <th className="text-left px-4 py-3 font-medium text-gray-600">{t('fields.date')}</th>
+              <th className="text-left px-4 py-3 font-medium text-gray-600">{t('fields.actions')}</th>
             </tr>
           </thead>
           <tbody className="divide-y">
@@ -134,9 +136,9 @@ export default function FinalInspectionPage() {
                 <td className="px-4 py-3">
                   {item.approval_status === 'pending' && (
                     <div className="flex gap-1">
-                      <button onClick={() => updateStatus(item.id, 'approved')} className="text-xs bg-green-100 text-green-700 px-2 py-1 rounded hover:bg-green-200">Approve</button>
-                      <button onClick={() => updateStatus(item.id, 'rework')} className="text-xs bg-orange-100 text-orange-700 px-2 py-1 rounded hover:bg-orange-200">Rework</button>
-                      <button onClick={() => updateStatus(item.id, 'rejected')} className="text-xs bg-red-100 text-red-700 px-2 py-1 rounded hover:bg-red-200">Reject</button>
+                      <button onClick={() => updateStatus(item.id, 'approved')} className="text-xs bg-green-100 text-green-700 px-2 py-1 rounded hover:bg-green-200">{t('finalInspections.approve')}</button>
+                      <button onClick={() => updateStatus(item.id, 'rework')} className="text-xs bg-orange-100 text-orange-700 px-2 py-1 rounded hover:bg-orange-200">{t('finalInspections.rework')}</button>
+                      <button onClick={() => updateStatus(item.id, 'rejected')} className="text-xs bg-red-100 text-red-700 px-2 py-1 rounded hover:bg-red-200">{t('finalInspections.reject')}</button>
                     </div>
                   )}
                 </td>
@@ -144,7 +146,7 @@ export default function FinalInspectionPage() {
             ))}
           </tbody>
         </table>
-        {items.length === 0 && <p className="text-center py-8 text-gray-400 text-sm">No final inspections yet</p>}
+        {items.length === 0 && <p className="text-center py-8 text-gray-400 text-sm">{t('finalInspections.noInspections')}</p>}
       </div>
     </div>
   )

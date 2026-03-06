@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import { useAuth } from '../AuthContext'
+import { useTranslation } from 'react-i18next'
 
 export default function LoginPage() {
   const [email, setEmail] = useState('')
@@ -9,6 +10,7 @@ export default function LoginPage() {
   const [loading, setLoading] = useState(false)
   const { login } = useAuth()
   const navigate = useNavigate()
+  const { t } = useTranslation()
 
   const handleSubmit = async (e) => {
     e.preventDefault()
@@ -18,7 +20,7 @@ export default function LoginPage() {
       await login(email, password)
       navigate('/')
     } catch {
-      setError('Invalid email or password')
+      setError(t('auth.invalidCredentials'))
     } finally {
       setLoading(false)
     }
@@ -28,8 +30,8 @@ export default function LoginPage() {
     <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-brand-50 to-brand-100">
       <div className="bg-white rounded-xl shadow-lg p-8 w-full max-w-md">
         <div className="text-center mb-8">
-          <h1 className="text-3xl font-bold text-brand-800">🍊 FruitQMS</h1>
-          <p className="text-gray-500 mt-2">Quality Management System</p>
+          <h1 className="text-3xl font-bold text-brand-800">🍊 {t('app.name')}</h1>
+          <p className="text-gray-500 mt-2">{t('app.subtitle')}</p>
         </div>
 
         {error && (
@@ -40,19 +42,19 @@ export default function LoginPage() {
 
         <form onSubmit={handleSubmit} className="space-y-4">
           <div>
-            <label className="block text-sm font-medium text-gray-700 mb-1">Email</label>
+            <label className="block text-sm font-medium text-gray-700 mb-1">{t('auth.email')}</label>
             <input
               type="email"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
               required
               className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-brand-500 focus:border-brand-500 outline-none"
-              placeholder="demo@fruitqms.local"
+              placeholder="demo@fruitqms.example.com"
             />
           </div>
 
           <div>
-            <label className="block text-sm font-medium text-gray-700 mb-1">Password</label>
+            <label className="block text-sm font-medium text-gray-700 mb-1">{t('auth.password')}</label>
             <input
               type="password"
               value={password}
@@ -68,14 +70,14 @@ export default function LoginPage() {
             disabled={loading}
             className="w-full bg-brand-600 text-white py-2.5 rounded-lg font-medium hover:bg-brand-700 transition-colors disabled:opacity-50"
           >
-            {loading ? 'Signing in...' : 'Sign In'}
+            {loading ? t('auth.signingIn') : t('auth.signIn')}
           </button>
         </form>
 
         <p className="text-center text-sm text-gray-500 mt-6">
-          No account?{' '}
+          {t('auth.noAccount')}{' '}
           <Link to="/register" className="text-brand-600 hover:underline font-medium">
-            Register
+            {t('auth.register')}
           </Link>
         </p>
       </div>

@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
+import { useTranslation } from 'react-i18next'
 import api from '../api'
 
 export default function RegisterPage() {
@@ -9,6 +10,7 @@ export default function RegisterPage() {
   const [error, setError] = useState('')
   const [loading, setLoading] = useState(false)
   const navigate = useNavigate()
+  const { t } = useTranslation()
 
   const set = (k) => (e) => setForm({ ...form, [k]: e.target.value })
 
@@ -30,7 +32,7 @@ export default function RegisterPage() {
     <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-brand-50 to-brand-100">
       <div className="bg-white rounded-xl shadow-lg p-8 w-full max-w-md">
         <div className="text-center mb-6">
-          <h1 className="text-3xl font-bold text-brand-800">🍊 Register</h1>
+          <h1 className="text-3xl font-bold text-brand-800">🍊 {t('auth.register')}</h1>
         </div>
 
         {error && (
@@ -39,39 +41,39 @@ export default function RegisterPage() {
 
         <form onSubmit={handleSubmit} className="space-y-3">
           <div>
-            <label className="block text-sm font-medium text-gray-700 mb-1">Full Name</label>
+            <label className="block text-sm font-medium text-gray-700 mb-1">{t('auth.fullName')}</label>
             <input value={form.name} onChange={set('name')} required
               className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-brand-500 outline-none" />
           </div>
           <div>
-            <label className="block text-sm font-medium text-gray-700 mb-1">Username</label>
+            <label className="block text-sm font-medium text-gray-700 mb-1">{t('auth.username')}</label>
             <input value={form.username} onChange={set('username')} required
               className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-brand-500 outline-none" />
           </div>
           <div>
-            <label className="block text-sm font-medium text-gray-700 mb-1">Email</label>
+            <label className="block text-sm font-medium text-gray-700 mb-1">{t('auth.email')}</label>
             <input type="email" value={form.email} onChange={set('email')} required
               className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-brand-500 outline-none" />
           </div>
           <div>
-            <label className="block text-sm font-medium text-gray-700 mb-1">Password</label>
+            <label className="block text-sm font-medium text-gray-700 mb-1">{t('auth.password')}</label>
             <input type="password" value={form.password} onChange={set('password')} required minLength={8}
               className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-brand-500 outline-none" />
           </div>
           <div className="grid grid-cols-2 gap-3">
             <div>
-              <label className="block text-sm font-medium text-gray-700 mb-1">Role</label>
+              <label className="block text-sm font-medium text-gray-700 mb-1">{t('auth.role')}</label>
               <select value={form.role} onChange={set('role')}
                 className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-brand-500 outline-none">
-                <option value="viewer">Viewer</option>
-                <option value="inspector">Inspector</option>
-                <option value="qa_manager">QA Manager</option>
-                <option value="auditor">Auditor</option>
-                <option value="admin">Admin</option>
+                <option value="viewer">{t('roles.viewer')}</option>
+                <option value="inspector">{t('roles.inspector')}</option>
+                <option value="qa_manager">{t('roles.qa_manager')}</option>
+                <option value="auditor">{t('roles.auditor')}</option>
+                <option value="admin">{t('roles.admin')}</option>
               </select>
             </div>
             <div>
-              <label className="block text-sm font-medium text-gray-700 mb-1">Language</label>
+              <label className="block text-sm font-medium text-gray-700 mb-1">{t('auth.language')}</label>
               <select value={form.language} onChange={set('language')}
                 className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-brand-500 outline-none">
                 <option value="en">English</option>
@@ -85,12 +87,12 @@ export default function RegisterPage() {
 
           <button type="submit" disabled={loading}
             className="w-full bg-brand-600 text-white py-2.5 rounded-lg font-medium hover:bg-brand-700 transition-colors disabled:opacity-50">
-            {loading ? 'Registering...' : 'Create Account'}
+            {loading ? t('auth.registering') : t('auth.createAccount')}
           </button>
         </form>
 
         <p className="text-center text-sm text-gray-500 mt-4">
-          Already registered? <Link to="/login" className="text-brand-600 hover:underline font-medium">Sign In</Link>
+          {t('auth.alreadyRegistered')} <Link to="/login" className="text-brand-600 hover:underline font-medium">{t('auth.signIn')}</Link>
         </p>
       </div>
     </div>

@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react'
+import { useTranslation } from 'react-i18next'
 import api from '../api'
 
 const STATUS_COLORS = {
@@ -16,6 +17,7 @@ export default function IntakePage() {
   const [showForm, setShowForm] = useState(false)
   const [form, setForm] = useState({})
   const [loading, setLoading] = useState(true)
+  const { t } = useTranslation()
 
   const load = () => {
     Promise.all([
@@ -58,70 +60,70 @@ export default function IntakePage() {
   return (
     <div>
       <div className="flex justify-between items-center mb-6">
-        <h1 className="text-2xl font-bold text-gray-800">Intake Inspections</h1>
+        <h1 className="text-2xl font-bold text-gray-800">{t('intake.title')}</h1>
         <button onClick={() => setShowForm(!showForm)} className="bg-brand-600 text-white px-4 py-2 rounded-lg text-sm hover:bg-brand-700">
-          {showForm ? 'Cancel' : '+ New Inspection'}
+          {showForm ? t('fields.cancel') : t('intake.newInspection')}
         </button>
       </div>
 
       {showForm && (
         <form onSubmit={handleSubmit} className="bg-white border rounded-xl p-5 mb-6">
-          <h3 className="font-semibold text-gray-800 mb-4">New Intake Inspection</h3>
+          <h3 className="font-semibold text-gray-800 mb-4">{t('intake.formTitle')}</h3>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
             <div>
-              <label className="block text-xs text-gray-600 mb-1">Packhouse *</label>
+              <label className="block text-xs text-gray-600 mb-1">{t('intake.packhouse')} *</label>
               <select value={form.packhouse_id || ''} onChange={set('packhouse_id')} required
                 className="w-full px-3 py-2 border rounded-lg text-sm focus:ring-2 focus:ring-brand-500 outline-none">
-                <option value="">Select...</option>
+                <option value="">{t('fields.select')}</option>
                 {packhouses.map((p) => <option key={p.id} value={p.id}>{p.name}</option>)}
               </select>
             </div>
             <div>
-              <label className="block text-xs text-gray-600 mb-1">Grower</label>
+              <label className="block text-xs text-gray-600 mb-1">{t('intake.grower')}</label>
               <select value={form.grower_id || ''} onChange={set('grower_id')}
                 className="w-full px-3 py-2 border rounded-lg text-sm focus:ring-2 focus:ring-brand-500 outline-none">
-                <option value="">Select...</option>
+                <option value="">{t('fields.select')}</option>
                 {growers.map((g) => <option key={g.id} value={g.id}>{g.grower_name}</option>)}
               </select>
             </div>
             <div>
-              <label className="block text-xs text-gray-600 mb-1">Batch Code</label>
+              <label className="block text-xs text-gray-600 mb-1">{t('fields.batchCode')}</label>
               <input value={form.batch_code || ''} onChange={set('batch_code')}
                 className="w-full px-3 py-2 border rounded-lg text-sm focus:ring-2 focus:ring-brand-500 outline-none" />
             </div>
             <div>
-              <label className="block text-xs text-gray-600 mb-1">Crop Type</label>
+              <label className="block text-xs text-gray-600 mb-1">{t('fields.cropType')}</label>
               <input value={form.crop_type || ''} onChange={set('crop_type')}
                 className="w-full px-3 py-2 border rounded-lg text-sm focus:ring-2 focus:ring-brand-500 outline-none" />
             </div>
             <div>
-              <label className="block text-xs text-gray-600 mb-1">Variety</label>
+              <label className="block text-xs text-gray-600 mb-1">{t('intake.variety')}</label>
               <input value={form.variety || ''} onChange={set('variety')}
                 className="w-full px-3 py-2 border rounded-lg text-sm focus:ring-2 focus:ring-brand-500 outline-none" />
             </div>
             <div>
-              <label className="block text-xs text-gray-600 mb-1">Quantity</label>
+              <label className="block text-xs text-gray-600 mb-1">{t('intake.quantity')}</label>
               <input type="number" step="0.1" value={form.quantity || ''} onChange={set('quantity')}
                 className="w-full px-3 py-2 border rounded-lg text-sm focus:ring-2 focus:ring-brand-500 outline-none" />
             </div>
             <div>
-              <label className="block text-xs text-gray-600 mb-1">Quantity Unit</label>
+              <label className="block text-xs text-gray-600 mb-1">{t('intake.quantityUnit')}</label>
               <select value={form.quantity_unit || 'kg'} onChange={set('quantity_unit')}
                 className="w-full px-3 py-2 border rounded-lg text-sm focus:ring-2 focus:ring-brand-500 outline-none">
-                <option value="kg">kg</option>
-                <option value="bins">bins</option>
-                <option value="pallets">pallets</option>
-                <option value="boxes">boxes</option>
+                <option value="kg">{t('intake.units.kg')}</option>
+                <option value="bins">{t('intake.units.bins')}</option>
+                <option value="pallets">{t('intake.units.pallets')}</option>
+                <option value="boxes">{t('intake.units.boxes')}</option>
               </select>
             </div>
             <div>
-              <label className="block text-xs text-gray-600 mb-1">Harvest Date</label>
+              <label className="block text-xs text-gray-600 mb-1">{t('intake.harvestDate')}</label>
               <input type="date" value={form.harvest_date || ''} onChange={set('harvest_date')}
                 className="w-full px-3 py-2 border rounded-lg text-sm focus:ring-2 focus:ring-brand-500 outline-none" />
             </div>
           </div>
           <button type="submit" className="mt-4 bg-brand-600 text-white px-6 py-2 rounded-lg text-sm hover:bg-brand-700">
-            Create Inspection
+            {t('intake.createInspection')}
           </button>
         </form>
       )}
@@ -131,13 +133,13 @@ export default function IntakePage() {
           <table className="w-full text-sm">
             <thead>
               <tr className="border-b bg-gray-50">
-                <th className="text-left px-4 py-3 font-medium text-gray-600">ID</th>
-                <th className="text-left px-4 py-3 font-medium text-gray-600">Batch</th>
-                <th className="text-left px-4 py-3 font-medium text-gray-600">Crop</th>
-                <th className="text-left px-4 py-3 font-medium text-gray-600">Quantity</th>
-                <th className="text-left px-4 py-3 font-medium text-gray-600">Status</th>
-                <th className="text-left px-4 py-3 font-medium text-gray-600">Date</th>
-                <th className="text-left px-4 py-3 font-medium text-gray-600">Actions</th>
+                <th className="text-left px-4 py-3 font-medium text-gray-600">{t('fields.id')}</th>
+                <th className="text-left px-4 py-3 font-medium text-gray-600">{t('fields.batch')}</th>
+                <th className="text-left px-4 py-3 font-medium text-gray-600">{t('fields.crop')}</th>
+                <th className="text-left px-4 py-3 font-medium text-gray-600">{t('intake.quantity')}</th>
+                <th className="text-left px-4 py-3 font-medium text-gray-600">{t('fields.status')}</th>
+                <th className="text-left px-4 py-3 font-medium text-gray-600">{t('fields.date')}</th>
+                <th className="text-left px-4 py-3 font-medium text-gray-600">{t('fields.actions')}</th>
               </tr>
             </thead>
             <tbody className="divide-y">
@@ -157,9 +159,9 @@ export default function IntakePage() {
                     <div className="flex gap-1">
                       {item.status === 'pending' && (
                         <>
-                          <button onClick={() => updateStatus(item.id, 'accepted')} className="text-xs bg-green-100 text-green-700 px-2 py-1 rounded hover:bg-green-200">Accept</button>
-                          <button onClick={() => updateStatus(item.id, 'rejected')} className="text-xs bg-red-100 text-red-700 px-2 py-1 rounded hover:bg-red-200">Reject</button>
-                          <button onClick={() => updateStatus(item.id, 'quarantined')} className="text-xs bg-orange-100 text-orange-700 px-2 py-1 rounded hover:bg-orange-200">Quarantine</button>
+                          <button onClick={() => updateStatus(item.id, 'accepted')} className="text-xs bg-green-100 text-green-700 px-2 py-1 rounded hover:bg-green-200">{t('intake.accept')}</button>
+                          <button onClick={() => updateStatus(item.id, 'rejected')} className="text-xs bg-red-100 text-red-700 px-2 py-1 rounded hover:bg-red-200">{t('intake.reject')}</button>
+                          <button onClick={() => updateStatus(item.id, 'quarantined')} className="text-xs bg-orange-100 text-orange-700 px-2 py-1 rounded hover:bg-orange-200">{t('intake.quarantine')}</button>
                         </>
                       )}
                     </div>
@@ -168,7 +170,7 @@ export default function IntakePage() {
               ))}
             </tbody>
           </table>
-          {items.length === 0 && <p className="text-center py-8 text-gray-400 text-sm">No intake inspections yet</p>}
+          {items.length === 0 && <p className="text-center py-8 text-gray-400 text-sm">{t('intake.noInspections')}</p>}
         </div>
       </div>
     </div>

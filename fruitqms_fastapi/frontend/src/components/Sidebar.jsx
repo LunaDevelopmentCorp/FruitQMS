@@ -1,27 +1,29 @@
 import { NavLink } from 'react-router-dom'
 import { useAuth } from '../AuthContext'
-
-const links = [
-  { to: '/', label: 'Dashboard', icon: '📊' },
-  { to: '/organization', label: 'Organization', icon: '🏢' },
-  { to: '/intake', label: 'Intake Inspections', icon: '📦' },
-  { to: '/process-checks', label: 'Process Checks', icon: '⚙️' },
-  { to: '/final-inspections', label: 'Final Inspections', icon: '✅' },
-  { to: '/daily-checklists', label: 'Daily Checklists', icon: '📋' },
-  { to: '/forms', label: 'Form Templates', icon: '📝' },
-  { to: '/settings', label: 'Settings', icon: '⚙️' },
-]
+import { useTranslation } from 'react-i18next'
 
 export default function Sidebar() {
   const { user, logout } = useAuth()
+  const { t } = useTranslation()
+
+  const links = [
+    { to: '/', label: t('nav.dashboard'), icon: '📊' },
+    { to: '/organization', label: t('nav.organization'), icon: '🏢' },
+    { to: '/intake', label: t('nav.intake'), icon: '📦' },
+    { to: '/process-checks', label: t('nav.processChecks'), icon: '⚙️' },
+    { to: '/final-inspections', label: t('nav.finalInspections'), icon: '✅' },
+    { to: '/daily-checklists', label: t('nav.dailyChecklists'), icon: '📋' },
+    { to: '/forms', label: t('nav.formTemplates'), icon: '📝' },
+    { to: '/settings', label: t('nav.settings'), icon: '⚙️' },
+  ]
 
   return (
     <aside className="w-64 bg-brand-800 text-white min-h-screen flex flex-col">
       <div className="p-4 border-b border-brand-700">
         <h1 className="text-xl font-bold flex items-center gap-2">
-          🍊 FruitQMS
+          🍊 {t('app.name')}
         </h1>
-        <p className="text-brand-300 text-xs mt-1">Quality Management System</p>
+        <p className="text-brand-300 text-xs mt-1">{t('app.subtitle')}</p>
       </div>
 
       <nav className="flex-1 py-4">
@@ -52,7 +54,7 @@ export default function Sidebar() {
           onClick={logout}
           className="text-xs text-brand-300 hover:text-white transition-colors"
         >
-          Sign Out
+          {t('nav.signOut')}
         </button>
       </div>
     </aside>

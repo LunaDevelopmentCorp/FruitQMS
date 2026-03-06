@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react'
+import { useTranslation } from 'react-i18next'
 import api from '../api'
 
 function StatCard({ label, value, sub, color = 'brand' }) {
@@ -21,6 +22,7 @@ export default function DashboardPage() {
   const [stats, setStats] = useState(null)
   const [ncs, setNcs] = useState([])
   const [loading, setLoading] = useState(true)
+  const { t } = useTranslation()
 
   useEffect(() => {
     Promise.all([
@@ -37,35 +39,35 @@ export default function DashboardPage() {
 
   return (
     <div>
-      <h1 className="text-2xl font-bold text-gray-800 mb-6">Dashboard</h1>
+      <h1 className="text-2xl font-bold text-gray-800 mb-6">{t('dashboard.title')}</h1>
 
       {stats ? (
         <>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mb-8">
-            <StatCard label="Intake Inspections" value={stats.intake_count ?? 0} sub={`${stats.intake_pass_rate ?? 0}% pass rate`} />
-            <StatCard label="Process Checks" value={stats.process_check_count ?? 0} sub={`${stats.process_check_pass_rate ?? 0}% pass rate`} color="blue" />
-            <StatCard label="Final Inspections" value={stats.final_inspection_count ?? 0} sub={`${stats.final_inspection_pass_rate ?? 0}% pass rate`} color="amber" />
-            <StatCard label="Daily Checklists" value={stats.daily_checklist_count ?? 0} sub={`${stats.daily_checklist_pass_rate ?? 0}% pass rate`} color="brand" />
+            <StatCard label={t('dashboard.intakeInspections')} value={stats.intake_count ?? 0} sub={`${stats.intake_pass_rate ?? 0}${t('dashboard.passRate')}`} />
+            <StatCard label={t('dashboard.processChecks')} value={stats.process_check_count ?? 0} sub={`${stats.process_check_pass_rate ?? 0}${t('dashboard.passRate')}`} color="blue" />
+            <StatCard label={t('dashboard.finalInspections')} value={stats.final_inspection_count ?? 0} sub={`${stats.final_inspection_pass_rate ?? 0}${t('dashboard.passRate')}`} color="amber" />
+            <StatCard label={t('dashboard.dailyChecklists')} value={stats.daily_checklist_count ?? 0} sub={`${stats.daily_checklist_pass_rate ?? 0}${t('dashboard.passRate')}`} color="brand" />
           </div>
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 mb-8">
-            <StatCard label="Form Submissions" value={stats.form_submission_count ?? 0} color="blue" />
-            <StatCard label="Non-Conformances" value={stats.non_conformance_count ?? 0} color="red" sub="Last 7 days" />
+            <StatCard label={t('dashboard.formSubmissions')} value={stats.form_submission_count ?? 0} color="blue" />
+            <StatCard label={t('dashboard.nonConformances')} value={stats.non_conformance_count ?? 0} color="red" sub={t('dashboard.last7Days')} />
           </div>
         </>
       ) : (
         <div className="bg-white rounded-xl border p-8 text-center text-gray-500 mb-8">
-          <p className="text-lg">No data yet</p>
-          <p className="text-sm mt-1">Run the seed script or start creating inspections to see stats here.</p>
+          <p className="text-lg">{t('dashboard.noData')}</p>
+          <p className="text-sm mt-1">{t('dashboard.noDataHelp')}</p>
         </div>
       )}
 
       <div className="bg-white rounded-xl border">
         <div className="px-5 py-4 border-b">
-          <h2 className="font-semibold text-gray-800">Recent Non-Conformances</h2>
+          <h2 className="font-semibold text-gray-800">{t('dashboard.recentNonConformances')}</h2>
         </div>
         {ncs.length === 0 ? (
-          <p className="p-5 text-gray-500 text-sm">No non-conformances found.</p>
+          <p className="p-5 text-gray-500 text-sm">{t('dashboard.noNonConformances')}</p>
         ) : (
           <div className="divide-y">
             {ncs.map((nc, i) => (

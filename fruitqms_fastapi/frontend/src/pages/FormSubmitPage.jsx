@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react'
 import { useParams, useNavigate } from 'react-router-dom'
+import { useTranslation } from 'react-i18next'
 import api from '../api'
 import { useAuth } from '../AuthContext'
 import DynamicForm from '../components/DynamicForm'
@@ -8,6 +9,7 @@ export default function FormSubmitPage() {
   const { templateId } = useParams()
   const { user } = useAuth()
   const navigate = useNavigate()
+  const { t } = useTranslation()
   const [template, setTemplate] = useState(null)
   const [loading, setLoading] = useState(true)
   const [submitting, setSubmitting] = useState(false)
@@ -49,8 +51,8 @@ export default function FormSubmitPage() {
 
   if (!template) return (
     <div className="text-center py-20">
-      <p className="text-gray-500">Template not found</p>
-      <button onClick={() => navigate('/forms')} className="text-brand-600 hover:underline mt-2 text-sm">Back to templates</button>
+      <p className="text-gray-500">{t('forms.templateNotFound')}</p>
+      <button onClick={() => navigate('/forms')} className="text-brand-600 hover:underline mt-2 text-sm">{t('forms.backToTemplates')}</button>
     </div>
   )
 
@@ -58,18 +60,18 @@ export default function FormSubmitPage() {
     <div className="max-w-lg mx-auto text-center py-12">
       <div className="bg-green-50 border border-green-200 rounded-xl p-8">
         <div className="text-4xl mb-4">✓</div>
-        <h2 className="text-xl font-bold text-green-800 mb-2">Form Submitted</h2>
-        <p className="text-green-700 text-sm mb-1">Submission #{result.id}</p>
+        <h2 className="text-xl font-bold text-green-800 mb-2">{t('forms.formSubmitted')}</h2>
+        <p className="text-green-700 text-sm mb-1">{t('forms.submissionId')}{result.id}</p>
         {result.score !== null && result.score !== undefined && (
-          <p className="text-lg font-semibold text-green-800 mt-2">Score: {result.score}%</p>
+          <p className="text-lg font-semibold text-green-800 mt-2">{t('forms.score')}: {result.score}%</p>
         )}
-        <p className="text-green-600 text-sm mt-2">Status: {result.status}</p>
+        <p className="text-green-600 text-sm mt-2">{t('fields.status')}: {result.status}</p>
         <div className="mt-6 flex gap-3 justify-center">
           <button onClick={() => { setResult(null); }} className="bg-brand-600 text-white px-4 py-2 rounded-lg text-sm hover:bg-brand-700">
-            Submit Another
+            {t('forms.submitAnother')}
           </button>
           <button onClick={() => navigate('/forms')} className="border px-4 py-2 rounded-lg text-sm hover:bg-gray-50">
-            Back to Templates
+            {t('forms.backToTemplates')}
           </button>
         </div>
       </div>
@@ -81,7 +83,7 @@ export default function FormSubmitPage() {
       <div className="flex items-center justify-between mb-6">
         <div>
           <button onClick={() => navigate('/forms')} className="text-sm text-gray-500 hover:text-gray-700 mb-1">
-            ← Back to Templates
+            ← {t('forms.backToTemplates')}
           </button>
           <h1 className="text-2xl font-bold text-gray-800">{template.name}</h1>
           {template.description && <p className="text-gray-500 text-sm mt-1">{template.description}</p>}

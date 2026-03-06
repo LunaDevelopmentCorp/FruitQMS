@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react'
+import { useTranslation } from 'react-i18next'
 import api from '../api'
 
 const STATUS_COLORS = {
@@ -15,6 +16,7 @@ export default function ProcessChecksPage() {
   const [showForm, setShowForm] = useState(false)
   const [form, setForm] = useState({})
   const [loading, setLoading] = useState(true)
+  const { t } = useTranslation()
 
   const load = async () => {
     const [checks, phs] = await Promise.all([
@@ -23,7 +25,6 @@ export default function ProcessChecksPage() {
     ])
     setItems(Array.isArray(checks) ? checks : [])
     setPackhouses(Array.isArray(phs) ? phs : [])
-    // Load pack lines for first packhouse
     if (phs.length > 0) {
       const lines = await api.get(`/packhouses/${phs[0].id}/pack-lines`).then((r) => r.ok ? r.json() : [])
       setPackLines(Array.isArray(lines) ? lines : [])
@@ -56,40 +57,40 @@ export default function ProcessChecksPage() {
   return (
     <div>
       <div className="flex justify-between items-center mb-6">
-        <h1 className="text-2xl font-bold text-gray-800">Process Checks</h1>
+        <h1 className="text-2xl font-bold text-gray-800">{t('processChecks.title')}</h1>
         <button onClick={() => setShowForm(!showForm)} className="bg-brand-600 text-white px-4 py-2 rounded-lg text-sm hover:bg-brand-700">
-          {showForm ? 'Cancel' : '+ New Check'}
+          {showForm ? t('fields.cancel') : t('processChecks.newCheck')}
         </button>
       </div>
 
       {showForm && (
         <form onSubmit={handleSubmit} className="bg-white border rounded-xl p-5 mb-6">
-          <h3 className="font-semibold text-gray-800 mb-4">New Process Check</h3>
+          <h3 className="font-semibold text-gray-800 mb-4">{t('processChecks.formTitle')}</h3>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
             <div>
-              <label className="block text-xs text-gray-600 mb-1">Pack Line *</label>
+              <label className="block text-xs text-gray-600 mb-1">{t('processChecks.packLine')} *</label>
               <select value={form.pack_line_id || ''} onChange={set('pack_line_id')} required
                 className="w-full px-3 py-2 border rounded-lg text-sm focus:ring-2 focus:ring-brand-500 outline-none">
-                <option value="">Select...</option>
+                <option value="">{t('fields.select')}</option>
                 {packLines.map((l) => <option key={l.id} value={l.id}>{l.name} ({l.code})</option>)}
               </select>
             </div>
             <div>
-              <label className="block text-xs text-gray-600 mb-1">Batch Code</label>
+              <label className="block text-xs text-gray-600 mb-1">{t('fields.batchCode')}</label>
               <input value={form.batch_code || ''} onChange={set('batch_code')}
                 className="w-full px-3 py-2 border rounded-lg text-sm focus:ring-2 focus:ring-brand-500 outline-none" />
             </div>
             <div>
-              <label className="block text-xs text-gray-600 mb-1">Shift</label>
+              <label className="block text-xs text-gray-600 mb-1">{t('fields.shift')}</label>
               <select value={form.shift || 'day'} onChange={set('shift')}
                 className="w-full px-3 py-2 border rounded-lg text-sm focus:ring-2 focus:ring-brand-500 outline-none">
-                <option value="day">Day</option>
-                <option value="night">Night</option>
+                <option value="day">{t('processChecks.shifts.day')}</option>
+                <option value="night">{t('processChecks.shifts.night')}</option>
               </select>
             </div>
           </div>
           <button type="submit" className="mt-4 bg-brand-600 text-white px-6 py-2 rounded-lg text-sm hover:bg-brand-700">
-            Create Check
+            {t('processChecks.createCheck')}
           </button>
         </form>
       )}
@@ -98,13 +99,13 @@ export default function ProcessChecksPage() {
         <table className="w-full text-sm">
           <thead>
             <tr className="border-b bg-gray-50">
-              <th className="text-left px-4 py-3 font-medium text-gray-600">ID</th>
-              <th className="text-left px-4 py-3 font-medium text-gray-600">Batch</th>
-              <th className="text-left px-4 py-3 font-medium text-gray-600">Shift</th>
-              <th className="text-left px-4 py-3 font-medium text-gray-600">Status</th>
-              <th className="text-left px-4 py-3 font-medium text-gray-600">Issues</th>
-              <th className="text-left px-4 py-3 font-medium text-gray-600">Date</th>
-              <th className="text-left px-4 py-3 font-medium text-gray-600">Actions</th>
+              <th className="text-left px-4 py-3 font-medium text-gray-600">{t('fields.id')}</th>
+              <th className="text-left px-4 py-3 font-medium text-gray-600">{t('fields.batch')}</th>
+              <th className="text-left px-4 py-3 font-medium text-gray-600">{t('fields.shift')}</th>
+              <th className="text-left px-4 py-3 font-medium text-gray-600">{t('fields.status')}</th>
+              <th className="text-left px-4 py-3 font-medium text-gray-600">{t('fields.issues')}</th>
+              <th className="text-left px-4 py-3 font-medium text-gray-600">{t('fields.date')}</th>
+              <th className="text-left px-4 py-3 font-medium text-gray-600">{t('fields.actions')}</th>
             </tr>
           </thead>
           <tbody className="divide-y">
@@ -123,8 +124,8 @@ export default function ProcessChecksPage() {
                 <td className="px-4 py-3">
                   {item.status === 'pending' && (
                     <div className="flex gap-1">
-                      <button onClick={() => updateStatus(item.id, 'pass')} className="text-xs bg-green-100 text-green-700 px-2 py-1 rounded hover:bg-green-200">Pass</button>
-                      <button onClick={() => updateStatus(item.id, 'fail')} className="text-xs bg-red-100 text-red-700 px-2 py-1 rounded hover:bg-red-200">Fail</button>
+                      <button onClick={() => updateStatus(item.id, 'pass')} className="text-xs bg-green-100 text-green-700 px-2 py-1 rounded hover:bg-green-200">{t('processChecks.pass')}</button>
+                      <button onClick={() => updateStatus(item.id, 'fail')} className="text-xs bg-red-100 text-red-700 px-2 py-1 rounded hover:bg-red-200">{t('processChecks.fail')}</button>
                     </div>
                   )}
                 </td>
@@ -132,7 +133,7 @@ export default function ProcessChecksPage() {
             ))}
           </tbody>
         </table>
-        {items.length === 0 && <p className="text-center py-8 text-gray-400 text-sm">No process checks yet</p>}
+        {items.length === 0 && <p className="text-center py-8 text-gray-400 text-sm">{t('processChecks.noChecks')}</p>}
       </div>
     </div>
   )

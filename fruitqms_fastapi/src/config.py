@@ -21,10 +21,12 @@ class Settings(BaseSettings):
     JWT_ACCESS_TOKEN_EXPIRE_MINUTES: int = 30
     JWT_REFRESH_TOKEN_EXPIRE_DAYS: int = 7
 
-    # FruitPak Integration
-    FRUITPAK_API_URL: Optional[str] = None  # e.g., "https://api.fruitpak.example.com"
-    FRUITPAK_API_KEY: Optional[str] = None
+    # FruitPak Integration (JWT auth — no API keys yet)
+    FRUITPAK_API_URL: Optional[str] = None  # e.g., "http://localhost:3000" or "https://api.fruitpak.com"
+    FRUITPAK_EMAIL: Optional[str] = None  # dedicated QMS service user in FruitPak
+    FRUITPAK_PASSWORD: Optional[str] = None
     FRUITPAK_TIMEOUT_SECONDS: int = 10
+    FRUITPAK_POLL_INTERVAL_MINUTES: int = 10  # how often to poll for new batches
 
     # CORS
     CORS_ORIGINS: str = "http://localhost:3000,http://localhost:5173"

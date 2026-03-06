@@ -6,29 +6,38 @@ __pycache__/
 *.pyc
 *.pyo
 *.pyd
+*.egg-info/
 .Python
 
 # Database
 qms_local.db
 *.db
+instance/
+
+# Environment
+.env
 
 # IDE
 .vscode/
 .idea/
 *.swp
 *.swo
+*.code-workspace
 
 # OS
 .DS_Store
 Thumbs.db
 
-# Flask
-instance/
+# Node
+node_modules/
+dist/
+
+# Testing
 .pytest_cache/
 .coverage
 htmlcov/
 
-# Migrations (keep migrations folder but ignore generated files initially)
+# Flask (legacy)
 migrations/versions/*.pyc
 
 # Claude Code
